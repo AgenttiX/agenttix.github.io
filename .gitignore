@@ -3,3 +3,6 @@ _site/
 .jekyll-cache/
 .jekyll-metadata
 .sass-cache/
+# GitHub Pages does not use the Gemfile.lock
+# https://stackoverflow.com/a/56297531/
+Gemfile.lock
