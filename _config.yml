@@ -14,3 +14,6 @@ search_enabled: true
 
 plugins:
   - jekyll-feed
+
+exclude:
+  - README.md
