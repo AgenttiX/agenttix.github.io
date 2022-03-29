@@ -4,6 +4,7 @@ description: >-
   Physics, IT, information security, open source etc.
 # baseurl:
 url: "https://agx.fi"
+# markdown: kramdown
 twitter_username: AgenttiX
 github_username: AgenttiX
 
