@@ -1,2 +1,16 @@
+title: Mika's website
+# email:
+description: >-
+  Physics, IT, information security, open source etc.
+# baseurl:
+url: "https://agx.fi"
+twitter_username: AgenttiX
+github_username: AgenttiX
+
+# https://www.embeddedlog.com/jekyll-theme-rtd/configuration/configyml.html
 # theme: jekyll-theme-slate
 remote_theme: carlosperate/jekyll-theme-rtd
+search_enabled: true
+
+plugins:
+  - jekyll-feed
