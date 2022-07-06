@@ -4,4 +4,7 @@ title: Index
 nav_exclude: true
 ---
 
-Mika's website
+Mika's website. Work in in progress.
+
+Many of the tutorials and reviews on this site have originally been written for personal use.
+However, I thought that I could share them in the hope that they could be useful.
