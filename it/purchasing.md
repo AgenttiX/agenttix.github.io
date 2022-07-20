@@ -255,7 +255,7 @@ If you're only using the computer for light tasks such as web browsing, consider
     and n258 is the mmWave band for short-range connectivity for mass events such as concerts and festivals
 - NFC
   - The tags are cheap on AliExpress and can be used for various purposes
-  - Makes the use of a YubiKey a lot easier
+  - Makes the use of a physical security key such as a YubiKey a lot easier
 - Android version: at least 12 (as of 2022)
   - Android 10 adds support for AV1 decoding
   - Android 12 adds support for the AVIF image format
