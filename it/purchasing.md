@@ -61,6 +61,14 @@ If you're only using the computer for light tasks such as web browsing, consider
     Therefore, buying a lower-end model from a newer series instead of a higher-end model from older series may be worth the additional price
     even when the raw performance would be similar.
     - [AV1 decoding is supported from AMD RX 6000 series and Nvidia RTX 3000 series onwards](https://en.wikipedia.org/wiki/AV1#Hardware)
+  - AMD GPU drivers are included in the Linux kernel and therefore work out of the box,
+    whereas Nvidia GPU drivers have to be installed separately
+    and are compatible with new Linux distribution versions only as long as the GPU is officially supported by Nvidia.
+    AMD GPUs should therefore have a longer lifespan on Linux than Nvidia GPUs.
+    However, AMD scientific libraries have to be installed manually,
+    and their support of new Linux distribution versions is
+    [notoriously poor](https://github.com/RadeonOpenCompute/ROCm/issues/1713).
+    Therefore, if you want to do any GPU-accelerated computing, even OpenCL, you should get an Nvidia GPU instead.
 - RAM
   - 8 GB is sufficient for basic tasks, but I recommend 16 GB, especially for gaming.
     32 GB is worth considering for professional workloads and virtual desktops.
