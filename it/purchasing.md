@@ -23,6 +23,7 @@ Before starting to look for devices, please ask yourself these questions:
 - [Huuto.net](https://www.huuto.net/) and [Tori.fi](https://www.tori.fi/) are good places to find used devices in Finland.
 - [Huutokaupat.com](https://huutokaupat.com/) is an auction site for professional sellers such as liquidations.
   You can find incredible deals on professional hardware, but those are quite rare.
+- [IO-Tech BBS](https://bbs.io-tech.fi/) is comprehensive IT forum with a section for sales
 - First think carefully whether you actually need the device, and whether you need it right now or perhaps only after a few years.
   The electronics industry moves forward so rapidly that it's rarely a good idea to purchase a device before you actually need it.
   If you have decided that you actually need the device, take your time to find the models that suit your needs.
