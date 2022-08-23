@@ -7,17 +7,20 @@ title: Information security
 Here are some information security tips.
 This list is a work in progress.
 
+
 ## Checklist
 CIA model:
 - Confidentiality
 - Integrity
 - Availability
 
+
 ## Practical tips
 - Have cards from multiple banks in case one of them is down
 - Electronic identity card
   - [In Finland](https://poliisi.fi/henkilokortti)
   - [Linux compatibility](https://www.linux.fi/wiki/HST)
+
 
 ## Securing a Windows desktop
 - Keep Windows updated
@@ -28,6 +31,7 @@ CIA model:
 - [BitLocker](https://docs.microsoft.com/en-us/windows/security/information-protection/bitlocker/bitlocker-overview)
 - [VeraCrypt](https://www.veracrypt.fr/en/Home.html)
 
+
 ## Securing a Linux desktop
 - Keep software updated: apt-get, snap, flatpak etc.
 - Enable firewall
@@ -36,6 +40,7 @@ CIA model:
 ### Disk encryption
 - [LUKS](https://wiki.archlinux.org/title/Dm-crypt/Encrypting_an_entire_system)
 - [ZFS](https://wiki.archlinux.org/title/ZFS#Native_encryption)
+
 
 ## Securing a Linux server
 - Disable SSH password authentication and use keyfiles instead
@@ -58,6 +63,7 @@ Allowing a program to receive connections:
 sudo ufw allow <port_number> comment "My program"
 ```
 
+
 ## Securing an Android device
 - Keep the firmware (aka. Android version) up to date
   - Every month [several vulnerabilities](https://source.android.com/security/bulletin)
@@ -69,6 +75,7 @@ sudo ufw allow <port_number> comment "My program"
   - Even a single malicious app is enough to compromise a phone.
 - Reduce the permissions given to apps
 - Keep Bluetooth disabled if you don't need it
+
 
 ## Securing a router
 The most important thing about securing a router is keeping it up to date.
@@ -93,14 +100,67 @@ You can test whether you have DNSSEC enabled with this
 
 
 ## Hardware security keys
-Services that support YubiKey/WebAuthn
-- Facebook
-- GitHub
-- GitLab
-- Google
+[Services that support YubiKey/WebAuthn](https://www.yubico.com/fi/works-with-yubikey/catalog/?sort=popular), including:
+- Binance
+- [Bitbucket](https://bitbucket.org/account/settings/two-step-verification/manage)
+- Bitfinex
+- Coinbase
+- eBay
+- Electronic Arts
+- Epic Games
+- EVE Online
+- [Facebook](https://www.facebook.com/security/2fac/settings/)
+- [GitHub](https://github.com/settings/security)
+- [GitLab](https://gitlab.com/-/profile/two_factor_auth)
+- [Google](https://myaccount.google.com/signinoptions/two-step-verification)
 - Heroku
+- Instagram
+- KeePassXC ([see this description](https://security.stackexchange.com/a/258414/))
+- Kickstarter
 - Microsoft
-- OVH
+- Microsoft Azure Active Directory
+- NiceHash
+- [OVH](https://www.ovh.com/manager/#/dedicated/useraccount/security)
+- ProtonMail
+- Reddit
+- TeamViewer
+- Twitch
+- Twitter
 
 Services that will support YubiKey/WebAuthn in the future
 - [Self-developed Django applications](https://github.com/jazzband/django-two-factor-auth/pull/408)
+
+### Resetting a YubiKey
+``` bash
+ykman fido reset
+ykman oath reset
+ykman openpgp reset
+ykman otp delete 1
+ykman otp delete 2
+ykman piv reset
+```
+
+### Configuring a YubiKey
+``` bash
+ykman fido access change-pin
+```
+
+### Setting up SSH authentication
+Check that your clients and servers have OpenSSH 8.2 or later:
+``` bash
+ssh -V
+```
+Create the SSH key
+([Yubico instructions](https://www.yubico.com/blog/github-now-supports-ssh-security-keys/)).
+Use ed25519-sk instead of ecdsa-sk, as the latter is not cryptographically secure!
+``` bash
+ssh-keygen -t ed25519-sk -O resident -O verify-required
+```
+
+Support has been requested for
+- [Android](https://www.reddit.com/r/yubikey/comments/shrd2u/u2f_and_ssh_on_android/)
+- [iOS](https://www.reddit.com/r/yubikey/comments/krygf6/security_key_nfc_for_ssh_in_ios/)
+- [TermBot](https://github.com/cotechde/termbot/issues/27)
+- [Termius](https://ideas.teams.termius.com/c/47-u2f-fido2-token-support)
+  - Already works on desktop but not on Android
+- [Termux](https://github.com/termux/termux-packages/issues/4942)
