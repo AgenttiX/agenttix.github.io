@@ -103,6 +103,71 @@ Instead, create additional admin accounts with only the necessary privileges.
 [best practices](https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/manage/component-updates/executive-summary#summary-of-best-practices-for-securing-active-directory-domain-services)
 by Microsoft.
 
+### Active Directory Certificate Services
+- [Microsoft instructions](https://docs.microsoft.com/en-us/windows-server/networking/core-network-guide/cncg/server-certs/install-the-certification-authority)
+- [Certification Authority Guidance](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831574(v=ws.11)?redirectedfrom=MSDN#crypto)
+- Decide a name for the CA
+  - The default format is Company-ServerName-CA, e.g. MyCompany-CA01-CA
+  - Please see the [CA naming rules](https://social.technet.microsoft.com/wiki/contents/articles/16160.considerations-for-certification-authority-ca-names.aspx)
+- If you have enough Windows Server licenses, set up a separate virtual machine (VM) for the certificate authority (CA)
+  - Once the CA is configured, the VM can no longer be renamed, promoted to a domain controller (DC) or demoted
+- Use the default settings for the CA root key
+  - Cryptographic provider: RSA#Microsoft Software Key Storage Provider
+    - This is the Microsoft recommendation.
+      A TPM-based key store would be more secure, but if the CA server is compromised, the attacker can issue arbitrary certificates anyway.
+  - Key length: 4096
+    - The default is 2048
+    - [Do not use a shorter key than 2048, as they are insecure and many systems will refuse to work with them!
+](https://dirteam.com/sander/2015/07/09/ad-fs-certificates-best-practices-part-2-key-length/)
+    - [A quantum computer with 20 million qubits should be able to crack 2048-bit RSA in 8 hours](https://www.technologyreview.com/2019/05/30/65724/how-a-quantum-computer-could-break-2048-bit-rsa-encryption-in-8-hours/)
+  - Hash algorithm: SHA256
+    - Supported from Windows XP SP3 and Windows Server 2003 SP2 ->
+  - [Windows 7 and 8 require a hotfix to enable SHA512 for TLS 1.2](https://support.microsoft.com/en-us/topic/sha512-is-disabled-in-windows-when-you-use-tls-1-2-5863e74e-e5b6-cc3b-759b-ece8da875825)
+- Have a look at [keylength.com](https://www.keylength.com/) when deciding your settings
+- Recommendations for the defaults
+  - [Cloud Infrastructure Services](https://cloudinfrastructureservices.co.uk/active-directory-certificate-services-best-practices/) (2019->)
+  - [social.technet.microsoft.com](https://social.technet.microsoft.com/Forums/office/en-US/c462dec2-210b-4878-a832-42a95ff2cc61/sha512-and-4096-compatibility?forum=winserversecurity) (2015)
+  - [Zindagi Technologies](https://zindagitech.com/how-should-we-implement-active-directory-certificate-services/) (2021)
+- Recommendations for higher security
+  - [Techgenix](https://techgenix.com/microsoft-pki-quick-guide-part2-design/)
+  - [social.technet.microsoft.com](https://social.technet.microsoft.com/Forums/windowsserver/en-US/daeea1a0-bf18-4ec1-b38d-b75a73ee5e08/are-there-any-major-compatibility-issues-with-using-gt-2048-bit-ca-keys?forum=winserversecurity)
+  - [social.technet.microsoft.com](https://social.technet.microsoft.com/Forums/lync/en-US/0f98e960-849e-490f-90e9-d8f177285ad5/sha1-or-sha256-and-2048-or-4096-when-setting-up-a-new-root-and-sub-ca?forum=winserversecurity)
+
+TODO [Instructions](https://mjcb.io/blog/2020/03/09/certificate-authority-windows-server-2019/)
+
+### Windows Server IKEv2 VPN
+- First set up Active Directory Certificate Services with the instructions above
+- The VPN clients should have TPM 2.0 enabled
+- [Configure the VPN](https://docs.microsoft.com/en-us/windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy-deployment)
+- Settings for the VPN User Authentication template
+  - Cryptography
+    - Provider Category: Key Storage Provider
+    - Algorithm name: RSA
+    - Minimum key size: 2048 (You can't set a longer one, or the Microsoft Platform Crypto Provider will disappear from the provider list.)
+    - "Requests must use one of the following providers"
+    - Providers: Microsoft Platform Crypto Provider (this is the TPM-backed provider)
+    - Request hash: SHA256
+  - Security
+    - Authenticated users (or at least the CA server) should have read permissions.
+      Otherwise you will get the error [0x80094800](https://www.pkisolutions.com/the-requested-template-is-not-supported-by-this-ca-error-0x80094800/)
+  - Key Attestation
+    - Key Attestation: Required
+    - Perform attestation based on: user credentials
+- The Microsoft documentation tends to implicitly assume that the CA, NPS and RAS/VPN are on different servers.
+- It's recommended to run the CA, NPS and RAS/VPN on different servers,
+  and this is what the Microsoft instructions implicitly assume.
+  If you get any certificate errors when attempting to connect to the VPN,
+  you may have to go to Certificates (Local Computer) -> Personal -> Certificates -> your root certificate -> Properties -> General
+  and set `Certificate purposes: Enable only the following purposes`
+  and remove `IP security IKE intermediate`, and possibly `Server Authentication` and `User Authentication` as well.
+- In the Network Policy Server settings use the certificates of the NPS, not the RAS/VPN server.
+- On the client
+  - Networking -> IPv4 -> Properties -> Advanced -> Disable `Use default gateway on remote network`
+
+TODO check
+- [Security hardening](https://directaccess.richardhicks.com/2018/12/10/always-on-vpn-ikev2-security-configuration/)
+- [Policy mismatch](https://directaccess.richardhicks.com/2019/09/02/always-on-vpn-ikev2-policy-mismatch-error/)
+
 ## Hardware security keys
 Services that support YubiKey/WebAuthn
 - Facebook
