@@ -1,3 +1,30 @@
+---
+layout: default
+title: Active Directory
+---
+# Active Directory
+Active Directory is *the* way to manage an organisation that has multiple computers.
+
+## Samba Active Directory
+Samba Active Directory is the free and open source implementation of
+Microsoft Active Directory.
+It is suitable for both small and large environments,
+requires significantly more configuration and tweaking than
+Microsoft Active Directory.
+On the other hand, you don't have to pay exorbitant sums of money for the Windows Server licenses.
+You can both
+[set up a new domain](https://wiki.samba.org/index.php/Setting_up_Samba_as_an_Active_Directory_Domain_Controller)
+or
+[add Samba domain controllers to an existing domain](https://wiki.samba.org/index.php/Joining_a_Samba_DC_to_an_Existing_Active_Directory).
+
+Before setting up a Samba domain, think carefully which
+[identity mapping](https://wiki.samba.org/index.php/Identity_Mapping_Back_Ends)
+and
+[DNS](https://wiki.samba.org/index.php/The_Samba_AD_DNS_Back_Ends)
+back ends to use.
+The `ad` identity mapping backed is a pain to manage when creating new users and groups,
+but it might be necessary in your environment.
+
 ## Securing an Active Directory domain
 - Keep your domain controllers up to date
 - Use strong passphrases
@@ -16,7 +43,7 @@ set up the latest policy templates on your domain controller SYSVOL
 according to the
 [Microsoft instructions for Managing policy templates](https://docs.microsoft.com/en-us/troubleshoot/windows-client/group-policy/create-and-manage-central-store).
 
-Policies for additional software can be downloaded here
+Policies for additional software can be downloaded here:
 - [Chrome](https://support.google.com/chrome/a/answer/187202)
 - [Edge](https://docs.microsoft.com/en-us/deployedge/configure-microsoft-edge)
 - [Firefox](https://support.mozilla.org/en-US/kb/customizing-firefox-using-group-policy-windows)
@@ -39,7 +66,47 @@ Windows hardening
 - [Windows hardware security](https://docs.microsoft.com/en-us/windows/security/hardware)
 
 
-### Active Directory Certificate Services
+### Password hardening
+Windows password security is fundamentally broken to maintain backwards compatibility.
+[The legacy LM hash used to store the password is based on 64-bit DES,
+and the "newer" NTLM hash is based on unsalted MD4](https://docs.microsoft.com/en-us/windows-server/security/kerberos/passwords-technical-overview).
+[The NT and NTLM hashes are so weak](https://support.microsoft.com/en-us/topic/security-guidance-for-ntlmv1-and-lm-network-authentication-da2168b6-4a31-0088-fb03-f081acde6e73),
+because before January 2000,
+the US law was interpreted to prevent the export of stronger cryptography.
+(Big thanks to the PGP developers for
+[appealing this](https://en.wikipedia.org/wiki/Pretty_Good_Privacy#Criminal_investigation)!)
+
+LM hashes are disabled by default on Windows Vista and newer,
+and you can disable them on Windows XP with a
+[group policy](https://docs.microsoft.com/en-us/troubleshoot/windows-server/windows-security/prevent-windows-store-lm-hash-password).
+Setting this group policy also for newer devices is a good idea to reduce the risk of an attacker enabling
+the LM hashes.
+
+NTLM authentication should be restricted to the latest NTLMv2 version with a
+[group policy](https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/network-security-lan-manager-authentication-level).
+
+[Windows 10 encrypts the MD4-based NTLM hash with AES](https://security.stackexchange.com/a/158174/),
+but since AES is symmetric encryption,
+the original hash can be extracted with tools such as
+[Mimikatz](https://github.com/gentilkiwi/mimikatz).
+To mitigate against this, enable Credential Guard with a
+[group policy](https://docs.microsoft.com/en-us/windows/security/identity-protection/credential-guard/credential-guard-manage).
+However, Credential Guard does not protect the password being stolen with a keylogger
+or a malicious
+[Security Support Provider](https://docs.microsoft.com/en-us/windows/win32/rpc/security-support-providers-ssps-)
+(SSP) when you log in.
+
+All Windows passwords should contain both lower and uppercase characters and numbers and be at least 10 characters long,
+preferably significantly longer.
+Otherwise the NTLM hash can be trivially cracked with an
+[easily available rainbow table](https://project-rainbowcrack.com)
+using free software such as
+[Ophcrack](https://ophcrack.sourceforge.io/).
+You should enforce this with a
+[group policy](https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/password-policy).
+
+
+## Active Directory Certificate Services
 Active Directory Certificate Services (AD CS) is the platform
 for setting up a public key infrastructure for a Windows domain.
 
@@ -83,7 +150,11 @@ for setting up a public key infrastructure for a Windows domain.
   - [social.technet.microsoft.com](https://social.technet.microsoft.com/Forums/windowsserver/en-US/daeea1a0-bf18-4ec1-b38d-b75a73ee5e08/are-there-any-major-compatibility-issues-with-using-gt-2048-bit-ca-keys?forum=winserversecurity)
   - [social.technet.microsoft.com](https://social.technet.microsoft.com/Forums/lync/en-US/0f98e960-849e-490f-90e9-d8f177285ad5/sha1-or-sha256-and-2048-or-4096-when-setting-up-a-new-root-and-sub-ca?forum=winserversecurity)
 
-### Windows Server IKEv2 VPN
+## Windows Server IKEv2 VPN
+This setup is rather complex, and it's easy to make mistakes that affect its security negatively.
+For smaller environments, consider using OpenVPN instead.
+The primary benefits of Windows Server -based IKEv2 are that the clients are configured automatically,
+and that the user certificates can't be extracted from the clients if they are stored on a TPM.
 - First set up Active Directory Certificate Services with the instructions above
 - To prevent extraction of keys from the clients, they should have TPM 2.0 with support for key attestation
 - [Microsoft instructions](https://docs.microsoft.com/en-us/windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy-deployment)
