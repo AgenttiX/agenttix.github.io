@@ -91,7 +91,7 @@ the original hash can be extracted with tools such as
 [Mimikatz](https://github.com/gentilkiwi/mimikatz).
 To mitigate against this, enable Credential Guard with a
 [group policy](https://docs.microsoft.com/en-us/windows/security/identity-protection/credential-guard/credential-guard-manage).
-However, Credential Guard does not protect the password being stolen with a keylogger
+However, Credential Guard does not protect the password from being stolen with a keylogger
 or a malicious
 [Security Support Provider](https://docs.microsoft.com/en-us/windows/win32/rpc/security-support-providers-ssps-)
 (SSP) when you log in.
