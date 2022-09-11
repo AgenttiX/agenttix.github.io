@@ -8,6 +8,15 @@ Of the major web browsers,
 [Firefox](https://www.mozilla.org/en-US/firefox/)
 is the only one that properly respects user privacy and open web standards.
 
+## Why use Firefox?
+- Free (as in freedom) and open source
+  - No backdoors, independent security auditing
+- Google Chrome does not respect your privacy
+  - [By default Chrome Sync does not end-to-end encrypt user data](https://support.google.com/chrome/answer/165139?hl=en&co=GENIE.Platform%3DAndroid).
+    This lets Google see all your saved passwords.
+  - [Even when enabled, the end-to-end encryption has been easy to bruteforce](https://bugs.chromium.org/p/chromium/issues/detail?id=820976).
+    Again, Google can see all your saved passwords.
+
 ## Plugins
 
 ### Privacy and security
