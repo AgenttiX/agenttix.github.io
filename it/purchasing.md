@@ -17,6 +17,8 @@ Before starting to look for devices, please ask yourself these questions:
 
 
 ## How to find good deals
+- [Ebay](https://www.ebay.com/) is a good source for used enterprise networking hardware
+- [FibreStore](https://www.fs.com/de-en) is a good source for new enterprise networking hardware
 - [Geizhals](https://geizhals.eu/) is a good comparison site for Central Europe.
   It has extensive filtering tools and is therefore good for finding models with the features you want.
 - [Hinta.fi](https://hinta.fi/) and [Hintaseuranta.fi](https://hintaseuranta.fi/) are good price comparison sites for Finland.
@@ -44,8 +46,11 @@ If you're only using the computer for light tasks such as web browsing, consider
     For these workloads multi-core performance is the most important quantity.
   - For gaming single-core performance is the most important quantity.
   - Frequency is not a good indicator of performance. Look for benchmark results instead.
-  - If you're buying a used device, ensure that the CPU is
-    [compatible with Windows 11](https://docs.microsoft.com/en-us/windows-hardware/design/minimum/windows-processor-requirements)
+  - If you're buying a used device
+    - Ensure that the CPU is
+      [compatible with Windows 11](https://docs.microsoft.com/en-us/windows-hardware/design/minimum/windows-processor-requirements)
+    - Try to buy the CPU and motherboard together, and possibly the RAM as well.
+      If they don't work, it's easier to complain to one seller than multiple.
 - GPU
   - GPU is the most important part for gaming.
   - Depending on the state of the cryptocurrency market, finding a GPU can be difficult, and the prices may be inflated.
@@ -87,11 +92,13 @@ If you're only using the computer for light tasks such as web browsing, consider
   - Read reviews about the VRM temperatures and quality for reliability and overclocking headroom.
     A good motherboard with a low number of VRM phases can be as good as one with a higher number of phases.
   - There tend to never be enough USB ports, but more can be added with a PCIe x1 add-on card.
-  - If you have a NAS, an integrated 10 GB Ethernet controller is worth considering.
-    When installed as an add-on card, 10 GB Ethernet controllers tend to need a longer than x1 PCIe slot,
+  - If you have a NAS, an integrated 10 Gb Ethernet controller is worth considering.
+    When installed as an add-on card, 10 Gb Ethernet controllers tend to need a longer than x1 PCIe slot,
     requiring installation in one of the x16 slots on the motherboard.
     Many motherboards split the lanes between the x16 slots to e.g. x8 per slot when multiple cards are installed,
     so installing a separate Ethernet controller may halve the bandwidth of your GPU.
+  - If you're building a server, ensure that you have enough PCIe slots and lanes.
+    Installing multiple network cards and SATA controllers will easily consume the most of your PCIe slots.
   - Thunderbolt docks can make it a lot easier to manage the cables, especially if you have an electric standing desk.
     With optical cables you can even install the computer in another room and have complete silence in your room!
   - Wired network connectivity should be preferred over wireless whenever possible.
@@ -262,3 +269,76 @@ If you're only using the computer for light tasks such as web browsing, consider
 - Devices with the aforementioned features:
   [Geizhals list](https://geizhals.eu/?cat=umtsover&xf=10063_12.0%7E146_Videos+%402160p%2F60fps%7E157_131072%7E162_LineageOS+Support%7E17890_n28%7E17890_n78%7E18414_NFC%7E2607_6144)
   - The 5G mmWave band n258 has been left out from the list, as it's supported by only a few devices
+
+
+## Networking
+### Network architecture
+- Don't spend extra money for a motherboard with integrated 10 Gbps Ethernet.
+  If you have free PCIe slots left, install a separate network card instead.
+- 10 Gbps switches are expensive and noisy.
+  For a home network it's more cost-effective to install a direct 10 Gbps or 40 Gbps connection between the computer
+  and the server.
+- PoE is very handy if you're going to install multiple Wi-Fi access points or security cameras.
+  However, PoE switches are more noisy than the non-PoE versions.
+
+### Network cards
+- Intel E1G42ET
+  - [Intel 82576 chip](https://ark.intel.com/content/www/us/en/ark/products/series/32261/intel-82576-gigabit-ethernet-controller.html)
+  - 2x 1 Gbps Ethernet
+  - PCIe 2.0 x1 or x4
+- [Intel I350-T4](https://ark.intel.com/content/www/us/en/ark/products/184824/intel-ethernet-network-adapter-i350t4-for-ocp-3-0.html)
+  - 4x 1 Gbps Ethernet
+  - PCIe 2.1 x4
+- [Intel I350-T4 v2](https://ark.intel.com/content/www/us/en/ark/products/84805/intel-ethernet-server-adapter-i350t4v2.html)
+  - [Slightly better reliability/safety](https://community.intel.com/t5/Ethernet-Products/Differences-I350-T4-vs-I350-T4V2/m-p/582395)
+- [Intel X520-SR2](https://ark.intel.com/content/www/us/en/ark/products/39774/intel-ethernet-converged-network-adapter-x520sr2.html)
+  - 2x SFP+
+  - PCIe 2.0 x8
+  - Compatible only with Intel SFP+ modules and cables
+  - [Compatibility table](https://compatibleproducts.intel.com/ProductDetails?activeModule=Intel%C2%AE%20Ethernet&prdName=Intel%C2%AE%20Ethernet%20Converged%20Network%20Adapter%20X520-SR2)
+- [Intel X520-DA2](https://ark.intel.com/content/www/us/en/ark/products/39776/intel-ethernet-converged-network-adapter-x520da2.html)
+  - 2x SFP+
+  - PCIe 2.0 x8
+  - Compatible only with Intel SFP+ modules and cables
+  - [Compatibility table](https://compatibleproducts.intel.com/ProductDetails?activeModule=Intel%C2%AE%20Ethernet&prdName=Intel%C2%AE%20Ethernet%20Converged%20Network%20Adapter%20X520-DA2)
+- Mellanox ConnectX-2
+  - 2x SFP+
+  - PCIe 2.0 x8
+  - [Firmware](https://network.nvidia.com/support/firmware/connectx2en/)
+- Mellanox ConnectX-3
+  - 2x SFP+
+  - PCIe 3.0 x8
+  - [Firmware](https://network.nvidia.com/support/firmware/connectx3en/)
+  - [Transceiver compatibility](https://www.reddit.com/r/homelab/comments/scfmiu/10gbaset_spf_transceivers_for_mellanox_connectx3/)
+- Mellanox ConnectX-4
+- Reddit discussions
+  - [What 10 Gigabit Sfp+ Cards](https://www.reddit.com/r/PFSENSE/comments/syq7w4/what_10_gigabit_sfp_cards/)
+  - [Mellanox ConnectX-2 vs ConnectX-3](https://www.reddit.com/r/homelab/comments/cf5tlg/mellnox_connectx2_vs_connectx3/)
+- [Overkill build](https://michael.stapelberg.ch/posts/2021-07-10-linux-25gbit-internet-router-pc-build/)
+
+### Switches
+- Most rack-mountable switches make a lot of noise.
+  Therefore, search for reviews and forum posts before buying,
+  if the switch is not going to be placed in a separate server room.
+  - [Reddit](https://www.reddit.com/r/homelab/comments/79gidp/silent_10gb_ethernet_managed_switch/)
+- [TP-Link TL-SG3428XMP](https://www.tp-link.com/us/business-networking/managed-switch/tl-sg3428xmp/)
+  - Good price for the features (as of 2022)
+  - [Very noisy](https://www.reddit.com/r/TPLink_Omada/comments/w3f2af/tlsg3428xmp_v20_fan_speed_cpu_utilisation/)
+- [Ubiquiti UniFi Switch Pro 48 PoE](https://eu.store.ui.com/collections/unifi-network-routing-switching/products/usw-pro-48-poe)
+  - More noisy than in the specs
+    - [Reddit](https://www.reddit.com/r/Ubiquiti/comments/geghko/anyone_ever_addressed_uswpro48poe_fan_noise/)
+    - [Ubiquiti forum](https://community.ui.com/questions/USW-PRO-48-POE-Fan-Noise-and-Heat-Nowhere-Near-Specs/b2f7569a-10dc-432c-a4ef-08a53f63dc82)
+  - Fan replacement
+    - Will void the warranty
+    - [Forum post](https://community.ui.com/questions/Noisy-Fan-replacement-for-USW-Pro-48-PoE/b62ff60c-7a73-4c68-8b03-0e4a561f1984)
+- [Ubiquiti UniFi Switch Enterprise 48 PoE](https://eu.store.ui.com/collections/unifi-network-routing-switching/products/switch-enterprise-48-poe)
+  - [Relatively silent at low loads, but noisy with high PoE load](https://community.ui.com/questions/USW-Enterprise-24-PoE-noise-levels/d9ce70c5-d00a-4e0b-ac11-7beb94974aa5)
+
+### Transceivers
+- [10Gtek 10GBase SFP+](https://www.amazon.de/-/en/gp/product/B01M8O3MAL/)
+- Intel E10GSFPSR
+
+### Racks
+- These are damn difficult to find in Finland at even remotely reasonable prices.
+  Most stores only sell to business customers.
+- [StarTech 12U RK1236BKF](https://www.startech.com/en-fi/server-management/rk1236bkf)
