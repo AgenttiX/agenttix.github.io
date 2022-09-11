@@ -262,3 +262,51 @@ If you're only using the computer for light tasks such as web browsing, consider
 - Devices with the aforementioned features:
   [Geizhals list](https://geizhals.eu/?cat=umtsover&xf=10063_12.0%7E146_Videos+%402160p%2F60fps%7E157_131072%7E162_LineageOS+Support%7E17890_n28%7E17890_n78%7E18414_NFC%7E2607_6144)
   - The 5G mmWave band n258 has been left out from the list, as it's supported by only a few devices
+
+
+## USB flash drives
+- The drive should have USB 3.0 or later.
+- Prefer a fully metallic casing.
+  Plastic ones will eventually break if stored in a pocket.
+- Prefer one without a detachable protector,
+  as those tend to loosen and eventually get lost over time.
+- If you get one with a rotating holder mechanism,
+  ensure that it's tight enough and won't loosen over time.
+- Test the drive with [f3](https://fight-flash-fraud.readthedocs.io/en/latest/)
+  immediately after purchasing to ensure that it's not a fake
+  and that it's reliable.
+
+
+## Accessories
+
+- Adapters
+  - [DisplayPort -> DVI (active)](https://www.aliexpress.com/item/32981791094.html)
+  - [USB-c -> HDMI (4K 60 Hz)](https://www.aliexpress.com/item/32980806917.html)
+  - [USB-c -> micro-USB](https://www.amazon.de/gp/product/B08GLNRTCD)
+- Cables
+  - [DisplayPort 1.4](https://www.aliexpress.com/item/4001299891742.html)
+  - [HDMI 2.1](https://www.aliexpress.com/item/1005002124697606.html)
+    - [Optical](https://www.aliexpress.com/item/4000860157677.html)
+  - [Thunderbolt 4](https://www.aliexpress.com/item/1005003026399770.html)
+  - [S/PDIF (optical audio)](https://www.amazon.de/-/en/gp/product/B00FQK3H8Q)
+  - [USB-A - USB-B](https://www.amazon.de/-/en/gp/product/B07FWFVDNV)
+  - [USB-A - USB-c](https://www.amazon.de/gp/product/B098DTBP29)
+  - USB-c
+    - [10 Gbps, 0.5-3 m, very stiff](https://www.aliexpress.com/item/1005003257832228.html)
+    - [10 Gbps, 1-3 m](https://www.aliexpress.com/item/1005001400212927.html)
+    - [20 Gbps, 0.5-3 m, very stiff](https://www.aliexpress.com/item/1005003257832228.html)
+    - [40 Gbps, 12 cm](https://www.aliexpress.com/item/1005004279822626.html)
+- Battery chargers
+  - Opus BT-C900
+  - [SkyRC MC3000](https://www.skyrc.com/MC3000_Charger)
+  - [SkyRC Q200](https://www.aliexpress.com/item/32878229674.html)
+- [Bike lamp](https://www.aliexpress.com/item/4001316728026.html)
+  - Problem: The USB-c port does not negotiate properly,
+    and cannot therefore be charged from a USB-c PD negotiating port,
+    but only with a USB-a <-> USB-c adapter cable
+    from a port that does not require negotiation to provide power.
+- [Car charger](https://www.aliexpress.com/item/1005003400586617.html)
+- [KVM switch (USB 3.0)](https://www.aliexpress.com/item/1005001274346519.html)
+  - Problem: Client ports are USB-A, not USB-B
+- [Multi-charger](https://www.aliexpress.com/item/1005003903150067.html)
+  - Not compatible with the USB-c - micro-USB adapters I have tested
