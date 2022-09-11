@@ -6,19 +6,30 @@ title: Checklists
 # Checklists / notes
 
 ## Windows installation
-- Update BIOS/UEFI and firmware before the installation as much as you practically can
+- Update BIOS/UEFI and firmware before the installation as much as you practically can.
+  - This is especially important with old computers, as important features such as proper UEFI support may be added as a
+    UEFI/BIOS update.
 - Download the ISO image from Microsoft:
   [Windows 10](https://www.microsoft.com/fi-fi/software-download/windows10ISO),
   [Windows 11](https://www.microsoft.com/software-download/windows11)
   - I recommend downloading the en-US image, as googling error codes is much easier in English compared to e.g. Finnish.
-- Create the installation media with [Rufus](https://rufus.ie/)
-  - Set the partitioning to GPT/UEFI (non-CSM) unless you have a very old computer that does not have UEFI
-- Disconnect other disks before starting the installation
+- Create the installation media with [Rufus](https://rufus.ie/).
+  - Rufus will format the entire USB stick, so move any important data elsewhere before using Rufus.
+  - Set the partitioning to GPT/UEFI (non-CSM) unless you have a very old computer that does not have UEFI.
+  - If asked to customize Windows installation, remove all the checkboxes unless you know that you
+    need to have them enabled. Especially the requirement for Secure Boot and TPM 2.0 should not be removed
+    if your computer has them, as they are important security features!
+- Disconnect other disks before starting the installation.
   - If other disks are connected, Windows can install the bootloader to the wrong disk, which will cause problems later.
-- Set BIOS/UEFI settings
-  - Set boot to UEFI only, without CSM (if possible)
-  - Enable TPM and wipe it if you're not storing anything on it at the moment. Use a discrete TPM instead of firmware TPM if possible.
-  - Enable virtualization (VT-x, AMD-V etc.) including the additional features (VT-d etc.), as those are required for various security features of Windows.
+- Boot your computer to the UEFI/BIOS setup menu.
+  Depending on the model of your computer, you can do this by pressing F10, F2, Delete or Enter during early boot.
+  If none of these keys seem to work, see the user manual of your motherboard or laptop.
+  In the UEFI/BIOS setup menu, set these settings:
+  - Set boot to UEFI only, without CSM (if possible).
+  - Enable TPM and wipe it if you're not storing anything on it at the moment.
+    Use a discrete TPM instead of firmware TPM if possible.
+  - Enable virtualization (VT-x, AMD-V etc.) including the additional features (IOMMU, SR-IOV, VT-d etc.),
+    as those are required for various security features of Windows.
 - When asked to log in with a Microsoft account, disconnect the computer from the Internet
   - Wired connection: disconnect cable
   - Wi-Fi: use a physical button (if available) or press Shift+F10 and write `netsh wlan disconnect`
