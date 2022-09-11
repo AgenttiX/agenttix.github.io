@@ -202,3 +202,7 @@ and that the user certificates can't be extracted from the clients if they are s
   - Check the other tabs and ensure that the settings are correct.
 - If you get a policy mismatch error, follow
   [these instructions](https://directaccess.richardhicks.com/2019/09/02/always-on-vpn-ikev2-policy-mismatch-error/).
+- If you get the
+  [error 8007042a](https://serverfault.com/a/1042893)
+  when starting Routing and Remote Access, go to
+  NPS -> Accounting -> Log File Properties -> Change Log File Properties and disable "If logging fails, discard connection requests."
