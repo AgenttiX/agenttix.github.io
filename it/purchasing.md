@@ -269,7 +269,12 @@ If you're only using the computer for light tasks such as web browsing, consider
 - Devices with the aforementioned features:
   [Geizhals list](https://geizhals.eu/?cat=umtsover&xf=10063_12.0%7E146_Videos+%402160p%2F60fps%7E157_131072%7E162_LineageOS+Support%7E17890_n28%7E17890_n78%7E18414_NFC%7E2607_6144)
   - The 5G mmWave band n258 has been left out from the list, as it's supported by only a few devices
-
+- Security:
+  [StrongBox secure element (SE)](https://developer.android.com/training/articles/keystore#HardwareSecurityModule)
+  - Only available on some devices with Android 9 and later
+  - Its presence can be verified with the
+    [Key Attestation Demo](https://play.google.com/store/apps/details?id=io.github.vvb2060.keyattestation)
+    app.
 
 ## Networking
 ### Network architecture
