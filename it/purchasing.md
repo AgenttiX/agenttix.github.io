@@ -61,10 +61,11 @@ If you're only using the computer for light tasks such as web browsing, consider
     so one should be careful when choosing the GPU.
   - At the moment GPUs are supported for about nine years after release.
     This is the maximum time you can expect the GPU to be compatible with the latest OS, both on Windows and on Linux.
-    (For example the GTX 700 series is supported on Ubuntu 22.04 only with legacy drivers, which don't support the latest CUDA libraries.)
+    (For example the GTX 700 series is supported on Ubuntu 22.04 only with legacy drivers,
+    which don't support the latest CUDA libraries.)
   - New GPUs often have significant feature improvements such as video encoders and decoders and newer connector versions.
-    Therefore, buying a lower-end model from a newer series instead of a higher-end model from older series may be worth the additional price
-    even when the raw performance would be similar.
+    Therefore, buying a lower-end model from a newer series instead of a higher-end model from older series
+    may be worth the additional price, even when the raw performance would be similar.
     - [AV1 decoding is supported from AMD RX 6000 series and Nvidia RTX 3000 series onwards](https://en.wikipedia.org/wiki/AV1#Hardware)
   - AMD GPU drivers are included in the Linux kernel and therefore work out of the box,
     whereas Nvidia GPU drivers have to be installed separately
@@ -74,6 +75,15 @@ If you're only using the computer for light tasks such as web browsing, consider
     and their support of new Linux distribution versions is
     [notoriously poor](https://github.com/RadeonOpenCompute/ROCm/issues/1713).
     Therefore, if you want to do any GPU-accelerated computing, even OpenCL, you should get an Nvidia GPU instead.
+  - RTX 4000 series and later GPUs use the new 12VHPWR power connector.
+    If you're planning to install one of these in a new build,
+    you should get a PSU that also has the same connector,
+    or one for which the manufacturer provides official adapter cables.
+    Third-party adapters are a fire hazard when used with multi-rail PSUs or when plugged to ports with
+    a too low power rating.
+    The connector is also very fragile, so avoid bending the cables when doing cable management.
+    [Gamers Nexus](https://www.gamersnexus.net/news-pc/3692-intel-arc-isnt-dead-melting-gpu-cables),
+    [JayzTwoCents](https://www.youtube.com/watch?v=K6FiGEAp928)
 - RAM
   - 8 GB is sufficient for basic tasks, but I recommend 16 GB, especially for gaming.
     32 GB is worth considering for professional workloads and virtual desktops.
@@ -97,15 +107,18 @@ If you're only using the computer for light tasks such as web browsing, consider
     requiring installation in one of the x16 slots on the motherboard.
     Many motherboards split the lanes between the x16 slots to e.g. x8 per slot when multiple cards are installed,
     so installing a separate Ethernet controller may halve the bandwidth of your GPU.
+    However, a used add-on card is usually the cheaper option.
   - If you're building a server, ensure that you have enough PCIe slots and lanes.
     Installing multiple network cards and SATA controllers will easily consume the most of your PCIe slots.
-  - Thunderbolt docks can make it a lot easier to manage the cables, especially if you have an electric standing desk.
+  - With a Thunderbolt port you can have a Thunderbolt dock that makes it a lot easier to manage the cables,
+    especially if you have an electric standing desk.
     With optical cables you can even install the computer in another room and have complete silence in your room!
   - Wired network connectivity should be preferred over wireless whenever possible.
-    However, if wired networking is not possible, you should use a Wi-Fi adapter that is either included in the motherboard
-    or connected over PCIe. A well-positioned external antenna is necessary for a fast and reliable connection.
+    However, if wired networking is not possible,
+    you should use a Wi-Fi adapter that is either included in the motherboard or connected over PCIe.
+    A well-positioned external antenna is necessary for a fast and reliable connection.
 - SSD
-  - The operating system should be installed on a M.2 form factor SSD with PCIe connectivity (NVME).
+  - The operating system should be installed on an M.2 form factor SSD with PCIe connectivity (NVME).
     Those can be quite expensive especially at the larger sizes,
     so files should be stored on separate drives such as SATA SSDs.
     If you have lots of large files such as movies, it's preferable to build a separate server (NAS) for them.
@@ -141,6 +154,8 @@ If you're only using the computer for light tasks such as web browsing, consider
     and a full day or two each year flushing and cleaning the loop.
     For the most complex loops you may have to modify the case with metalworking tools.
     Don't build a custom loop unless you have multiple GPUs or are especially concerned about aesthetics or noise.
+  - The CPU socket orientation varies on server motherboards.
+    If you have one, ensure that you get a CPU cooler with the correct orientation for the best airflow.
 - Fans
   - Noctua is a good choice.
   - If you want RGB, consider the Corsair ML series,
@@ -150,8 +165,19 @@ If you're only using the computer for light tasks such as web browsing, consider
     control pin from the splitter box to the Arduino and having a common ground.
     Be careful with the pin connections, though, as wrong connections can easily burn out the LEDs.
 - Case
-  - Consider a 19" rack case, as then you can install all your equipment nicely in a rack below your desk.
-    However, good racks with e.g. glass doors and noise insulation can be very expensive.
+  - Consider a 19" rack case, as then you can install all your equipment nicely in a rack below your desk,
+    or take the computer with you to e.g. a LAN party in a rack carrying case.
+    - 5U and higher cases are difficult to find, so you may have to go with a 4U one.
+      However, this significantly limits the maximum height of the CPU cooler.
+      Therefore, an all-in-one (AIO) water cooler will probably be the best option for high-performance cooling.
+    - If you want a higher-height case, you should consider installing a regular PC case that is small enough
+      to be put on a rack shelf.
+    - [Be Quiet! Pure Base 500 DX](https://www.bequiet.com/en/case/1854)
+      has just the right size
+      [to fit in a rack](https://www.reddit.com/r/homelab/comments/xb4pb8/first_dive_into_my_own_homelab_super_excited/).
+    - Some manufacturers:
+      - [Alphacool](https://www.alphacool.com/shop/enterprise-solutions-server/19-server-racks/19-cases/)
+      - [Inter-Tech](https://www.inter-tech.de/en/products/ipc)
   - Fractal Design makes good and quiet cases.
   - The case should have a USB-c port in the front for attaching e.g. a phone.
   - Optical drives are no longer worth it, so there is no need to have space for them. Use an external drive instead.
@@ -165,6 +191,8 @@ If you're only using the computer for light tasks such as web browsing, consider
   - Various features that are difficult to find on consumer laptops:
     integrated LTE/5G modems, privacy filters on monitors, fingerprint readers, identity card readers, NFC etc.
   - Good Linux support from the community
+- The [Framework](https://frame.work/) laptop has great upgradeability and repairability,
+  which give it a long lifespan and therefore good value for money.
 - For the CPU, GPU, RAM and SSD, please see the desktop tips
 - Laptop performance is affected a lot by cooling,
   and therefore performance test results for the individual components
@@ -195,6 +223,24 @@ If you're only using the computer for light tasks such as web browsing, consider
     having an integrated modem in the laptop is a lot easier and more reliable than sharing internet from a phone.
   - This feature is often found only on business laptops such as ThinkPads.
   - 3G network will be shut down in a few years, so the modems on older laptops will then become pretty much useless.
+
+### External GPUs
+- [eGPU.io](https://egpu.io/)
+- [Geizhals list](https://geizhals.eu/?cat=hwegpu)
+- Prefer an enclosure with a standard ATX power supply,
+  as you can then replace it in the case of a failure.
+- Thunderbolt 3 and 4 bandwidth is limited to PCIe 3.0 x4,
+  whereas on desktops GPUs are usually connected by PCIe 3.0 x16 or higher.
+  This significantly limits the bandwidth between the CPU and GPU,
+  and results in slightly worse performance than on a desktop.
+  Therefore, mid-range cards will provide the best value for money.
+  - Some laptops provide only PCIe 3.0 x2 over Thunderbolt,
+    which limits the performance further.
+- If you need more than 1 Gbps networking or multiple peripherals,
+  those should be provided by a separate dock,
+  so that they don't compete with the GPU for Thunderbolt bandwidth.
+- [Mantiz](https://mymantiz.com/) eGPUs are good choices
+- [Razer Core X Chroma is buggy on Linux](https://y.tsutsumi.io/2020/08/15/egpu-linux-core-x-chroma/)
 
 ## Monitors and TVs
 - Panel technology
@@ -344,9 +390,12 @@ If you're only using the computer for light tasks such as web browsing, consider
 - Intel E10GSFPSR
 
 ### Racks
-- These are damn difficult to find in Finland at even remotely reasonable prices.
+- [Various Ikea tables and shelves](https://wiki.eth0.nl/index.php/List_of_IkeaRacks)
+  are compatible with 19" rack hardware.
+  The most famous ones are the Lack tables, also known as LackRacks.
+- Racks with cover panels are damn difficult to find in Finland at even remotely reasonable prices.
   Most stores only sell to business customers.
-- [StarTech 12U RK1236BKF](https://www.startech.com/en-fi/server-management/rk1236bkf)
+  - [StarTech 12U RK1236BKF](https://www.startech.com/en-fi/server-management/rk1236bkf)
 
 
 ## USB flash drives
@@ -362,8 +411,24 @@ If you're only using the computer for light tasks such as web browsing, consider
   and that it's reliable.
 
 
-## Accessories
+## Headphones
+- Read reviews and go to a store to test the headphones yourself to determine the audio quality.
+- The headphones should have good audio quality without the installation of any additional software.
 
+### Headphones / headsets
+- Very few headsets have a good microphone.
+  Especially wireless headsets are limited by the wireless bandwidth.
+  Therefore, for the best audio quality you should use an external microphone such
+  as a [Modmic](https://antlionaudio.com/) that you can attach to the headset.
+
+### Wireless earplugs
+- Active noise cancellation is a highly useful feature
+- [Bluetooth audio codecs are a mess](https://www.headphonesty.com/2020/03/bluetooth-audio-codecs-explained/)
+  - [AAC over Bluetooth is unstable on Android](https://www.soundguys.com/the-ultimate-guide-to-bluetooth-headphones-aac-20296/) 
+- [Geizhals list](https://geizhals.eu/?cat=sphd&xf=1228_aktive+Ger%E4uschunterdr%FCckung+(ANC)%7E1231_Bluetooth%7E17987_Ladeetui%7E17987_USB-C+Ladeanschluss%7E6714_mit+Mikrofon)
+
+
+## Accessories
 - Adapters
   - [DisplayPort -> DVI (active)](https://www.aliexpress.com/item/32981791094.html)
   - [USB-c -> HDMI (4K 60 Hz)](https://www.aliexpress.com/item/32980806917.html)
