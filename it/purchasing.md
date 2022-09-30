@@ -324,13 +324,80 @@ If you're only using the computer for light tasks such as web browsing, consider
 
 ## Networking
 ### Network architecture
-- Don't spend extra money for a motherboard with integrated 10 Gbps Ethernet.
+- Don't spend extra money for a motherboard with integrated 10 Gbps Ethernet, unless you're running out of PCIe lanes.
   If you have free PCIe slots left, install a separate network card instead.
 - 10 Gbps switches are expensive and noisy.
   For a home network it's more cost-effective to install a direct 10 Gbps or 40 Gbps connection between the computer
   and the server.
 - PoE is very handy if you're going to install multiple Wi-Fi access points or security cameras.
   However, PoE switches are more noisy than the non-PoE versions.
+
+### Wi-Fi routers / access points
+To be specific, the so-called "Wi-Fi routers" are not usually routers,
+as they have only one connection to the internet.
+True routers have multiple connections to the internet and decide,
+to which physical connection each packet should be sent.
+Instead, "Wi-Fi routers" are a combination of a firewall and a Wi-Fi access point (AP),
+that runs some additional services such as DHCP and DNS.
+However, they are often called routers for simplicity.
+
+Most manufacturers are notoriously poor in providing security updates for their devices,
+and if they do, it's often only for a few years.
+If a router no longer receives security updates, you should not connect it to the internet!
+Depending on the latest security updates it received,
+you may be able to repurpose it as e.g. an additional Wi-Fi AP, though.
+Many devices also lack important settings and features such as
+802.11w management frame protection that protects from
+[deauth jamming](https://github.com/SpacehuhnTech/esp8266_deauther),
+and countermeasures for the
+[KRACK attacks](https://www.krackattacks.com/).
+However, it should be noted that old devices may not be compatible with these protections.
+If you are still using such devices, you should create a separate Wi-Fi SSID for them
+so that you don't have to reduce the security for the rest of your devices.
+
+[OpenWRT](https://openwrt.org/)
+is perhaps the most feature-rich and well-maintained custom firmware, and it's also open source.
+Therefore, you should prefer
+[devices that are compatible with OpenWRT](https://openwrt.org/supported_devices).
+If you have an existing device, you should install a custom firmware on it as well.
+If your device is not compatible with OpenWRT, you should use some other notable custom firmware, such as:
+- [Asuswrt-Merlin](https://www.asuswrt-merlin.net/) ([supported devices](https://www.asuswrt-merlin.net/about))
+- [DD-WRT](https://dd-wrt.com/) ([supported devices](https://wiki.dd-wrt.com/wiki/index.php/Supported_Devices))
+- [Gargoyle](https://www.gargoyle-router.com/) ([supported devices](https://www.gargoyle-router.com/wiki/doku.php?id=supported_routers_-_tested_routers)
+- [LibreCMC](https://librecmc.org/) ([supported devices](https://librecmc.org/fossil/librecmc/wiki?name=Supported_Hardware))
+- [Tomato by Shibby](https://tomato.groov.pl/) ([supported devices](https://tomato.groov.pl/?page_id=164))
+- [AdvancedTomato](https://advancedtomato.com/) ([supported devices](https://advancedtomato.com/downloads))
+- [FreshTomato](https://freshtomato.org/) ([supported devices](https://wiki.freshtomato.org/doku.php/hardware_compatibility))
+
+#### Features to look for, in the order of importance
+- OpenWRT compatibility
+- Enough flash (8 MB) and RAM (64 MB) for OpenWRT to work properly, preferably at least 16 MB flash and 128 MB RAM
+- WPA3
+  - For WPA3-enterprise, also look for 192-bit encryption support
+- Wi-Fi 6
+- High-speed ports (> 1 Gbps Ethernet, SFP+)
+
+#### Wi-Fi routers / access points I've been dealing with
+- ~~Xiaomi Mi Router 3G v1~~
+  - No longer available
+  - [AliExpress](https://www.aliexpress.com/item/32837907107.html)
+  - [OpenWRT](https://openwrt.org/toh/xiaomi/mir3g)
+  - v2 is a completely different device with a lot worse hardware!
+  - Wi-Fi 5 (802.11ac)
+  - Flashable over serial
+- ~~ASUS RT-AX58U~~
+  - Now that there are finally devices compatible with both OpenWRT and Wi-Fi 6, you should get one of those instead.
+  - [Hinta.fi](https://hinta.fi/1780666/asus-rt-ax58u)
+  - [Geizhals](https://geizhals.eu/asus-rt-ax58u-ax3000-90ig04q0-mo3r10-a2152041.html)
+  - [Asuswrt-Merlin](https://www.asuswrt-merlin.net/)
+  - Wi-Fi 6 (802.11ax)
+  - I don't have one, but have received positive feedback from friends and relatives who have these.
+- [Ubiquiti UniFi](https://ui.com/wi-fi)
+  - If you need multiple access points for enterprise use with centralized management,
+    UniFi access points are a cost-effective option with their default firmware.
+    If you have only a few access points (such as in home use), you should
+    [use OpenWRT instead](https://openwrt.org/toh/ubiquiti/start),
+    as many UniFi access points are compatible with OpenWRT.
 
 ### Network cards
 - Intel E1G42ET
