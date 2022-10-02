@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Checklists
+title: Windows
 ---
 
-# Checklists / notes
+# Windows
 
 ## Windows installation
 - Update BIOS/UEFI and firmware before the installation as much as you practically can.
