@@ -114,8 +114,12 @@ If you're only using the computer for light tasks such as web browsing, consider
     Many motherboards split the lanes between the x16 slots to e.g. x8 per slot when multiple cards are installed,
     so installing a separate Ethernet controller may halve the bandwidth of your GPU.
     However, a used add-on card is usually the cheaper option.
-  - If you're building a server, ensure that you have enough PCIe slots and lanes.
+  - Ensure that you have enough PCIe slots and lanes, especially if you're building a server.
     Installing multiple network cards and SATA controllers will easily consume the most of your PCIe slots.
+    - On many consumer boards several features (PCIe ports, Thunderbolt, SATA etc.) are connected to the same PCIe lanes,
+      and cannot be enabled simultaneously.
+      Carefully read the manual of the motherboard before purchasing to ensure,
+      that you can simultaneously enable all the features you need.
   - With a Thunderbolt port you can have a Thunderbolt dock that makes it a lot easier to manage the cables,
     especially if you have an electric standing desk.
     With optical cables you can even install the computer in another room and have complete silence in your room!
