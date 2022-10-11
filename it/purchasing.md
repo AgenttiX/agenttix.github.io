@@ -180,16 +180,49 @@ If you're only using the computer for light tasks such as web browsing, consider
     - 5U and higher cases are difficult to find, so you may have to go with a 4U one.
       However, this significantly limits the maximum height of the CPU cooler.
       Therefore, an all-in-one (AIO) water cooler will probably be the best option for high-performance cooling.
-    - If you want a higher-height case, you should consider installing a regular PC case that is small enough
-      to be put on a rack shelf.
-    - [Be Quiet! Pure Base 500 DX](https://www.bequiet.com/en/case/1854)
-      has just the right size
-      [to fit in a rack](https://www.reddit.com/r/homelab/comments/xb4pb8/first_dive_into_my_own_homelab_super_excited/).
     - Some manufacturers:
       - [Alphacool](https://www.alphacool.com/shop/enterprise-solutions-server/19-server-racks/19-cases/)
       - [Inter-Tech](https://www.inter-tech.de/en/products/ipc)
-  - Fractal Design makes good and quiet cases.
-  - The case should have a USB-c port in the front for attaching e.g. a phone.
+  - If you want a larger case, you should consider installing a regular PC case that is small enough
+    to be put on a 19" rack shelf.
+    The width of the space in a 19" rack is
+    [17.75" = 450.85 mm](https://en.wikipedia.org/wiki/19-inch_rack#Specifications),
+    so any case with a total height smaller than this should fit.
+    Depending on how close the side panels of your rack are,
+    you should also include the legs of the case in your estimates.
+    This kind of mounting puts the side panel on top.
+    Therefore, a glass side panel is very easy to break by dropping something on it,
+    and a solid side panel should be preferred.
+    - You can use this
+      [Geizhals listing](https://geizhals.eu/?cat=gehatx&xf=348_50%7E540_supportUSB-C%7E9691_ATX)
+      to find suitable cases.
+      Please note that the dimensions include the feet,
+      and you should therefore check the height without the feet separately.
+    - [Be Quiet! Pure Base 500DX](https://www.bequiet.com/en/case/1854)
+      ([hinta.fi](https://hinta.fi/1906339/be-quiet-pure-base-500dx-black))
+      - 463 mm with feet and 443 mm without, which is just the right size
+        [to fit in a rack](https://www.reddit.com/r/homelab/comments/xb4pb8/first_dive_into_my_own_homelab_super_excited/).
+  - Good cases that probably don't fit in a rack, unless you put them in through a side panel
+    - Fractal Design makes good and quiet cases.
+    - [Fractal Design Define 7](https://www.fractal-design.com/products/cases/define/define-7/black-solid/)
+      ([hinta.fi](https://hinta.fi/1871621/fractal-design-define-7))
+      - 475 mm with feet and 451 mm without
+    - [Fractal Design Define 7 Compact](https://www.fractal-design.com/products/cases/define/define-7-compact/black-solid/)
+      ([hinta.fi](https://hinta.fi/1914063/fractal-design-define-7-compact))
+      - 474 mm with feet and 451 mm without
+    - [Fractal Design Meshify 2](https://www.fractal-design.com/products/cases/meshify/meshify-2/black-solid/)
+      ([hinta.fi](https://hinta.fi/2114795/fractal-design-meshify-2))
+      - 474 mm with feet and 454 mm without
+      - [The feet are removable](https://www.reddit.com/r/FractalDesignNA/comments/p3lysy/change_feet_of_meshify_2/).
+    - [Fractal Design Meshify 2 Compact](https://www.fractal-design.com/products/cases/meshify/meshify-2-compact/black-solid/)
+      ([hinta.fi](https://hinta.fi/2115292/fractal-design-meshify-2-compact))
+      - 475 mm with feet and 455 mm without
+    - [Fractal Design Torrent](https://www.fractal-design.com/products/cases/torrent/torrent/black-solid/)
+      ([hinta.fi](https://hinta.fi/2986095/fractal-design-torrent))
+      - 530 mm with feet
+    - [Fractal Design Torrent Compact](https://www.fractal-design.com/products/cases/torrent/torrent-compact/black-solid/)
+      ([hinta.fi](https://hinta.fi/3256994/fractal-design-torrent-compact))
+  - The case should have a USB-c port in the front for attaching e.g. a phone or a USB-c FIDO2 security key.
   - Optical drives are no longer worth it, so there is no need to have space for them. Use an external drive instead.
 
 
