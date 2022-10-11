@@ -75,6 +75,12 @@ If you're only using the computer for light tasks such as web browsing, consider
     and their support of new Linux distribution versions is
     [notoriously poor](https://github.com/RadeonOpenCompute/ROCm/issues/1713).
     Therefore, if you want to do any GPU-accelerated computing, even OpenCL, you should get an Nvidia GPU instead.
+  - Main differences between consumer (GTX, RTX, Radeon) and professional cards (Quadro, Tesla, Radeon Pro)
+    - Professional cards have ECC memory and registers, whereas consumer cards often don't
+      (or have ECC only in the memory and not for the registers).
+      ECC memory is highly useful for scientific simulations and other loads that require precision,
+      but not for machine learning.
+    - Professional cards use different drivers that have been optimized and tested for CAD instead of games.
   - RTX 4000 series and later GPUs use the new 12VHPWR power connector.
     If you're planning to install one of these in a new build,
     you should get a PSU that also has the same connector,
