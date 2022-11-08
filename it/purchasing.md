@@ -41,146 +41,197 @@ Those also often have poor-quality components in their power delivery and bad ai
 
 If you're only using the computer for light tasks such as web browsing, consider buying a laptop and a Thunderbolt dock instead.
 
-- CPU
-  - CPU is the most important component for professional workloads such as image and video editing and software development.
-    For these workloads multi-core performance is the most important quantity.
-  - For gaming single-core performance is the most important quantity.
-  - Frequency is not a good indicator of performance. Look for benchmark results instead.
-  - If you're buying a used device
-    - Ensure that the CPU is
-      [compatible with Windows 11](https://docs.microsoft.com/en-us/windows-hardware/design/minimum/windows-processor-requirements)
-    - Try to buy the CPU and motherboard together, and possibly the RAM as well.
-      If they don't work, it's easier to complain to one seller than multiple.
-- GPU
-  - GPU is the most important part for gaming.
-  - Depending on the state of the cryptocurrency market, finding a GPU can be difficult, and the prices may be inflated.
-    In those times finding a good deal can take a lot of work.
-  - If you're streaming or recording your monitor, look for a GPU with a good encoder.
-    At the moment Nvidia's NVENC is superior to the alternatives.
-    However, many of the cheapest GPUs such as the MX series and the GTX 1600 series don't include NVENC,
-    so one should be careful when choosing the GPU.
-  - At the moment GPUs are supported for about nine years after release.
-    This is the maximum time you can expect the GPU to be compatible with the latest OS, both on Windows and on Linux.
-    (For example the GTX 700 series is supported on Ubuntu 22.04 only with legacy drivers,
-    which don't support the latest CUDA libraries.)
-  - New GPUs often have significant feature improvements such as video encoders and decoders and newer connector versions.
-    Therefore, buying a lower-end model from a newer series instead of a higher-end model from older series
-    may be worth the additional price, even when the raw performance would be similar.
-    - [AV1 decoding is supported from AMD RX 6000 series and Nvidia RTX 3000 series onwards](https://en.wikipedia.org/wiki/AV1#Hardware)
-  - AMD GPU drivers are included in the Linux kernel and therefore work out of the box,
-    whereas Nvidia GPU drivers have to be installed separately
-    and are compatible with new Linux distribution versions only as long as the GPU is officially supported by Nvidia.
-    AMD GPUs should therefore have a longer lifespan on Linux than Nvidia GPUs.
-    However, AMD scientific libraries have to be installed manually,
-    and their support of new Linux distribution versions is
-    [notoriously poor](https://github.com/RadeonOpenCompute/ROCm/issues/1713).
-    Therefore, if you want to do any GPU-accelerated computing, even OpenCL, you should get an Nvidia GPU instead.
-  - RTX 4000 series and later GPUs use the new 12VHPWR power connector.
-    If you're planning to install one of these in a new build,
-    you should get a PSU that also has the same connector,
-    or one for which the manufacturer provides official adapter cables.
-    Third-party adapters are a fire hazard when used with multi-rail PSUs or when plugged to ports with
-    a too low power rating.
-    The connector is also very fragile, so avoid bending the cables when doing cable management.
-    [Gamers Nexus](https://www.gamersnexus.net/news-pc/3692-intel-arc-isnt-dead-melting-gpu-cables),
-    [JayzTwoCents](https://www.youtube.com/watch?v=K6FiGEAp928)
-- RAM
-  - 8 GB is sufficient for basic tasks, but I recommend 16 GB, especially for gaming.
-    32 GB is worth considering for professional workloads and virtual desktops.
-    Higher amounts of RAM are only necessary for specific use cases such as virtual machines and scientific computing.
-  - Frequency is not a good indicator of performance, as the latency matters a lot.
-    In addition to the frequency, look for the absolute latency in nanoseconds.
-    It's the latency number divided by the frequency, and lower is better.
-    You should also check the maximum frequency supported by your CPU and motherboard.
-  - ECC memory is worth considering for professional use that requires reliability.
-    On AMD this is unofficially supported by most CPUs and some consumer motherboards,
-    whereas on Intel this is found only on professional hardware.
-- Motherboard
-  - Think carefully what features you actually need, as additional features can crank up the price quite quickly.
-  - For compatibility with Windows 11, the CPU+Motherboard combination must have TPM 2.0 support,
-    either in the firmware or as a physical chip.
-  - Read reviews about the VRM temperatures and quality for reliability and overclocking headroom.
-    A good motherboard with a low number of VRM phases can be as good as one with a higher number of phases.
-  - There tend to never be enough USB ports, but more can be added with a PCIe x1 add-on card.
-  - If you have a NAS, an integrated 10 Gb Ethernet controller is worth considering.
-    When installed as an add-on card, 10 Gb Ethernet controllers tend to need a longer than x1 PCIe slot,
-    requiring installation in one of the x16 slots on the motherboard.
-    Many motherboards split the lanes between the x16 slots to e.g. x8 per slot when multiple cards are installed,
-    so installing a separate Ethernet controller may halve the bandwidth of your GPU.
-    However, a used add-on card is usually the cheaper option.
-  - If you're building a server, ensure that you have enough PCIe slots and lanes.
-    Installing multiple network cards and SATA controllers will easily consume the most of your PCIe slots.
-  - With a Thunderbolt port you can have a Thunderbolt dock that makes it a lot easier to manage the cables,
-    especially if you have an electric standing desk.
-    With optical cables you can even install the computer in another room and have complete silence in your room!
-  - Wired network connectivity should be preferred over wireless whenever possible.
-    However, if wired networking is not possible,
-    you should use a Wi-Fi adapter that is either included in the motherboard or connected over PCIe.
-    A well-positioned external antenna is necessary for a fast and reliable connection.
-- SSD
-  - The operating system should be installed on an M.2 form factor SSD with PCIe connectivity (NVME).
-    Those can be quite expensive especially at the larger sizes,
-    so files should be stored on separate drives such as SATA SSDs.
-    If you have lots of large files such as movies, it's preferable to build a separate server (NAS) for them.
-  - Throughput is only one of the important characteristics.
-    IOPS is also important, and largely determined by the controller.
-  - Avoid QLC except for separate game drives, as it has bad write speeds and wears out quickly. Prefer TLC instead.
-  - Games take a lot of space. For gaming, 1 TB is the minimum size, and 2 TB is worth considering.
-  - If you need encryption, look for an SSD with OPAL support.
-    Other protocols are often proprietary and poorly implemented.
-  - As of 2022, PCIe 4.0 may not be worth the additional price.
-- Power supply (PSU)
-  - Aim for at least 80 Plus Gold certification. This is also an indicator of build quality.
-  - Look for a semi-passive model. This means that the fan should stop spinning with low loads.
-    It will reduce the noise and extend the lifetime of the fan.
-  - If you pay for your electricity yourself and have the computer on for the most of the time
-    for e.g. cryptocurrency mining or scientific computing,
-    higher efficiencies are worth considering, as they will pay for themselves in the long run.
-  - Newer GPUs tend to have higher power consumption, so it's a good idea to leave some headroom in the power budget.
-- Cooling
-  - The best air coolers are sufficient almost any CPU if you're not overclocking.
-    For the average user the choice between an air cooler and a closed-loop water cooler should be based on
-    aesthetics and reliability.
-  - The largest Noctua coolers are among the best air coolers.
-  - With both closed and custom water cooling, radiator surface area is the most important factor for performance.
-    For a CPU the radiator should be at least 2x 120 mm but preferably 2x 140 mm.
-    If you have a GPU in the same loop,
-    the radiator should be at least 3x 120 mm but preferably 3x 140 mm or a thick 3x 120 mm.
-  - 140 mm fans can move larger amounts of air with the same noise level as 120 mm fans.
-    2x 140 mm is about as performant as 3x 120 mm but can be more quiet.
-  - The closed-loop water cooling systems often come with bad fans that you should replace to reduce the noise.
-  - Custom water cooling is expensive and requires a lot of work.
-    If you end up building one, be prepared to spend at least a full week assembling the computer,
-    and a full day or two each year flushing and cleaning the loop.
-    For the most complex loops you may have to modify the case with metalworking tools.
-    Don't build a custom loop unless you have multiple GPUs or are especially concerned about aesthetics or noise.
-  - The CPU socket orientation varies on server motherboards.
-    If you have one, ensure that you get a CPU cooler with the correct orientation for the best airflow.
-- Fans
-  - Noctua is a good choice.
-  - If you want RGB, consider the Corsair ML series,
-    as on low RPMs it's about as quiet as Noctua fans thanks to its maglev bearing.
-    Don't confuse the ML series with the more noisy but better-lighted LL series.
-    The LEDs use the standard WS2818B protocol at 5 V and can therefore be controlled with an Arduino by attaching the
-    control pin from the splitter box to the Arduino and having a common ground.
-    Be careful with the pin connections, though, as wrong connections can easily burn out the LEDs.
-- Case
-  - Consider a 19" rack case, as then you can install all your equipment nicely in a rack below your desk,
-    or take the computer with you to e.g. a LAN party in a rack carrying case.
-    - 5U and higher cases are difficult to find, so you may have to go with a 4U one.
-      However, this significantly limits the maximum height of the CPU cooler.
-      Therefore, an all-in-one (AIO) water cooler will probably be the best option for high-performance cooling.
-    - If you want a higher-height case, you should consider installing a regular PC case that is small enough
-      to be put on a rack shelf.
-    - [Be Quiet! Pure Base 500 DX](https://www.bequiet.com/en/case/1854)
-      has just the right size
+### CPU
+- CPU is the most important component for professional workloads such as image and video editing and software development.
+  For these workloads multi-core performance is the most important quantity.
+- For gaming single-core performance is the most important quantity.
+- Frequency is not a good indicator of performance. Look for benchmark results instead.
+- If you're buying a used device
+  - Ensure that the CPU is
+    [compatible with Windows 11](https://docs.microsoft.com/en-us/windows-hardware/design/minimum/windows-processor-requirements)
+  - Try to buy the CPU and motherboard together, and possibly the RAM as well.
+    If they don't work, it's easier to complain to one seller than multiple.
+
+### GPU
+- GPU is the most important part for gaming.
+- Depending on the state of the cryptocurrency market, finding a GPU can be difficult, and the prices may be inflated.
+  In those times finding a good deal can take a lot of work.
+- If you're streaming or recording your monitor, look for a GPU with a good encoder.
+  At the moment Nvidia's NVENC is superior to the alternatives.
+  However, many of the cheapest GPUs such as the MX series and the GTX 1600 series don't include NVENC,
+  so one should be careful when choosing the GPU.
+- At the moment GPUs are supported for about nine years after release.
+  This is the maximum time you can expect the GPU to be compatible with the latest OS, both on Windows and on Linux.
+  (For example the GTX 700 series is supported on Ubuntu 22.04 only with legacy drivers,
+  which don't support the latest CUDA libraries.)
+- New GPUs often have significant feature improvements such as video encoders and decoders and newer connector versions.
+  Therefore, buying a lower-end model from a newer series instead of a higher-end model from older series
+  may be worth the additional price, even when the raw performance would be similar.
+  - [AV1 decoding is supported from AMD RX 6000 series and Nvidia RTX 3000 series onwards](https://en.wikipedia.org/wiki/AV1#Hardware)
+- AMD GPU drivers are included in the Linux kernel and therefore work out of the box,
+  whereas Nvidia GPU drivers have to be installed separately
+  and are compatible with new Linux distribution versions only as long as the GPU is officially supported by Nvidia.
+  AMD GPUs should therefore have a longer lifespan on Linux than Nvidia GPUs.
+  However, AMD scientific libraries have to be installed manually,
+  and their support of new Linux distribution versions is
+  [notoriously poor](https://github.com/RadeonOpenCompute/ROCm/issues/1713).
+  Therefore, if you want to do any GPU-accelerated computing, even OpenCL, you should get an Nvidia GPU instead.
+- Main differences between consumer (GTX, RTX, Radeon) and professional cards (Quadro, Tesla, Radeon Pro)
+  - Professional cards have ECC memory and registers, whereas consumer cards often don't
+    (or have ECC only in the memory and not for the registers).
+    ECC memory is highly useful for scientific simulations and other loads that require precision,
+    but not for machine learning.
+  - Professional cards use different drivers that have been optimized and tested for CAD instead of games.
+- RTX 4000 series and later GPUs use the new 12VHPWR power connector.
+  If you're planning to install one of these in a new build,
+  you should get a PSU that also has the same connector,
+  or one for which the manufacturer provides official adapter cables.
+  Third-party adapters are a fire hazard when used with multi-rail PSUs or when plugged to ports with
+  a too low power rating.
+  The connector is also very fragile, so avoid bending the cables when doing cable management.
+  [Gamers Nexus](https://www.gamersnexus.net/news-pc/3692-intel-arc-isnt-dead-melting-gpu-cables),
+  [JayzTwoCents](https://www.youtube.com/watch?v=K6FiGEAp928)
+
+### RAM
+- 8 GB is sufficient for basic tasks, but I recommend 16 GB, especially for gaming.
+  32 GB is worth considering for professional workloads and virtual desktops.
+  Higher amounts of RAM are only necessary for specific use cases such as virtual machines and scientific computing.
+- Frequency is not a good indicator of performance, as the latency matters a lot.
+  In addition to the frequency, look for the absolute latency in nanoseconds.
+  It's the latency number divided by the frequency, and lower is better.
+  You should also check the maximum frequency supported by your CPU and motherboard.
+- ECC memory is worth considering for professional use that requires reliability.
+  On AMD this is unofficially supported by most CPUs and some consumer motherboards,
+  whereas on Intel this is found only on professional hardware.
+
+### Motherboard
+- Think carefully what features you actually need, as additional features can crank up the price quite quickly.
+- For compatibility with Windows 11, the CPU+Motherboard combination must have TPM 2.0 support,
+  either in the firmware or as a physical chip.
+- Read reviews about the VRM temperatures and quality for reliability and overclocking headroom.
+  A good motherboard with a low number of VRM phases can be as good as one with a higher number of phases.
+- There tend to never be enough USB ports, but more can be added with a PCIe x1 add-on card.
+- If you have a NAS, an integrated 10 Gb Ethernet controller is worth considering.
+  When installed as an add-on card, 10 Gb Ethernet controllers tend to need a longer than x1 PCIe slot,
+  requiring installation in one of the x16 slots on the motherboard.
+  Many motherboards split the lanes between the x16 slots to e.g. x8 per slot when multiple cards are installed,
+  so installing a separate Ethernet controller may halve the bandwidth of your GPU.
+  However, a used add-on card is usually the cheaper option.
+- Ensure that you have enough PCIe slots and lanes, especially if you're building a server.
+  Installing multiple network cards and SATA controllers will easily consume the most of your PCIe slots.
+  - On many consumer boards several features (PCIe ports, Thunderbolt, SATA etc.) are connected to the same PCIe lanes,
+    and cannot be enabled simultaneously.
+    Carefully read the manual of the motherboard before purchasing to ensure,
+    that you can simultaneously enable all the features you need.
+- With a Thunderbolt port you can have a Thunderbolt dock that makes it a lot easier to manage the cables,
+  especially if you have an electric standing desk.
+  With optical cables you can even install the computer in another room and have complete silence in your room!
+- Wired network connectivity should be preferred over wireless whenever possible.
+  However, if wired networking is not possible,
+  you should use a Wi-Fi adapter that is either included in the motherboard or connected over PCIe.
+  A well-positioned external antenna is necessary for a fast and reliable connection.
+
+### SSD
+- The operating system should be installed on an M.2 form factor SSD with PCIe connectivity (NVME).
+  Those can be quite expensive especially at the larger sizes,
+  so files should be stored on separate drives such as SATA SSDs.
+  If you have lots of large files such as movies, it's preferable to build a separate server (NAS) for them.
+- Throughput is only one of the important characteristics.
+  IOPS is also important, and largely determined by the controller.
+- Avoid QLC except for separate game drives, as it has bad write speeds and wears out quickly. Prefer TLC instead.
+- Games take a lot of space. For gaming, 1 TB is the minimum size, and 2 TB is worth considering.
+- If you need encryption, look for an SSD with OPAL support.
+  Other protocols are often proprietary and poorly implemented.
+- As of 2022, PCIe 4.0 may not be worth the additional price.
+
+### Power supply (PSU)
+- Aim for at least 80 Plus Gold certification. This is also an indicator of build quality.
+- Look for a semi-passive model. This means that the fan should stop spinning with low loads.
+  It will reduce the noise and extend the lifetime of the fan.
+- If you pay for your electricity yourself and have the computer on for the most of the time
+  for e.g. cryptocurrency mining or scientific computing,
+  higher efficiencies are worth considering, as they will pay for themselves in the long run.
+- Newer GPUs tend to have higher power consumption, so it's a good idea to leave some headroom in the power budget.
+
+### Cooling
+- The best air coolers are sufficient almost any CPU if you're not overclocking.
+  For the average user the choice between an air cooler and a closed-loop water cooler should be based on
+  aesthetics and reliability.
+- The largest Noctua coolers are among the best air coolers.
+- With both closed and custom water cooling, radiator surface area is the most important factor for performance.
+  For a CPU the radiator should be at least 2x 120 mm but preferably 2x 140 mm.
+  If you have a GPU in the same loop,
+  the radiator should be at least 3x 120 mm but preferably 3x 140 mm or a thick 3x 120 mm.
+- 140 mm fans can move larger amounts of air with the same noise level as 120 mm fans.
+  2x 140 mm is about as performant as 3x 120 mm but can be more quiet.
+- The closed-loop water cooling systems often come with bad fans that you should replace to reduce the noise.
+- Custom water cooling is expensive and requires a lot of work.
+  If you end up building one, be prepared to spend at least a full week assembling the computer,
+  and a full day or two each year flushing and cleaning the loop.
+  For the most complex loops you may have to modify the case with metalworking tools.
+  Don't build a custom loop unless you have multiple GPUs or are especially concerned about aesthetics or noise.
+- The CPU socket orientation varies on server motherboards.
+  If you have one, ensure that you get a CPU cooler with the correct orientation for the best airflow.
+
+### Fans
+- Noctua is a good choice.
+- If you want RGB, consider the Corsair ML series,
+  as on low RPMs it's about as quiet as Noctua fans thanks to its maglev bearing.
+  Don't confuse the ML series with the more noisy but better-lighted LL series.
+  The LEDs use the standard WS2818B protocol at 5 V and can therefore be controlled with an Arduino by attaching the
+  control pin from the splitter box to the Arduino and having a common ground.
+  Be careful with the pin connections, though, as wrong connections can easily burn out the LEDs.
+
+### Case
+- Consider a 19" rack case, as then you can install all your equipment nicely in a rack below your desk,
+  or take the computer with you to e.g. a LAN party in a rack carrying case.
+  - 5U and higher cases are difficult to find, so you may have to go with a 4U one.
+    However, this significantly limits the maximum height of the CPU cooler.
+    Therefore, an all-in-one (AIO) water cooler will probably be the best option for high-performance cooling.
+  - Some manufacturers:
+    - [Alphacool](https://www.alphacool.com/shop/enterprise-solutions-server/19-server-racks/19-cases/)
+    - [Inter-Tech](https://www.inter-tech.de/en/products/ipc)
+- If you want a larger case, you should consider installing a regular PC case that is small enough
+  to be put on a 19" rack shelf.
+  The width of the space in a 19" rack is
+  [17.75" = 450.85 mm](https://en.wikipedia.org/wiki/19-inch_rack#Specifications),
+  so any case with a total height smaller than this should fit.
+  Depending on how close the side panels of your rack are,
+  you should also include the legs of the case in your estimates.
+  This kind of mounting puts the side panel on top.
+  Therefore, a glass side panel is very easy to break by dropping something on it,
+  and a solid side panel should be preferred.
+  - You can use this
+    [Geizhals listing](https://geizhals.eu/?cat=gehatx&xf=348_50%7E540_supportUSB-C%7E9691_ATX)
+    to find suitable cases.
+    Please note that the dimensions include the feet,
+    and you should therefore check the height without the feet separately.
+  - [Be Quiet! Pure Base 500DX](https://www.bequiet.com/en/case/1854)
+    ([hinta.fi](https://hinta.fi/1906339/be-quiet-pure-base-500dx-black))
+    - 463 mm with feet and 443 mm without, which is just the right size
       [to fit in a rack](https://www.reddit.com/r/homelab/comments/xb4pb8/first_dive_into_my_own_homelab_super_excited/).
-    - Some manufacturers:
-      - [Alphacool](https://www.alphacool.com/shop/enterprise-solutions-server/19-server-racks/19-cases/)
-      - [Inter-Tech](https://www.inter-tech.de/en/products/ipc)
+- Good cases that probably don't fit in a rack, unless you put them in through a side panel
   - Fractal Design makes good and quiet cases.
-  - The case should have a USB-c port in the front for attaching e.g. a phone.
-  - Optical drives are no longer worth it, so there is no need to have space for them. Use an external drive instead.
+  - [Fractal Design Define 7](https://www.fractal-design.com/products/cases/define/define-7/black-solid/)
+    ([hinta.fi](https://hinta.fi/1871621/fractal-design-define-7))
+    - 475 mm with feet and 451 mm without
+  - [Fractal Design Define 7 Compact](https://www.fractal-design.com/products/cases/define/define-7-compact/black-solid/)
+    ([hinta.fi](https://hinta.fi/1914063/fractal-design-define-7-compact))
+    - 474 mm with feet and 451 mm without
+  - [Fractal Design Meshify 2](https://www.fractal-design.com/products/cases/meshify/meshify-2/black-solid/)
+    ([hinta.fi](https://hinta.fi/2114795/fractal-design-meshify-2))
+    - 474 mm with feet and 454 mm without
+    - [The feet are removable](https://www.reddit.com/r/FractalDesignNA/comments/p3lysy/change_feet_of_meshify_2/).
+  - [Fractal Design Meshify 2 Compact](https://www.fractal-design.com/products/cases/meshify/meshify-2-compact/black-solid/)
+    ([hinta.fi](https://hinta.fi/2115292/fractal-design-meshify-2-compact))
+    - 475 mm with feet and 455 mm without
+  - [Fractal Design Torrent](https://www.fractal-design.com/products/cases/torrent/torrent/black-solid/)
+    ([hinta.fi](https://hinta.fi/2986095/fractal-design-torrent))
+    - 530 mm with feet
+  - [Fractal Design Torrent Compact](https://www.fractal-design.com/products/cases/torrent/torrent-compact/black-solid/)
+    ([hinta.fi](https://hinta.fi/3256994/fractal-design-torrent-compact))
+- The case should have a USB-c port in the front for attaching e.g. a phone or a USB-c FIDO2 security key.
+- Optical drives are no longer worth it, so there is no need to have space for them. Use an external drive instead.
 
 
 ## Laptops
@@ -197,32 +248,36 @@ If you're only using the computer for light tasks such as web browsing, consider
 - Laptop performance is affected a lot by cooling,
   and therefore performance test results for the individual components
   may not correspond to actual performance of the particular laptop model.
-- Connectivity
-  - Thunderbolt is a must-have, if you want to connect the laptop to a high-resolution monitor or multiple monitors.
-    If you're gaming only at home and at LAN parties and have an external monitor, consider purchasing an external
-    GPU to get desktop-level gaming performance out of your laptop.
-  - USB-c charging makes it a lot easier to charge the laptop with docks, portable charges and power banks.
-  - 4K 60 Hz output requires HDMI 2.0 or later, which is quite rare on older laptops.
-- Battery
-  - Most laptops have either lithium-ion (Li-ion) or lithium polymer (LiPo) batteries.
-  - The lifetime expectancy of both battery types is about three years.
-    Around this time the batteries have lost a significant fraction of their capacity,
-    and LiPo batteries also tend to puff over time, especially when exposed to the heat from the laptop.
-    The latter will cause a fire hazard and physical damage to the laptop from the pressure they create when
-    expanding. I've seen several laptops where the thickness of the battery has more than doubled over time,
-    cracking the laptop open. Therefore, Li-ion batteries should be preferred over LiPo batteries.
-    Often user-replaceable batteries, especially the thick ones, are Li-ion, and the internal batteries are LiPo.
-  - Internal batteries can also be replaced on most laptops, but the availability of replacement batteries is worse.
-- Monitor
-  - For good eyes, 1080p is the optimal resolution for 14". For older eyes, 1080p and 15" is a good combination.
-  - Higher resolutions require the use of scaling to make text large enough to be readable.
-    This may cause problems with older software,
-    and on Linux the use of multiple monitors with different scaling levels requires Wayland.
-- LTE/5G modem (WWAN)
-  - If you can somehow get a multi-SIM cell phone plan or data plan or can afford the extra data plan,
-    having an integrated modem in the laptop is a lot easier and more reliable than sharing internet from a phone.
-  - This feature is often found only on business laptops such as ThinkPads.
-  - 3G network will be shut down in a few years, so the modems on older laptops will then become pretty much useless.
+
+### Connectivity
+- Thunderbolt is a must-have, if you want to connect the laptop to a high-resolution monitor or multiple monitors.
+  If you're gaming only at home and at LAN parties and have an external monitor, consider purchasing an external
+  GPU to get desktop-level gaming performance out of your laptop.
+- USB-c charging makes it a lot easier to charge the laptop with docks, portable charges and power banks.
+- 4K 60 Hz output requires HDMI 2.0 or later, which is quite rare on older laptops.
+
+###  Battery
+- Most laptops have either lithium-ion (Li-ion) or lithium polymer (LiPo) batteries.
+- The lifetime expectancy of both battery types is about three years.
+  Around this time the batteries have lost a significant fraction of their capacity,
+  and LiPo batteries also tend to puff over time, especially when exposed to the heat from the laptop.
+  The latter will cause a fire hazard and physical damage to the laptop from the pressure they create when
+  expanding. I've seen several laptops where the thickness of the battery has more than doubled over time,
+  cracking the laptop open. Therefore, Li-ion batteries should be preferred over LiPo batteries.
+  Often user-replaceable batteries, especially the thick ones, are Li-ion, and the internal batteries are LiPo.
+- Internal batteries can also be replaced on most laptops, but the availability of replacement batteries is worse.
+
+### Monitor
+- For good eyes, 1080p is the optimal resolution for 14". For older eyes, 1080p and 15" is a good combination.
+- Higher resolutions require the use of scaling to make text large enough to be readable.
+  This may cause problems with older software,
+  and on Linux the use of multiple monitors with different scaling levels requires Wayland.
+
+### LTE/5G modem (WWAN)
+- If you can somehow get a multi-SIM cell phone plan or data plan or can afford the extra data plan,
+  having an integrated modem in the laptop is a lot easier and more reliable than sharing internet from a phone.
+- This feature is often found only on business laptops such as ThinkPads.
+- 3G network will be shut down in a few years, so the modems on older laptops will then become pretty much useless.
 
 ### External GPUs
 - [eGPU.io](https://egpu.io/)
@@ -243,43 +298,49 @@ If you're only using the computer for light tasks such as web browsing, consider
 - [Razer Core X Chroma is buggy on Linux](https://y.tsutsumi.io/2020/08/15/egpu-linux-core-x-chroma/)
 
 ## Monitors and TVs
-- Panel technology
-  - Avoid TN panels, unless you're a gaming professional and absolutely need the fastest refresh rates possible.
-    - They have bad viewing angles and color space
-  - Avoid OLED panels if the monitor/TV is connected to a computer
-    - Any static objects on the screen such as the taskbar will be permanently burned in within months of active use
-  - VA and IPS are good panel technologies
-- Sizing
-  - For desktop monitors, 27" and 1440p has the best price-to-performance ratio as of 2022.
-  - For older eyes, ~31" and 1440p may be preferred due to the larger default text size.
-  - Higher pixel densities are barely noticeable but require a lot more powerful hardware for gaming.
-  - 34" 3440x1440 ultrawide is the optimal size for professional use. You can easily fit two large documents
-    or your code and the documentation on the screen at the same time.
-  - A 4K display should be ~40" or larger. If you install them on a monitor arm and plan your apartment properly,
-    you can also use them as your TV.
-  - Gaming on 4K requires a very powerful computer (RX 6000 or RTX 3000 series or later GPU).
-- Connectivity
-  - If you want to connect several devices to the same monitor,
-    ensure that it has a sufficient number of connections that can drive the monitor at its full refresh rate.
-    Desktop monitors often have a too old HDMI version,
-    and TVs can have the latest HDMI version on only some of their ports.
-  - HDMI 2.0 is required for 4K 60 Hz, and HDMI 2.1 for 4K 120 Hz and variable refresh rate.
-    However, with HDMI 2.1 most features such as the aforementioned are optional and their presence has to be verified manually.
-- Refresh rate
-  - High refresh rate is more important than variable refresh rate such as FreeSync or G-Sync,
-    as the latter require specific support from software.
-    Therefore, look for monitors with a 120 Hz or higher refresh rate.
-    Having a high refresh rate also affects the smoothness of all desktop applications and movies.
-    Most movies are shot in 24 or 25 FPS, and therefore they lag a lot on 60 Hz monitors where every other frame has to
-    be shown once and every other twice to match the monitor refresh rate.
-    This effect is a lot smaller on high refresh rate monitors.
-    On Linux variable refresh rate is not supported if you have multiple monitors.
-  - Some TVs already have 120 Hz refresh rates
-- HDR
-  - On Windows HDR is supported with consumer GPUs only on fullscreen applications such as games.
-    The support for HDR photos and videos is very limited.
-  - Properly displaying HDR content requires a high maximum brightness such as 1000 nits, aka. HDR1000.
-    Especially HDR400 is not worth it, unless you want to test the HDR compatibility of various sofware.
+### Panel technology
+- Avoid TN panels, unless you're a gaming professional and absolutely need the fastest refresh rates possible.
+  - They have bad viewing angles and color space
+- Avoid OLED panels if the monitor/TV is connected to a computer
+  - Any static objects on the screen such as the taskbar will be permanently burned in within months of active use
+- VA and IPS are good panel technologies
+
+### Sizing
+- For desktop monitors, 27" and 1440p has the best price-to-performance ratio as of 2022.
+- For older eyes, ~31" and 1440p may be preferred due to the larger default text size.
+- Higher pixel densities are barely noticeable but require a lot more powerful hardware for gaming.
+- 34" 3440x1440 ultrawide is the optimal size for professional use. You can easily fit two large documents
+  or your code and the documentation on the screen at the same time.
+- A 4K display should be ~40" or larger. If you install them on a monitor arm and plan your apartment properly,
+  you can also use them as your TV.
+- Gaming on 4K requires a very powerful computer (RX 6000 or RTX 3000 series or later GPU).
+
+### Connectivity
+- If you want to connect several devices to the same monitor,
+  ensure that it has a sufficient number of connections that can drive the monitor at its full refresh rate.
+  Desktop monitors often have a too old HDMI version,
+  and TVs can have the latest HDMI version on only some of their ports.
+- HDMI 2.0 is required for 4K 60 Hz, and HDMI 2.1 for 4K 120 Hz and variable refresh rate.
+  However, with HDMI 2.1 most features such as the aforementioned are optional and their presence has to be verified manually.
+
+### Refresh rate
+- High refresh rate is more important than variable refresh rate such as FreeSync or G-Sync,
+  as the latter require specific support from software.
+  Therefore, look for monitors with a 120 Hz or higher refresh rate.
+  Having a high refresh rate also affects the smoothness of all desktop applications and movies.
+  Most movies are shot in 24 or 25 FPS, and therefore they lag a lot on 60 Hz monitors where every other frame has to
+  be shown once and every other twice to match the monitor refresh rate.
+  This effect is a lot smaller on high refresh rate monitors.
+  On Linux variable refresh rate is not supported if you have multiple monitors.
+- Some TVs already have 120 Hz refresh rates
+
+### HDR
+- On Windows HDR is supported with consumer GPUs only on fullscreen applications such as games.
+  The support for HDR photos and videos is very limited.
+- Properly displaying HDR content requires a high maximum brightness such as 1000 nits, aka. HDR1000.
+  Especially HDR400 is not worth it, unless you want to test the HDR compatibility of various sofware.
+
+### Misc
 - VESA mounting support is a must-have, as monitor arms save a lot of desk space, and you may want to install them later.
 - For smart monitors and TVs, prefer Android TV over manufacturer-specific proprietary implementations
   - For compatibility and good image quality with future streaming services, ensure that the TV has the AV1 hardware decoder and Android TV 10 or later.
@@ -288,7 +349,6 @@ If you're only using the computer for light tasks such as web browsing, consider
 
 
 ## Phones
-
 - Phone manufacturers often provide security patches for only 1-2 years after the model is released.
   If you want to use the phone for longer, look for a phone that is supported by an alternative Android version such as LineageOS.
   - [Official list](https://download.lineageos.org/)
