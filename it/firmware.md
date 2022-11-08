@@ -60,6 +60,28 @@ The order and naming of these settings may vary depending on the model of your m
 - [Reddit](https://www.reddit.com/r/hardware/comments/vpalik/a_dream_come_true_running_coreboot_on_a_modern/)
 
 [me_cleaner](https://github.com/corna/me_cleaner)
+
+## Laptop CPU throttling
+On many laptops, and especially ThinkPad T480,
+the motherboard firmware artificially throttles the CPU unless the firmware can communicate to a driver in the OS.
+This leads to degraded performance on Linux, where the manufacturer-provided driver is not available.
+This throttling can be overwritten with
+[throttled](https://github.com/erpalma/throttled).
+However, it requires access to MSR ad PCI BAR,
+which are restricted when Kernel Lockdown is enabled.
+Kernel Lockdown is enabled automatically when Secure Boot is enabled,
+and to the best of my knowledge there is no way to disable Kernel Lockdown
+without disabling some step of the Secure Boot chain.
+There are two options:
+1) Run `sudo mokutil --disable-validation`, reboot,
+  select "Change Secure Boot state" and give the characters of your password.
+2) Disable Secure Boot
+
+I prefer the former,
+as it somewhat prevents an attacker from booting the computer from a USB drive with a custom kernel.
+
+Throttled also supports undervolting, which is a great way to get even more performance out of a laptop.
+
 ## Custom BIOS/UEFI versions
 A modified BIOS/UEFI can solve various issues and
 remove artificial limitations imposed by the device manufacturer.
