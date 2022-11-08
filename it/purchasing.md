@@ -233,6 +233,20 @@ If you're only using the computer for light tasks such as web browsing, consider
 - The case should have a USB-c port in the front for attaching e.g. a phone or a USB-c FIDO2 security key.
 - Optical drives are no longer worth it, so there is no need to have space for them. Use an external drive instead.
 
+### Expansion cards
+- PCIe USB controllers are the best way to add more USB ports.
+  - If the card has multiple controllers,
+    you should in theory be able to assign each controller to a separate virtual machine.
+    However, the IOMMU grouping of the motherboard may come in the way.
+    [Reddit thread 1](https://www.reddit.com/r/unRAID/comments/n48wos/pcie_usb_controller_card_with_multiple_controllers/),
+    [Reddit thread 2](https://www.reddit.com/r/VFIO/comments/jdzdhj/1_pci_usb_card_with_2x_controllers/),
+    [Levelonetechs thread](https://forum.level1techs.com/t/usb-sr-iov-pcie-expansion-card/153324),
+    [Intel forum thread](https://community.intel.com/t5/Server-Products/Intel-XHCI-controller-with-SR-IOV-support-XHCI-IOV/m-p/521300).
+    - [HighPoint RocketU](https://www.highpoint-tech.com/usb-catalog)
+    - [StarTech PEXUSB3S44](https://www.startech.com/en-us/cards-adapters/pexusb3s44v):
+      [Amazon.de](https://www.amazon.de/-/en/StarTech-PEXUSB3S44-Channel-PCIE-Card/dp/B00HJZEA2S)
+    - If you come across a PCIe USB card with SR-IOV, please let me know!
+
 
 ## Laptops
 - The ThinkPad T-series is built to last. If you don't need high gaming performance, get one if you can afford it.
