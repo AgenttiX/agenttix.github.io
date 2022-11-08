@@ -406,7 +406,7 @@ If you're only using the computer for light tasks such as web browsing, consider
 - PoE is very handy if you're going to install multiple Wi-Fi access points or security cameras.
   However, PoE switches are more noisy than the non-PoE versions.
 
-### Wi-Fi routers / access points
+### Wi-Fi routers / access points / firewalls
 To be specific, the so-called "Wi-Fi routers" are not usually routers,
 as they have only one connection to the internet.
 True routers have multiple connections to the internet and decide,
@@ -451,8 +451,9 @@ If your device is not compatible with OpenWRT, you should use some other notable
 - Wi-Fi 6
 - High-speed ports (> 1 Gbps Ethernet, SFP+)
 
-#### Wi-Fi routers / access points I've been dealing with
+#### Wi-Fi routers / access points
 - ~~Xiaomi Mi Router 3G v1~~
+  - I'm using one of these
   - No longer available
   - [AliExpress](https://www.aliexpress.com/item/32837907107.html)
   - [OpenWRT](https://openwrt.org/toh/xiaomi/mir3g)
@@ -460,18 +461,35 @@ If your device is not compatible with OpenWRT, you should use some other notable
   - Wi-Fi 5 (802.11ac)
   - Flashable over serial
 - ~~ASUS RT-AX58U~~
+  - I don't have one, but have received positive feedback from friends and relatives who have these.
   - Now that there are finally devices compatible with both OpenWRT and Wi-Fi 6, you should get one of those instead.
   - [Hinta.fi](https://hinta.fi/1780666/asus-rt-ax58u)
   - [Geizhals](https://geizhals.eu/asus-rt-ax58u-ax3000-90ig04q0-mo3r10-a2152041.html)
   - [Asuswrt-Merlin](https://www.asuswrt-merlin.net/)
   - Wi-Fi 6 (802.11ax)
-  - I don't have one, but have received positive feedback from friends and relatives who have these.
+- Banana Pi
+  - There are several versions available
+  - [BPI-R3](https://wiki.banana-pi.org/Banana_Pi_BPI-R3)
+    - [Should soon be supported by OpenWRT](https://forum.openwrt.org/t/bpi-r3-support/135972) (as of 2022)
 - [Ubiquiti UniFi](https://ui.com/wi-fi)
   - If you need multiple access points for enterprise use with centralized management,
     UniFi access points are a cost-effective option with their default firmware.
     If you have only a few access points (such as in home use), you should
     [use OpenWRT instead](https://openwrt.org/toh/ubiquiti/start),
     as many UniFi access points are compatible with OpenWRT.
+
+#### "Routers" / firewalls
+- NanoPi
+  - There are several versions available
+  - NanoPi R5S
+    - 2x 2.5 Gbps + 1x 1 Gbps Ethernet
+    - Official firmware is [FriendlyWRT](https://wiki.friendlyelec.com/wiki/index.php/How_to_Build_FriendlyWrt),
+      an OpenWRT fork.
+    - [Not yet supported by OpenWRT](https://openwrt.org/toh/friendlyarm/nanopi_r5s) (as of 2022)
+  - NanoPi R4S
+    - 2x 1 Gbps Ethernet
+    - [Supported by OpenWRT](https://openwrt.org/toh/friendlyarm/nanopi_r4s_v1)
+
 
 ### Network cards
 - Intel E1G42ET
