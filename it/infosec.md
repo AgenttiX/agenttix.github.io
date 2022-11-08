@@ -144,6 +144,10 @@ ykman piv reset
 ```
 
 ### Configuring a YubiKey
+Verify
+[on this page](https://www.yubico.com/genuine/)
+that the YubiKey is genuine.
+
 ``` bash
 ykman fido access change-pin
 ```
