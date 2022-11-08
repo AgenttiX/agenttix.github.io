@@ -51,3 +51,12 @@ The order and naming of these settings may vary depending on the model of your m
     remove unused devices from the boot device list.
   - Set network boot to boot from the local disk.
   - These reduce the risk of evil maid attacks.
+
+
+## Intel AMT & AMD PSP
+[Hackaday article](https://hackaday.com/2017/12/11/what-you-need-to-know-about-the-intel-management-engine/)
+[Dasharo](https://docs.dasharo.com/)
+- [Modern hardware](https://www.phoronix.com/review/coreboot-adl-dream)
+- [Reddit](https://www.reddit.com/r/hardware/comments/vpalik/a_dream_come_true_running_coreboot_on_a_modern/)
+
+[me_cleaner](https://github.com/corna/me_cleaner)
