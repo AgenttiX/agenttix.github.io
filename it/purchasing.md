@@ -539,6 +539,13 @@ If your device is not compatible with OpenWRT, you should use some other notable
   - [StarTech 12U RK1236BKF](https://www.startech.com/en-fi/server-management/rk1236bkf)
 
 
+### UPS devices
+- Always use AGM or gel batteries.
+  [Regular lead-acid batteries require addition of distilled water every 2-3 months when in use](https://electronics.stackexchange.com/a/210819/),
+  or the UPS will damage them permanently.
+  I've seen regular lead-acid batteries physically crack open within two years of use.
+
+
 ## USB flash drives
 - The drive should have USB 3.0 or later.
 - Prefer a fully metallic casing.
