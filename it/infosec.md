@@ -38,7 +38,10 @@ CIA model:
 - Enable Secure Boot
 
 ### Disk encryption
-- [LUKS](https://wiki.archlinux.org/title/Dm-crypt/Encrypting_an_entire_system)
+- LUKS
+  - [Arch Wiki](https://wiki.archlinux.org/title/Dm-crypt/Encrypting_an_entire_system)
+  - [Gentoo Wiki](https://wiki.gentoo.org/wiki/Dm-crypt_full_disk_encryption)
+  - [Current state and flaws](https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html)
 - [ZFS](https://wiki.archlinux.org/title/ZFS#Native_encryption)
 
 
