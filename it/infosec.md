@@ -22,6 +22,46 @@ CIA model:
   - [Linux compatibility](https://www.linux.fi/wiki/HST)
 
 
+## Travel
+### Before travelling
+- Make a backup of all important data.
+- Install the latest security updates.
+- Encrypt all devices that contain sensitive data.
+  Merely having a login password does not prevent an attacker from extracting data from the device.
+- Enable biometric authentication only when used as a part of a multi-factor authentication.
+  Many countries have legislation that permits the authorities to force
+  one to perform biometric authentication,
+  whereas in the western world passwords often fall under the
+  [self-incrimination](https://en.wikipedia.org/wiki/Self-incrimination)
+  protection.
+- Have a verified boot chain on all of your devices to prevent tampering.
+  On PCs this means enabling Secure Boot,
+  protecting the UEFI/BIOS with a password and enabling UEFI/BIOS rollback protection.
+  On Android one should preferably have a locked bootloader.
+- To ensure that your laptop will not be tampered with,
+  put a bit of nail polish on one of the laptop screws.
+  Preferably use a nail polish with e.g. glitter that creates unique patterns.
+  Take a picture of these patterns.
+
+### When travelling
+- Do not connect untrusted peripherals or cables.
+  Even a regular-looking USB cable (such as the
+  [O.MG cable](https://o.mg.lol/)) can contain a chip that can infect a computer,
+  or even wireless connectivity for remote control!
+  The only exception to this are monitors over display cables (HDMI, DisplayPort, DVI, VGA),
+  as their capabilities for transferring anything else than video is rather limited.
+  However, connecting a monitor with USB-c is not safe!
+- Do not plug your devices to untrusted USB ports.
+  Only charge your USB devices using trusted chargers.
+  This includes laptops.
+- Do not leave your laptop unattended, even in the hotel room.
+  Even the safe in your hotel room is not safe,
+  as the hotel personnel can access it.
+- If you are dealing with sensitive data,
+  do not connect your devices to high-risk networks such as public Wi-Fi.
+  Buy a local cell phone / data plan instead.
+
+
 ## Securing a Windows desktop
 - Keep Windows updated
 - Keep apps updated
