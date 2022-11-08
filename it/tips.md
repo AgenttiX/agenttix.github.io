@@ -63,22 +63,3 @@ sudo mount /mnt/share-path
 
 ## BIOS/UEFI
 
-### Lenovo battery DRM
-Lenovo laptops have a DRM that prevents third-party batteries from charging.
-- [Reddit thread](https://www.reddit.com/r/Lenovo/comments/dcnpzg/the_battery_installed_is_not_supported_by_this/)
-- [Hackaday article](https://hackaday.com/2016/02/11/unlocking-thinkpad-batteries/)
-
-## Lenovo WLAN/WWAN DRM
-- [G510](https://medium.com/@p0358/removing-wlan-wwan-bios-whitelist-on-a-lenovo-laptop-to-use-a-custom-wi-fi-card-f6033a5a5e5a)
-- [X1 Carbon](https://www.reddit.com/r/thinkpad/comments/8813ub/x1_carbon_whitelist/?utm_source=share&utm_medium=web2x&context=3)
-
-### Lenovo XX30 series
-- [Custom BIOS](https://github.com/n4ru/1vyrain)
-- [Custom EC firmware](https://github.com/hamishcoleman/thinkpad-ec)
-
-### Meltdown and Spectre patch for X58 motherboards
-- [Techpowerup](https://www.techpowerup.com/forums/threads/meltdown-and-spectre-patched-bios-for-x58-motherboards.246101/)
-- [Gigabyte UK](https://forum.giga-byte.co.uk/index.php?topic=22899.0)
-- [Gigabyte US](https://forum.gigabyte.us/thread/4901/spectre-patched-bios-gigabyte-motherboards)
-
-Tested to work on GA-X58A-UD7.
