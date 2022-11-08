@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Checklists
+title: Windows
 ---
 
-# Checklists / notes
+# Windows
 
-## Windows installation
+## Installing Windows
 - Update BIOS/UEFI and firmware before the installation as much as you practically can.
   - This is especially important with old computers, as important features such as proper UEFI support may be added as a
     UEFI/BIOS update.
@@ -63,3 +63,30 @@ title: Checklists
 - If you're willing to pay for antivirus software, install [F-Secure](https://www.f-secure.com/)
   - It's from Finland, so it's not subject to NSA surveillance like Norton and McAfee, and not from a rogue state like Kaspersky
 - Install software with the [installer script](https://github.com/AgenttiX/windows-scripts)
+
+## Installing software
+Unlike Linux, Android and iOS, Windows does not have a single package manager or software store
+where you could download most software.
+The most comprehensive package manager for Windows is
+[Chocolatey](https://chocolatey.org/),
+and volunteers have created installers for most commonly used software.
+Microsoft is also finally moving in the right direction, and has created their own package manager,
+[winget](https://github.com/microsoft/winget-cli),
+but its repositories are still rather limited.
+Chocolatey has a GUI, but both of these are primarily intended to be command-line software,
+and are therefore not as user-friendly as they could be.
+Therefore, I have created
+[my own installer script](https://github.com/AgenttiX/windows-scripts)
+that has a GUI and can use both Chocolatey and winget to install software.
+
+## Maintenance
+Since Windows software is installed from so many sources,
+manually maintaining Windows workstations is a pain.
+To avoid this, I install most software using the aforementioned package managers Chocolatey and winget,
+and have developed
+[my own maintenance script](https://github.com/AgenttiX/windows-scripts)
+to install all updates at once.
+Another option would be to use enterprise management tools such as
+[Microsoft Intune](https://learn.microsoft.com/en-us/mem/intune/fundamentals/what-is-intune)
+or
+[Puppet](https://puppet.com/).

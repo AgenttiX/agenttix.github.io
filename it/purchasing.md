@@ -82,6 +82,8 @@ If you're only using the computer for light tasks such as web browsing, consider
     ECC memory is highly useful for scientific simulations and other loads that require precision,
     but not for machine learning.
   - Professional cards use different drivers that have been optimized and tested for CAD instead of games.
+- GDDR6X has ECC-like error correction, but without error reporting.
+  - [Active on RTX 3080](https://www.reddit.com/r/overclocking/comments/nfk5pf/does_gddr6_memory_have_error_correction_abilities/)
 - RTX 4000 series and later GPUs use the new 12VHPWR power connector.
   If you're planning to install one of these in a new build,
   you should get a PSU that also has the same connector,

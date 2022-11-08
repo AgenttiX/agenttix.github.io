@@ -119,6 +119,9 @@ You can test whether you have DNSSEC enabled with this
 - Kickstarter
 - Microsoft
 - Microsoft Azure Active Directory
+  - [Firefox on Linux is not supported](https://learn.microsoft.com/en-us/azure/active-directory/authentication/fido2-compatibility),
+    [as it does not yet support CTAP2](https://bugzilla.mozilla.org/show_bug.cgi?id=1530370)
+  - Setup at [https://aka.ms/mfasetup](https://aka.ms/mfasetup)
 - NiceHash
 - [OVH](https://www.ovh.com/manager/#/dedicated/useraccount/security)
 - ProtonMail
@@ -141,6 +144,10 @@ ykman piv reset
 ```
 
 ### Configuring a YubiKey
+Verify
+[on this page](https://www.yubico.com/genuine/)
+that the YubiKey is genuine.
+
 ``` bash
 ykman fido access change-pin
 ```
