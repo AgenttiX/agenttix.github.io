@@ -48,6 +48,7 @@ Policies for additional software can be downloaded here:
 - [Edge](https://docs.microsoft.com/en-us/deployedge/configure-microsoft-edge)
 - [Firefox](https://support.mozilla.org/en-US/kb/customizing-firefox-using-group-policy-windows)
 - [Group Policy Administrative Templates Catalog](https://admx.help/)
+- [Samba](https://wiki.samba.org/index.php/Group_Policy#Installing_Samba_ADMX_Templates) (by running samba-tool on a DC or a domain member)
 
 Windows hardening
 - [Account lockout](https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/account-lockout-duration)
