@@ -477,14 +477,14 @@ If your device is not compatible with OpenWRT, you should use some other notable
   - v2 is a completely different device with a lot worse hardware!
   - Wi-Fi 5 (802.11ac)
   - Flashable over serial
-- ~~ASUS RT-AX58U~~
+- ~~[ASUS RT-AX58U](https://www.asus.com/networking-iot-servers/wifi-routers/asus-wifi-routers/rt-ax58u/)~~
   - I don't have one, but have received positive feedback from friends and relatives who have these.
   - Now that there are finally devices compatible with both OpenWRT and Wi-Fi 6, you should get one of those instead.
   - [Hinta.fi](https://hinta.fi/1780666/asus-rt-ax58u)
   - [Geizhals](https://geizhals.eu/asus-rt-ax58u-ax3000-90ig04q0-mo3r10-a2152041.html)
   - [Asuswrt-Merlin](https://www.asuswrt-merlin.net/)
   - Wi-Fi 6 (802.11ax)
-- Banana Pi
+- [Banana Pi](https://www.banana-pi.org/)
   - There are several versions available
   - [BPI-R3](https://wiki.banana-pi.org/Banana_Pi_BPI-R3)
     - [Should soon be supported by OpenWRT](https://forum.openwrt.org/t/bpi-r3-support/135972) (as of 2022)
@@ -496,6 +496,16 @@ If your device is not compatible with OpenWRT, you should use some other notable
     as many UniFi access points are compatible with OpenWRT.
 
 #### "Routers" / firewalls
+- ~~[Huawei AR1200E](https://support.huawei.com/enterprise/en/routers/ar1220e-pid-24020781/)~~
+  - Serial console password can be reset from the BootROM menu (Ctrl+B)
+  - [Default BootROM password is Admin@huawei](https://forum.huawei.com/enterprise/en/corpus-595.html)
+  - [Internal flash can only be formatted from the BootROM menu (Ctrl+B)](https://support.huawei.com/enterprise/en/doc/EDOC1000154645/e1352af8/how-do-i-format-a-storage-medium)
+    - Formatting the internal flash also deletes the firmware from the device.
+      Therefore, copy the existing firmware file from the internal flash to a USB drive before formatting
+  - The firmware is based on [Wind River Linux](https://www.windriver.com/products/linux)
+  - [Firmware download](https://support.huawei.com/enterprise/en/routers/ar1220e-pid-24020781/software)
+    - Unfortunately this requires registering the device,
+      which is only possible for devices that have been purchased by individual client companies, not carriers.
 - NanoPi
   - There are several versions available
   - NanoPi R5S
