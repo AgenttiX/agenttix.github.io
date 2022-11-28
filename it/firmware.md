@@ -10,7 +10,7 @@ Unfortunately many manufacturers don't provide a proper way to automatically not
 If you don't have a way to receive update notifications automatically,
 you should check your manufacturer's website regularly.
 
-## BIOS/UEFI settings
+## UEFI/BIOS settings
 The order and naming of these settings may vary depending on the model of your motherboard.
 
 - CPU
@@ -33,20 +33,29 @@ The order and naming of these settings may vary depending on the model of your m
     - Enable, as this reduces the risk of evil maid attacks.
   - TPM / security chip
     - Enable. This is mandatory for Windows 11.
+    - SHA256: enable
     - Clear before OS installation.
       If e.g. BitLocker is already enabled,
       you will need to use a recovery key after clearing the TPM to restore access to your data.
 - Power save
   - Disable all unnecessary wake up sources, e.g. network, PCIe and Thunderbolt,
     unless you want to boot up your computer by some other way than the power button.
+  - [Active State Power Management (ASPM)](https://en.wikipedia.org/wiki/Active_State_Power_Management): enable/auto
+  - Aggressive LPM (ALPM): enable
+    - If you get blue screens, disable this.
 - Thunderbolt
   - Security level: user authorization.
     This prevents DMA attacks from unauthorized devices.
+- Resizable BAR: enable
+  - This is important for GPU performance
 - Virtualization
   - Virtualization / VT-x / AMD-V: enable
-  - IOMMU / VT-d / SR-IOV: enable
+  - IOMMU / VT-d: enable
+  - SR-IOV: enable
   - These features are highly useful for various security features of modern operating systems
 - Boot
+  - UEFI only (disable legacy/BIOS)
+  - CSM: disable (unless you have old hardware that requires CSM)
   - Set your local SSD as the first boot device, and
     remove unused devices from the boot device list.
   - Set network boot to boot from the local disk.
@@ -82,11 +91,11 @@ as it somewhat prevents an attacker from booting the computer from a USB drive w
 
 Throttled also supports undervolting, which is a great way to get even more performance out of a laptop.
 
-## Custom BIOS/UEFI versions
-A modified BIOS/UEFI can solve various issues and
+## Custom UEFI/BIOS versions
+A modified UEFI/BIOS can solve various issues and
 remove artificial limitations imposed by the device manufacturer.
 However, be careful what you install,
-BIOS/UEFI and other firmware have very deep access to your system.
+UEFI/BIOS and other firmware have very deep access to your system.
 
 ### Lenovo battery DRM
 Lenovo laptops have a DRM that prevents third-party batteries from charging.
