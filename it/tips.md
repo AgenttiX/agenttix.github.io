@@ -60,6 +60,3 @@ Then you can mount with
 ```
 sudo mount /mnt/share-path
 ```
-
-## BIOS/UEFI
-
