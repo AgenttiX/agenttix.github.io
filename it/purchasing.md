@@ -397,6 +397,21 @@ If you're only using the computer for light tasks such as web browsing, consider
   - Its presence can be verified with the
     [Key Attestation Demo](https://play.google.com/store/apps/details?id=io.github.vvb2060.keyattestation)
     app.
+- Google Pixel
+  - The 5G, VoLTE and eSIM features work only in
+      [networks that are certified by Google](https://pixel.withgoogle.com/5G/).
+      As of 2022, this does **not** include Finland.
+      This is an artificial limitation created by Google.
+    - Please go to the [Google issue tracker](https://issuetracker.google.com/issues/229334870)
+      and press the "+1: I am impacted" button in the top-right corner to vote for this issue to get fixed.
+    - You can file a complaint to the European Consumer Centres Network according to
+      [these instructions](https://forum.xda-developers.com/t/5g-connectivity-in-non-supported-countries.4438065/post-87110781).
+    - Unofficial fixes
+      - [Pixel 4a and Pixel 5](https://github.com/swangjang/Pixel-Redbull-Carrier-Patch)
+      - [Pixel 6 Pro](https://forum.xda-developers.com/t/activate-5g-on-non-5g-country.4457071/)
+      - [Pixel 7](https://forum.xda-developers.com/t/root-enable-5g-volte-and-call-screening-in-unsupported-countries.4510243/)
+  - Pixel phones are among the most secure Android devices, especially with
+    [GrapheneOS](https://grapheneos.org/) ([supported models](https://grapheneos.org/build#build-targets)).
 
 ## Networking
 ### Network architecture
