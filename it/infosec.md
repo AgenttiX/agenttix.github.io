@@ -144,19 +144,23 @@ You can test whether you have DNSSEC enabled with this
 
 ## Hardware security keys
 [Services that support YubiKey/WebAuthn](https://www.yubico.com/fi/works-with-yubikey/catalog/?sort=popular), including:
-- Binance
+- [Binance](https://accounts.binance.com/en/manage-yubikey-authenticator)
+  - Firefox on Linux is not supported
 - [Bitbucket](https://bitbucket.org/account/settings/two-step-verification/manage)
-- Bitfinex
+- [Bitfinex](https://setting.bitfinex.com/security)
 - Coinbase
 - eBay
 - Electronic Arts
 - Epic Games
 - EVE Online
 - [Facebook](https://www.facebook.com/security/2fac/settings/)
+- [Gate.io](https://www.gate.io/myaccount/webauthn)
 - [GitHub](https://github.com/settings/security)
 - [GitLab](https://gitlab.com/-/profile/two_factor_auth)
+- [GNOME GitLab](https://gitlab.gnome.org/-/profile/two_factor_auth)
 - [Google](https://myaccount.google.com/signinoptions/two-step-verification)
 - Heroku
+- Home Assistant Community
 - Instagram
 - KeePassXC ([see this description](https://security.stackexchange.com/a/258414/))
 - Kickstarter
@@ -166,12 +170,17 @@ You can test whether you have DNSSEC enabled with this
     [as it does not yet support CTAP2](https://bugzilla.mozilla.org/show_bug.cgi?id=1530370)
   - Setup at [https://aka.ms/mfasetup](https://aka.ms/mfasetup)
 - NiceHash
+- [Nvidia](https://profile.nvgs.nvidia.com/security/webauthn)
 - [OVH](https://www.ovh.com/manager/#/dedicated/useraccount/security)
+- [PayPal](https://www.paypal.com/myaccount/security/twofactor/authentication)
 - ProtonMail
+- [PyPI](https://pypi.org/manage/account/webauthn-provision)
+- Signal Community
 - Reddit
 - TeamViewer
 - Twitch
 - Twitter
+- [WordPress](https://wordpress.com/me/security/two-step)
 
 Services that will support YubiKey/WebAuthn in the future
 - [Self-developed Django applications](https://github.com/jazzband/django-two-factor-auth/pull/408)
@@ -214,3 +223,8 @@ Support has been requested for
 - [Termius](https://ideas.teams.termius.com/c/47-u2f-fido2-token-support)
   - Already works on desktop but not on Android
 - [Termux](https://github.com/termux/termux-packages/issues/4942)
+
+### YubiKey with KeePassXC
+- [Security benefits](https://security.stackexchange.com/a/258414/)
+- [Official FAQ](https://keepassxc.org/docs/#faq-yubikey-howto)
+- [KeePassXC 2.6.0 is not compatible due to a bug](https://github.com/keepassxreboot/keepassxc/issues/4987)
