@@ -629,11 +629,46 @@ If your device is not compatible with OpenWRT, you should use some other notable
 
 
 ## Accessories
-- Adapters
+### Keyboards
+A good keyboard should have
+- ISO or ANSI layout depending on your preference
+- Hot-swappable mechanical switches
+- [QMK](https://qmk.fm/) or [VIA](https://www.caniusevia.com/) firmware support
+- Wired connectivity
+- Detachable cable with USB-c
+- Wireless connectivity is a plus, but be mindful of security.
+  There should be a way to turn the wireless connectivity off.
+
+Some good keyboards
+- [Keychron K8 Pro ISO](https://www.keychron.com/products/keychron-k8-pro-qmk-via-wireless-mechanical-keyboard-iso-layout-collection?variant=40283914731609)
+- [GMMK Pro ISO](https://www.gloriousgaming.com/products/glorious-gmmk-pro-75-barebone-iso-black-slate)
+
+### Mice
+There are significant difference in the accuracy of mice,
+and price is not an indicator of good quality.
+Please see
+[this guide](https://sensor.fyi/info/)
+for details, and
+[this list](https://sensor.fyi/mice/)
+for good mice.
+
+I'm using
+[Logitech G502](https://www.logitechg.com/en-us/products/gaming-mice/g502-hero-gaming-mouse.910-005469.html)
+and
+[Logitech PowerPlay](https://www.logitechg.com/en-us/products/gaming-mouse-pads/powerplay-wireless-charging.943-000109.html),
+and am very happy with those.
+
+Linux support for gaming mice, keyboards and headphones is provided by
+[Piper](https://github.com/libratbag/piper/)
+and
+[libratbag](https://github.com/libratbag/libratbag).
+
+### Adapters
   - [DisplayPort -> DVI (active)](https://www.aliexpress.com/item/32981791094.html)
   - [USB-c -> HDMI (4K 60 Hz)](https://www.aliexpress.com/item/32980806917.html)
   - [USB-c -> micro-USB](https://www.amazon.de/gp/product/B08GLNRTCD)
-- Cables
+
+### Cables
   - [DisplayPort 1.4](https://www.aliexpress.com/item/4001299891742.html)
   - [HDMI 2.1](https://www.aliexpress.com/item/1005002124697606.html)
     - [Optical](https://www.aliexpress.com/item/4000860157677.html)
@@ -646,6 +681,9 @@ If your device is not compatible with OpenWRT, you should use some other notable
     - [10 Gbps, 1-3 m](https://www.aliexpress.com/item/1005001400212927.html)
     - [20 Gbps, 0.5-3 m, very stiff](https://www.aliexpress.com/item/1005003257832228.html)
     - [40 Gbps, 12 cm](https://www.aliexpress.com/item/1005004279822626.html)
+
+
+## Other
 - Battery chargers
   - Opus BT-C900
   - [SkyRC MC3000](https://www.skyrc.com/MC3000_Charger)
