@@ -446,6 +446,13 @@ However, it should be noted that old devices may not be compatible with these pr
 If you are still using such devices, you should create a separate Wi-Fi SSID for them
 so that you don't have to reduce the security for the rest of your devices.
 
+If you're buying an enterprise device, and especially a used one, ensure that you have access to the firmware updates!
+Various manufacturers only provide firmware downloads for registered enterprise customers.
+The firmware updates may also require an expensive yearly license.
+At least these are known to be problematic:
+- Huawei
+- WatchGuard
+
 [OpenWRT](https://openwrt.org/)
 is perhaps the most feature-rich and well-maintained custom firmware, and it's also open source.
 Therefore, you should prefer
