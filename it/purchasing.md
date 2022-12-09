@@ -398,6 +398,21 @@ If you're only using the computer for light tasks such as web browsing, consider
   - Its presence can be verified with the
     [Key Attestation Demo](https://play.google.com/store/apps/details?id=io.github.vvb2060.keyattestation)
     app.
+- Google Pixel
+  - The 5G, VoLTE and eSIM features work only in
+      [networks that are certified by Google](https://pixel.withgoogle.com/5G/).
+      As of 2022, this does **not** include Finland.
+      This is an artificial limitation created by Google.
+    - Please go to the [Google issue tracker](https://issuetracker.google.com/issues/229334870)
+      and press the "+1: I am impacted" button in the top-right corner to vote for this issue to get fixed.
+    - You can file a complaint to the European Consumer Centres Network according to
+      [these instructions](https://forum.xda-developers.com/t/5g-connectivity-in-non-supported-countries.4438065/post-87110781).
+    - Unofficial fixes
+      - [Pixel 4a and Pixel 5](https://github.com/swangjang/Pixel-Redbull-Carrier-Patch)
+      - [Pixel 6 Pro](https://forum.xda-developers.com/t/activate-5g-on-non-5g-country.4457071/)
+      - [Pixel 7](https://forum.xda-developers.com/t/root-enable-5g-volte-and-call-screening-in-unsupported-countries.4510243/)
+  - Pixel phones are among the most secure Android devices, especially with
+    [GrapheneOS](https://grapheneos.org/) ([supported models](https://grapheneos.org/build#build-targets)).
 
 ## Networking
 ### Network architecture
@@ -432,6 +447,13 @@ However, it should be noted that old devices may not be compatible with these pr
 If you are still using such devices, you should create a separate Wi-Fi SSID for them
 so that you don't have to reduce the security for the rest of your devices.
 
+If you're buying an enterprise device, and especially a used one, ensure that you have access to the firmware updates!
+Various manufacturers only provide firmware downloads for registered enterprise customers.
+The firmware updates may also require an expensive yearly license.
+At least these are known to be problematic:
+- Huawei
+- WatchGuard
+
 [OpenWRT](https://openwrt.org/)
 is perhaps the most feature-rich and well-maintained custom firmware, and it's also open source.
 Therefore, you should prefer
@@ -463,14 +485,14 @@ If your device is not compatible with OpenWRT, you should use some other notable
   - v2 is a completely different device with a lot worse hardware!
   - Wi-Fi 5 (802.11ac)
   - Flashable over serial
-- ~~ASUS RT-AX58U~~
+- ~~[ASUS RT-AX58U](https://www.asus.com/networking-iot-servers/wifi-routers/asus-wifi-routers/rt-ax58u/)~~
   - I don't have one, but have received positive feedback from friends and relatives who have these.
   - Now that there are finally devices compatible with both OpenWRT and Wi-Fi 6, you should get one of those instead.
   - [Hinta.fi](https://hinta.fi/1780666/asus-rt-ax58u)
   - [Geizhals](https://geizhals.eu/asus-rt-ax58u-ax3000-90ig04q0-mo3r10-a2152041.html)
   - [Asuswrt-Merlin](https://www.asuswrt-merlin.net/)
   - Wi-Fi 6 (802.11ax)
-- Banana Pi
+- [Banana Pi](https://www.banana-pi.org/)
   - There are several versions available
   - [BPI-R3](https://wiki.banana-pi.org/Banana_Pi_BPI-R3)
     - [Should soon be supported by OpenWRT](https://forum.openwrt.org/t/bpi-r3-support/135972) (as of 2022)
@@ -482,6 +504,16 @@ If your device is not compatible with OpenWRT, you should use some other notable
     as many UniFi access points are compatible with OpenWRT.
 
 #### "Routers" / firewalls
+- ~~[Huawei AR1200E](https://support.huawei.com/enterprise/en/routers/ar1220e-pid-24020781/)~~
+  - Serial console password can be reset from the BootROM menu (Ctrl+B)
+  - [Default BootROM password is Admin@huawei](https://forum.huawei.com/enterprise/en/corpus-595.html)
+  - [Internal flash can only be formatted from the BootROM menu (Ctrl+B)](https://support.huawei.com/enterprise/en/doc/EDOC1000154645/e1352af8/how-do-i-format-a-storage-medium)
+    - Formatting the internal flash also deletes the firmware from the device.
+      Therefore, copy the existing firmware file from the internal flash to a USB drive before formatting
+  - The firmware is based on [Wind River Linux](https://www.windriver.com/products/linux)
+  - [Firmware download](https://support.huawei.com/enterprise/en/routers/ar1220e-pid-24020781/software)
+    - Unfortunately this requires registering the device,
+      which is only possible for devices that have been purchased by individual client companies, not carriers.
 - NanoPi
   - There are several versions available
   - NanoPi R5S
@@ -603,11 +635,46 @@ If your device is not compatible with OpenWRT, you should use some other notable
 
 
 ## Accessories
-- Adapters
+### Keyboards
+A good keyboard should have
+- ISO or ANSI layout depending on your preference
+- Hot-swappable mechanical switches
+- [QMK](https://qmk.fm/) or [VIA](https://www.caniusevia.com/) firmware support
+- Wired connectivity
+- Detachable cable with USB-c
+- Wireless connectivity is a plus, but be mindful of security.
+  There should be a way to turn the wireless connectivity off.
+
+Some good keyboards
+- [Keychron K8 Pro ISO](https://www.keychron.com/products/keychron-k8-pro-qmk-via-wireless-mechanical-keyboard-iso-layout-collection?variant=40283914731609)
+- [GMMK Pro ISO](https://www.gloriousgaming.com/products/glorious-gmmk-pro-75-barebone-iso-black-slate)
+
+### Mice
+There are significant difference in the accuracy of mice,
+and price is not an indicator of good quality.
+Please see
+[this guide](https://sensor.fyi/info/)
+for details, and
+[this list](https://sensor.fyi/mice/)
+for good mice.
+
+I'm using
+[Logitech G502](https://www.logitechg.com/en-us/products/gaming-mice/g502-hero-gaming-mouse.910-005469.html)
+and
+[Logitech PowerPlay](https://www.logitechg.com/en-us/products/gaming-mouse-pads/powerplay-wireless-charging.943-000109.html),
+and am very happy with those.
+
+Linux support for gaming mice, keyboards and headphones is provided by
+[Piper](https://github.com/libratbag/piper/)
+and
+[libratbag](https://github.com/libratbag/libratbag).
+
+### Adapters
   - [DisplayPort -> DVI (active)](https://www.aliexpress.com/item/32981791094.html)
   - [USB-c -> HDMI (4K 60 Hz)](https://www.aliexpress.com/item/32980806917.html)
   - [USB-c -> micro-USB](https://www.amazon.de/gp/product/B08GLNRTCD)
-- Cables
+
+### Cables
   - [DisplayPort 1.4](https://www.aliexpress.com/item/4001299891742.html)
   - [HDMI 2.1](https://www.aliexpress.com/item/1005002124697606.html)
     - [Optical](https://www.aliexpress.com/item/4000860157677.html)
@@ -620,6 +687,9 @@ If your device is not compatible with OpenWRT, you should use some other notable
     - [10 Gbps, 1-3 m](https://www.aliexpress.com/item/1005001400212927.html)
     - [20 Gbps, 0.5-3 m, very stiff](https://www.aliexpress.com/item/1005003257832228.html)
     - [40 Gbps, 12 cm](https://www.aliexpress.com/item/1005004279822626.html)
+
+
+## Other
 - Battery chargers
   - Opus BT-C900
   - [SkyRC MC3000](https://www.skyrc.com/MC3000_Charger)
