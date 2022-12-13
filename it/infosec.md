@@ -228,3 +228,40 @@ Support has been requested for
 - [Security benefits](https://security.stackexchange.com/a/258414/)
 - [Official FAQ](https://keepassxc.org/docs/#faq-yubikey-howto)
 - [KeePassXC 2.6.0 is not compatible due to a bug](https://github.com/keepassxreboot/keepassxc/issues/4987)
+
+### Setting up PGP
+These instructions are a work in progress.
+
+- These steps must be done on a highly secure computer!
+- [YubiKey instructions](https://support.yubico.com/hc/en-us/articles/360013790259-Using-Your-YubiKey-with-OpenPGP)
+- [A comprehensive guide](https://github.com/drduh/YubiKey-Guide)
+
+Change the user and admin PINs
+``` bash
+gpg --change-pin
+```
+
+Require touch for using the YubiKey
+``` bash
+ykman openpgp keys set-touch aut on
+ykman openpgp keys set-touch enc on
+ykman openpgp keys set-touch sig on
+```
+
+Feed entropy from the YubiKey to the system pseudorandom number generator (PRNG)
+``` pass
+echo "SCD RANDOM 512" | gpg-connect-agent | sudo tee /dev/random | hexdump -C
+```
+
+Generate the master key
+``` bash
+gpg --expert --full-gen-key
+```
+- Do not set an expiry date
+
+TODO
+
+Verify that the sub-keys have been moved to the YubiKey
+``` bash
+gpg -K
+```
