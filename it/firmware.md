@@ -2,8 +2,8 @@
 layout: default
 title: Firmware
 ---
-# Firmware
 
+# Firmware
 Keeping firmware up to date is necessary for proper security.
 Unfortunately many manufacturers don't provide a proper way to automatically notify users of available firmware updates.
 If you don't have a way to receive update notifications automatically,

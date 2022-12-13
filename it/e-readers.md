@@ -2,6 +2,7 @@
 layout: default
 title: E-readers
 ---
+
 # E-readers
 
 ## Amazon Kindle

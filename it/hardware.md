@@ -2,6 +2,7 @@
 layout: default
 title: Hardware
 ---
+
 # Hardware
 
 ## Setting up a new computer

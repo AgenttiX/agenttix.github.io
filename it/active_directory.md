@@ -2,6 +2,7 @@
 layout: default
 title: Active Directory
 ---
+
 # Active Directory
 Active Directory is *the* way to manage an organisation that has multiple computers.
 

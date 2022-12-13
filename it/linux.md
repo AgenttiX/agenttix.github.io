@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Active Directory
+title: Linux
 ---
 
 # Linux
