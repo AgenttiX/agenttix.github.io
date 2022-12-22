@@ -1,3 +1,8 @@
+---
+layout: default
+title: Virtualization
+---
+
 # Virtualization
 With virtualization, you can run multiple virtual computers
 and therefore multiple operating systems on a single physical device.

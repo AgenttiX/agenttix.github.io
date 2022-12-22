@@ -388,6 +388,7 @@ If you're only using the computer for light tasks such as web browsing, consider
 - Android version: at least 12 (as of 2022)
   - Android 10 adds support for AV1 decoding
   - Android 12 adds support for the AVIF image format
+  - [Official list of supported media formats](https://developer.android.com/guide/topics/media/media-formats)
 - Devices with the aforementioned features:
   [Geizhals list](https://geizhals.eu/?cat=umtsover&xf=10063_12.0%7E146_Videos+%402160p%2F60fps%7E157_131072%7E162_LineageOS+Support%7E17890_n28%7E17890_n78%7E18414_NFC%7E2607_6144)
   - The 5G mmWave band n258 has been left out from the list, as it's supported by only a few devices
@@ -615,6 +616,13 @@ If your device is not compatible with OpenWRT, you should use some other notable
 - Read reviews and go to a store to test the headphones yourself to determine the audio quality.
 - The headphones should have good audio quality without the installation of any additional software.
 
+### Bluetooth
+- [Bluetooth audio codecs are a mess](https://www.headphonesty.com/2020/03/bluetooth-audio-codecs-explained/)
+  - [AAC over Bluetooth is unstable on Android](https://www.soundguys.com/the-ultimate-guide-to-bluetooth-headphones-aac-20296/)
+- Standard bluetooth does not support stereo audio output and mic input at the same time.
+  If you enable the microphone, the audio will be mono and of horrible quality.
+  This is a fundamental limitation of the Bluetooth protocol.
+
 ### Headphones / headsets
 - Very few headsets have a good microphone.
   Especially wireless headsets are limited by the wireless bandwidth.
@@ -623,8 +631,6 @@ If your device is not compatible with OpenWRT, you should use some other notable
 
 ### Wireless earplugs
 - Active noise cancellation is a highly useful feature
-- [Bluetooth audio codecs are a mess](https://www.headphonesty.com/2020/03/bluetooth-audio-codecs-explained/)
-  - [AAC over Bluetooth is unstable on Android](https://www.soundguys.com/the-ultimate-guide-to-bluetooth-headphones-aac-20296/) 
 - [Geizhals list](https://geizhals.eu/?cat=sphd&xf=1228_aktive+Ger%E4uschunterdr%FCckung+(ANC)%7E1231_Bluetooth%7E17987_Ladeetui%7E17987_USB-C+Ladeanschluss%7E6714_mit+Mikrofon)
 
 

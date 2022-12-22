@@ -2,6 +2,7 @@
 layout: default
 title: Active Directory
 ---
+
 # Active Directory
 Active Directory is *the* way to manage an organisation that has multiple computers.
 
@@ -9,7 +10,7 @@ Active Directory is *the* way to manage an organisation that has multiple comput
 Samba Active Directory is the free and open source implementation of
 Microsoft Active Directory.
 It is suitable for both small and large environments,
-requires significantly more configuration and tweaking than
+but requires significantly more configuration and tweaking than
 Microsoft Active Directory.
 On the other hand, you don't have to pay exorbitant sums of money for the Windows Server licenses.
 You can both

@@ -75,6 +75,14 @@ These are some of the apps that I have found useful.
 
 
 ## Links for devices I've tested
+Whichever ROM or kernel you use as your daily driver,
+it should have SELinux set to enforcing.
+Setting SELinux to permissive opens up
+a vulnerability that allows any installed app to gain root access.
+([XDA Developers](https://www.xda-developers.com/permissive-selinux-dangers-exploits/),
+[Twitter](https://twitter.com/topjohnwu/status/1359054106019565571),
+[Reddit](https://www.reddit.com/r/Android/comments/lfye5r/comment/gmoi05a/),
+[GitHub](https://github.com/vvb2060/Magica))
 
 ### OnePlus 6 (enchilada)
 - [LineageOS](https://download.lineageos.org/enchilada)

@@ -4,7 +4,6 @@ title: Firmware
 ---
 
 # Firmware
-
 Keeping firmware up to date is necessary for proper security.
 Unfortunately many manufacturers don't provide a proper way to automatically notify users of available firmware updates.
 If you don't have a way to receive update notifications automatically,
@@ -38,11 +37,11 @@ The order and naming of these settings may vary depending on the model of your m
       If e.g. BitLocker is already enabled,
       you will need to use a recovery key after clearing the TPM to restore access to your data.
 - Power save
-  - Disable all unnecessary wake up sources, e.g. network, PCIe and Thunderbolt,
+  - Disable all unnecessary wake up sources, e.g. network, PCIe and Thunderbolt and enable "ErP" and "S5 maximum power savings",
     unless you want to boot up your computer by some other way than the power button.
   - [Active State Power Management (ASPM)](https://en.wikipedia.org/wiki/Active_State_Power_Management): enable/auto
   - Aggressive LPM (ALPM): enable
-    - If you get blue screens, disable this.
+    - If you get blue screens, try disabling this.
 - Thunderbolt
   - Security level: user authorization.
     This prevents DMA attacks from unauthorized devices.
@@ -60,6 +59,20 @@ The order and naming of these settings may vary depending on the model of your m
     remove unused devices from the boot device list.
   - Set network boot to boot from the local disk.
   - These reduce the risk of evil maid attacks.
+- SATA controller mode: AHCI
+  - If you need RAID, software RAID is better than motherboard RAID.
+
+## Updating UEFI/BIOS
+In general, you should download the update from the manufacturer's website
+and flash it either with the provided tool or directly from the UEFI/BIOS.
+Flashing directly from the UEFI/BIOS or from a bootable USB is safer than flashing from the OS.
+
+### HP enterprise workstations
+- Download the update .exe from HP.
+- Extract the .exe using 7-Zip.
+- Format a USB flash drive with MBR + FAT32.
+- Copy the .bin file to the root of the drive.
+- Go to UEFI/BIOS and update from USB.
 
 
 ## Intel AMT & AMD PSP
