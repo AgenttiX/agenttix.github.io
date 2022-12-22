@@ -48,3 +48,6 @@ title: Hardware
 - Set up automated backups.
 - Use the computer for a few days or weeks to see that it's stable.
 - Overclock (if you want to).
+
+## Personal IT hardware
+[Geekbench results](https://browser.geekbench.com/user/AgenttiX)
