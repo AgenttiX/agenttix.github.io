@@ -6,7 +6,7 @@ title: Music
 
 ## [Two Steps From Hell](https://www.twostepsfromhell.com/)
 - [Heart of Courage](https://www.youtube.com/watch?v=K2iC1aCPbKA)
-- [Phantom](hhttps://www.youtube.com/watch?v=79ILqbLye0s)
+- [Phantom](https://www.youtube.com/watch?v=79ILqbLye0s)
 - [Strength of a Thousand Men](https://www.youtube.com/watch?v=jIxas0a-KgM)
 - [Victory](https://www.youtube.com/watch?v=hKRUPYrAQoE)
 
