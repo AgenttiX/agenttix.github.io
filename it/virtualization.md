@@ -13,6 +13,7 @@ and therefore multiple operating systems on a single physical device.
   - High-performance network and storage, but this requires installation of custom drivers
     during Windows installation for Windows clients
   - With virt-manager the learning curve is not too high
+    - However, using ZFS is highly recommended for a server, and understanding it will take time.
   - TPM support
 - Hyper-V
   - The latest Hyper-V Server is no longer available for free. 2019 is the last free version.
@@ -20,8 +21,243 @@ and therefore multiple operating systems on a single physical device.
   - GPU passthrough is supported only for enterprise GPUs
   - TPM and TRIM support
   - Good integration with the Windows ecosystem (Active Directory etc.)
+  - No support for ZFS and therefore no protection from data corruption
 - VirtualBox
   - Cross-platform
   - Good for small testing environments
   - No PCIe passthrough (previous versions had a buggy implementation)
   - As of 2022, TPM and TRIM support are not yet implemented
+
+
+## Proxmox
+These instructions are a work in progress.
+
+### Installation
+The
+[official ISO installer](https://pve.proxmox.com/wiki/Installation)
+does not support encryption of the root partition.
+If you want to see official encryption support, please vote on
+[the issue](https://bugzilla.proxmox.com/show_bug.cgi?id=2714).
+
+Proxmox does not support Secure Boot either
+([Forum 1](https://forum.proxmox.com/threads/does-pve-host-support-secure-boot.99728/),
+[Forum 2](https://forum.proxmox.com/threads/how-to-enable-secure-boot-on-pve-6.55831/),
+[Reddit](https://www.reddit.com/r/homelab/comments/ddbgd9/does_proxmox_support_secure_boot/)).
+This is because Proxmox uses a
+[custom kernel](https://pve.proxmox.com/wiki/Proxmox_VE_Kernel),
+which would have to be signed with the Microsoft keys,
+as the official Debian (and Ubuntu) kernels are.
+
+To use either of these features,
+you need to first install Debian and then Proxmox on top of it.
+In this case, install Debian with Secure Boot enabled,
+as you can easily disable it later in the UEFI/BIOS settings,
+but enabling Secure Boot for an installation that has been installed without it
+can be more difficult.
+Note that enabling Secure Boot also enables kernel lockdown,
+which disables access to some features.
+
+After a fresh installation you may want to install a few packages
+``` bash
+apt-get install console-setup git screen sudo
+```
+
+#### Mortar
+[Mortar](https://github.com/noahbliss/mortar)
+is a utility that combines the use of Secure Boot and TPM for full validation of both the kernel and the initramfs,
+plus automatic decryption of the encrypted root volume.
+
+First install Debian using the [official netinst ISO](https://www.debian.org/download).
+To install Mortar, follow both the
+[generic](https://github.com/noahbliss/mortar)
+and
+[Proxmox-specific](https://github.com/noahbliss/mortar/blob/master/docs/proxmox-install.md)
+instructions.
+Each of them contains info that is missing from the other.
+Remember these
+- Reset the TPM and enable both SHA1 and SHA256 banks before starting the operation,
+  so you don't forget it and the TPM measurements stabilize.
+- Remove "quiet" from `/etc/mortar/cmdline.conf`
+- When running `mortar-compilesigninstall`, add the arguments only for the first run!
+- At the first reboot after `mortar-compilesigninstall`,
+  set Secure Boot to audit mode (or disable it) to allow Mortar to boot.
+- Do not disable the boot partition until you have installed all your hardware and Proxmox!
+
+Once you have installed Mortar, you can install
+[Proxmox on top of Debian](https://pve.proxmox.com/wiki/Install_Proxmox_VE_on_Debian_11_Bullseye).
+However, please ensure that you're using instructions that correspond to your Debian version.
+
+
+#### SSH unlock
+An encrypted Linux installation can be decrypted remotely by installing an SSH server on the initramfs.
+However, if your server has IPMI, using it is a simpler choice.
+- [SSH unlock](https://herold.space/proxmox-zfs-full-disk-encryption-with-ssh-remote-unlock/)
+- [Encrypted installation](https://medium.com/@pbengert/proxmox-failover-cluster-with-encrypted-root-and-zfs-encrypted-storage-with-auto-unlock-based-on-34e863514cbc)
+- [Guide](https://xiu.io/posts/18-proxmox-zfs-fde/)
+- [ZFS boot unlock](https://github.com/chungy/zfs-boottime-encryption)
+
+
+### ZFS
+ZFS is very powerful but has a steep learning curve.
+Optimal values for its many settings are highly dependent on your workload,
+and therefore you should google a lot before creating your ZFS pool.
+The
+[Arch Wiki article on ZFS](https://wiki.archlinux.org/title/ZFS) and
+[OpenZFS documentation](https://openzfs.github.io/openzfs-docs)
+are good sources to start with.
+
+ZFS benefits a lot from having high amounts of RAM.
+The computer should have at least 4 GB of RAM in total to use ZFS.
+To use ZFS deduplication you need 1-5 GB of RAM per 1 TB of storage.
+Enabling it is a permanent change that cannot be easily reverted.
+For most use cases you should use compression instead.
+
+ZFS compression is a highly useful feature.
+Even though it's an extra step in the data pipeline,
+modern CPUs are much faster than HDDs,
+and therefore according to
+[performance tests](https://www.reddit.com/r/zfs/comments/svnycx/a_simple_real_world_zfs_compression_speed_an/)
+it can improve throughput.
+Unless you have specific needs, you should use LZ4, which is the default.
+If you have VM images, text files or other well-compressible data that doesn't need high performance, you can use ZSTD.
+
+[Ars Technica guide](https://arstechnica.com/information-technology/2020/05/zfs-101-understanding-zfs-storage-and-performance/)
+
+[ZFS supports encryption](https://wiki.archlinux.org/title/ZFS#Native_encryption).
+However,
+[multiple keys are not supported yet](https://github.com/openzfs/zfs/issues/6824).
+If you encrypt the entire pool,
+[you cannot disable encryption for individual datasets](https://www.reddit.com/r/zfs/comments/bnvdco/zol_080_encryption_dont_encrypt_the_pool_root/).
+[Encrypted ZFS can be unlocked with a TPM](https://www.reddit.com/r/zfs/comments/ppo9rl/zfs_encryption_and_tpm/).
+However, I recommend that you encrypt your root disk with other means and store the keys of your ZFS pools there.
+
+Creating the encryption key
+``` bash
+mkdir /root/zfs
+chmod 700 /root/zfs
+dd if=/dev/random bs=32 count=1 of=/root/zfs/YOUR_KEY_FILE
+chmod 600 /root/zfs/key
+```
+
+Creating the pool
+``` bash
+zpool create \
+  -o ashift=12 \ # 4 KB sector size
+  -o autotrim=on \
+  -O encryption=on \
+  # -O keyformat=passphrase \ # For external drives only!
+  # -O keylocation=prompt \ # For external drives only!
+  -O keyformat=raw
+  -O keylocation=file:///root/zfs/YOUR_KEY_FILE
+  -O xattr=sa \ # Good for performance.
+  -O dnodesize=auto \ # Set sufficient space for system attributes. Not compatible with having GRUB2 boot directly from this dataset.
+  -O compression=on \ # Compression helps performance. lz4 is the default algorithm.
+  -O relatime=on \ # Update access time only when it hasn't been updated for 24 hours.
+  -m /mnt/NAME_OF_POOL \
+  <NAME_OF_POOL> \
+  [raidz(2|3)|mirror] \
+  <NAMES_OF_DISKS>
+```
+"-o" = pool property, "-O" = filesystem property.
+Getting ashift right is absolutely essential,
+as it cannot be changed later except by completely destroying and recreating the entire pool.
+The vast majority of modern HDDs have a sector size of 4 KB, which requires ashift=12 (or greater).
+Some SSDs can have a sector size of 8 KB, for which ashift=13 would be optimal.
+However, SSD firmware is designed to handle 4 KB writes, and therefore ashift=12 will probably give
+practically equal performance.
+Therefore, for simplicity I'm using ashift=12 everywhere.
+However, some enterprise SSDs are an exception and will require ashift=13.
+
+Creating the datasets
+``` bash
+# For files
+zfs create <YOUR_POOL>/<YOUR_DATASET>
+# For photos, movies and large backups
+zfs create <YOUR_POOL>/<YOUR_DATASET> -o recordsize=1M
+```
+Optimal record size depends on the purpose of the dataset
+It can be changed later, but it applies for new data only.
+For databases, you should use a smaller record size, e.g. 8KB for PostgreSQL.
+- [Tuning 1](https://jrs-s.net/2018/08/17/zfs-tuning-cheat-sheet/)
+- [Tuning 2](https://klarasystems.com/articles/tuning-recordsize-in-openzfs/)
+
+
+### Cache
+In home use you probably don't need SLOG or L2ARC.
+Get at least 128 GB RAM first.
+
+L2ARC can be on a non-mirrored drive.
+In general higher size is better, but you will need RAM for indexing the L2ARC.
+``` bash
+lvcreate -L500G -n zfs-cache target-vg
+```
+
+ZLOG should be on a mirrored drive that does not have a large integrated cache.
+The size of a ZLOG can be small.
+Intel Optane SSDs (16-32 GB) are good choices.
+``` bash
+lvcreate -L100G -n zfs-log target-vg
+```
+
+
+### Using ZFS for Proxmox VMs
+Storing the boot disks of virtual machines directly on ZFS is based on ZVOLs, not ZFS datasets.
+ZVOLs have a fixed volblocksize, whereas datasets have a variable record size,
+where the setting (default 128 KB, max. 1 MB) is the maximum size.
+For virtual machines you should set the volblocksize based on the smallest block size your workload is going to have,
+as attempting to write a block smaller than volblocksize hurts performance.
+
+Go to Proxmox -> Datacenter -> Storage -> Add.
+Select your ZFS pool. You can use its name as the ID.
+Enable
+[thin provision](https://www.reddit.com/r/Proxmox/comments/n0cwb0/a_guide_to_thin_provisioning_with_proxmox/)
+so that TRIM in the VMs will free up space on the host.
+In the Proxmox GUI the volblocksize is simply called "Block Size",
+and it's set globally for all ZVOLs created through Proxmox.
+If you create ZVOLs manually, you can specify independent volblocksizes for them.
+My VMs are going to be running PostgreSQL, and therefore the Proxmox default of 8 KB is good for my purposes.
+
+
+### ACLs
+Full compatibility with Windows clients requires NFS4 ACLs,
+[which are not yet supported by ZFS on Linux](https://github.com/openzfs/zfs/issues/4966).
+The other options are to
+1) Use POSIX ACLs with ZFS, which causes translation issues between the filesystem and Windows clients.
+2) Use acl_xattr, which stores the ACLs as xattr attributes.
+  The ACL access control is therefore not enforced by the filesystem, and not used for local access.
+
+If you need ACLs, you can enable them after creating the pool or dataset with:
+``` bash
+zfs set acltype=posixacl <nameofzpool>/<nameofdataset>
+```
+
+### Backups and snapshots
+[zrepl](https://zrepl.github.io/)
+
+
+### Samba
+ZFS has integrated SMB sharing, which uses Samba in the background, but it's rather rudimentary.
+For better control over Samba settings you should run Samba separately,
+and preferably in an LXC container for isolation.
+
+``` bash
+pct set 100 -mp0 /host_dir,mp=/container_dir
+```
+
+```
+vfs objects = acl_xattr
+inherit acls = yes
+map acl inherit = yes
+# Only required for Samba < 4.9.0
+# store dos attributes = yes
+```
+
+
+#### Shadow Copy with ZFS snapshots
+This is possible, but I haven't tried it myself, since I'm using primarily Linux clients.
+- [Instructions](https://forum.openmediavault.org/index.php?thread/43915-install-zfs-snapshot-and-enable-samba-shadow-copy-previous-versions-for-windows/)
+- [Instructions 2](https://medium.com/@Dylan.Wang/how-to-use-zfs-zfs-auto-snapshot-package-samba-to-support-windows-shadow-copy-on-ubuntu-18-04-15001c9580fc)
+
+
+### pfSense
+[Official instructions](https://docs.netgate.com/pfsense/en/latest/recipes/virtualize-proxmox-ve.html)
