@@ -248,7 +248,19 @@ If you're only using the computer for light tasks such as web browsing, consider
     - [StarTech PEXUSB3S44](https://www.startech.com/en-us/cards-adapters/pexusb3s44v):
       [Amazon.de](https://www.amazon.de/-/en/StarTech-PEXUSB3S44-Channel-PCIE-Card/dp/B00HJZEA2S)
     - If you come across a PCIe USB card with SR-IOV, please let me know!
-
+- PCIe SATA controllers
+  - If you have PCIe slot that can hold an x8 card, get a used enterprise card on eBay, e.g. PERC H200 or PERC H310.
+  - Avoid cards that have port expanders in them! (e.g. JMB5XX.)
+    If one of the drives connected to a port multiplier fails,
+    it may interrupt connectivity for the rest of the drives,
+    causing irrecoverable damage to a RAID array.
+    There are also various driver issues.
+    ([Forum post](https://www.truenas.com/community/resources/multiply-your-problems-with-sata-port-multipliers-and-cheap-sata-controllers.177/))
+  - If you have only a PCIe x1 or x4 slot, an ASM1166-based 6-port card is an OK choice.
+    The cards with more ports are based on port expanders and should be avoided.
+    However, please not that the cards with PCIe x4 ports are actually only x2.
+  - [Performance comparison of various controllers](https://forums.unraid.net/topic/41340-satasas-controllers-tested-real-world-max-throughput-during-parity-check/)
+  - [List of controllers compatible with Unraid](https://forums.unraid.net/topic/102010-recommended-controllers-for-unraid/)
 
 ## Laptops
 - The ThinkPad T-series is built to last. If you don't need high gaming performance, get one if you can afford it.
