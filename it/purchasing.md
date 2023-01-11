@@ -495,7 +495,7 @@ If your device is not compatible with OpenWRT, you should use some other notable
 - [Banana Pi](https://www.banana-pi.org/)
   - There are several versions available
   - [BPI-R3](https://wiki.banana-pi.org/Banana_Pi_BPI-R3)
-    - [Should soon be supported by OpenWRT](https://forum.openwrt.org/t/bpi-r3-support/135972) (as of 2022)
+    - [OpenWRT](https://openwrt.org/toh/sinovoip/bananapi_bpi-r3)
 - [Ubiquiti UniFi](https://ui.com/wi-fi)
   - If you need multiple access points for enterprise use with centralized management,
     UniFi access points are a cost-effective option with their default firmware.
