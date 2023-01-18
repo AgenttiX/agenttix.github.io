@@ -370,9 +370,11 @@ If you're only using the computer for light tasks such as web browsing, consider
   - [Official list](https://download.lineageos.org/)
   - [Geizhals list](https://geizhals.eu/?cat=umtsover&xf=162_LineageOS+Support) (new models may appear with a delay)
 - RAM: at least 6 GB
+  - Having less RAM will result in sluggishness.
 - Storage: at least 128 GB
+  - Apps take a horrible amount of space these days.
 - Camera
-  - 4K 60 Hz video recording
+  - 4K 60 Hz video recording. 60 Hz video is a lot smoother than the 30 Hz video that most phones record.
   - Camera2 API support for RAW photography and manual control of various features such as focus, white balance, ISO and shutter speed.
     You can test this with the
     [Manual Camera Compatibility test app](https://play.google.com/store/apps/details?id=pl.vipek.camera2_compatibility_test)
@@ -385,15 +387,18 @@ If you're only using the computer for light tasks such as web browsing, consider
 - NFC
   - The tags are cheap on AliExpress and can be used for various purposes
   - Makes the use of a physical security key such as a YubiKey a lot easier
-- Android version: at least 12 (as of 2022)
+- Android version: at least 12 (as of 2022), preferably the latest available
   - Android 10 adds support for AV1 decoding
   - Android 12 adds support for the AVIF image format
   - [Official list of supported media formats](https://developer.android.com/guide/topics/media/media-formats)
-- Devices with the aforementioned features:
-  [Geizhals list](https://geizhals.eu/?cat=umtsover&xf=10063_12.0%7E146_Videos+%402160p%2F60fps%7E157_131072%7E162_LineageOS+Support%7E17890_n28%7E17890_n78%7E18414_NFC%7E2607_6144)
+- Devices with the aforementioned features
+  - [Geizhals list with Android 12 and official LineageOS](https://geizhals.eu/?cat=umtsover&xf=10063_12.0%7E146_Videos+%402160p%2F60fps%7E157_131072%7E162_LineageOS+Support%7E17890_n28%7E17890_n78%7E18414_NFC%7E2607_6144)
+  - [Geizhals list with Android 13](https://geizhals.eu/?cat=umtsover&xf=10063_13.0%7E146_Videos+%402160p%2F60fps%7E157_131072%7E17890_n28%7E17890_n78%7E18414_NFC%7E2607_6144)
   - The 5G mmWave band n258 has been left out from the list, as it's supported by only a few devices
 - Security:
   [StrongBox secure element (SE)](https://developer.android.com/training/articles/keystore#HardwareSecurityModule)
+  - Enables secure hardware-backed storage of credentials.
+    (Most other credential stores on Android are based on software or firmware and can be broken.)
   - Only available on some devices with Android 9 and later
   - Its presence can be verified with the
     [Key Attestation Demo](https://play.google.com/store/apps/details?id=io.github.vvb2060.keyattestation)
