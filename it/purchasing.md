@@ -248,7 +248,19 @@ If you're only using the computer for light tasks such as web browsing, consider
     - [StarTech PEXUSB3S44](https://www.startech.com/en-us/cards-adapters/pexusb3s44v):
       [Amazon.de](https://www.amazon.de/-/en/StarTech-PEXUSB3S44-Channel-PCIE-Card/dp/B00HJZEA2S)
     - If you come across a PCIe USB card with SR-IOV, please let me know!
-
+- PCIe SATA controllers
+  - If you have PCIe slot that can hold an x8 card, get a used enterprise card on eBay, e.g. PERC H200 or PERC H310.
+  - Avoid cards that have port expanders in them! (e.g. JMB5XX.)
+    If one of the drives connected to a port multiplier fails,
+    it may interrupt connectivity for the rest of the drives,
+    causing irrecoverable damage to a RAID array.
+    There are also various driver issues.
+    ([Forum post](https://www.truenas.com/community/resources/multiply-your-problems-with-sata-port-multipliers-and-cheap-sata-controllers.177/))
+  - If you have only a PCIe x1 or x4 slot, an ASM1166-based 6-port card is an OK choice.
+    The cards with more ports are based on port expanders and should be avoided.
+    However, please not that the cards with PCIe x4 ports are actually only x2.
+  - [Performance comparison of various controllers](https://forums.unraid.net/topic/41340-satasas-controllers-tested-real-world-max-throughput-during-parity-check/)
+  - [List of controllers compatible with Unraid](https://forums.unraid.net/topic/102010-recommended-controllers-for-unraid/)
 
 ## Laptops
 - The ThinkPad T-series is built to last. If you don't need high gaming performance, get one if you can afford it.
@@ -511,7 +523,7 @@ If your device is not compatible with OpenWRT, you should use some other notable
 - [Banana Pi](https://www.banana-pi.org/)
   - There are several versions available
   - [BPI-R3](https://wiki.banana-pi.org/Banana_Pi_BPI-R3)
-    - [Should soon be supported by OpenWRT](https://forum.openwrt.org/t/bpi-r3-support/135972) (as of 2022)
+    - [OpenWRT](https://openwrt.org/toh/sinovoip/bananapi_bpi-r3)
 - [Ubiquiti UniFi](https://ui.com/wi-fi)
   - If you need multiple access points for enterprise use with centralized management,
     UniFi access points are a cost-effective option with their default firmware.
@@ -634,10 +646,33 @@ If your device is not compatible with OpenWRT, you should use some other notable
 
 ### Bluetooth
 - [Bluetooth audio codecs are a mess](https://www.headphonesty.com/2020/03/bluetooth-audio-codecs-explained/)
-  - [AAC over Bluetooth is unstable on Android](https://www.soundguys.com/the-ultimate-guide-to-bluetooth-headphones-aac-20296/)
-- Standard bluetooth does not support stereo audio output and mic input at the same time.
+  - [Comparison of various codecs](https://habr.com/en/post/456182/)
+  - [AAC](https://en.wikipedia.org/wiki/Advanced_Audio_Coding)
+    - Proprietary
+    - [AAC over Bluetooth is unstable on Android](https://www.soundguys.com/the-ultimate-guide-to-bluetooth-headphones-aac-20296/)
+  - [aptX](https://en.wikipedia.org/wiki/AptX)
+    - Proprietary
+    - There are several variations with varying quality. In general, they are not much better than SBC.
+  - [CVSD](https://en.wikipedia.org/wiki/Continuously_variable_slope_delta_modulation)
+    - With microphone support. Horrible quality. Use mSBC instead.
+  - [LC3](https://en.wikipedia.org/wiki/LC3_(codec))
+    - Successor of SBC for Bluetooth 5.2 and Android 13 ->. Use this if you can.
+  - [LDAC](https://en.wikipedia.org/wiki/LDAC_(codec))
+    - The encoder is open source, but the decoder is proprietary and available only for Sony devices.
+  - [LHDC](https://en.wikipedia.org/wiki/LHDC_(codec))
+    - Supported by Android 10 ->
+  - [LLAC](https://en.wikipedia.org/wiki/LHDC_(codec)#LLAC)
+    - Low latency verison of LHDC, aka. LHDC LL
+  - [mSBC](https://www.rfwireless-world.com/Terminology/SBC-vs-mSBC-codec.html)
+    - SBC with microphone support. Horrible quality, but much better than CVSD.
+  - [SBC](https://en.wikipedia.org/wiki/SBC_(codec))
+    - Basic codec. Support is mandatory for all stereo Bluetooth audio devices.
+  - [SBC-XQ](https://en.wikipedia.org/wiki/SBC_(codec)#Higher_quality_variants)
+    - SBC with a higher bitrate, resulting in quality comparable to aptX HD.
+      Supported by LineageOS 15 -> and PipeWire (Ubuntu 22.10 ->)
+- Standard Bluetooth does not support stereo audio output and mic input at the same time.
   If you enable the microphone, the audio will be mono and of horrible quality.
-  This is a fundamental limitation of the Bluetooth protocol.
+  [This is a fundamental limitation of the Bluetooth protocol.](https://superuser.com/a/1123841/)
 
 ### Headphones / headsets
 - Very few headsets have a good microphone.

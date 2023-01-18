@@ -48,6 +48,13 @@ Open FTBA and go to Library -> your modpack -> Settings -> Java version
 and select the Java 8 you just installed.
 You should increase the instance memory to at least 4 GB, preferably more.
 
+### Using a discrete Nvidia GPU on a Linux laptop
+Run the FTB App with these environment variables:
+``` bash
+__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia ~/FTBA/FTBApp
+```
+You can use the command `nvidia-smi` to check that Minecraft is indeed using the discrete GPU.
+
 ### OptiFine
 [OptiFine](https://www.optifine.net/)
 is highly recommended for improving the graphics.
