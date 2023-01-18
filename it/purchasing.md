@@ -356,11 +356,22 @@ If you're only using the computer for light tasks such as web browsing, consider
 - Properly displaying HDR content requires a high maximum brightness such as 1000 nits, aka. HDR1000.
   Especially HDR400 is not worth it, unless you want to test the HDR compatibility of various sofware.
 
-### Misc
-- VESA mounting support is a must-have, as monitor arms save a lot of desk space, and you may want to install them later.
-- For smart monitors and TVs, prefer Android TV over manufacturer-specific proprietary implementations
+### Smart features
+- Prefer Android TV over manufacturer-specific proprietary implementations
   - For compatibility and good image quality with future streaming services, ensure that the TV has the AV1 hardware decoder and Android TV 10 or later.
   - For compatibility with the photos of future cameras, ensure that the TV has Android TV 12 or later, as it includes support for the AVIF image format.
+- To have easy access to your media, a smart TV should be compatible with Plex or Jellyfin, preferably both.
+  - [Plex compatibility list](https://support.plex.tv/articles/204080173-which-smart-tv-models-are-supported/)
+    - Note that unlocking the full features of Plex costs money, whereas Jellyfin is free.
+  - [Jellyfin compatibility list](https://jellyfin.org/downloads/clients)
+    - There is also some support for Samsung Tizen TVs, but it's rather complicated to set up (as of 2023).
+      [GitHub](https://github.com/jellyfin/jellyfin-tizen),
+      [Reddit](https://www.reddit.com/r/jellyfin/comments/s0438d/build_and_deploy_jellyfin_app_to_samsung_tizen/)
+  - Android TV is compatible with both Plex and Jellyfin,
+    and this is yet another reason to choose Android TV over manufacturer-specific proprietary implementations.
+
+### Misc
+- VESA mounting support is a must-have, as monitor arms save a lot of desk space, and you may want to install them later.
 - For TVs, bigger is better, but you should think on how to mount them. Many TV stands have quite a small maximum size.
 
 
