@@ -442,6 +442,18 @@ If you're only using the computer for light tasks such as web browsing, consider
   - Pixel phones are among the most secure Android devices, especially with
     [GrapheneOS](https://grapheneos.org/) ([supported models](https://grapheneos.org/build#build-targets)).
 
+
+## Media boxes
+- [Many Android media boxes come with malware preinstalled.](https://www.youtube.com/watch?v=1vpepaQ-VQQ)
+  Only use boxes that are either from trustworthy vendors or on which you can install custom firmware.
+- Good devices
+  - [Google Chromecast](https://en.wikipedia.org/wiki/Chromecast)
+  - [Nvidia Shield TV](https://en.wikipedia.org/wiki/Nvidia_Shield_TV)
+  - Raspberry Pi 4
+    - [Android TV](https://konstakang.com/devices/rpi4/)
+    - [LibreELEC](https://en.wikipedia.org/wiki/LibreELEC)
+
+
 ## Networking
 ### Network architecture
 - Don't spend extra money for a motherboard with integrated 10 Gbps Ethernet, unless you're running out of PCIe lanes.
