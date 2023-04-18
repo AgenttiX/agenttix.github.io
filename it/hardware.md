@@ -39,6 +39,7 @@ title: Hardware
   - Run `gpupdate /force`.
   - Reboot.
 - Enable BitLocker.
+  - Any BIOS updates should be installed before this, as some computers don't allow BIOS updates when BitLocker is enabled.
 - Install Windows Updates.
 - Run stress testing such as
   [Prime95](https://www.mersenne.org/download/) and

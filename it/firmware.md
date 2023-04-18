@@ -83,6 +83,18 @@ Flashing directly from the UEFI/BIOS or from a bootable USB is safer than flashi
 
 [me_cleaner](https://github.com/corna/me_cleaner)
 
+## Intel AMT / ME settings
+- Change the Management Engine (ME) password even if you don't plan to use the ME at all.
+  [Not changing the default password is a security risk.](https://threatpost.com/intel-amt-loophole-allows-hackers-to-gain-control-of-some-pcs-in-under-a-minute/129408/)
+- General settings
+  - Power control
+    - ME on in Host Sleep States: enable ME wake in S3, S4-5 if you want to be able to remotely start the computer even when it's turned off.
+- Intel Standard Manageability Configuration
+  - [Password policy](https://dl.dell.com/manuals/all-products/esuprt_laptop/esuprt_precision_mobile/precision-m4500_administrator%20guide_en-us.pdf):
+    Default Password Only = Allow changing the ME password over the web interface only if the default password has not been changed.
+- Network setup
+  - Network Name Settings: Set your hostname and FQDN
+
 ## Laptop CPU throttling
 On many laptops, and especially ThinkPad T480,
 the motherboard firmware artificially throttles the CPU unless the firmware can communicate to a driver in the OS.
