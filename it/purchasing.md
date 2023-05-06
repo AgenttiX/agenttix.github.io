@@ -732,6 +732,11 @@ Linux support for gaming mice, keyboards and headphones is provided by
 and
 [libratbag](https://github.com/libratbag/libratbag).
 
+### Bluetooth adapters
+The documentation of the
+[Home Assistant Bluetooth integration](https://www.home-assistant.io/integrations/bluetooth)
+has a list of known good adapters.
+
 ### Adapters
   - [DisplayPort -> DVI (active)](https://www.aliexpress.com/item/32981791094.html)
   - [USB-c -> HDMI (4K 60 Hz)](https://www.aliexpress.com/item/32980806917.html)
