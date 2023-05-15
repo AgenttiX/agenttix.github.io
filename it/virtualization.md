@@ -79,8 +79,13 @@ Remember these
   so you don't forget it and the TPM measurements stabilize.
 - Remove "quiet" from `/etc/mortar/cmdline.conf`
 - When running `mortar-compilesigninstall`, add the arguments only for the first run!
+- After you have run `mortar-compilesigninstall`, the computer should boot directly with Mortar and without GRUB.
+  You should not see the GRUB screen if the computer is booting with Mortar.
 - At the first reboot after `mortar-compilesigninstall`,
   set Secure Boot to audit mode (or disable it) to allow Mortar to boot.
+  - If you can't get Mortar to boot with the Secure Boot custom keys,
+    it may be that your motherboard [does not support custom keys with Secure Boot](https://superuser.com/q/1181943).
+    This problem is present at least in some HP EliteDesk systems.
 - Do not disable the boot partition until you have installed all your hardware and Proxmox!
 
 Once you have installed Mortar, you can install
