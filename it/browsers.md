@@ -42,6 +42,7 @@ is the only one that properly respects user privacy and open web standards.
 - [Netflix 1080p](https://addons.mozilla.org/en-US/firefox/addon/netflix-1080p-firefox/)
 - [Netflix Tweaked](https://github.com/andrewbrey/netflix-tweaked)
 - [Plasma Integration](https://addons.mozilla.org/en-US/firefox/addon/plasma-integration/)
+- [SponsorBlock](https://sponsor.ajay.app/)
 - [SteamDB](https://steamdb.info/extension/)
 - [Tab Reloader](https://addons.mozilla.org/en-US/firefox/addon/tab-reloader/)
 - User-Agent Switcher
