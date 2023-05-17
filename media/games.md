@@ -55,7 +55,18 @@ __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia ~/FTBA/FTBApp
 ```
 You can use the command `nvidia-smi` to check that Minecraft is indeed using the discrete GPU.
 
-### OptiFine
+### Mods
+- [Applied Energistics 2](https://appliedenergistics.github.io/)
+- [Mekanism](https://wiki.aidancbrady.com/)
+
+#### [Rubidium](https://www.curseforge.com/minecraft/mc-mods/rubidium)
+Rubidium can double your FPS, and it works with FTB modpacks.
+Just copy it to the mods folder of your client.
+
+#### [Oculus](https://www.curseforge.com/minecraft/mc-mods/oculus)
+Shader mod.
+
+#### OptiFine
 [OptiFine](https://www.optifine.net/)
 is highly recommended for improving the graphics.
 Unfortunately it's not bundled in modpacks by default due to its restrictive licensing
