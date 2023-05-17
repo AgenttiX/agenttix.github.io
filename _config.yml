@@ -7,6 +7,7 @@ url: "https://agx.fi"
 # markdown: kramdown
 twitter_username: AgenttiX
 github_username: AgenttiX
+google_analytics: G-QNHX8YQ2VP
 
 # https://www.embeddedlog.com/jekyll-theme-rtd/configuration/configyml.html
 # theme: jekyll-theme-slate
