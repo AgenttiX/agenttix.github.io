@@ -3,11 +3,13 @@ layout: search
 ---
 <!-- https://learn.cloudcannon.com/jekyll/jekyll-search-using-lunr-js/ -->
 
+<!--
 <form action="/search.html" method="get">
   <label for="search-box">Search</label>
-  <input type="text" id="search-box" name="query">
+  <input type="text" id="search-query" name="q">
   <input type="submit" value="search">
 </form>
+-->
 
 <ul id="search-results"></ul>
 
