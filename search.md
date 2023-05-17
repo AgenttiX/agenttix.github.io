@@ -3,6 +3,7 @@ layout: default
 title: Search
 nav_exclude: true
 ---
+
 <!-- https://learn.cloudcannon.com/jekyll/jekyll-search-using-lunr-js/ -->
 
 <!--
@@ -13,6 +14,7 @@ nav_exclude: true
 </form>
 -->
 
+# Search results
 <ul id="search-results"></ul>
 
 <script>
