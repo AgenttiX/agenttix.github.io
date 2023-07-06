@@ -21,6 +21,9 @@ These are some of the apps that I have found useful.
 - [Call Recorder](https://f-droid.org/en/packages/com.github.axet.callrecorder/)
 - [CellMapper](https://play.google.com/store/apps/details?id=cellmapper.net.cellmapper)
 - [CREDO Detector](https://play.google.com/store/apps/details?id=science.credo.mobiledetector)
+- [Digital Wellbeing](https://play.google.com/store/apps/details?id=com.google.android.apps.wellbeing)
+  - Preinstalled on some devices, and included in some Google Apps packages.
+    Possibilities of installing it afterwards are very limited.
 - [DriveDroid](https://www.drivedroid.io/)
 - [DRM Info](https://play.google.com/store/apps/details?id=com.androidfung.drminfo)
 - [F-Droid](https://f-droid.org/)
@@ -44,6 +47,9 @@ These are some of the apps that I have found useful.
 - [OpenVPN for Android](https://play.google.com/store/apps/details?id=de.blinkt.openvpn)
 - [Orbot](https://play.google.com/store/apps/details?id=org.torproject.android)
 - [PCMark](https://play.google.com/store/apps/details?id=com.futuremark.pcmark.android.benchmark)
+- [Personal Safety](https://play.google.com/store/apps/details?id=com.google.android.apps.safetyhub)
+  - Preinstalled on some devices. Possibilities of installing it afterwards are very limited.
+- [Prey](https://preyproject.com/)
 - [ProCam X](https://play.google.com/store/apps/details?id=com.intermedia.hd.camera.pro)
 - [SafetyNet Test](https://play.google.com/store/apps/details?id=org.freeandroidtools.safetynettest)
 - [SD Maid](https://play.google.com/store/apps/details?id=eu.thedarken.sdm)
@@ -70,8 +76,12 @@ These are some of the apps that I have found useful.
 - [WireGuard](https://play.google.com/store/apps/details?id=com.wireguard.android)
 - [Xournal++](https://play.google.com/store/apps/details?id=online.xournal.mobile)
 - [X-Plore](https://play.google.com/store/apps/details?id=com.lonelycatgames.Xplore)
-- [YouTube Vanced](https://vancedapp.com/)
-  - Benefits from root
+- [YouTube ReVanved](https://github.com/revanced)
+  - To install, download [ReVanced Manager](https://github.com/revanced/revanced-manager)
+  - If you don't have root, you will also need the
+    [official YouTube apk](https://www.apkmirror.com/apk/google-inc/youtube/)
+    and
+    [Vanced MicroG](https://github.com/TeamVanced/VancedMicroG).
 
 
 ## Links for devices I've tested
@@ -88,6 +98,9 @@ a vulnerability that allows any installed app to gain root access.
 - [LineageOS](https://download.lineageos.org/enchilada)
 - [TWRP](https://twrp.me/oneplus/oneplus6.html)
 - [Stock ROM](https://www.oneplus.com/global/support/softwareupgrade/details?code=PM1574156173727)
+- Kernel
+  - [CleanSlate](https://forum.xda-developers.com/t/kernel-cleanslate-q-v3-7-9-flashlight-led-kcal-fingerprnt-battery-25jul.3797668/) (OxygenOS-based ROMs only?)
+  - [ElementalX](https://forum.xda-developers.com/t/kernel-april-4-elementalx-op6-6-02.3799054/) (OxygenOS-based ROMs only?)
 
 ### Samsung Galaxy Note 3 LTE (SM-N9005, hlte)
 - [LineageOS](https://download.lineageos.org/hlte)
@@ -137,38 +150,60 @@ a vulnerability that allows any installed app to gain root access.
 These instructions look very complicated, but they are actually quite straightforward,
 unless you have a device with the A/B partition scheme or without a separate recovery partition.
 
-- Upgrade of stock ROM for firmware upgrades (if doing a clean install and if it's possible)
+- Download
+  - Latest stock ROM (if available)
+  - Custom ROM
+  - TWRP or some other custom recovery
+  - (Custom kernel)
+  - (Google Apps)
+  - (Magisk)
+- Upgrade the stock ROM to get low-level firmware upgrades (if doing a clean install and if it's possible)
   - The stock ROM may contain newer firmware for the modem, bluetooth etc., which improves security and reliability.
     Some of this firmware may be saved beyond the usual partitions,
     and can therefore be carried on to the custom ROM
     even though the system and data partitions will be wiped during the installation of the custom ROM. 
-  - Please ensure, though, that the newer stock ROM doesn't lock the bootloader or introduce other additional restrictions.
-- Install fastboot-installable official firmware from the stock ROM (if not already upgraded)
-  - This can be done with the scripts of this repository.
+  - Please check beforehand, though, that the newer stock ROM doesn't lock the bootloader or introduce other additional restrictions.
+- Boot the phone to fastboot mode
 - Select the boot slot you want to install to
   - `sudo fastboot --set-active=a` (or b)
+- Install fastboot-installable official firmware from the stock ROM (if not already upgraded)
+  - Unzip the official firmware zip. If it contains only `payload.bin` instead of separate files for each partition,
+    you can use.
+    [Android OTA Payload Extractor](https://github.com/tobyxdd/android-ota-payload-extractor)
+    to extract the file.
+  - Flash the fastboot-flashable partitions using
+    [my scripts](https://github.com/AgenttiX/linux-scripts/tree/master/android).
+  - Flash the LineageOS `boot.img`, `dtbo.img` and `vbmeta.img` over the default ones.
+    - DTBO = Device Tree Blob for Overlay, which contains information about the hardware of the device.
+    - vbmeta = [Android Verified Boot (AVB)](https://wiki.postmarketos.org/index.php?title=Android_Verified_Boot_(AVB)) metadata
+  - If you get the error `Flashing is not allowed for Critical Partitions`, reboot after installing the LineageOS `boot.img` and run the script using the fastboot mode of the LineageOS recovery.
 - Boot to recovery (TWRP)
   - Try these in this order until one of them works
     - Samsung devices
        1) `sudo heimdall flash --RECOVERY <TWRP image>.img`
        2) Use Odin
     - Fastboot devices
-      1) `sudo fastboot install recovery <TWRP image>.img` and boot from the on-device menu
+      1) `sudo fastboot flash recovery <TWRP image>.img` and boot from the on-device menu
       2) `sudo fastboot boot <TWRP image>.img`
-      3) `sudo fastboot install boot <TWRP image>.img` and boot from the on-device menu
+      3) `sudo fastboot flash boot <TWRP image>.img` and boot from the on-device menu
   - If TWRP gets stuck at the logo, try an older version.
-- ADB-installable firmware from the stock ROM (if doing a clean install)
-  - This can be done with the scripts of this repository.
+- Install ADB-installable firmware from the stock ROM (if doing a clean install) using
+  [my scripts](https://github.com/AgenttiX/linux-scripts/tree/master/android).
 - ROM (LineageOS)
   - Select the boot slot you want to install to.
   - Wipe the system and cache partitions
     - On devices without a separate recovery partition TWRP cannot be booted without a working OS installation,
       so don't reboot after wiping system before LineageOS is installed.
-  - Select the boot slot you don't want to install to.
-  - Install LineageOS (This will install to the slot that is not active at the moment.)
-  - Select "reboot to recovery"
-- If the device boots to the LineageOS recovery, ensure that the active slot is the slot you want to install to.
-  - Then you have to use `adb sideload <file>.zip` to install the rest.
+  - Select the boot slot you don't want to install to,
+    since the LineageOS zip will auto-install itself to the slot that is not active at the moment.
+  - Install LineageOS.
+  - Go to the reboot menu and select the installed slot before rebooting.
+  - Reboot the device. (This may be necessary to install Google Apps,
+    since the installer may require the recovery Android version to match that of the OS.)
+  - Ensure that the device rebooted to the correct slot.
+    If not, reboot to fastboot, select the correct slot and reboot to recovery.
+- Install the rest of the zips
+  - If the device booted to the LineageOS recovery, click "Apply update" and send the zips with `adb sideload <file>.zip`.
   - Install regardless of the signature warnings. They merely warn that the additional zips aren't provided by LineageOS.
 - Google Apps
 - Kernel (if available)
@@ -207,10 +242,34 @@ unless you have a device with the A/B partition scheme or without a separate rec
 ## Setting up the device
 The initial setup menu can be very buggy, and easily gets stuck in an eternal loop.
 Therefore, when initially setting up the device, skip all optional setup menus and do the configuration later.
-Skip especially these
+Skip especially these:
 - Copying data from an old phone
   - If your old phone is not rooted and this is therefore the only way to migrate your data,
     you should first do the setup once so that you know it works,
     then reset the phone and do the setup again but migrating the data this time.
 - Google account setup
 - Screen lock setup
+
+## Backups
+### Apps that should be restored using backup software
+- Notify for Mi Band
+  - By restoring from a backup you don't have to re-pair your band, and can keep old recorded data.
+- Syncthing
+  - Either backup restore the contents of the synced folders manually to enable the app to find them,
+    or remove and re-add the folders in the app to force a resync.
+- WhatsApp
+  - Titanium Backup may not work. Use Swift Backup instead.
+
+### Apps that have their own backup systems
+The most of these are manual only.
+
+- Authy
+- K-9 mail
+- OpenCamera
+- QKSMS
+- Signal
+  - Titanium Backup and Swift Backup may not work. If they fail, use Signal's own file-based backup instead.
+- Sleep As Android
+- WhatsApp
+  - Using its own backup feature results in regeneration of the encryption keys.
+    By using Swift Backup you can avoid this.
