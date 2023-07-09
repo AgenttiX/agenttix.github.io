@@ -266,3 +266,71 @@ This is possible, but I haven't tried it myself, since I'm using primarily Linux
 
 ### pfSense
 [Official instructions](https://docs.netgate.com/pfsense/en/latest/recipes/virtualize-proxmox-ve.html)
+
+### Docker in LXC
+Running Docker in LXC can be very handy, but it's not officially supported and may result in errors.
+- If you have any issues, ensure that the LXC features `keyctl=1,nesting=1` enabled.
+
+Using OpenZFS < 2.2 results in errors of the form `overlayfs: upper fs does not support RENAME_WHITEOUT`.
+[This will be fixed in OpenZFS 2.2](https://github.com/openzfs/zfs/issues/8648#issuecomment-1452448356)
+
+Errors of the form `failed to register layer: unlinkat ... invalid argument` are caused by running Docker in LXC.
+- [StackOverflow](https://stackoverflow.com/a/75270574)
+- [Reddit](https://www.reddit.com/r/nginxproxymanager/comments/11n21lw/unable_to_pull_npm_docker_image_on_proxmox_ubuntu/)
+- [Proxmox forums](https://forum.proxmox.com/threads/docker-failed-to-register-layer-applylayer-exit-status-1-stdout-stderr-unlinkat-var-log-apt-invalid-argument.119954/)
+
+Increasing the UID and GID mapping ranges for the LXC container would probably fix the problem,
+but the container cannot start if those are increased.
+
+Default
+```
+lxc.idmap: u 0 100000 65536
+lxc.idmap: g 0 100000 65536
+```
+Modified (does not work)
+```
+lxc.idmap: u 0 100000 1000000
+lxc.idmap: g 0 100000 1000000
+```
+
+Workaround: [change from overlayfs2 to fuse-overlayfs](https://webdock.io/en/docs/how-guides/docker-guides/how-change-the-docker-storage-driver)
+- You may also have to enable FUSE for the container in the LXC settings.
+
+
+### Nvidia GPU Passthrough for Docker in LXC
+- On the host
+  - [Enable the contrib and non-free repositories](https://wiki.debian.org/NvidiaGraphicsDrivers)
+  - [Enable the CUDA repository](https://developer.nvidia.com/cuda-downloads)
+  - `apt-get install nvidia-driver nvidia-smi`
+    - Be careful when installing! Attempting to install `firmware-misc-nonfree` may conflict with Proxmox!
+  - Reboot
+  - Test that the driver works using `nvidia-smi`. Take note of the driver version,
+    as you will have to install exactly the same driver version inside the LXC container.
+- If you are using LXC directly on top of e.g. Ubuntu instead of Proxmox, follow the
+  [Ubuntu instructions](https://ubuntu.com/tutorials/gpu-data-processing-inside-lxd)
+  based on `nvidia.runtime=true`. If you're using Proxmox, continue following these instructions instead.
+- Setup the LXC container
+  - Setup the LXC container as usually
+  - Stop the container
+  - On the host, edit `/etc/pve/lxc/<container_number>.conf` as instructed [here](https://jocke.no/2022/02/23/plex-gpu-transcoding-in-docker-on-lxc-on-proxmox/)
+    - For me the numbers were 195, 503 and 511
+    - Link also the `/dev/dri` and `/dev/fb0` as instructed
+      [here](https://forum.proxmox.com/threads/gpu-passthrough-to-lxc-container.114106/)
+  - Start the container
+  - Install Nvidia drivers without the kernel module, e.g. `apt-get install nvidia-headless-no-dkms-535 nvidia-utils-535 libnvidia-encode-535 libnvidia-decode-535`
+    - Use exactly the same driver version as on the host.
+    - The LXC container shares its kernel with the host, which already has the DKMS kernel module.
+    - If you don't install the encoding and decoding libraries, FFmpeg will crash when attempting to transcode.
+  - Test that the driver works using `nvidia-smi` in the container.
+- Setup Docker
+  - Install Docker
+  - Install [NVIDIA container runtime](https://github.com/NVIDIA/nvidia-container-runtime)
+  - Test that the GPU is visible in the container:
+    ```sudo docker run --gpus all nvidia/cuda:12.2.0-base-ubuntu22.04 nvidia-smi``` (change the version tag to the latest available)
+  - If you get an error about cgroups, follow
+    [these instructions](https://www.reddit.com/r/Proxmox/comments/s0ud5y/comment/jl4lef2/).
+- Follow the instructions for your Docker container, e.g.
+  [Jellyfin](https://jellyfin.org/docs/general/administration/hardware-acceleration/nvidia/).
+  - If nvidia-smi works in the container but transcoding crashes, check the FFmpeg logs in the Jellyfin dashboard.
+    You may be missing some libraries in the LXC container,
+    such as the `libnvidia-encode` and `libnvidia-decode` mentioned above.
