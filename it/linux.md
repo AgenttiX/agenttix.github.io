@@ -46,3 +46,8 @@ title: Linux
 ### Useful commands and utilities
 TODO
 
+## Fixes for bugs I've encountered
+### [Plasmashell using lots of CPU](https://www.reddit.com/r/kde/comments/tagio0/comment/icw4lft/)
+``` bash
+mv ~/.local/share/kactivitymanagerd ~/.local/share/kactivitymanagerd_old
+```
