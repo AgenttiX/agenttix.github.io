@@ -36,7 +36,21 @@ title: Linux
     [Rufus](https://rufus.ie/)
     to create the installation media.
     - Set the partitioning to GPT/UEFI (non-CSM) unless you have a very old computer that does not have UEFI.
-- TODO
+- Boot the computer from the USB drive
+- Install the OS
+- Configure SSH
+  - Add authorized keys to `~/.ssh/authorized_keys`
+  - [Set up banner / MOTD](https://github.com/AgenttiX/linux-scripts/tree/master/security/banner)
+  - Disable password login
+    - Set `PasswordAuthentication no` in `/etc/ssh/sshd_config`
+- Configure UFW firewall
+  - Note that Proxmox hosts have their own firewall system in the web GUI
+  - `sudo ufw allow ssh`
+  - `sudo ufw allow <YOUR_SERIVCES>`
+  - `sudo ufw enable`
+- [Configure SNMP](https://github.com/AgenttiX/linux-scripts/tree/master/librenms)
+  if using e.g. LibreNMS
+
 
 ## Terminal
 
