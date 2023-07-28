@@ -35,6 +35,10 @@ DNS lists
 ```
 suppress gen_id 1, sig_id 2002910
 suppress gen_id 1, sig_id 2003068
+
+#ET USER_AGENTS Microsoft Device Metadata Retrieval Client User-Agent
+suppress gen_id 1, sig_id 2027390
+
 suppress gen_id 1, sig_id 2028651
 suppress gen_id 119, sig_id 4
 suppress gen_id 119, sig_id 7
