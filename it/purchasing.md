@@ -258,7 +258,7 @@ If you're only using the computer for light tasks such as web browsing, consider
     ([Forum post](https://www.truenas.com/community/resources/multiply-your-problems-with-sata-port-multipliers-and-cheap-sata-controllers.177/))
   - If you have only a PCIe x1 or x4 slot, an ASM1166-based 6-port card is an OK choice.
     The cards with more ports are based on port expanders and should be avoided.
-    However, please not that the cards with PCIe x4 ports are actually only x2.
+    However, please note that the cards with PCIe x4 ports are actually only x2.
   - [Performance comparison of various controllers](https://forums.unraid.net/topic/41340-satasas-controllers-tested-real-world-max-throughput-during-parity-check/)
   - [List of controllers compatible with Unraid](https://forums.unraid.net/topic/102010-recommended-controllers-for-unraid/)
 
