@@ -565,6 +565,28 @@ If your device is not compatible with OpenWRT, you should use some other notable
     - 2x 1 Gbps Ethernet
     - [Supported by OpenWRT](https://openwrt.org/toh/friendlyarm/nanopi_r4s_v1)
 
+### VDSL2 modems
+- The operator-provided modems often have ancient firmware with security issues and poor performance.
+  Therefore, I recommend using a separately bought one instead, preferably one with OpenWRT if there are any available.
+- [Geizhals list](https://geizhals.eu/?cat=wlanroutmod&xf=4024_VDSL2%7E529_802.11ax%7E546_WPA3%7E758_VDSL2)
+- [OpenWRT compatibility list](https://openwrt.org/toh/views/toh_modem_supported?datasrt=availability&dataflt%5BModem%2A~%5D=VDSL2)
+- AVM FRITZ!Box 7490
+  - [Geizhals](https://geizhals.eu/avm-fritz-box-7490-20002584-20002585-a992918.html)
+  - [OpenWRT support pending](https://openwrt.org/toh/avm/fritz.box.7490) ([pull request](https://github.com/openwrt/openwrt/pull/5075))
+- TP-Link Archer VR200
+  - [Geizhals](https://geizhals.eu/tp-link-archer-vr200-a1369252.html)
+  - [Supported by OpenWRT](https://openwrt.org/toh/tp-link/vr200v)
+    - Note: 2.4 GHz Wi-Fi is not supported by OpenWRT!
+- TP-Link Archer VR200v
+  - [Geizhals](https://geizhals.eu/tp-link-archer-vr200v-a1230225.html)
+  - [Supported by OpenWRT](https://openwrt.org/toh/tp-link/vr200v)
+    - Note: 2.4 GHz Wi-Fi is not supported by OpenWRT!
+
+### Cable modems ([DOCSIS](https://en.wikipedia.org/wiki/DOCSIS))
+- The operator-provided modems often have ancient firmware with security issues and poor performance.
+  As of 2023, there are no cable modems with OpenWRT support.
+  Therefore, I recommend the AVM FRITZ!Box modems.
+- [Geizhals list](https://geizhals.eu/?cat=wlanroutmod&xf=4024_Kabel-TV%7E529_802.11ax%7E546_WPA3)
 
 ### Network cards
 - Intel E1G42ET
