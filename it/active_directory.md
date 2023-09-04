@@ -204,7 +204,19 @@ and that the user certificates can't be extracted from the clients if they are s
   - Check the other tabs and ensure that the settings are correct.
 - If you get a policy mismatch error, follow
   [these instructions](https://directaccess.richardhicks.com/2019/09/02/always-on-vpn-ikev2-policy-mismatch-error/).
-- If you get the
-  [error 8007042a](https://serverfault.com/a/1042893)
-  when starting Routing and Remote Access, go to
-  NPS -> Accounting -> Log File Properties -> Change Log File Properties and disable "If logging fails, discard connection requests."
+- Errors and debugging
+  - [Error 20271](https://learn.microsoft.com/en-us/answers/questions/237191/always-on-vpn-(ikev2)-suddenly-stopped-working)
+    in the event viewer, and
+    "The remote connection was denied because the user name and password combination you provided is not recognized,
+    or the selected authentication protocol is not permitted on the remote access server." in the client
+    - A wrong certificate is selected for the NPS server.
+    - Go to NPS -> Policies -> Network Policies -> Virtual Private Network (VPN) Connections -> Properties -> Constraints
+      -> Authentication Methods -> EAP Types -> Microsoft: Protected EAP (PEAP) -> Edit...
+      and select the certificate of the NPS server, not the VPN server.
+      In this window, go to EAP Types -> Smart Card or other certificate -> Edit, and select the same certificate.
+      After this, you may have to restart the NPS service.
+  - [Error 8007042a](https://serverfault.com/a/1042893)
+    when starting Routing and Remote Access: go to
+    NPS -> Accounting -> Log File Properties -> Change Log File Properties and disable "If logging fails, discard connection requests."
+  - "IKE authentication credentials are unacceptable" in the client
+    - The VPN server certificate has expired

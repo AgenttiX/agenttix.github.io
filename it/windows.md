@@ -6,6 +6,7 @@ title: Windows
 # Windows
 
 ## Installing Windows
+### Preparation
 - Update BIOS/UEFI and firmware before the installation as much as you practically can.
   - This is especially important with old computers, as important features such as proper UEFI support may be added as a
     UEFI/BIOS update.
@@ -30,6 +31,8 @@ title: Windows
     Use a discrete TPM instead of firmware TPM if possible.
   - Enable virtualization (VT-x, AMD-V etc.) including the additional features (IOMMU, SR-IOV, VT-d etc.),
     as those are required for various security features of Windows.
+
+### Installation
 - When asked to log in with a Microsoft account, disconnect the computer from the Internet
   - Wired connection: disconnect cable
   - Wi-Fi: use a physical button (if available) or press Shift+F10 and write `netsh wlan disconnect`
@@ -41,6 +44,8 @@ title: Windows
     as the login may not apply properly for login & BitLocker recovery configuration etc.
   - When enabling OneDrive, disable the backup unless you have bought additional storage (e.g. as a part of Office 365).
     Otherwise you will get constant prompts to buy more OneDrive storage once your home folder exceeds the free plan (5 GB).
+
+### After installation
 - If you're not going to install any other virtualization software than Hyper-V, enable
   [memory integrity](https://support.microsoft.com/en-us/windows/core-isolation-e30ed737-17d8-42f3-a2a9-87521df09b78)
   before installing any additional device drivers, as those may prevent you from enabling it later.
