@@ -546,14 +546,26 @@ If your device is not compatible with OpenWRT, you should use some other notable
 #### "Routers" / firewalls
 - ~~[Huawei AR1200E](https://support.huawei.com/enterprise/en/routers/ar1220e-pid-24020781/)~~
   - Serial console password can be reset from the BootROM menu (Ctrl+B)
+  - The mini-USB console may not be enabled by default, and you may have to use a USB-RJ45 serial console cable instead.
   - [Default BootROM password is Admin@huawei](https://forum.huawei.com/enterprise/en/corpus-595.html)
   - [Internal flash can only be formatted from the BootROM menu (Ctrl+B)](https://support.huawei.com/enterprise/en/doc/EDOC1000154645/e1352af8/how-do-i-format-a-storage-medium)
     - Formatting the internal flash also deletes the firmware from the device.
       Therefore, copy the existing firmware file from the internal flash to a USB drive before formatting
+  - Default console username is admin and password is Admin@huawei
   - The firmware is based on [Wind River Linux](https://www.windriver.com/products/linux)
   - [Firmware download](https://support.huawei.com/enterprise/en/routers/ar1220e-pid-24020781/software)
     - Unfortunately this requires registering the device,
       which is only possible for devices that have been purchased by individual client companies, not carriers.
+  - How to fully reset the device and update the firmware
+    - First ensure that you have access to the firmware file
+    - Copy the firmware file from the internal flash to a USB stick using the console
+    - Format internal flash from the BootROM menu
+    - Insert a USB stick which has the firmware file at its root folder, and boot the device
+    - The device should automatically boot from the USB device
+    - Wait for the firmware to start
+    - Copy the new firmware file to the root folder of the internal flash using the serial console
+    - Disconnect the USB stick and reboot the device
+    - The device should now boot the updated firmware from its internal flash
 - NanoPi
   - There are several versions available
   - NanoPi R5S
