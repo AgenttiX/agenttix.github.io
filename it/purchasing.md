@@ -593,6 +593,7 @@ If your device is not compatible with OpenWRT, you should use some other notable
   - [Geizhals](https://geizhals.eu/tp-link-archer-vr200v-a1230225.html)
   - [Supported by OpenWRT](https://openwrt.org/toh/tp-link/vr200v)
     - Note: 2.4 GHz Wi-Fi is not supported by OpenWRT!
+  - [There may be issues in accessing the serial console for flashing](https://forum.openwrt.org/t/empty-serial-console-on-archer-vr200v/118390/)
 
 ### Cable modems ([DOCSIS](https://en.wikipedia.org/wiki/DOCSIS))
 - The operator-provided modems often have ancient firmware with security issues and poor performance.
