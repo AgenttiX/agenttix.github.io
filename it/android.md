@@ -45,6 +45,7 @@ These are some of the apps that I have found useful.
 - [Obsidian](https://play.google.com/store/apps/details?id=md.obsidian)
 - [OONI Probe](https://play.google.com/store/apps/details?id=org.openobservatory.ooniprobe)
 - [OpenCamera](https://play.google.com/store/apps/details?id=net.sourceforge.opencamera)
+  - [AVIF is not yet supported, but support has been requested.](https://sourceforge.net/p/opencamera/tickets/963/)
 - [OpenKeychain](https://www.openkeychain.org/)
 - [OpenVPN for Android](https://play.google.com/store/apps/details?id=de.blinkt.openvpn)
 - [Orbot](https://play.google.com/store/apps/details?id=org.torproject.android)
