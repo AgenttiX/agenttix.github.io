@@ -141,7 +141,7 @@ for setting up a public key infrastructure for a Windows domain.
     - [A quantum computer with 20 million qubits should be able to crack 2048-bit RSA in 8 hours](https://www.technologyreview.com/2019/05/30/65724/how-a-quantum-computer-could-break-2048-bit-rsa-encryption-in-8-hours/)
   - Hash algorithm: SHA256
     - Supported from Windows XP SP3 and Windows Server 2003 SP2 ->
-    - [Windows 7 and 8 require a hotfix to enable SHA512 for TLS 1.2](https://support.microsoft.com/en-us/topic/sha512-is-disabled-in-windows-when-you-use-tls-1-2-5863e74e-e5b6-cc3b-759b-ece8da875825)
+    - [Windows 7 and 8 require an update to enable SHA512 for TLS 1.2](https://support.microsoft.com/en-us/topic/sha512-is-disabled-in-windows-when-you-use-tls-1-2-5863e74e-e5b6-cc3b-759b-ece8da875825)
 - Have a look at [keylength.com](https://www.keylength.com/) when deciding your settings
 - Recommendations to use the defaults
   - [Cloud Infrastructure Services](https://cloudinfrastructureservices.co.uk/active-directory-certificate-services-best-practices/) (2019->)

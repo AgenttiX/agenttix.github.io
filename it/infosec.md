@@ -141,6 +141,43 @@ DNSSEC is a method for validating the authenticity of this information, preventi
 You can test whether you have DNSSEC enabled with this
 [DNSSEC test](https://dnssec.vs.uni-due.de/).
 
+### OpenVPN
+I've found that these settings work well enough.
+Please let me know if there's something to be improved.
+- Server mode: `Remote Access (SSL/TLS)`
+  - This is more secure than a shared key or user auth.
+- Device mode: `tun - Layer 3 Tunnel Mode`
+  - In most use cases there's no need for tap (OSI layer 2).
+- Protocol: `UDP IPv4 and IPv6 on all interfaces (multihome)`
+- Local port: preferably the default of 1194. If you have multiple servers, just increment the port number.
+- TLS configuration: `Use a TLS Key`, and automatically generate it.
+- Peer Certificate Authority: see the [cryptography section](#Cryptography)
+- DH Parameter Length: `ECDH only`
+- ECDH Curve: See the [cryptography section](#Cryptography)
+- Data Encryption Algorithms
+  - AES-256-GCM
+  - CHACHA20-POLY1305
+  - If you want better performance, also add AES-128-GCM
+- Fallback Data Encryption Algorithm: AES-256-CBC
+- Auth Digest Algorithm
+  - To quote the pfSense documentation,
+    "[The GUI default of SHA256 is a good balance of security and speed.](https://docs.netgate.com/pfsense/en/latest/vpn/openvpn/configure-server-crypto.html#auth-digest-algorithm)"
+- Hardware Crypto
+  - "When left unspecified, OpenVPN will choose automatically based on what is available in the operating system to accelerate ciphers OpenVPN wants to use."
+  - "In most common deployments this setting is unnecessary as the automatic behavior of OpenVPN is correct."
+  - AES-NI is enabled automatically regardless of this setting.
+- Certificate depth: `One (Client+Server)`, unless you have some fancy PKI setup.
+- Client Certificate Key Usage Validation: yes
+- Allow Compression: `Refuse any non-stub compression (Most secure)`
+- Duplicate Connection: yes if multiple devices use the same client certificate
+- Dynamic IP: yes
+  - This is necessary to allow the clients to switch e.g. from mobile data to Wi-Fi without interrupting connectivity
+- DNS Server enable: yes if you want the clients to access e.g. Active Directory
+- Block Outside DNS: yes to ensure that local domain names are queried from the local DNS servers
+- Force DNS cache update: yes
+- UDP Fast I/O: Enable. I've had no trouble with this.
+- Send/Receive Buffer: change this from the default value according to the instructions on the config page
+
 
 ## Hardware security keys
 [Services that support YubiKey/WebAuthn](https://www.yubico.com/fi/works-with-yubikey/catalog/?sort=popular), including:
@@ -265,3 +302,58 @@ Verify that the sub-keys have been moved to the YubiKey
 ``` bash
 gpg -K
 ```
+
+
+## Cryptography
+See [this site](https://www.keylength.com/)
+for the key length recommendations of various organizations.
+
+RSA
+- Use key sizes of at least 2048 bits, and 4096 bits for CAs.
+- Note that many hardware devices, such as TPMs, cannot store keys longer than 2048 bits.
+- With TLS and OpenVPN, the key sizes affect the performance of only the negotiation handshake at the start of the connection
+  and during renegotiation, which for OpenVPN happens once per hour.
+
+
+Diffie-Hellman parameters
+- At least 2048 bits.
+  [1024 bit Diffie-Hellman can be cracked by nation states.](https://weakdh.org/)
+- Generate your own parameters whenever possible.
+
+Elliptic Curve Diffie-Hellman (ECDH)
+- See [this list](https://safecurves.cr.yp.to/) for safe curves,
+  and [this list](https://en.wikipedia.org/wiki/Comparison_of_TLS_implementations#Supported_elliptic_curves)
+  for compatibility with TLS implementations.
+- The NIST curves
+  [may contain NSA backdoors](https://security.stackexchange.com/a/256108)
+  and are
+  [difficult to implement without vulnerabilities for side-channel attacks](https://safecurves.cr.yp.to/).
+- Curve25519 (used in the X25519 Diffie-Hellmann key exchange)
+  - A lot less prone to side-channel attacks than the NIST curves.
+    [Use this whenever you can.](https://security.stackexchange.com/a/230713)
+  - [Not supported by most browsers for certificates (as of 2023)](https://security.stackexchange.com/a/270111)
+  - X25519 is supported by
+    [Firefox](https://blog.mozilla.org/security/2020/07/06/performance-improvements-via-formally-verified-cryptography-in-firefox/)
+    and
+    [Chrome](https://chromestatus.com/feature/5682529109540864)
+- prime256v1 = NIST P-256
+  - Not as secure as the other options. Do not use this unless you have to for compatibility.
+- secp384r1 = NIST P-384
+  - The default for pfSense OpenVPN
+  - Good compromise between security and performance
+  - Compatible with most web browsers
+  - If setting up an enterprise system with various clients, I'd go with this just to be sure about
+    [compatibility](https://security.stackexchange.com/a/78624).
+- secp521r1 = NIST P-521
+  - Theoretically more secure than secp384r1, but not widely used.
+    [Chromium has dropped support for it](https://security.stackexchange.com/questions/100991/why-is-secp521r1-no-longer-supported-in-chrome-others),
+    which is rather suspicious.
+  - If setting up a highly secure system which has only a few users and
+    where safe curves such as Curve25519 are not available,
+    I'd go with this over secp384r1.
+
+Hashing
+- Do not use SHA-1, as [it has been broken](https://shattered.io/).
+- [SHA-256 is good enough](https://security.stackexchange.com/a/165568),
+  and SHA-512 is not worth it for online systems due to the longer hashes.
+  - [Windows 7 and 8 require an update to enable SHA512 for TLS 1.2](https://support.microsoft.com/en-us/topic/sha512-is-disabled-in-windows-when-you-use-tls-1-2-5863e74e-e5b6-cc3b-759b-ece8da875825)
