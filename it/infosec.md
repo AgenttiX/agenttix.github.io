@@ -248,7 +248,8 @@ ssh -V
 ```
 Create the SSH key
 ([Yubico instructions](https://www.yubico.com/blog/github-now-supports-ssh-security-keys/)).
-Use ed25519-sk instead of ecdsa-sk, as the latter is not cryptographically secure!
+Use ed25519-sk instead of ecdsa-sk, as the latter is difficult to implement without side-channel vulnerabilities.
+See the [cryptography section](#cryptography) for details.
 ``` bash
 ssh-keygen -t ed25519-sk -O resident -O verify-required
 ```
@@ -260,6 +261,36 @@ Support has been requested for
 - [Termius](https://ideas.teams.termius.com/c/47-u2f-fido2-token-support)
   - Already works on desktop but not on Android
 - [Termux](https://github.com/termux/termux-packages/issues/4942)
+
+### SSH authentication with TPM
+If you want to use SSH without having to touch a physical security key,
+you can store the SSH keys on a TPM instead.
+These instructions are based on
+[the instructions in Gentoo wiki](https://wiki.gentoo.org/wiki/Trusted_Platform_Module/SSH)
+``` bash
+sudo apt-get install libtpm2-pkcs11-1 libtpm2-pkcs11-tools
+sudo usermod -a -G tss "${USER}"
+# Log out and back in for the group membership to be applied
+tpm2_ptool init
+# Create long random PINs and write them down in e.g. your password manager software
+tpm2_ptool addtoken --pid=1 --label=ssh --userpin=MySecretPassword --sopin=MyRecoveryPassword
+# See the list of supported algorithms. If ed25519 is there, use it. (As of 2023, it's not yet supported.)
+tpm2_ptool addkey --help
+# If you get an error, try rsa2048 instead
+tpm2_ptool addkey --label=ssh --userpin=MySecretPassword --algorithm=rsa4096
+# Retrieve the public key from the TPM
+# https://github.com/tpm2-software/tpm2-pkcs11/issues/792
+TPM2_PKCS11_LOG_LEVEL=0 ssh-keygen -D /usr/lib/x86_64-linux-gnu/libtpm2_pkcs11.so.1
+# Load the stored key into the SSH agent
+ssh-add -s /usr/lib/x86_64-linux-gnu/libtpm2_pkcs11.so.1
+```
+
+Use RSA instead of ECC, since ECC is difficult to implement without side-channel vulnerabilities.
+[Such vulnerabilities have already been found in TPMs.](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-25082).
+ED25519 is in the TPM specification and
+[support for it has been requested for tpm2-pkcs11](https://github.com/tpm2-software/tpm2-pkcs11/issues/785),
+but TPM manufacturers will first have to implement the algorithm in their devices.
+As of 2023, no TPM manufacturer has yet done so.
 
 ### YubiKey with KeePassXC
 - [Security benefits](https://security.stackexchange.com/a/258414/)
