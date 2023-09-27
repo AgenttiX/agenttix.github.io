@@ -13,6 +13,7 @@ These are some of the apps that I have found useful.
 - [3DMark](https://play.google.com/store/apps/details?id=com.futuremark.dmandroid.application)
 - [AdAway](https://adaway.org/)
   - Requires root
+- [AppLock](https://play.google.com/store/apps/details?id=com.sp.protector.free)
 - [Authy](https://authy.com/)
 - [BOINC](https://f-droid.org/en/packages/edu.berkeley.boinc/)
   - Use only on devices that don't have a battery, e.g. media boxes,
