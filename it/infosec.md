@@ -22,6 +22,10 @@ CIA model:
   - [Linux compatibility](https://www.linux.fi/wiki/HST)
 
 
+## Privacy
+[Privacy Not Included](https://foundation.mozilla.org/en/privacynotincluded/)
+
+
 ## Travel
 ### Before travelling
 - Make a backup of all important data.

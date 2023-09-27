@@ -3,6 +3,7 @@ layout: default
 title: Help
 ---
 
+# Receiving help
 If I have given you the link to this page,
 it means that I want to help you.
 However, to save our time, I would hope that you could do a few preliminary things first.
@@ -18,7 +19,7 @@ Please follow the instructions below depending on the type of the device you nee
 - Install and run my maintenance script
   - Instructions are available [here](https://github.com/AgenttiX/windows-scripts/blob/master/README.md)
   - Installing and running the script can be somewhat complicated, but please at least try.
-- If I have asked you to install TeamViewer
+- If I have asked you to install TeamViewer,
   please install it using my installer script that gets installed along with the maintenance script.
   If you have issues in installing using the installer script, you can download TeamViewer
   [here](https://www.teamviewer.com/en/download/windows/) instead.

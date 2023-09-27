@@ -24,10 +24,10 @@ and provide the citizens with
 [bread and circuses](https://en.wikipedia.org/wiki/Bread_and_circuses)
 to keep them occupied and docile.
 Political movements, ideologies and religions would be suppressed to prevent disagreements and societal unrest.
-Sexuality would be encouraged only in promiscuous form to prevent people from forming close bonds with other people,
+Sexuality would be encouraged only in promiscuous form to discourage forming close bonds with other people,
 preventing them from having other allegiances than to society as a whole.
-Any residual unhappiness would be suppressed by drugs.
-In other words, Aldous Huxley's vision of the future has quite a few similarities of our society of today.
+Any residual unhappiness is medicated away.
+Many of these have an uncanny resemblance to our society of today.
 
 The subtle ways the utopia of the book has become a dystopia are perhaps best described by this quote
 from the 1985 book [Amusing Ourselves to Death](https://en.wikipedia.org/wiki/Amusing_Ourselves_to_Death),
@@ -78,7 +78,7 @@ Those that dare to raise voices of concern are sent to [re-education camps](http
 possibly never to return.
 
 The book was published in the year 1949, but remains very much relevant to the society of today.
-To quote the Chief Research Officer of the Finnish information security software provider WithSecure,
+To quote Mikko Hyppönen, the Chief Research Officer of the Finnish information security software provider WithSecure,
 "[George Orwell was an optimist](https://www.youtube.com/watch?v=9CqVYUOjHLw)".
 <!-- The quote is at 1:32 -->
 The book is very capable in describing the dystopia of mass surveillance,
