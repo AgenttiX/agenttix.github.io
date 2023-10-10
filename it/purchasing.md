@@ -42,7 +42,7 @@ Those also often have poor-quality components in their power delivery and bad ai
 If you're only using the computer for light tasks such as web browsing, consider buying a laptop and a Thunderbolt dock instead.
 
 ### CPU
-- Geizhals:
+- Geizhals lists:
   [AMD](https://geizhals.eu/?cat=cpuamdam4&xf=14840_6~19779_24~5_AES-NI~5_AMD-V~5_AVX~5_AVX2~5_ECC-Unterst%FCtzung&sort=p),
   [Intel](https://geizhals.eu/?cat=cpu1151&xf=14840_4~19516_DDR5~19779_16~5_AES-NI~5_AVX~5_AVX2~5_VT-d&sort=p)
 - CPU is the most important component for professional workloads such as image and video editing and software development.
@@ -56,7 +56,7 @@ If you're only using the computer for light tasks such as web browsing, consider
     If they don't work, it's easier to complain to one seller than multiple.
 
 ### GPU
-- [Geizhals](https://geizhals.eu/?cat=gra16_512&xf=132_8192~20252_AV1~20252_H.264~20252_H.265~20253_AV1~20253_H.264~20253_H.265~5425_1&sort=p)
+- [Geizhals list](https://geizhals.eu/?cat=gra16_512&xf=132_8192~20252_AV1~20252_H.264~20252_H.265~20253_AV1~20253_H.264~20253_H.265~5425_1&sort=p)
 - GPU is the most important part for gaming.
 - Depending on the state of the cryptocurrency market, finding a GPU can be difficult, and the prices may be inflated.
   In those times finding a good deal can take a lot of work.
@@ -99,7 +99,7 @@ If you're only using the computer for light tasks such as web browsing, consider
   [JayzTwoCents](https://www.youtube.com/watch?v=K6FiGEAp928)
 
 ### RAM
-- [Geizhals](https://geizhals.eu/?cat=ramddr3&xf=253_16384~254_2666~5828_DDR4~5828_DDR5~5830_DIMM~5830_DIMM+mit+ECC&sort=p#productlist)
+- [Geizhals list](https://geizhals.eu/?cat=ramddr3&xf=253_16384~254_2666~5828_DDR4~5828_DDR5~5830_DIMM~5830_DIMM+mit+ECC&sort=p#productlist)
 - 8 GB is sufficient for basic tasks, but I recommend 16 GB, especially for gaming.
   32 GB is worth considering for professional workloads and virtual desktops.
   Higher amounts of RAM are only necessary for specific use cases such as virtual machines and scientific computing.
@@ -112,7 +112,7 @@ If you're only using the computer for light tasks such as web browsing, consider
   whereas on Intel this is found only on professional hardware.
 
 ### Motherboard
-- Geizhals:
+- Geizhals lists:
   [AMD AM5](https://geizhals.eu/?cat=mbam5&sort=p&xf=11524_1%7E17255_1%7E18030_1%7E19226_1%7E19232_1%7E494_Onboard+TPM+2.0+Unterst%FCtzung),
   [Intel Socket 1700](https://geizhals.eu/?cat=mbp4_1700&sort=p&xf=11524_1%7E11924_1%7E17255_1%7E18030_1%7E19226_1%7E494_Onboard+TPM+2.0+Unterst%FCtzung)
 - Think carefully what features you actually need, as additional features can crank up the price quite quickly.
@@ -142,7 +142,7 @@ If you're only using the computer for light tasks such as web browsing, consider
   A well-positioned external antenna is necessary for a fast and reliable connection.
 
 ### SSD
-- [Geizhals](https://geizhals.eu/?cat=hdssd&xf=16325_3~221_3000~222_3000~2235_500~2236_500~252_960~4832_3&sort=p)
+- [Geizhals list](https://geizhals.eu/?cat=hdssd&xf=16325_3~221_3000~222_3000~2235_500~2236_500~252_960~4832_3&sort=p)
 - The operating system should be installed on an M.2 form factor SSD with PCIe connectivity (NVME).
   Those can be quite expensive especially at the larger sizes,
   so files should be stored on separate drives such as SATA SSDs.
@@ -156,7 +156,7 @@ If you're only using the computer for light tasks such as web browsing, consider
 - As of 2022, PCIe 4.0 may not be worth the additional price.
 
 ### Power supply (PSU)
-- [Geizhals](https://geizhals.eu/?cat=gehps&xf=18421_4~360_850~363_semi-passiv~4174_ATX&sort=p#productlist)
+- [Geizhals list](https://geizhals.eu/?cat=gehps&xf=18421_4~360_850~363_semi-passiv~4174_ATX&sort=p#productlist)
 - Aim for at least 80 Plus Gold certification. This is also an indicator of build quality.
 - Look for a semi-passive model. This means that the fan should stop spinning with low loads.
   It will reduce the noise and extend the lifetime of the fan.
@@ -195,7 +195,7 @@ If you're only using the computer for light tasks such as web browsing, consider
   Be careful with the pin connections, though, as wrong connections can easily burn out the LEDs.
 
 ### Case
-- [Geizhals](https://geizhals.eu/?cat=gehatx&xf=20097_1~535_Staubfilter~9709_ATX&sort=p)
+- [Geizhals list](https://geizhals.eu/?cat=gehatx&xf=20097_1~535_Staubfilter~9709_ATX&sort=p)
 - Consider a 19" rack case, as then you can install all your equipment nicely in a rack below your desk,
   or take the computer with you to e.g. a LAN party in a rack carrying case.
   - 5U and higher cases are difficult to find, so you may have to go with a 4U one.
