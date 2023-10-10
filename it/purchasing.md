@@ -428,6 +428,7 @@ If you're only using the computer for light tasks such as web browsing, consider
 - Devices with the aforementioned features
   - [Geizhals list with Android 12 and official LineageOS](https://geizhals.eu/?cat=umtsover&xf=10063_12.0%7E146_Videos+%402160p%2F60fps%7E157_131072%7E162_LineageOS+Support%7E17890_n28%7E17890_n78%7E18414_NFC%7E2607_6144)
   - [Geizhals list with Android 13](https://geizhals.eu/?cat=umtsover&xf=10063_13.0%7E146_Videos+%402160p%2F60fps%7E157_131072%7E17890_n28%7E17890_n78%7E18414_NFC%7E2607_6144)
+  - [Geizhals list with Android 14 and official LineageOS](https://geizhals.eu/?cat=umtsover&xf=10063_14.0%7E146_Videos+%402160p%2F60fps%7E157_131072%7E162_LineageOS+Support%7E17890_n28%7E17890_n78%7E18414_NFC%7E2607_6144)
   - The 5G mmWave band n258 has been left out from the list, as it's supported by only a few devices
 - Security:
   [StrongBox secure element (SE)](https://developer.android.com/training/articles/keystore#HardwareSecurityModule)
