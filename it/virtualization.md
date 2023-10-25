@@ -299,13 +299,23 @@ Workaround: [change from overlayfs2 to fuse-overlayfs](https://webdock.io/en/doc
 
 ### Nvidia GPU Passthrough for Docker in LXC
 - On the host
+  - Remove previous versions of the Nvidia driver: `apt purge "^cuda.*$" "^libnvidia.*$" "^nvidia.*$"`
   - [Enable the contrib and non-free repositories](https://wiki.debian.org/NvidiaGraphicsDrivers)
   - [Enable the CUDA repository](https://developer.nvidia.com/cuda-downloads)
-  - `apt-get install nvidia-driver nvidia-smi`
+  - Install the drivers
+    - If you have a [GPU supported by the open kernel module](https://github.com/NVIDIA/open-gpu-kernel-modules#compatible-gpus):
+      `apt-get install nvidia-kernel-open-dkms cuda-drivers nvidia-smi`
+    - If not, leave the `nvidia-kernel-open-dkms` out: `apt-get install cuda-drivers nvidia-smi`
     - Be careful when installing! Attempting to install `firmware-misc-nonfree` may conflict with Proxmox!
   - Reboot
   - Test that the driver works using `nvidia-smi`. Take note of the driver version,
     as you will have to install exactly the same driver version inside the LXC container.
+  - If `nvidia-smi` gives the error
+    `NVIDIA-SMI has failed because it couldn't communicate with the NVIDIA driver. Make sure that the latest NVIDIA driver is installed and running.`,
+    and if you have had some different Nvidia packages installed,
+    please purge all Nvidia packages as instructed above, and start again.
+    If this does not help, please see [this thread](https://forum.proxmox.com/threads/unable-to-load-nvidia-drivers-not-blacklisted.79034/).
+    For me, purging and reinstalling all the packages was sufficient, but your experience may be different.
 - If you are using LXC directly on top of e.g. Ubuntu instead of Proxmox, follow the
   [Ubuntu instructions](https://ubuntu.com/tutorials/gpu-data-processing-inside-lxd)
   based on `nvidia.runtime=true`. If you're using Proxmox, continue following these instructions instead.
@@ -317,16 +327,22 @@ Workaround: [change from overlayfs2 to fuse-overlayfs](https://webdock.io/en/doc
     - Link also the `/dev/dri` and `/dev/fb0` as instructed
       [here](https://forum.proxmox.com/threads/gpu-passthrough-to-lxc-container.114106/)
   - Start the container
-  - Install Nvidia drivers without the kernel module, e.g. `apt-get install nvidia-headless-no-dkms-535 nvidia-utils-535 libnvidia-encode-535 libnvidia-decode-535`
+  - Install the same version of the Nvidia drivers as on the host, but without the kernel module, e.g.
+    `apt-get install nvidia-headless-no-dkms-545 nvidia-utils-545 libnvidia-encode-545 libnvidia-decode-545`
     - Use exactly the same driver version as on the host.
     - The LXC container shares its kernel with the host, which already has the DKMS kernel module.
     - If you don't install the encoding and decoding libraries, FFmpeg will crash when attempting to transcode.
-  - Test that the driver works using `nvidia-smi` in the container.
+  - Test that the driver works using `nvidia-smi` in the container. You may have to reboot the container first.
+- Once the driver works, lock the package versions so that automatic upgrades won't cause a version mismatch.
+  - On the host:
+    - If using the open kernel module: `apt-mark hold nvidia-kernel-open-dkms cuda-drivers`
+    - If not: `apt-mark hold nvidia-kernel-dkms cuda-drivers`
+  - On the container: `apt-mark hold nvidia-headless-no-dkms-545 nvidia-utils-545 libnvidia-encode-545 libnvidia-decode-545`
 - Setup Docker
   - Install Docker
-  - Install [NVIDIA container runtime](https://github.com/NVIDIA/nvidia-container-runtime)
+  - Install [NVIDIA container runtime](https://gitlab.com/nvidia/container-toolkit/container-toolkit/-/tree/main/cmd/nvidia-container-runtime)
   - Test that the GPU is visible in the container:
-    ```sudo docker run --gpus all nvidia/cuda:12.2.0-base-ubuntu22.04 nvidia-smi``` (change the version tag to the latest available)
+    ```sudo docker run --gpus all nvidia/cuda:12.2.2-base-ubuntu22.04 nvidia-smi``` (change the version tag to the latest available)
   - If you get an error about cgroups, follow
     [these instructions](https://www.reddit.com/r/Proxmox/comments/s0ud5y/comment/jl4lef2/).
 - Follow the instructions for your Docker container, e.g.
