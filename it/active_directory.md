@@ -190,6 +190,18 @@ and that the user certificates can't be extracted from the clients if they are s
   None of these are secure.
   - Run [my script](https://github.com/AgenttiX/windows-scripts/blob/master/VPN/Harden-VPN.ps1)
     both on the client and the server to harden the VPN connection.
+  - "Classified documents published by Der Spiegel indicate that
+    NSA is passively decrypting IPsec connections at a significant scale. --
+    The documents published by Der Spiegel describe a system named TURMOIL
+    that is used to collect and decrypt VPN traffic.
+    The evidence indicates that this decryption is performed using passive eavesdropping and
+    does not require message injection or man-in-the-middle attacks on IPsec or IKE. --
+    decrypted VPN traffic is reinjected into TURMOIL processing infrastructure and
+    passed to other systems for storage and analysis. --
+    The details of their attack systems are consistent with an efficient break for 1024-bit Diffie-Hellman."
+    ([weakdh.org](https://weakdh.org/), [research article](https://doi.org/10.1145/2810103.2813707))
+    Data from the TURMOIL system is automatically sent to
+    [XKeyscore](https://en.wikipedia.org/wiki/XKeyscore) for further analysis.
 - Test that the connection works.
 - Run [another script](https://github.com/AgenttiX/windows-scripts/blob/master/VPN/Create-VPNProfile.ps1)
   to create a configuration profile from the VPN connection on the client.
