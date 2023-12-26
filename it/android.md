@@ -150,6 +150,12 @@ a vulnerability that allows any installed app to gain root access.
   - Recommended for LineageOS
   - Can be installed with the Lineage recovery, but not with TWRP due to differences in the mount paths (as of writing)
 - [FlameGApps](https://flamegapps.github.io/)
+  - Since I'm using TWRP instead of the LineageOS recovery, I'm using this for Android versions that are too new for Open GApps.
+  - I'm using the basic package with the following extensions
+    - Android Auto
+    - Google Search + Assistant
+    - Google TTS
+    - Google WebView
 - [NikGApps](https://nikgapps.com/)
 
 
@@ -249,11 +255,18 @@ unless you have a device with the A/B partition scheme or without a separate rec
 ## Setting up the device
 The initial setup menu can be very buggy, and easily gets stuck in an eternal loop.
 Therefore, when initially setting up the device, skip all optional setup menus and do the configuration later.
+If you decide not to follow my advice and end up with a stuck initial setup menu,
+just factory reset the device without having to reinstall the firmware,
+and try again.
+
 Skip especially these:
 - Copying data from an old phone
   - If your old phone is not rooted and this is therefore the only way to migrate your data,
-    you should first do the setup once so that you know it works,
-    then reset the phone and do the setup again but migrating the data this time.
+    you should first do the setup once so that you know it works.
+    Then, when you are at the Android home screen,
+    try to migrate data by clicking the device setup notification.
+    If the notification is not available,
+    reset the phone and do the initial setup again but migrating the data this time.
 - Google account setup
 - Screen lock setup
 
