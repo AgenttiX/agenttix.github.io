@@ -26,13 +26,19 @@ title: Windows
   Depending on the model of your computer, you can do this by pressing F10, F2, Delete or Enter during early boot.
   If none of these keys seem to work, see the user manual of your motherboard or laptop.
   In the UEFI/BIOS setup menu, set these settings:
-  - Set boot to UEFI only, without CSM (if possible).
+  - Set boot to UEFI only, without CSM (if possible)
+  - Enable Secure Boot
+    - You can disable it later if you want to.
+      However, it's important to have Secure Boot enabled when installing an OS,
+      as this ensures that the boot chain is compatible with Secure Boot.
   - Enable TPM and wipe it if you're not storing anything on it at the moment.
     Use a discrete TPM instead of firmware TPM if possible.
   - Enable virtualization (VT-x, AMD-V etc.) including the additional features (IOMMU, SR-IOV, VT-d etc.),
     as those are required for various security features of Windows.
 
 ### Installation
+- Select manual/custom partitioning when asked.
+  Preferably delete all existing partitions and select the unallocated as the installation target.
 - When asked to log in with a Microsoft account, disconnect the computer from the Internet
   - Wired connection: disconnect cable
   - Wi-Fi: use a physical button (if available) or press Shift+F10 and write `netsh wlan disconnect`
