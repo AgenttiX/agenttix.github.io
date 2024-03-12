@@ -109,6 +109,21 @@ a vulnerability that allows any installed app to gain root access.
   - [CleanSlate](https://forum.xda-developers.com/t/kernel-cleanslate-q-v3-7-9-flashlight-led-kcal-fingerprnt-battery-25jul.3797668/) (OxygenOS-based ROMs only?)
   - [ElementalX](https://forum.xda-developers.com/t/kernel-april-4-elementalx-op6-6-02.3799054/) (OxygenOS-based ROMs only?)
 
+### OnePlus 9 Pro (lemonadep)
+- [LineageOS](https://wiki.lineageos.org/devices/lemonadep/)
+- [TWRP](https://twrp.me/oneplus/oneplus9pro.html)
+- [Stock ROM](https://service.oneplus.com/global/search/search-detail?id=2096329)
+- Kernel
+  - [blu_spark](https://xdaforums.com/t/kernel-blu_spark-r158-op9-pro-a13-custom.4286037/)
+- Camera mod
+  - Reddit posts
+    - [OnePlus 9 Pro Low Max Camera Resolution](https://www.reddit.com/r/LineageOS/comments/x0rplf/oneplus_9_pro_low_max_camera_resolution/)
+    - [LineageOS on OnePlus 9 Pro?](https://www.reddit.com/r/LineageOS/comments/wxrww2/lineageos_on_oneplus_9_pro/)
+    - [What's up with the cameras on LOS?](https://www.reddit.com/r/LineageOS/comments/109zi7o/whats_up_with_the_cameras_on_los/)
+    - [OnePlus 9 Pro (lemonadep): the new camera app doesn't see the aux cameras (LOS 20)](https://www.reddit.com/r/LineageOS/comments/103dxct/oneplus_9_pro_lemonadep_the_new_camera_app_doesnt/)
+    - [OnePlus9Pro What's working or isn't?](https://www.reddit.com/r/LineageOS/comments/s7gz6l/oneplus9pro_whats_working_or_isnt/)
+    - [OnePlus 9Pro LineageOS camera](https://www.reddit.com/r/LineageOS/comments/pkouh4/oneplus_9pro_lineageos_camera/)
+
 ### Samsung Galaxy Note 3 LTE (SM-N9005, hlte)
 - [LineageOS](https://download.lineageos.org/hlte)
 - [TWRP](https://twrp.me/samsung/samsunggalaxynote3qualcomm.html)
