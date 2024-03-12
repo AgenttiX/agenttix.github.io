@@ -42,6 +42,7 @@ My preliminary config files can be found
 [here](https://github.com/AgenttiX/linux-scripts/tree/master/neovim)
 in my linux-scripts repository.
 
+
 ### [PyCharm](https://www.jetbrains.com/pycharm/)
 PyCharm is a feature-rich IDE for Python development.
 Its professional version has comprehensive support for web development with Django
@@ -58,6 +59,45 @@ and I'm therefore looking for open source alternatives.
 Please vote on
 [the request to add support for automatic plugin updates](https://youtrack.jetbrains.com/issue/IDEA-185204/Automatic-plugin-update).
 
+#### Plugins
+- [.env files support](https://plugins.jetbrains.com/plugin/9525--env-files-support)
+- [.ignore](https://plugins.jetbrains.com/plugin/7495--ignore)
+- [Activity Watcher](https://plugins.jetbrains.com/plugin/11361-activity-watcher)
+- [Batch Scripts Support](https://github.com/aefimov/idea-batch)
+- [ChatGPT - EasyCode](https://plugins.jetbrains.com/plugin/20603-chatgpt--easycode)
+- [Docker](https://www.jetbrains.com/help/idea/docker.html)
+- [Fortran](https://plugins.jetbrains.com/plugin/9699-fortran)
+- [Full Line Code Completion](https://plugins.jetbrains.com/plugin/14823-full-line-code-completion)
+- [Makefile Language](https://plugins.jetbrains.com/plugin/9333-makefile-language)
+- [PowerShell](https://plugins.jetbrains.com/plugin/10249-powershell)
+- [Requirements](https://plugins.jetbrains.com/plugin/10837-requirements)
+- [TeXiFy IDEA](https://plugins.jetbrains.com/plugin/9473-texify-idea)
+- [WakaTime](https://plugins.jetbrains.com/plugin/7425-wakatime)
+
+
 ### [VSCodium](https://vscodium.com/)
 VSCodium is an open-source distribution of Microsoft's VS Code.
 This is my go-to editor for other programming languages than Python.
+
+#### Plugins
+- [aw-watcher-vscode](https://open-vsx.org/extension/ActivityWatch/aw-watcher-vscode)
+- [EditorConfig for VS Code](https://open-vsx.org/extension/EditorConfig/EditorConfig)
+- [colorize](https://open-vsx.org/extension/kamikillerto/vscode-colorize)
+- [Django](https://open-vsx.org/extension/batisteo/vscode-django)
+- [Docker](https://open-vsx.org/extension/ms-azuretools/vscode-docker)
+- [ESLint](https://open-vsx.org/extension/dbaeumer/vscode-eslint)
+- [Excel Viewer](https://open-vsx.org/extension/GrapeCity/gc-excelviewer)
+- [GitHub Actions](https://open-vsx.org/extension/cschleiden/vscode-github-actions)
+- [GitLab Workflow](https://open-vsx.org/extension/GitLab/gitlab-workflow)
+- [GitLens — Git supercharged](https://open-vsx.org/extension/eamodio/gitlens)
+- [indent-rainbow](https://open-vsx.org/extension/oderwat/indent-rainbow)
+- [LaTeX Workshop](https://open-vsx.org/extension/James-Yu/latex-workshop)
+- [Photran](https://open-vsx.org/extension/FIUBA/photran-lsp-client-vscode)
+- [Pylint](https://open-vsx.org/extension/ms-python/pylint)
+- [Pyright](https://open-vsx.org/vscode/item?itemName=ms-pyright.pyright)
+- [Python](https://open-vsx.org/extension/ms-python/python)
+- [Remote (OSS)](https://open-vsx.org/extension/xaberus/remote-oss)
+- [Resource Monitor](https://open-vsx.org/extension/anwar/resourcemonitor) (Does not work for me?)
+- [Settings Sync](https://open-vsx.org/extension/Shan/code-settings-sync)
+- [vscode-icons](https://open-vsx.org/extension/vscode-icons-team/vscode-icons)
+- [WakaTime](https://open-vsx.org/extension/WakaTime/vscode-wakatime)
