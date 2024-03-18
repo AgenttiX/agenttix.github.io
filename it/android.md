@@ -11,15 +11,15 @@ These are some of the apps that I have found useful.
 
 - [112 Suomi](https://112.fi/112-suomi)
 - [3DMark](https://play.google.com/store/apps/details?id=com.futuremark.dmandroid.application)
-- [AdAway](https://adaway.org/)
+- [AdAway](https://adaway.org/) (GPLv3, [GitHub](https://github.com/AdAway/AdAway))
   - Requires root
 - [AppLock](https://play.google.com/store/apps/details?id=com.sp.protector.free)
 - [Authy](https://authy.com/)
-- [BOINC](https://f-droid.org/en/packages/edu.berkeley.boinc/)
+- [BOINC](https://f-droid.org/en/packages/edu.berkeley.boinc/) (GPLv3+)
   - Use only on devices that don't have a battery, e.g. media boxes,
     as batteries can't withstand the prolonged high temperatures.
-- [Briar](https://briarproject.org/)
-- [Call Recorder](https://f-droid.org/en/packages/com.github.axet.callrecorder/)
+- [Briar](https://briarproject.org/) (GPLv3, [GitLab](https://code.briarproject.org/briar/briar))
+- [Call Recorder](https://f-droid.org/en/packages/com.github.axet.callrecorder/) (GPLv3, [GitLab](https://gitlab.com/axet/android-call-recorder))
 - [CellMapper](https://play.google.com/store/apps/details?id=cellmapper.net.cellmapper)
 - [CREDO Detector](https://play.google.com/store/apps/details?id=science.credo.mobiledetector)
 - [Digital Wellbeing](https://play.google.com/store/apps/details?id=com.google.android.apps.wellbeing)
@@ -37,9 +37,13 @@ These are some of the apps that I have found useful.
 - [hueManic](https://play.google.com/store/apps/details?id=com.urbandroid.hue)
 - [IP Webcam](https://play.google.com/store/apps/details?id=com.pas.webcam)
 - [Jellyfin](https://play.google.com/store/apps/details?id=org.jellyfin.mobile)
+  (GPLv2, [GitHub](https://github.com/jellyfin/jellyfin-android))
 - [K-9 Mail](https://k9mail.app/)
+  (Apache 2.0, [GitHub](https://github.com/thundernest/k-9))
 - [KDE Connect](https://play.google.com/store/apps/details?id=org.kde.kdeconnect_tp)
+  (GPLv2, [GitHub](https://github.com/KDE/kdeconnect-android))
 - [Keepass2Android](https://play.google.com/store/apps/details?id=keepass2android.keepass2android)
+  (GPLv3, [GitHub](https://github.com/PhilippC/keepass2android))
 - [Key Attestation Demo](https://play.google.com/store/apps/details?id=io.github.vvb2060.keyattestation)
 - [Manual Camera Compatibility](https://play.google.com/store/apps/details?id=pl.vipek.camera2_compatibility_test)
 - [Notify for Mi Band](https://play.google.com/store/apps/details?id=com.mc.miband1)
@@ -59,8 +63,12 @@ These are some of the apps that I have found useful.
 - [Prey](https://preyproject.com/)
 - [ProCam X](https://play.google.com/store/apps/details?id=com.intermedia.hd.camera.pro)
 - [SafetyNet Test](https://play.google.com/store/apps/details?id=org.freeandroidtools.safetynettest)
-- [SD Maid](https://play.google.com/store/apps/details?id=eu.thedarken.sdm)
-  ([pro](https://play.google.com/store/apps/details?id=eu.thedarken.sdm.unlocker))
+- SD Maid
+  - [SD Maid 1](https://play.google.com/store/apps/details?id=eu.thedarken.sdm) for old Android versions
+    ([pro](https://play.google.com/store/apps/details?id=eu.thedarken.sdm.unlocker),
+    [GitHub](https://github.com/d4rken-org/sdmaid))
+  - [SD Maid 2/SE](https://play.google.com/store/apps/details?id=eu.darken.sdmse) for new Android versions
+    ([GitHub](https://github.com/d4rken-org/sdmaid-se))
   - Requires root
 - [Signal](https://play.google.com/store/apps/details?id=org.thoughtcrime.securesms)
 - [SnoopSnitch](https://f-droid.org/packages/de.srlabs.snoopsnitch/)
@@ -244,6 +252,7 @@ unless you have a device with the A/B partition scheme or without a separate rec
 
 ([XDA discussion of proper installation order](https://forum.xda-developers.com/t/what-is-the-proper-order-of-flashing-rom-kernel-root-gapps-and-anti-throttle.3651521/))
 
+
 ## Root installation steps
 - Install Magisk when installing the ROM as above
 - Install [Magisk Manager](https://github.com/topjohnwu/Magisk)
@@ -284,6 +293,7 @@ Skip especially these:
     reset the phone and do the initial setup again but migrating the data this time.
 - Google account setup
 - Screen lock setup
+
 
 ## Backups
 ### Apps that should be restored using backup software
