@@ -78,6 +78,7 @@ Please vote on
 ### [VSCodium](https://vscodium.com/)
 VSCodium is an open-source distribution of Microsoft's VS Code.
 This is my go-to editor for other programming languages than Python.
+- [Fixing imports](https://stackoverflow.com/a/62581540)
 
 #### Plugins
 - [aw-watcher-vscode](https://open-vsx.org/extension/ActivityWatch/aw-watcher-vscode)
