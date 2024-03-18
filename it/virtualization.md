@@ -147,21 +147,23 @@ chmod 600 /root/zfs/key
 Creating the pool
 ``` bash
 zpool create \
-  -o ashift=12 \ # 4 KB sector size
+  -o ashift=12 \ # 4 KB sector size. Absolutely necessary. See the text below for details.
+  # Automatic TRIM. This is absolutely necessary if the pool has SSDs or SMR HDDs.
+  # Otherwise the performance will degrade over time.
   -o autotrim=on \
   -O encryption=on \
   # -O keyformat=passphrase \ # For external drives only!
   # -O keylocation=prompt \ # For external drives only!
-  -O keyformat=raw
-  -O keylocation=file:///root/zfs/YOUR_KEY_FILE
-  -O xattr=sa \ # Good for performance.
+  -O keyformat=raw \ # Use the key file as binary instead of ASCII. See the key creation instructions above.
+  -O keylocation=file:///root/zfs/YOUR_KEY_FILE \
+  -O xattr=sa \ # Store the extended filesystem attributes along with the data. Good for performance.
   -O dnodesize=auto \ # Set sufficient space for system attributes. Not compatible with having GRUB2 boot directly from this dataset.
   -O compression=on \ # Compression helps performance. lz4 is the default algorithm.
   -O relatime=on \ # Update access time only when it hasn't been updated for 24 hours.
-  -m /mnt/NAME_OF_POOL \
+  -m /mnt/NAME_OF_POOL \ # Mount point for the pool
   <NAME_OF_POOL> \
-  [raidz(2|3)|mirror] \
-  <NAMES_OF_DISKS>
+  [raidz(2|3)|mirror] \ # Pool/RAID type
+  <NAMES_OF_DISKS> # e.g. /dev/sda etc.
 ```
 "-o" = pool property, "-O" = filesystem property.
 Getting ashift right is absolutely essential,
