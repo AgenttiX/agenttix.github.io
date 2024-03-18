@@ -15,6 +15,12 @@ Before starting to look for devices, please ask yourself these questions:
   Some parts are worth future-proofing, whereas with some parts the additional features and performance are not worth the additional cost.
 - Does the device have to be new, or would a used one be sufficient?
 
+## Where to find good quality reviews
+- [Gamers Nexus](https://www.gamersnexus.net/)
+- [Linus Tech Tips](https://www.youtube.com/channel/UCXuqSBlHAE6Xw-yeJA0Tunw)
+  used to be a good source of reviews.
+  As of 2023, [not anymore](https://www.youtube.com/watch?v=FGW3TPytTjc),
+  as their recent videos have had numerous issues with data and claims that are blatantly incorrect.
 
 ## How to find good deals
 - [Ebay](https://www.ebay.com/) is a good source for used enterprise networking hardware
