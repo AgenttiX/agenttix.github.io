@@ -99,6 +99,23 @@ These are some of the apps that I have found useful.
     [Vanced MicroG](https://github.com/TeamVanced/VancedMicroG).
 
 
+## Pros and cons of custom ROMs
+### Pros
+- Better privacy: no telemetry to the manufacturer
+- Better security
+  - Faster updates and newer Android version
+- Newer Android version with new and better features
+
+### Cons
+- The camera may not work at its full resolution for either photos or videos
+  - In many phones 4K 60 Hz recording and above is not available on custom ROMs,
+    as it's based on a proprietary API.
+    [OnePlus blog post](https://community.oneplus.com/thread/477075)
+- There may be bugs specific to your device model.
+  Some features may not work at all,
+  and the only way to know if such major bugs exist is by testing the ROM on your device.
+
+
 ## Links for devices I've tested
 Whichever ROM or kernel you use as your daily driver,
 it should have SELinux set to enforcing.
