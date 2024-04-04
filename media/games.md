@@ -30,6 +30,18 @@ so please install it first using the instructions below.
 For instructions on setting up a server, please see my
 [Minecraft server GitHub repository](https://github.com/AgenttiX/minecraft-server).
 
+### Rules for my server
+Enjoy the game and let others do the same.
+However, if you want to be specific, this includes:
+- Respect other players and their property
+  - No PvP except between players that have agreed to it
+  - No griefing
+  - No stealing
+- Keep the spawn area clean.
+  - Discuss with the admins before building a base near the spawn
+  - No large quarries < 2000 blocks from the spawn
+- No political symbols or offensive art visible from the spawn or on the map
+
 ### Installing Java on Ubuntu
 Minecraft 1.16 and later are based on Java 16,
 so I recommend installing the latest Java from the
