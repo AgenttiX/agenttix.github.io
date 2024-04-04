@@ -16,6 +16,9 @@ title: Firewall
 
 IPv4 lists
 - [FireHOL level 3](https://raw.githubusercontent.com/firehol/blocklist-ipsets/master/firehol_level3.netset)
+  - Note that this list may contain false positives such as GitHub IPs,
+    which may cause issues with various services such as GitHub.
+    Therefore, I recommend using the "Deny Inbound" settings for this list instead of "Deny Both".
 - [EmergingThreats](https://rules.emergingthreats.net/blockrules/compromised-ips.txt)
 - [BinaryDefense](https://www.binarydefense.com/banlist.txt)
 
