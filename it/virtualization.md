@@ -247,10 +247,13 @@ ZFS has integrated SMB sharing, which uses Samba in the background, but it's rat
 For better control over Samba settings you should run Samba separately,
 and preferably in an LXC container for isolation.
 
+To mount a host directory to an LXC container, run:
 ``` bash
-pct set 100 -mp0 /host_dir,mp=/container_dir
+pct set XXX -mpY /host_dir,mp=/container_dir
 ```
+where XXX is the container number, and Y is the number of the mount point, starting from 0.
 
+In the Samba settings, set these:
 ```
 vfs objects = acl_xattr
 inherit acls = yes
