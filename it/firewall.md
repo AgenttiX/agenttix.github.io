@@ -71,6 +71,9 @@ suppress gen_id 128, sig_id 4
 # Telegram
 suppress gen_id 137, sig_id 1
 
+#(spp_sip) URI is too long
+suppress gen_id 140, sig_id 3
+
 suppress gen_id 141, sig_id 1
 
 # Kapsi IMAP4
