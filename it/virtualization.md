@@ -135,6 +135,8 @@ If you encrypt the entire pool,
 [you cannot disable encryption for individual datasets](https://www.reddit.com/r/zfs/comments/bnvdco/zol_080_encryption_dont_encrypt_the_pool_root/).
 [Encrypted ZFS can be unlocked with a TPM](https://www.reddit.com/r/zfs/comments/ppo9rl/zfs_encryption_and_tpm/).
 However, I recommend that you encrypt your root disk with other means and store the keys of your ZFS pools there.
+Such data pools can be
+[unlocked at boot time using systemd](https://wiki.archlinux.org/title/ZFS#Unlock/Mount_at_boot_time:_systemd).
 
 Creating the encryption key
 ``` bash
