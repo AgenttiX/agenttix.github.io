@@ -8,6 +8,12 @@ title: Firewall
 [OPNsense](https://opnsense.org/)
 [OpenWRT](https://openwrt.org/)
 
+## Misc settings
+For remote deployments,
+enable SSH access from the local network in addition to the web GUI,
+so that you can inspect issues in the case the web GUI goes down without having to access the physical console.
+Preferably restrict SSH access to be with key only.
+
 ## Darkstat
 [Darkstat](https://unix4lyfe.org/darkstat/)
 
