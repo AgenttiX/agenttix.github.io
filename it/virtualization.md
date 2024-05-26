@@ -135,6 +135,8 @@ If you encrypt the entire pool,
 [you cannot disable encryption for individual datasets](https://www.reddit.com/r/zfs/comments/bnvdco/zol_080_encryption_dont_encrypt_the_pool_root/).
 [Encrypted ZFS can be unlocked with a TPM](https://www.reddit.com/r/zfs/comments/ppo9rl/zfs_encryption_and_tpm/).
 However, I recommend that you encrypt your root disk with other means and store the keys of your ZFS pools there.
+Such data pools can be
+[unlocked at boot time using systemd](https://wiki.archlinux.org/title/ZFS#Unlock/Mount_at_boot_time:_systemd).
 
 Creating the encryption key
 ``` bash
@@ -247,10 +249,13 @@ ZFS has integrated SMB sharing, which uses Samba in the background, but it's rat
 For better control over Samba settings you should run Samba separately,
 and preferably in an LXC container for isolation.
 
+To mount a host directory to an LXC container, run:
 ``` bash
-pct set 100 -mp0 /host_dir,mp=/container_dir
+pct set XXX -mpY /host_dir,mp=/container_dir
 ```
+where XXX is the container number, and Y is the number of the mount point, starting from 0.
 
+In the Samba settings, set these:
 ```
 vfs objects = acl_xattr
 inherit acls = yes

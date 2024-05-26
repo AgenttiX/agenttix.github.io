@@ -300,7 +300,7 @@ ssh-add -s /usr/lib/x86_64-linux-gnu/libtpm2_pkcs11.so.1
 ```
 
 Use RSA instead of ECC, since ECC is difficult to implement without side-channel vulnerabilities.
-[Such vulnerabilities have already been found in TPMs.](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-25082).
+[Such vulnerabilities have already been found in TPMs](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-25082).
 ED25519 is in the TPM specification and
 [support for it has been requested for tpm2-pkcs11](https://github.com/tpm2-software/tpm2-pkcs11/issues/785),
 but TPM manufacturers will first have to implement the algorithm in their devices.

@@ -8,6 +8,12 @@ title: Firewall
 [OPNsense](https://opnsense.org/)
 [OpenWRT](https://openwrt.org/)
 
+## Misc settings
+For remote deployments,
+enable SSH access from the local network in addition to the web GUI,
+so that you can inspect issues in the case the web GUI goes down without having to access the physical console.
+Preferably restrict SSH access to be with key only.
+
 ## Darkstat
 [Darkstat](https://unix4lyfe.org/darkstat/)
 
@@ -16,6 +22,9 @@ title: Firewall
 
 IPv4 lists
 - [FireHOL level 3](https://raw.githubusercontent.com/firehol/blocklist-ipsets/master/firehol_level3.netset)
+  - Note that this list may contain false positives such as GitHub IPs,
+    which may cause issues with various services such as GitHub.
+    Therefore, I recommend using the "Deny Inbound" settings for this list instead of "Deny Both".
 - [EmergingThreats](https://rules.emergingthreats.net/blockrules/compromised-ips.txt)
 - [BinaryDefense](https://www.binarydefense.com/banlist.txt)
 
