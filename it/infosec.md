@@ -26,6 +26,15 @@ CIA model:
 [Privacy Not Included](https://foundation.mozilla.org/en/privacynotincluded/)
 
 
+## Maps
+- [GPSJAM GPS/GNSS Interference Map](https://gpsjam.org)
+- Internet attack maps
+  - The practicaul utility of these maps is very limited.
+  - [Bitdefender Cyberthreat Real-Time Map](https://threatmap.bitdefender.com/)
+  - [Fortinet Threat Map](https://threatmap.fortiguard.com/)
+  - [Radware Live Threat Map](https://livethreatmap.radware.com/)
+
+
 ## Travel
 ### Before travelling
 - Make a backup of all important data.
