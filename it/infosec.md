@@ -190,6 +190,7 @@ Please let me know if there's something to be improved.
 - [Bitbucket](https://bitbucket.org/account/settings/two-step-verification/manage)
 - [Bitfinex](https://setting.bitfinex.com/security)
 - Coinbase
+- Discord
 - eBay
 - Electronic Arts
 - Epic Games
