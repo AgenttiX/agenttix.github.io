@@ -18,7 +18,11 @@ title: Video games
 
 
 ## [Mass Effect](https://store.steampowered.com/app/1328670/Mass_Effect_Legendary_Edition/)
-[Fan-made trailer](https://www.youtube.com/watch?v=wvqYN2RJfVA)
+Mass effect is a deep and rich universe.
+It tackles some philosophical themes at a level that even Star Trek has been reluctant to grasp.
+
+- [Fan-made trailer](https://www.youtube.com/watch?v=wvqYN2RJfVA)
+- [Description on the underlying themes](https://gizmodo.com/why-mass-effect-is-the-most-important-science-fiction-u-5886178)
 
 
 ## [Minecraft](https://www.minecraft.net/)
@@ -88,7 +92,7 @@ Good shaders
 
 
 ## [Supreme Commander](https://store.steampowered.com/sub/11732/)
-[Forged Alliance Forever](https://www.faforever.com/)
-
+- [Forged Alliance Forever](https://www.faforever.com/)
+- [Linux instructions](https://github.com/FAForever/faf-linux)
 
 ## [Zero-K](https://zero-k.info/)
