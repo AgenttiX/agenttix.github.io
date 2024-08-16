@@ -297,19 +297,23 @@ Skip especially these:
 
 ## Backups
 ### Apps that should be restored using backup software
-- Notify for Mi Band
-  - By restoring from a backup you don't have to re-pair your band, and can keep old recorded data.
-- Syncthing
+- Syncthing (if using the same device)
   - Either backup restore the contents of the synced folders manually to enable the app to find them,
     or remove and re-add the folders in the app to force a resync.
+- Snapchat
+  - Backing up may not be necessary, as the messages may be stored in the cloud,
+    but at least the use of a backup software works.
+- Telegram
+  - This way you can keep your secret chats.
 - WhatsApp
   - Titanium Backup may not work. Use Swift Backup instead.
 
 ### Apps that have their own backup systems
-The most of these are manual only.
+The most of these apps support only manual backups.
 
 - Authy
 - K-9 mail
+- Notify for Mi Band
 - OpenCamera
 - QKSMS
 - Signal
