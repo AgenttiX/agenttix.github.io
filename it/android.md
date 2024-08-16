@@ -99,6 +99,23 @@ These are some of the apps that I have found useful.
     [Vanced MicroG](https://github.com/TeamVanced/VancedMicroG).
 
 
+## Pros and cons of custom ROMs
+### Pros
+- Better privacy: no telemetry to the manufacturer
+- Better security
+  - Faster updates and newer Android version
+- Newer Android version with new and better features
+
+### Cons
+- The camera may not work at its full resolution for either photos or videos
+  - In many phones 4K 60 Hz recording and above is not available on custom ROMs,
+    as it's based on a proprietary API.
+    [OnePlus blog post](https://community.oneplus.com/thread/477075)
+- There may be bugs specific to your device model.
+  Some features may not work at all,
+  and the only way to know if such major bugs exist is by testing the ROM on your device.
+
+
 ## Links for devices I've tested
 Whichever ROM or kernel you use as your daily driver,
 it should have SELinux set to enforcing.
@@ -119,8 +136,12 @@ a vulnerability that allows any installed app to gain root access.
 
 ### OnePlus 9 Pro (lemonadep)
 - [LineageOS](https://wiki.lineageos.org/devices/lemonadep/)
+  - [LineageOS 21 (Android 14) XDA thread](https://xdaforums.com/t/rom-official-lemonadep-14-lineageos-21.4656703/)
 - [TWRP](https://twrp.me/oneplus/oneplus9pro.html)
 - [Stock ROM](https://service.oneplus.com/global/search/search-detail?id=2096329)
+  - Note that this page may have an older firmware than what's available with OTA.
+    In that case, use the OTA firmware instead of the one available from the website,
+    and skip the manual update of the additional firmware partitions.
 - Kernel
   - [blu_spark](https://xdaforums.com/t/kernel-blu_spark-r158-op9-pro-a13-custom.4286037/)
 - Camera mod
@@ -186,7 +207,7 @@ a vulnerability that allows any installed app to gain root access.
 These instructions look very complicated, but they are actually quite straightforward,
 unless you have a device with the A/B partition scheme or without a separate recovery partition.
 
-- Download
+- Download (These may take a while, so start the downloads before reading further.)
   - Latest stock ROM (if available)
   - Custom ROM
   - TWRP or some other custom recovery
@@ -199,6 +220,14 @@ unless you have a device with the A/B partition scheme or without a separate rec
     and can therefore be carried on to the custom ROM
     even though the system and data partitions will be wiped during the installation of the custom ROM. 
   - Please check beforehand, though, that the newer stock ROM doesn't lock the bootloader or introduce other additional restrictions.
+- Boot the device to the stock firmware and test that all features work.
+  This way if you have any issues later, you will know if it's a hardware issue or caused by the custom firmware.
+  Test especially these features:
+  - Phone calls
+  - SMS
+  - VoLTE / VoWIFI (On some devices, this has to be used at least once with the stock firmware to provision
+    [IMS](https://en.wikipedia.org/wiki/IP_Multimedia_Subsystem).)
+  - Camera, including all special imaging modes (4K 60 Hz, 4K 120 Hz, 8K, zoom, macro, monochrome etc.)
 - Boot the phone to fastboot mode
 - Select the boot slot you want to install to
   - `sudo fastboot --set-active=a` (or b)
@@ -267,8 +296,16 @@ unless you have a device with the A/B partition scheme or without a separate rec
   - Google Play Store
   - All other apps that refuse to work on rooted phones
 - Install [Universal SafetyNet Fix](https://github.com/kdrag0n/safetynet-fix)
-- Install [MagiskHide Props Config](https://github.com/Magisk-Modules-Repo/MagiskHidePropsConf)
-- (Install [Google Pay SQlite Fix Module](https://forum.xda-developers.com/t/working-magisk-with-google-pay-as-of-gms-17-1-22-on-pie.3929950/page-9#post-79643248))
+  - As of 2024-06-20, this will make you pass these checks
+    - Safety net Request
+    - Response signature validation
+    - Basic Integrity
+  - But not this: CTS profile match
+    - It seems that Google has tightened its SafetyNet check,
+      and therefore there may be no way to get SafetyNet to pass on a modern rooted device.
+- If using an old firmware or old device, these additional tools may help
+  - [MagiskHide Props Config](https://github.com/Magisk-Modules-Repo/MagiskHidePropsConf)
+  - [Google Pay SQlite Fix Module](https://forum.xda-developers.com/t/working-magisk-with-google-pay-as-of-gms-17-1-22-on-pie.3929950/page-9#post-79643248)
 - Reboot
 - Delete app data and cache for the aforementioned Google apps
 - Install and run [SafetyNet Test](https://play.google.com/store/apps/details?id=org.freeandroidtools.safetynettest)

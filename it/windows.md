@@ -55,6 +55,21 @@ title: Windows
 - If you're not going to install any other virtualization software than Hyper-V, enable
   [memory integrity](https://support.microsoft.com/en-us/windows/core-isolation-e30ed737-17d8-42f3-a2a9-87521df09b78)
   before installing any additional device drivers, as those may prevent you from enabling it later.
+- Join the computer to a domain (if needed and not already joined).
+  - Move the computer to the correct AD Organizational Unit.
+  - Run `gpupdate /force`
+  - Reboot
+- Create additional user accounts as needed
+  - You can give individual domain users admin privileges to the local computer at
+    `Control Panel -> User Accounts -> Give other users access to this computer -> Advanced -> Advanced -> Local users and groups -> Groups -> Administrators -> Add...`
+- Install Windows Updates (including optional updates e.g. firmware, but not preview versions)
+- Enable BitLocker
+  - Any BIOS updates should be installed before this, as some computers don't allow BIOS updates when BitLocker is enabled.
+- If you're willing to pay for antivirus software, install [F-Secure](https://www.f-secure.com/)
+  - It's from Finland, so it's not subject to NSA surveillance like Norton and McAfee, and not from a rogue state like Kaspersky
+- Install Microsoft Office: [Download](https://aka.ms/office-install) (if you have a license)
+  - Always download the 64-bit version unless you have a specific reason to use the 32-bit version
+- Install software with the [installer script](https://github.com/AgenttiX/windows-scripts)
 - Disable Bluetooth from the taskbar menu unless you need it at the moment, as Bluetooth is a huge attack surface
 - Set Windows settings
   - System
@@ -70,10 +85,7 @@ title: Windows
   - Windows Update
     - Advanced options -> Receive updates for other Microsoft products: enable
     - Delivery optimization -> Allow downloads from other PCs: on, Devices on the internet and my local network
-- Install Windows Updates (including optional updates e.g. firmware, but not preview versions)
-- If you're willing to pay for antivirus software, install [F-Secure](https://www.f-secure.com/)
-  - It's from Finland, so it's not subject to NSA surveillance like Norton and McAfee, and not from a rogue state like Kaspersky
-- Install software with the [installer script](https://github.com/AgenttiX/windows-scripts)
+
 
 ## Installing software
 Unlike Linux, Android and iOS, Windows does not have a single package manager or software store
@@ -97,6 +109,7 @@ These may be useful to do depending on your use case
 - Configure OneDrive
 - Increase Outlook cache size to speed up the search:
   `Outlook -> Account Settings -> Change... -> Download email for the past: All`
+
 
 ## Maintenance
 Since Windows software is installed from so many sources,

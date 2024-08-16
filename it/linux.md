@@ -65,3 +65,20 @@ TODO
 ``` bash
 mv ~/.local/share/kactivitymanagerd ~/.local/share/kactivitymanagerd_old
 ```
+
+
+## Misc tips
+### Creating new users
+``` bash
+adduser user_name
+```
+The command `useradd` is a low-level utility, and should not be used interactively.
+
+### Giving group access to a user
+``` bash
+usermod -a -G group_name user_name
+```
+Giving root access
+``` bash
+usermod -a -G sudo user_name
+```

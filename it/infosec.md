@@ -26,6 +26,15 @@ CIA model:
 [Privacy Not Included](https://foundation.mozilla.org/en/privacynotincluded/)
 
 
+## Maps
+- [GPSJAM GPS/GNSS Interference Map](https://gpsjam.org)
+- Internet attack maps
+  - The practicaul utility of these maps is very limited.
+  - [Bitdefender Cyberthreat Real-Time Map](https://threatmap.bitdefender.com/)
+  - [Fortinet Threat Map](https://threatmap.fortiguard.com/)
+  - [Radware Live Threat Map](https://livethreatmap.radware.com/)
+
+
 ## Travel
 ### Before travelling
 - Make a backup of all important data.
@@ -190,6 +199,7 @@ Please let me know if there's something to be improved.
 - [Bitbucket](https://bitbucket.org/account/settings/two-step-verification/manage)
 - [Bitfinex](https://setting.bitfinex.com/security)
 - Coinbase
+- Discord
 - eBay
 - Electronic Arts
 - Epic Games
@@ -290,7 +300,7 @@ ssh-add -s /usr/lib/x86_64-linux-gnu/libtpm2_pkcs11.so.1
 ```
 
 Use RSA instead of ECC, since ECC is difficult to implement without side-channel vulnerabilities.
-[Such vulnerabilities have already been found in TPMs.](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-25082).
+[Such vulnerabilities have already been found in TPMs](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-25082).
 ED25519 is in the TPM specification and
 [support for it has been requested for tpm2-pkcs11](https://github.com/tpm2-software/tpm2-pkcs11/issues/785),
 but TPM manufacturers will first have to implement the algorithm in their devices.

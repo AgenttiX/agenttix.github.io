@@ -107,6 +107,22 @@ using free software such as
 You should enforce this with a
 [group policy](https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/password-policy).
 
+### Backing up an Active Directory domain
+The domain controller should preferably be virtualized so that it can be easily backed up as a whole.
+In addition to this, I recommend setting up
+Windows Server Backup.
+However, it should be noted that configuring a scheduled
+Windows Server Backup to a remote machine,
+the machine must be joined to the same domain as the server,
+and the same user should have admin both access to the domain controller
+and write access to the backup server.
+This is an unfortunate limitation of the Windows Server Backup software.
+It should be noted that this kind of a configuration makes the backup server
+vulnerable to ransomware, as if the attacker has access to the domain controller,
+they can use either the domain join or the backup credentials to destroy the backup.
+Therefore this backup server should be backed up further to another backup server
+with a pull-type configuration where the second backup server has only read access to the first.
+
 
 ## Active Directory Certificate Services
 Active Directory Certificate Services (AD CS) is the platform

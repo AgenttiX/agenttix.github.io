@@ -34,13 +34,6 @@ title: Hardware
   - Set a password even if you're not going to use ME.
     [Not changing the default password is a security risk.](https://threatpost.com/intel-amt-loophole-allows-hackers-to-gain-control-of-some-pcs-in-under-a-minute/129408/)
     - Disable remote access to the ME console if you're not going to use it.
-- Join the computer to a domain (if needed and not already joined).
-  - Move the computer to the correct AD Organizational Unit.
-  - Run `gpupdate /force`.
-  - Reboot.
-- Enable BitLocker.
-  - Any BIOS updates should be installed before this, as some computers don't allow BIOS updates when BitLocker is enabled.
-- Install Windows Updates.
 - Run stress testing such as
   [Prime95](https://www.mersenne.org/download/) and
   [Furmark](https://geeks3d.com/furmark/).
