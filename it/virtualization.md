@@ -243,6 +243,30 @@ zfs set acltype=posixacl <nameofzpool>/<nameofdataset>
 ### Backups and snapshots
 [zrepl](https://zrepl.github.io/)
 
+### Creating a VM
+System
+- Machine: q35 (Necessary for PCIe passthrough)
+- BIOS: OVMF (UEFI)
+- EFI storage: same as for the VM root disk
+- SCSI Controller: VirtIO SCSI single
+- QEMU Agent: yes (for Linux)
+- Add TPM: yes (if you're planning to use the TPM for e.g. SSH client)
+
+Disks
+- Bus/Device: [SCSI (virtio-scsi)](https://www.ovirt.org/develop/release-management/features/storage/virtio-scsi.html)
+  - VirtIO Block may be faster in some scenarios,
+    but it's legacy and should therefore not be used for new installations.
+- Discard: yes
+
+CPU
+- Cores: If you have many VMs, it's a good idea to set this to 1/2 of your total core count.
+  This way a single VM can use many of CPU cores if needed, but can't block the entire CPU.
+
+Network:
+- Model: VirtIO (paravirtualized)
+
+When installing the OS, there's little need for LVM, as snapshots can be handled at the Proxmox level.
+Therefore I have chosen to install my Ubuntu VMs without LVM.
 
 ### Samba
 ZFS has integrated SMB sharing, which uses Samba in the background, but it's rather rudimentary.
