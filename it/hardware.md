@@ -45,3 +45,25 @@ title: Hardware
 
 ## Personal IT hardware
 [Geekbench results](https://browser.geekbench.com/user/AgenttiX)
+
+### [ASUS Zenith II Extreme](https://rog.asus.com/motherboards/rog-zenith/rog-zenith-ii-extreme-model/)
+#### USB ports
+
+| Ports           | PCIe bus                    | IOMMU group | Name                                      |
+| --------------- | --------------------------- | ----------- | ----------------------------------------- |
+| SP_USB10        |                             |             | Chipset -> USB 2.0 header (dual device)   |
+| USB_E910        |                             |             | Chipset -> USB 2.0 header (single device) |
+| USB32G1_1,2,3,4 | 0000:49:00.3                | 55          |                                           |
+| U32G1_E56       |                             |             | Chipset -> header                         |
+| U32G1_E78       |                             |             | Chipset -> header                         |
+| USB32G2_1,2     | 0000:05:00.3                | 18          | CPU -> back                               |
+| USB32G2_3,4     | 0000:24:00.3                | 35          | CPU -> back                               |
+| USB32G2_5       | 0000:49:00.3                | 55          | Chipset -> header                         |
+| USB32G2_6       |                             |             | Chipset -> header                         |
+| USB32G2_7,9     | 0000:42:08.0                | 55          | Chipset -> back                           |
+| U32G2_C8        | 0000:49:00.1                | 55          | Chipset -> back                           |
+| U32G2X2_EC1     | 0000:22:00.0 / 0000:49:00.3 | 31 / 55     | CPU -> back                               |
+
+The USB controllers are in the IOMMU groups 18, 31, 35 and 55.
+This table does not yet include the front panel and USB-c ports.
+A good way to find out the values above is to connect a device and run `sudo lshw -html > lshw.html`.
