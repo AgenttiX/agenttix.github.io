@@ -82,3 +82,29 @@ Giving root access
 ``` bash
 usermod -a -G sudo user_name
 ```
+
+### Mounting SMB shares
+[Official Ubuntu instructions](https://ubuntu.com/server/docs/how-to-mount-cifs-shares-permanently#mount-unprotected-guest-network-folders)
+``` bash
+apt install cifs-utils
+mkdir /mnt/SHARE_NAME
+nano /etc/fstab
+```
+Add this line if you want to save the password:
+```
+//SERVER_IP_OR_DNS/SHARE_NAME /mnt/SHARE_NAME cifs credentials=/root/smb/SHARE_NAME,uid=LOCAL_USER,vers=3.11,seal,noexec,noauto 0 0
+```
+Also create the credentials file with:
+```
+username=YOUR_USERNAME
+password=YOUR_PASSWORD
+domain=YOUR_DOMAIN (if you're using a domain account)
+```
+Or add this line if you want the password to be asked every time:
+```
+//SERVER_IP_OR_DNS/SHARE_NAME /mnt/SHARE_NAME cifs user=SERVER_USER,uid=LOCAL_USER,vers=3.11,seal,noexec,noauto 0 0
+```
+Then run:
+``` bash
+mount /mnt/SHARE_NAME
+```
