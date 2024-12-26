@@ -243,6 +243,30 @@ zfs set acltype=posixacl <nameofzpool>/<nameofdataset>
 ### Backups and snapshots
 [zrepl](https://zrepl.github.io/)
 
+### Creating a VM
+System
+- Machine: q35 (Necessary for PCIe passthrough)
+- BIOS: OVMF (UEFI)
+- EFI storage: same as for the VM root disk
+- SCSI Controller: VirtIO SCSI single
+- QEMU Agent: yes (for Linux)
+- Add TPM: yes (if you're planning to use the TPM for e.g. SSH client)
+
+Disks
+- Bus/Device: [SCSI (virtio-scsi)](https://www.ovirt.org/develop/release-management/features/storage/virtio-scsi.html)
+  - VirtIO Block may be faster in some scenarios,
+    but it's legacy and should therefore not be used for new installations.
+- Discard: yes
+
+CPU
+- Cores: If you have many VMs, it's a good idea to set this to 1/2 of your total core count.
+  This way a single VM can use many of CPU cores if needed, but can't block the entire CPU.
+
+Network:
+- Model: VirtIO (paravirtualized)
+
+When installing the OS, there's little need for LVM, as snapshots can be handled at the Proxmox level.
+Therefore I have chosen to install my Ubuntu VMs without LVM.
 
 ### Samba
 ZFS has integrated SMB sharing, which uses Samba in the background, but it's rather rudimentary.
@@ -335,16 +359,20 @@ Workaround: [change from overlayfs2 to fuse-overlayfs](https://webdock.io/en/doc
       [here](https://forum.proxmox.com/threads/gpu-passthrough-to-lxc-container.114106/)
   - Start the container
   - Install the same version of the Nvidia drivers as on the host, but without the kernel module, e.g.
-    `apt-get install nvidia-headless-no-dkms-545 nvidia-utils-545 libnvidia-encode-545 libnvidia-decode-545`
+    `apt-get install nvidia-headless-no-dkms-560 nvidia-utils-560 libnvidia-encode-560 libnvidia-decode-560`
     - Use exactly the same driver version as on the host.
     - The LXC container shares its kernel with the host, which already has the DKMS kernel module.
     - If you don't install the encoding and decoding libraries, FFmpeg will crash when attempting to transcode.
   - Test that the driver works using `nvidia-smi` in the container. You may have to reboot the container first.
 - Once the driver works, lock the package versions so that automatic upgrades won't cause a version mismatch.
+  Locking merely `nvidia-kernel-open-dkms` and `cuda-drivers` is not sufficient,
+  as `apt` may still update their dependencies.
+  Therefore, you also have to lock the dependencies that have the same version number as those packages.
   - On the host:
-    - If using the open kernel module: `apt-mark hold nvidia-kernel-open-dkms cuda-drivers`
-    - If not: `apt-mark hold nvidia-kernel-dkms cuda-drivers`
-  - On the container: `apt-mark hold nvidia-headless-no-dkms-545 nvidia-utils-545 libnvidia-encode-545 libnvidia-decode-545`
+    `apt-mark hold firmware-nvidia-gsp libegl-nvidia0 libgl1-nvidia-glvnd-glx libgles-nvidia1 libgles-nvidia2 libglx-nvidia0 libnvidia-allocator1 libnvidia-cfg1 libnvidia-egl-xcb1 libnvidia-eglcore libnvidia-encode1 libnvidia-fbc1 libnvidia-glcore libnvidia-glvkspirv apt-mark hold firmware-nvidia-gsp libegl-nvidia0 libgl1-nvidia-glvnd-glx libgles-nvidia1 libgles-nvidia2 libglx-nvidia0 libnvidia-allocator1 libnvidia-cfg1 libnvidia-egl-xcb1 libnvidia-eglcore libnvidia-encode1 libnvidia-fbc1 libnvidia-glcore libnvidia-glvkspirv libnvidia-gpucomp libnvidia-ml1 libnvidia-nvvm4 libnvidia-opticalflow1 libnvidia-pkcs11 libnvidia-ptxjitcompiler1 libnvidia-rtcore libnvidia-vksc-core nvidia-alternative nvidia-cuda-mps nvidia-driver nvidia-driver-bin nvidia-driver-libs nvidia-egl-common nvidia-egl-icd nvidia-kernel-open-dkms nvidia-kernel-support nvidia-modprobe nvidia-opencl-common nvidia-opencl-icd nvidia-persistenced nvidia-settings nvidia-smi nvidia-suspend-common nvidia-vdpau-driver nvidia-vulkan-common nvidia-vulkan-icd nvidia-xconfig xserver-xorg-video-nvidia`
+    - Note that if you are not using the open kernel module, you have to replace `nvidia-kernel-open-dkms` with `nvidia-kernel-dkms`.
+  - On the container:
+    `apt-mark hold libnvidia-cfg1-560 libnvidia-compute-560 libnvidia-decode-560 libnvidia-encode-560 nvidia-compute-utils-560 nvidia-firmware-560-560.28.03 nvidia-headless-no-dkms-560 nvidia-kernel-common-560 nvidia-kernel-source-560 nvidia-utils-560`
 - Setup Docker
   - Install Docker
   - Install [NVIDIA container runtime](https://gitlab.com/nvidia/container-toolkit/container-toolkit/-/tree/main/cmd/nvidia-container-runtime)

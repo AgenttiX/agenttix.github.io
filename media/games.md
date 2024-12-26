@@ -18,7 +18,11 @@ title: Video games
 
 
 ## [Mass Effect](https://store.steampowered.com/app/1328670/Mass_Effect_Legendary_Edition/)
-[Fan-made trailer](https://www.youtube.com/watch?v=wvqYN2RJfVA)
+Mass effect is a deep and rich universe.
+It tackles some philosophical themes at a level that even Star Trek has been reluctant to grasp.
+
+- [Fan-made trailer](https://www.youtube.com/watch?v=wvqYN2RJfVA)
+- [Description on the underlying themes](https://gizmodo.com/why-mass-effect-is-the-most-important-science-fiction-u-5886178)
 
 
 ## [Minecraft](https://www.minecraft.net/)
@@ -99,8 +103,28 @@ Good shaders
 - [Sildur's Shaders](https://sildurs-shaders.github.io/)
 
 
-## [Supreme Commander](https://store.steampowered.com/sub/11732/)
-[Forged Alliance Forever](https://www.faforever.com/)
+## [Quantum Break](https://en.wikipedia.org/wiki/Quantum_Break)
+[Steam](https://store.steampowered.com/app/474960/Quantum_Break/)
 
+If you have a CPU with many threads such as an AMD threadripper,
+the game may crash at launch with the following error.
+```
+R_ASSERT( Havok Error (id 0xf03454fe)
+Memory\System\FreeList\hkFreeListMemorySystem.cpp (100): Too many threads
+)
+File: Memory\System\FreeList\hkFreeListMemorySystem.cpp
+Line: 100
+
+Reason: Too many threads
+```
+When running the game with Proton, you can fix this with the launch option:
+```
+WINE_CPU_TOPOLOGY=31:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30 %command%
+```
+
+
+## [Supreme Commander](https://store.steampowered.com/sub/11732/)
+- [Forged Alliance Forever](https://www.faforever.com/)
+- [Linux instructions](https://github.com/FAForever/faf-linux)
 
 ## [Zero-K](https://zero-k.info/)

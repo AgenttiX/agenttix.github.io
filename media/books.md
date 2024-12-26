@@ -98,6 +98,9 @@ such as [the Electronic Frontier Foundation](https://www.eff.org/) (EFF) and Ele
 
 ### [The Last Question](https://en.wikipedia.org/wiki/The_Last_Question)
 There's also a great [comic version](https://imgur.com/gallery/9KWrH).
+See also the 1979 article
+[Time without end: Physics and biology in an open universe](https://link.aps.org/doi/10.1103/RevModPhys.51.447)
+by Freeman Dyson.
 
 
 ### [The Lord of the Rings](https://en.wikipedia.org/wiki/The_Lord_of_the_Rings)

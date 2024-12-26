@@ -36,6 +36,7 @@ is the only one that properly respects user privacy and open web standards.
 
 ### Utility
 - [Better Netflix](https://addons.mozilla.org/en-US/firefox/addon/better-netflix/)
+- [DeArrow](https://addons.mozilla.org/en-US/firefox/addon/dearrow/)
 - [Distill](https://distill.io/)
 - [Firefox Multi-Account Containers](https://addons.mozilla.org/en-US/firefox/addon/multi-account-containers/)
 - [Keepa](https://keepa.com/)
