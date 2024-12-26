@@ -33,6 +33,11 @@ Many of the search results will take you to
 where people have posted lots of questions on various topics
 and got many useful answers from fellow programmers.
 
+If you're a student, teacher or academic researcher,
+I highly recommend joining
+[GitHub Education](https://github.com/education).
+This also includes
+[access to Copilot](https://docs.github.com/en/copilot/managing-copilot/managing-copilot-as-an-individual-subscriber/managing-your-github-copilot-pro-subscription/getting-free-access-to-copilot-pro-as-a-student-teacher-or-maintainer).
 
 ## IDEs
 ### [Neovim](https://neovim.io/)
