@@ -30,6 +30,8 @@ These are some of the apps that I have found useful.
 - [F-Droid](https://f-droid.org/)
 - [Findroid](https://play.google.com/store/apps/details?id=dev.jdtech.jellyfin)
 - [Firefox](https://play.google.com/store/apps/details?id=org.mozilla.firefox)
+- [FlorisBoard](https://play.google.com/store/apps/details?id=dev.patrickgold.florisboard) (Apache 2.0, [GitHub](https://github.com/florisboard/florisboard))
+- [Fossify Keyboard](https://play.google.com/store/apps/details?id=org.fossify.keyboard) (GPLv3, [GitHub](https://github.com/FossifyOrg/Keyboard))
 - [Google Fit](https://play.google.com/store/apps/details?id=com.google.android.apps.fitness)
 - [Google SMB client](https://github.com/google/samba-documents-provider)
 - [GSam Battery Monitor](https://play.google.com/store/apps/details?id=com.gsamlabs.bbm)
