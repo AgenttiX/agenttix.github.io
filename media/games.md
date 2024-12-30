@@ -14,6 +14,10 @@ title: Video games
 ## [Factorio](https://www.factorio.com/)
 
 
+## [Ingress](https://ingress.com/)
+
+
+
 ## [Kerbal Space Program](https://www.kerbalspaceprogram.com/)
 
 
