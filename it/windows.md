@@ -39,6 +39,8 @@ title: Windows
 ### Installation
 - Select manual/custom partitioning when asked.
   Preferably delete all existing partitions and select the unallocated as the installation target.
+  - If you choose to create the Windows partitions manually instead, give at least 1 GB of space for the EFI partition.
+    Windows will create a 100 MB partition by default, but it may not be enough to dual boot Linux.
 - When asked to log in with a Microsoft account, disconnect the computer from the Internet
   - Wired connection: disconnect cable
   - Wi-Fi: use a physical button (if available) or press Shift+F10 and write `netsh wlan disconnect`
@@ -49,7 +51,7 @@ title: Windows
   - Use the settings app to do the join. Don't do the first join using some other app such as Office or Edge,
     as the login may not apply properly for login & BitLocker recovery configuration etc.
   - When enabling OneDrive, disable the backup unless you have bought additional storage (e.g. as a part of Office 365).
-    Otherwise you will get constant prompts to buy more OneDrive storage once your home folder exceeds the free plan (5 GB).
+    Otherwise, you will get constant prompts to buy more OneDrive storage once your home folder exceeds the free plan (5 GB).
 
 ### After installation
 - If you're not going to install any other virtualization software than Hyper-V, enable
@@ -85,6 +87,8 @@ title: Windows
   - Windows Update
     - Advanced options -> Receive updates for other Microsoft products: enable
     - Delivery optimization -> Allow downloads from other PCs: on, Devices on the internet and my local network
+  - Fast startup
+    - Disable if you're using Linux on the same computer
 
 
 ## Installing software

@@ -14,10 +14,12 @@ title: Linux
 - [Lubuntu](https://lubuntu.me/)
   ([download](https://cdimage.ubuntu.com/lubuntu/releases/))
 
+
 ### Utilities
 
 - [Clonezilla](https://clonezilla.org/)
   ([download](https://clonezilla.org/downloads.php))
+
 
 ## Installing Linux
 - Download the ISO file
@@ -52,13 +54,111 @@ title: Linux
   if using e.g. LibreNMS
 
 
+### Encrypted dual boot
+- Install Windows as usual, but don't yet install software, as it will fill the drive, which will slow down the later steps.
+- Disable BitLocker (aka. device encryption) if it's enabled. Reboot and ensure that it's disabled.
+- Disable fast startup.
+  - If you don't, both your Windows and Linux installation may become corrupted when you boot to Windows after resizing its partition,
+    as Windows will not realize that the partition size has changed, and will write outside the partition.
+- Boot from the Linux installation media and select to try the OS before installation (e.g. "Try Ubuntu")
+  so that you can access disk partitioning tools before the installation.
+- Open a partitioning tool (e.g. GParted or KDE Partition Manager)
+  - Shrink the Windows C: partition to make space for Linux.
+    - I prefer to give about half of the disk to Linux.
+    - Do not move the Windows partition unless you absolutely want to, as
+      [resizing Windows partitions requires special tricks from the software](https://superuser.com/a/1370431).
+      If you do, be careful which tools you use. GParted and KDE Partition Manager should be fine.
+  - Create a new EFI partition of 4 GB.
+    - Ubuntu requires at last 300 MB for the EFI partition, but Windows may create a partition of only 100 MB by default.
+      System firmware updates can also use space on the EFI partition, and if it's too small, the updates will fail.
+    - Windows refuses to resize the EFI partition, and the libparted library used by GParted and KDE Partition manager
+      cannot resize FAT32 partitions that are smaller than 256 MB ([Bugzilla](https://bugzilla.gnome.org/show_bug.cgi?id=649324)).
+    - Follow the [Arch Wiki instructions](https://wiki.archlinux.org/title/EFI_system_partition#Replace_the_partition_with_a_larger_one).
+    - If you want, you can also move the Windows partition.
+  - Create a 4 GB ext4 boot partition for Linux right after the Windows partition.
+    - The boot partition should be at least 1 GB to ensure that kernel updates don't fill it up.
+  - Create an unformatted partition using all the free space on the disk.
+  - The disk should now have several Windows partitions, then the boot partition, and then the unformatted partition.
+- Now you can format the disk with LUKS
+``` bash
+sudo su
+# Create a LUKS container for the partition. Replace X with the number of the unformatted partition.
+cryptsetup -v luksFormat /dev/nvme0n1pX
+# Open the LUKS container.
+# You can replace crypto-pv with a name of your choice, but I prefer to use crypto-pv on all my devices for simplicity.
+cryptsetup open /dev/nvme0n1pX crypto-pv
+# Create an LVM physical volume (PV) in the LUKS container
+pvcreate /dev/mapper/crypto-pv
+# Create an LVM volume group on the PV.
+vgcreate crypto-vg /dev/mapper/crypto-pv
+# Create a swap partition on the LVM.
+# Change the size to be at least slightly higher than your RAM size, so that the swap partition can be used for hibernation.
+# The example value of 18 GB presumes that you have 16 GB of RAM.
+lvcreate -n crypto-swap -L 18G crypto-vg
+# Create the root partition using the rest of the available space on the LVM.
+lvcreate -n crypto-root -l 100%FREE crypto-vg
+# Configure the swap partition.
+mkswap /dev/crypto-vg/crypto-swap
+# Create a filesystem on the root partition.
+mkfs.ext4 /dev/crypto-vg/crypto-root
+```
+- Run the Linux installer. Select the following partitions to be used
+  - Root partition: mount point /
+  - Boot partition: mount point /boot
+  - EFI system partition: mount point /boot/efi
+  - In the case of Ubuntu or Kubuntu prior to 20.04, format the partitions in the installer to avoid
+    [this bug](https://askubuntu.com/q/698727/).
+  - Ubuntu 20.04 and later use the Calamares installer, in which LVM and LUKS support is buggy,
+    as the installer will try to close LVM and LUKS volumes before starting the installation.
+    To work around this, before continuing the installation from the partition selection screen,
+    open a terminal and run `while true; do vgchange -ay; done` to force the LVM volumes to stay open during the installation.
+  - You may also have not to select to format the partitions during the installation.
+- Do not reboot the computer after the installation!
+  Instead, you need to tell the newly installed Linux that it's on an encrypted disk.
+  At this point the new root partition should be mounted at `/target`.
+- **Do not reboot the computer after the installation!**
+  Instead, you have to tell the just-installed Linux that it's on an encrypted disk.
+  On old Ubuntu installers, the new root partition should now be mounted at `/target`.
+  On the new Calamaers installer, the new root partition will be mounted at `/var/tmp/calamares-root-SOME_STRING`.
+  This folder will be referred to as `/target` in the following commands.
+  If it's not mounted, you can use a partition manager of your choice to mount it.
+
+``` bash
+# Become root if you're not already.
+sudo su
+
+mount --bind /dev /target/dev
+mount --bind /run /target/run
+
+chroot /target
+# If you get an error that these are already mounted or that systemd still uses the old version, it's OK.
+mount --types=sysfs sys /sys
+mount --types=proc proc /proc
+
+# This is important to ensure that the soon-to-be-created initramfs will go to the new boot partition.
+mount /boot
+
+# Copy the UUID shown by this command to the clipboard.
+cryptsetup luksDump /dev/nvme0n1pX
+nano /etc/crypttab
+# If you don't see a line with the UUID you just copied, add this line to the file:
+crypto-pv UUID=PARTITION_UUID_HERE none luks
+
+# Enable the configuration
+update-initramfs -u
+```
+Now you can reboot to the new Linux installation. Enjoy!
+
+
 ## Terminal
 
 ### zsh
 [Oh My Zsh](https://ohmyz.sh/)
 
+
 ### Useful commands and utilities
 TODO
+
 
 ## Fixes for bugs I've encountered
 ### [Plasmashell using lots of CPU](https://www.reddit.com/r/kde/comments/tagio0/comment/icw4lft/)
@@ -82,6 +182,7 @@ Giving root access
 ``` bash
 usermod -a -G sudo user_name
 ```
+
 
 ### Mounting SMB shares
 [Official Ubuntu instructions](https://ubuntu.com/server/docs/how-to-mount-cifs-shares-permanently#mount-unprotected-guest-network-folders)

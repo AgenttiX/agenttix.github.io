@@ -79,6 +79,7 @@ CIA model:
 - Keep Windows updated
 - Keep apps updated
 - Enable Secure Boot and TPM
+- Enable BitLocker
 
 ### Disk encryption
 - [BitLocker](https://docs.microsoft.com/en-us/windows/security/information-protection/bitlocker/bitlocker-overview)
@@ -86,6 +87,7 @@ CIA model:
 
 
 ## Securing a Linux desktop
+- Enable LUKS disk encryption when installing the OS.
 - Keep software updated: apt-get, snap, flatpak etc.
 - Enable firewall
 - Enable Secure Boot
