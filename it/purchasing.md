@@ -106,8 +106,8 @@ If you're only using the computer for light tasks such as web browsing, consider
 
 ### RAM
 - [Geizhals list](https://geizhals.eu/?cat=ramddr3&xf=253_16384~254_2666~5828_DDR4~5828_DDR5~5830_DIMM~5830_DIMM+mit+ECC&sort=p#productlist)
-- 8 GB is sufficient for basic tasks, but I recommend 16 GB, especially for gaming.
-  32 GB is worth considering for professional workloads and virtual desktops.
+- 8 GB is sufficient for basic tasks, but I highly recommend 16 GB, especially for gaming.
+  Get 32 GB if you're programming or running other professional workloads, especially virtual desktops.
   Higher amounts of RAM are only necessary for specific use cases such as virtual machines and scientific computing.
 - Frequency is not a good indicator of performance, as the latency matters a lot.
   In addition to the frequency, look for the absolute latency in nanoseconds.
