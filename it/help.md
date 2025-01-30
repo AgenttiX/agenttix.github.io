@@ -43,3 +43,16 @@ Please follow the instructions below depending on the type of the device you nee
   - Instructions are available [here](https://support.apple.com/fi-fi/guide/iphone/iph3e504502/ios)
 - If I have asked you to install TeamViewer, please download it from
   [here](https://apps.apple.com/us/app/teamviewer-quicksupport/id661649585)
+
+
+## Network issues
+First run [Speedtest](https://www.speedtest.net/) and take a screeshot of the results, or save the link to the results.
+Also run [IPv6 test](https://ipv6-test.com/) and take a screenshot of the results.
+Then try the following steps and check after each step if the issue persists.
+- If you have a VPN enabled, try disabling it, if the service you're trying to access does not require the VPN.
+- Restart your router (and modem if they are separate devices).
+  - Unplug the power cord (or turn the power switch, if any), wait for 10 seconds, and turn the device back on.
+- Try using another network connection, e.g. using your phone as a hotspot, and see if the issue persists.
+- Update the firmware of your router.
+  - Instructions are available on the manufacturer's website.
+  - If your router is provided by your internet service provider (ISP), see their website for instructions.
