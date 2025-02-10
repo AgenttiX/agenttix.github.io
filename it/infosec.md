@@ -286,7 +286,8 @@ These instructions are based on
 ``` bash
 sudo apt-get install libtpm2-pkcs11-1 libtpm2-pkcs11-tools
 sudo usermod -a -G tss "${USER}"
-# Log out and back in for the group membership to be applied
+# Log out and back in for the group membership to be applied.
+# If this command does not work without sudo, reboot the computer.
 tpm2_ptool init
 # Create long random PINs and write them down in e.g. your password manager software
 tpm2_ptool addtoken --pid=1 --label=ssh --userpin=MySecretPassword --sopin=MyRecoveryPassword
