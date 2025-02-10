@@ -482,6 +482,45 @@ If you're only using the computer for light tasks such as web browsing, consider
 - PoE is very handy if you're going to install multiple Wi-Fi access points or security cameras.
   However, PoE switches are more noisy than the non-PoE versions.
 
+### Internet connections / subscriptions
+There are various different technologies for providing internet access to consumers.
+- VDSL
+  - Uses old phone cables
+  - VDSL2 provides up to 200 Mbps down and 100 Mbps up
+- Cable TV ([DOCSIS](https://en.wikipedia.org/wiki/DOCSIS))
+  - DOCSIS 4.0 provides up to 10 Gbps down and 6 Gbps up
+  - The maximum speed is shared with neighbors just like with wireless networks,
+    since the homes in a neighborhood share the same TV cable.
+  - Check that your operator provides a plan with a sufficient upload speed.
+    In many cases the upload speed is only 10% of the download speed,
+    which will significantly limit the usability of cloud storage.
+  - The cable modem has to be registered with the operator.
+    If you buy a used one, ensure that it's not locked to another operator.
+  - The cable modems provided by operators are often poorly maintained and buggy.
+    See the [cable modems section below](#cable-modems-docsis) for better devices.
+- Fiber / Ethernet
+  - The best choice if available for a reasonable price
+  - If there is fiber construction in your neighborhood, don't get left behind!
+    It can be very difficult and expensive to get a fiber connection afterwards,
+    if your neighbors already have the cabling but you don't.
+    It's the most cost-effective to install the fiber to the entire neighborhood at the same time.
+- 4G (LTE)
+  - High latency -> not suitable for gaming
+- 5G (NR)
+  - There are two possible modes of operation:
+    - NSA = non-standalone
+      - Uses the existing 4G network for control signaling
+      - The 5G network is used only for data
+      - High latency -> not suitable for gaming
+    - SA = standalone
+      - Low latency -> suitable for gaming
+  - mmWave
+    - Additional high-frequency band for higher speeds (n258 in Finland)
+    - Very high speeds but very short range
+    - Supported by very few devices and base stations (as of 2025)
+  - 5G SA is a valid replacement for wired connectivity.
+
+
 ### Wi-Fi routers / access points / firewalls
 To be specific, the so-called "Wi-Fi routers" are not usually routers,
 as they have only one connection to the internet.
