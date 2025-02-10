@@ -15,12 +15,14 @@ Before starting to look for devices, please ask yourself these questions:
   Some parts are worth future-proofing, whereas with some parts the additional features and performance are not worth the additional cost.
 - Does the device have to be new, or would a used one be sufficient?
 
+
 ## Where to find good quality reviews
 - [Gamers Nexus](https://www.gamersnexus.net/)
 - [Linus Tech Tips](https://www.youtube.com/channel/UCXuqSBlHAE6Xw-yeJA0Tunw)
   used to be a good source of reviews.
   As of 2023, [not anymore](https://www.youtube.com/watch?v=FGW3TPytTjc),
   as their recent videos have had numerous issues with data and claims that are blatantly incorrect.
+
 
 ## How to find good deals
 - [Ebay](https://www.ebay.com/) is a good source for used enterprise networking hardware
@@ -279,6 +281,7 @@ If you're only using the computer for light tasks such as web browsing, consider
   - [Performance comparison of various controllers](https://forums.unraid.net/topic/41340-satasas-controllers-tested-real-world-max-throughput-during-parity-check/)
   - [List of controllers compatible with Unraid](https://forums.unraid.net/topic/102010-recommended-controllers-for-unraid/)
 
+
 ## Laptops
 - The ThinkPad T-series is built to last. If you don't need high gaming performance, get one if you can afford it.
   They have:
@@ -341,6 +344,7 @@ If you're only using the computer for light tasks such as web browsing, consider
   so that they don't compete with the GPU for Thunderbolt bandwidth.
 - [Mantiz](https://mymantiz.com/) eGPUs are good choices
 - [Razer Core X Chroma is buggy on Linux](https://y.tsutsumi.io/2020/08/15/egpu-linux-core-x-chroma/)
+
 
 ## Monitors and TVs
 ### Panel technology
@@ -462,11 +466,25 @@ If you're only using the computer for light tasks such as web browsing, consider
 
 
 ## Media boxes
+- Instead of using a separate media box, consider purchasing an Android TV instead.
+  That way you don't need to have multiple remotes, which is easier to use especially for older people.
+  [Used Android TVs](https://www.tori.fi/recommerce/forsale/search?product_category=2.93.3906.62&q=Android) and
+  [Google TVs](https://www.tori.fi/recommerce/forsale/search?product_category=2.93.3906.62&q=Google)
+  can be surprisingly cheap.
 - [Many Android media boxes come with malware preinstalled.](https://www.youtube.com/watch?v=1vpepaQ-VQQ)
   Only use boxes that are either from trustworthy vendors or on which you can install custom firmware.
 - Good devices
-  - [Google Chromecast](https://en.wikipedia.org/wiki/Chromecast)
-  - [Nvidia Shield TV](https://en.wikipedia.org/wiki/Nvidia_Shield_TV)
+  - Banana Pi BPI-M5:
+    [docs](https://wiki.banana-pi.org/Banana_Pi_BPI-M5),
+    [wiki](https://docs.banana-pi.org/en/BPI-M5/BananaPi_BPI-M5),
+    [LineageOS](https://wiki.lineageos.org/devices/m5/)
+  - [Google Chromecast](https://en.wikipedia.org/wiki/Chromecast): discontinued,
+    [LineageOS](https://wiki.lineageos.org/devices/sabrina/)
+  - [Google TV Streamer](https://store.google.com/product/google_tv_streamer)
+  - [HardKernel ODROID-C4](https://www.hardkernel.com/shop/odroid-c4/):
+    [LineageOS](https://wiki.lineageos.org/devices/odroidc4/)
+  - [Nvidia Shield TV](https://en.wikipedia.org/wiki/Nvidia_Shield_TV):
+    [LineageOS](https://wiki.lineageos.org/devices/#nvidia)
   - Raspberry Pi 4
     - [Android TV](https://konstakang.com/devices/rpi4/)
     - [LibreELEC](https://en.wikipedia.org/wiki/LibreELEC)
