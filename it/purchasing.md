@@ -723,7 +723,8 @@ If your device is not compatible with OpenWRT, you should use some other notable
   - [LC3](https://en.wikipedia.org/wiki/LC3_(codec))
     - Successor of SBC for Bluetooth 5.2 and Android 13 ->. Use this if you can.
   - [LDAC](https://en.wikipedia.org/wiki/LDAC_(codec))
-    - The encoder is open source, but the decoder is proprietary and available only for Sony devices.
+    - The encoder is open source, but the decoder is proprietary. Supported by Android 8 -> and PipeWire (Ubuntu).
+    - Much better than SBC and AAC. Use this if you can.
   - [LHDC](https://en.wikipedia.org/wiki/LHDC_(codec))
     - Supported by Android 10 ->
   - [LLAC](https://en.wikipedia.org/wiki/LHDC_(codec)#LLAC)
