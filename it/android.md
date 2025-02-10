@@ -4,7 +4,7 @@ title: Android
 ---
 
 # Android
-Android is a lot more versatile OS than its competitors.
+Android is a significantly more versatile OS than its competitors.
 
 ## Apps
 These are some of the apps that I have found useful.
@@ -64,7 +64,6 @@ These are some of the apps that I have found useful.
 - [Plex Dash](https://play.google.com/store/apps/details?id=tv.plex.labs.dash)
 - [Prey](https://preyproject.com/)
 - [ProCam X](https://play.google.com/store/apps/details?id=com.intermedia.hd.camera.pro)
-- [SafetyNet Test](https://play.google.com/store/apps/details?id=org.freeandroidtools.safetynettest)
 - SD Maid
   - [SD Maid 1](https://play.google.com/store/apps/details?id=eu.thedarken.sdm) for old Android versions
     ([pro](https://play.google.com/store/apps/details?id=eu.thedarken.sdm.unlocker),
@@ -99,6 +98,41 @@ These are some of the apps that I have found useful.
     [official YouTube apk](https://www.apkmirror.com/apk/google-inc/youtube/)
     and
     [Vanced MicroG](https://github.com/TeamVanced/VancedMicroG).
+
+### Play Integrity and SafetyNet testers
+- [Play Integrity API Checker](https://play.google.com/store/apps/details?id=gr.nikolasspyr.integritycheck)
+- [SafetyNet Integrity Checker](https://play.google.com/store/apps/details?id=com.flinkapps.safteynet)
+- [YASNAC](https://play.google.com/store/apps/details?id=rikka.safetynetchecker)
+
+### Apps that are likely not to work on rooted devices
+Tested on OnePlus 9 Pro with the Play Integrity Fix Magisk module.
+- [Bank Norwegian](https://play.google.com/store/apps/details?id=com.banknorwegian)
+- [Ingress](https://play.google.com/store/apps/details?id=com.nianticproject.ingress)
+- [S-mobiili](https://play.google.com/store/apps/details?id=fi.spankki)
+
+### Apps that work on rooted devices
+Tested on OnePlus 9 Pro with the Play Integrity Fix Magisk module.
+- [Danske ID](https://play.google.com/store/apps/details?id=com.danskebank.danskeid)
+- [Danske Mobiilipankki](https://play.google.com/store/apps/details?id=com.danskebank.mobilebank3.fi)
+- [Google Wallet](https://play.google.com/store/apps/details?id=com.google.android.apps.walletnfcrel)
+- [OP-mobiili](https://play.google.com/store/apps/details?id=fi.op.android.opmobiili)
+
+## 5G connectivity
+5G can be implemented in two ways that are significantly different from each other.
+Non-standalone 5G (NSA) uses the 4G network for control and signaling,
+whereas standalone 5G (SA) uses only the 5G network.
+NSA was the first implementation to arrive and is still the most common one,
+but it has high latency and high battery use.
+
+Most devices technically support 5G SA, but unfortunately many of them have SA disabled in the software.
+To identify whether your Android phone is connected with SA or NSA, go to Settings -> About phone -> SIM status.
+In the "Mobile data network type" you should see "5G SA" or "5G NSA".
+For further details, enable developer mode and enter *#*#4636#*#* in the dialer.
+
+5G SA device compatibility
+- [Official list by Elisa](https://elisa.fi/5g/itsenainen-5g/#sa_puhelimet)
+- [Instructions for enabling 5G SA on OnePlus 7 - 9](https://mt-tech.fi/en/modify-oneplus-7-pro-5g-8-and-8-pro-nr-lte-a-band-combos/)
+- [Apple devices do not support 5G SA without custom configuration](https://yhteiso.elisa.fi/puheliittymaet-7/milloin-5g-standalone-tulee-iphone-puhelimiin-526522)
 
 
 ## Pros and cons of custom ROMs
@@ -171,6 +205,7 @@ a vulnerability that allows any installed app to gain root access.
 ### Samsung Galaxy Note 8 (SM-N950F, greatlte)
 - [LineageOS 19](https://forum.xda-developers.com/t/lineageos-19-1-android-12l-signature-spoofing-ota-updates-for-s8-s8-note8.4370375/) (Android 12)
 - [LineageOS 20](https://forum.xda-developers.com/t/lineageos-20-0-android-13-signature-spoofing-ota-updates-for-s8-s8-note8.4485527/) (Android 13)
+- [LineageOS 21](https://xdaforums.com/t/lineageos-21-0-android-14-signature-spoofing-ota-updates-for-s8-s8-note8.4655373/) (Android 14)
 - [TWRP](https://twrp.me/samsung/samsunggalaxynote8.html)
 - Kernel
   - All these have SELinux set to permissive and
@@ -189,19 +224,20 @@ a vulnerability that allows any installed app to gain root access.
 
 
 ## Google Apps
-- [Open GApps](https://opengapps.org/)
-  - Several versions available, but not always for the latest Android versions
-  - The nano version is my go-to GApps
 - [MindTheGapps](https://wiki.lineageos.org/gapps) ([Repository](https://gitlab.com/MindTheGapps))
   - Recommended for LineageOS
-  - Can be installed with the Lineage recovery, but not with TWRP due to differences in the mount paths (as of writing)
+  - Can be installed with the Lineage recovery,
+    but not with TWRP due to differences in the mount paths (as of writing in 2025).
 - [FlameGApps](https://flamegapps.github.io/)
-  - Since I'm using TWRP instead of the LineageOS recovery, I'm using this for Android versions that are too new for Open GApps.
+  - Good Google Apps for Android 12.
+  - For Android 12 I used the basic package with the following extensions:
   - I'm using the basic package with the following extensions
     - Android Auto
     - Google Search + Assistant
     - Google TTS
     - Google WebView
+- [Open GApps](https://opengapps.org/)
+  - Good Google Apps for Android <= 11. The nano version was my go-to GApps.
 - [NikGApps](https://nikgapps.com/)
 
 
@@ -297,20 +333,30 @@ unless you have a device with the A/B partition scheme or without a separate rec
   - Google Play services
   - Google Play Store
   - All other apps that refuse to work on rooted phones
-- Install [Universal SafetyNet Fix](https://github.com/kdrag0n/safetynet-fix)
-  - As of 2024-06-20, this will make you pass these checks
-    - Safety net Request
-    - Response signature validation
-    - Basic Integrity
-  - But not this: CTS profile match
-    - It seems that Google has tightened its SafetyNet check,
-      and therefore there may be no way to get SafetyNet to pass on a modern rooted device.
+- Install [Play Integrity Fix](https://github.com/chiteroman/PlayIntegrityFix)
+- Install [Zygisk Assistant](https://github.com/snake-4/Zygisk-Assistant)
+- Test results for OnePlus 9 Pro on 2025-01-27
+  - [YASNAC](https://play.google.com/store/apps/details?id=rikka.safetynetchecker)
+    - Basic Integrity: OK
+    - CTS profile match: OK
+    - Evaluation type: BASIC
+  - [SafetyNet Integrity Checker](https://play.google.com/store/apps/details?id=com.flinkapps.safteynet)
+    - SafetyNet
+      - Basic Integrity: Success
+      - CTS Profile Match: Success
+      - Response Signature Verification: Success
+    - Play Integrity
+      - Response Signature Verification: Success
+      - Account Verification: Success
+      - Device Integrity: Success
+      - App Integrity: Success
 - If using an old firmware or old device, these additional tools may help
   - [MagiskHide Props Config](https://github.com/Magisk-Modules-Repo/MagiskHidePropsConf)
   - [Google Pay SQlite Fix Module](https://forum.xda-developers.com/t/working-magisk-with-google-pay-as-of-gms-17-1-22-on-pie.3929950/page-9#post-79643248)
+  - [Universal SafetyNet Fix](https://github.com/kdrag0n/safetynet-fix)
 - Reboot
 - Delete app data and cache for the aforementioned Google apps
-- Install and run [SafetyNet Test](https://play.google.com/store/apps/details?id=org.freeandroidtools.safetynettest)
+- Install and run one of the Play Integrity or SafetyNet testers mentioned above
   - Your device should now pass the check
 - Delete app data and cache for the apps that still refuse to work
 
