@@ -113,9 +113,6 @@ mkfs.ext4 /dev/crypto-vg/crypto-root
     To work around this, before continuing the installation from the partition selection screen,
     open a terminal and run `while true; do vgchange -ay; done` to force the LVM volumes to stay open during the installation.
   - You may also have not to select to format the partitions during the installation.
-- Do not reboot the computer after the installation!
-  Instead, you need to tell the newly installed Linux that it's on an encrypted disk.
-  At this point the new root partition should be mounted at `/target`.
 - **Do not reboot the computer after the installation!**
   Instead, you have to tell the just-installed Linux that it's on an encrypted disk.
   On old Ubuntu installers, the new root partition should now be mounted at `/target`.
