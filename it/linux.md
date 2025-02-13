@@ -138,8 +138,10 @@ mount /boot
 # Copy the UUID shown by this command to the clipboard.
 cryptsetup luksDump /dev/nvme0n1pX
 nano /etc/crypttab
-# If you don't see a line with the UUID you just copied, add this line to the file:
-crypto-pv UUID=PARTITION_UUID_HERE none luks
+# If you don't see a line with the UUID you just copied, add this line to the file.
+# If the disk is an SSD, add the discard option to enable TRIM support,
+# which is necessary for proper operation of the SSD.
+crypto-pv UUID=PARTITION_UUID_HERE none luks,discard
 
 # Enable the configuration
 update-initramfs -u
