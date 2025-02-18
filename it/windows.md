@@ -126,3 +126,31 @@ Another option would be to use enterprise management tools such as
 [Microsoft Intune](https://learn.microsoft.com/en-us/mem/intune/fundamentals/what-is-intune)
 or
 [Puppet](https://puppet.com/).
+
+
+## Sleep issues
+Have you ever pulled your laptop from your backpack and found out that it's hot and the battery is drained?
+This is the big issue with
+[Windows Modern Standby (S0x)](https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/modern-standby).
+The laptop should go to sleep when you close the lid,
+but instead it may stay on and drain the battery overnight,
+possibly causing a fire hazard if it's in a closed space such as a backpack.
+
+If you encounter this issue, run the command `powercfg /a`.
+Check what it says about Standby (S3).
+If it's supported along with Modern Standby,
+you can directly enable a
+[registry fix](https://www.makeuseof.com/windows-disable-modern-standby/)
+to switch from Modern Standby to S3 sleep.
+If not, check your BIOS settings if there is a setting to enable S3 standby.
+This setting can be called as Linux sleep, and you should enable it even if you're using Windows only.
+You should also disable Modern Standby, aka. Windows sleep, if you can.
+Then boot to Windows and run `powercfg /a` again.
+You should now see that S3 sleep is supported.
+If you still have also Modern Standby enabled, you need the registry fix above to disable it.
+If not, you're good to go.
+
+For further details, run
+[my reporting script](https://github.com/AgenttiX/windows-scripts) or directly the command `powercfg /sleepstudy`.
+For a review of the issue, please see
+[this Linus Tech Tips video](https://www.youtube.com/watch?v=OHKKcd3sx2c).
