@@ -95,6 +95,42 @@ Flashing directly from the UEFI/BIOS or from a bootable USB is safer than flashi
 - Network setup
   - Network Name Settings: Set your hostname and FQDN
 
+
+## Sleep issues
+Have you ever pulled your laptop from your backpack and found out that it's hot and the battery is drained?
+This is the big issue with
+[Windows Modern Standby (S0x)](https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/modern-standby).
+The laptop should go to sleep when you close the lid,
+but instead it may stay on and drain the battery overnight,
+possibly causing a fire hazard if it's in a closed space such as a backpack.
+
+If you encounter this issue on Windows, run the command `powercfg /a` to see the currently supported sleep states.
+On Linux, run the command `cat /sys/power/mem_sleep`.
+Check what it says about Standby (S3).
+It can be either not supported, or disabled in favor of Modern Standby.
+
+Reboot your computer to the BIOS settings
+and check if there is a setting to enable S3 standby, and disable Modern Standby (aka. Windows sleep).
+This setting can be called as Linux sleep, and you should enable it even if you're using Windows only.
+Then reboot back to the OS (Windows or Linux).
+
+If you didn't see an option to change the standby mode
+and the command you previously ran did not show S3 as one of the supported sleep states, then you're out of luck.
+If you were able to change the settings, run the command above again.
+If it says that S3 sleep is supported, then you're good to go.
+If it says that S3 sleep is one of the supported sleep options,
+but Modern Standby is preferred, then you need to force the priority of S3 sleep over Modern Standby.
+On Windows you can do this with a
+[registry fix](https://www.makeuseof.com/windows-disable-modern-standby/).
+On Linux you can do this by following the
+[instructions on Arch Wiki](https://wiki.archlinux.org/title/Power_management/Suspend_and_hibernate#Changing_suspend_method).
+
+For further debugging, run
+[my reporting script](https://github.com/AgenttiX/windows-scripts) or directly the command `powercfg /sleepstudy`.
+For a review of the issue, please see
+[this Linus Tech Tips video](https://www.youtube.com/watch?v=OHKKcd3sx2c).
+
+
 ## Laptop CPU throttling
 On many laptops, and especially ThinkPad T480,
 the motherboard firmware artificially throttles the CPU unless the firmware can communicate to a driver in the OS.
