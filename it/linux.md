@@ -56,6 +56,7 @@ title: Linux
 
 ### Encrypted dual boot
 - Install Windows as usual, but don't yet install software, as it will fill the drive, which will slow down the later steps.
+  - If your computer supports Secure Boot, you should enable it before installing Windows, as it may be difficult to enable it later.
 - Disable BitLocker (aka. device encryption) if it's enabled. Reboot and ensure that it's disabled.
 - Disable fast startup.
   - If you don't, both your Windows and Linux installation may become corrupted when you boot to Windows after resizing its partition,
@@ -159,6 +160,20 @@ as Windows expects.
 ``` bash
 timedatectl set-local-rtc 1 --adjust-system-clock
 ```
+If hibernation does not work out of the box, you can enable it with these commands.
+``` bash
+# Get the UUID of the swap partition
+sudo blkid | grep swap
+# Edit the GRUB config
+sudo nano /etc/default/grub
+# Change the GRUB_CMDLINE_LINUX_DEFAULT line to include the resume parameter.
+# You may also want to remove the "quiet splash" to show the boot messages instead of the boot logo."
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash resume=UUID=YUOR_SWAP_PARTITION_UUID"
+```
+Now you can test hibernation with `sudo systemctl hibernate`.
+If you get the error ["Call to Hibernate failed: Sleep verb 'hibernate' is not configured or configuration is not supported by kernel"](https://askubuntu.com/a/1125038),
+then you may need to disable Secure Boot to get the hibernation working.
+
 Now you have a functioning and encrypted dual boot setup.
 Enjoy!
 
