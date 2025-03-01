@@ -300,9 +300,13 @@ unless you have a device with the A/B partition scheme or without a separate rec
       so don't reboot after wiping system before LineageOS is installed.
   - Select the boot slot you don't want to install to,
     since the LineageOS zip will auto-install itself to the slot that is not active at the moment.
+  - Upload the LineageOS zip to the device.
+    (If your device does not require a reboot to the LineageOS recovery,
+    then you can push the rest of the zips, e.g. Google Play and Magisk, here.)
+    You can use ADB for this: `adb push <file>.zip /sdcard/`
   - Install LineageOS.
   - Go to the reboot menu and select the installed slot before rebooting.
-  - Reboot the device. (This may be necessary to install Google Apps,
+  - Reboot the device to the recovery. (This may be necessary to install Google Apps,
     since the installer may require the recovery Android version to match that of the OS.)
   - Ensure that the device rebooted to the correct slot.
     If not, reboot to fastboot, select the correct slot and reboot to recovery.
@@ -314,8 +318,8 @@ unless you have a device with the A/B partition scheme or without a separate rec
 - TWRP zip (on devices without a recovery partition)
   - This will install to both slots.
 - Root (Magisk)
-  - The Magisk .apk has to be renamed to a .zip for it to work.
-  - TWRP wiped this, so you have to do this for both slots when upgrading.
+  - The Magisk .apk may have to be renamed to a .zip for it to work.
+  - TWRP installation wipes Magisk, so you have to do this for both slots when upgrading.
 - Reboot to system
 
 ([XDA discussion of proper installation order](https://forum.xda-developers.com/t/what-is-the-proper-order-of-flashing-rom-kernel-root-gapps-and-anti-throttle.3651521/))
@@ -393,6 +397,7 @@ Skip especially these:
   - This way you can keep your secret chats.
 - WhatsApp
   - Titanium Backup may not work. Use Swift Backup instead.
+
 
 ### Apps that have their own backup systems
 The most of these apps support only manual backups.
