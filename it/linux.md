@@ -92,6 +92,7 @@ pvcreate /dev/mapper/crypto-pv
 # Create an LVM volume group on the PV.
 vgcreate crypto-vg /dev/mapper/crypto-pv
 # Create a swap partition on the LVM.
+# Take a note of the UUID given by the command, as you will need it later.
 # Change the size to be at least slightly higher than your RAM size, so that the swap partition can be used for hibernation.
 # The example value of 18 GB presumes that you have 16 GB of RAM.
 lvcreate -n crypto-swap -L 18G crypto-vg
@@ -135,7 +136,7 @@ mount --types=proc proc /proc
 # This is important to ensure that the soon-to-be-created initramfs will go to the new boot partition.
 mount /boot
 
-# Copy the UUID shown by this command to the clipboard.
+# Copy the UUID shown by this command to the clipboard. X is the number of the LUKS partition.
 cryptsetup luksDump /dev/nvme0n1pX
 nano /etc/crypttab
 # If you don't see a line with the UUID you just copied, add this line to the file.
@@ -143,10 +144,23 @@ nano /etc/crypttab
 # which is necessary for proper operation of the SSD.
 crypto-pv UUID=PARTITION_UUID_HERE none luks,discard
 
+# Add the swap partition to the fstab
+nano /etc/fstab
+# If you don't see a line with the UUID of the swap partition (which was given by the lvcreate command earlier),
+# add this line to the file.
+UUID=SWAP_PARTITION_UUID_HERE none swap sw 0 0
+
 # Enable the configuration
 update-initramfs -u
 ```
-Now you can reboot to the new Linux installation. Enjoy!
+Now you can reboot to the new Linux installation.
+Once you have booted to the Linux installation, run this command to set the clock to local time,
+as Windows expects.
+``` bash
+timedatectl set-local-rtc 1 --adjust-system-clock
+```
+Now you have a functioning and encrypted dual boot setup.
+Enjoy!
 
 
 ## Terminal
