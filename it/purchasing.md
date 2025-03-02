@@ -419,7 +419,8 @@ If you're only using the computer for light tasks such as web browsing, consider
   - Apps take a horrible amount of space these days.
 - Camera
   - 4K 60 Hz video recording. 60 Hz video is a lot smoother than the 30 Hz video that most phones record.
-  - Camera2 API support for RAW photography and manual control of various features such as focus, white balance, ISO and shutter speed.
+  - Camera2 API support for RAW photography and manual control of various features such as focus,
+    white balance, ISO and shutter speed.
     You can test this with the
     [Manual Camera Compatibility test app](https://play.google.com/store/apps/details?id=pl.vipek.camera2_compatibility_test)
     and the
@@ -427,7 +428,14 @@ If you're only using the computer for light tasks such as web browsing, consider
 - Modem: 5G with support for at least the n78 band, which is the primary 5G band
   [in Finland](https://www.mikrobitti.fi/uutiset/tallainen-on-uusi-5g-taajuuskaista-listasimme-myos-kaikkien-suomessa-myytavien-5g-puhelinten-tuettavat-kaistat/9597cbae-27a4-4f86-9d40-7f2bf4407216)
   - n28 band is for longer ranges with lower speeds,
-    and n258 is the mmWave band for short-range connectivity for mass events such as concerts and festivals
+    and n258 is the mmWave band for short-range connectivity for mass events such as concerts and festivals.
+  - Ensure that the phone has 5G SA (standalone 5G) enabled in your area.
+    In Finland this is known as "itsenäinen 5G" or 5G+.
+    Otherwise, the phone will use 5G NSA (non-standalone 5G), which will use the 4G network for control signaling,
+    and therefore consume more battery and have higher latencies.
+    As of 2025, e.g.
+    [the list of devices supported by Elisa](https://elisa.fi/5g/itsenainen-5g/#sa_puhelimet)
+    is quite small. If your device is not on the list, a 5G data plan is probably not worth the price.
 - NFC
   - The tags are cheap on AliExpress and can be used for various purposes
   - Makes the use of a physical security key such as a YubiKey a lot easier
