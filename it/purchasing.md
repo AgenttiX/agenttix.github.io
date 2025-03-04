@@ -817,6 +817,20 @@ If your device is not compatible with OpenWRT, you should use some other notable
 
 
 ## Accessories
+### Security
+Wireless peripherals often have poor security.
+- Bluetooth-based devices should have at least Bluetooth 4.2. Previous versions are fundamentally broken.
+- [Logi Bolt](https://www.logitech.com/en-eu/business/work-setups/logi-bolt-wireless-technology.html) is quite secure
+  - It's based on Bluetooth Low Energy 5.0,
+    and uses all the security mechanisms in the Bluetooth Low Energy Core Specification 4.2.
+  - When using the official dongle, Logi Bolt uses security mode 1 with security level 4.
+    This uses Authenticated LE Secure Connections (LESC) encrypted pairing, which is FIPS compliant and based on
+    P-256 ECDH and AES-128-CCM and is FIPS compliant.
+    However, the NIST ECDH curves such as P-256 are notoriously difficult to implement securely,
+    which is why I won't be surprised if vulnerabilities are found in the future.
+- [Logitech Unifying](https://www.logitech.com/en-eu/resource-center/what-is-unifying.html) is broken and should not be used
+  - It's [vulnerable to both eavesdropping and keystroke injection](https://www.heise.de/news/Logitech-keyboards-and-mice-vulnerable-to-extensive-cyber-attacks-4464533.html).
+
 ### Keyboards
 A good keyboard should have
 - ISO or ANSI layout depending on your preference
