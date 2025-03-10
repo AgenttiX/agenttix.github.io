@@ -221,6 +221,9 @@ in Finland.
 
 
 ### [Elon Musk: Tesla, SpaceX, and the Quest for a Fantastic Future](https://www.amazon.com/Elon-Musk-Billionaire-SpaceX-Shaping-ebook/dp/B00SIDCSWY/ref=tmm_kin_swatch_0?_encoding=UTF8&qid=&sr=)
+Oh well how much Musk and the world have changed since this book was published in 2015...
+At the time this book was an inspiring read on various projects working for the betterment of humanity,
+but nowadays, one should disconnect the inspiring aspects from the politics that Musk has since promoted.
 
 
 ### Esko Valtaoja
