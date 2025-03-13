@@ -92,6 +92,20 @@ Once you have installed Mortar, you can install
 [Proxmox on top of Debian](https://pve.proxmox.com/wiki/Install_Proxmox_VE_on_Debian_11_Bullseye).
 However, please ensure that you're using instructions that correspond to your Debian version.
 
+If Mortar stops working after a BIOS update,
+this means that your BIOS has forgotten either the Secure Boot keys or the Mortar boot entry.
+To recreate them, you will have to run these again:
+``` bash
+./1-generatesecurebootkeys.sh
+mortar-compilesigninstall /path/to/vmlinuz-kernel-image /path/to/initramfs.img --install-entry
+# Now reboot your computer. Configure it to boot Mortar, enable Secure Boot and set Secure Boot to audit mode.
+# Then run:
+./2-installsecurebootkeys.sh
+# Reboot
+./3-tpm2clevis-prepluksandinstallhooks.sh
+mortar-compilesigninstall
+# Reboot
+```
 
 #### SSH unlock
 An encrypted Linux installation can be decrypted remotely by installing an SSH server on the initramfs.
