@@ -42,6 +42,10 @@ The order and naming of these settings may vary depending on the model of your m
   - [Active State Power Management (ASPM)](https://en.wikipedia.org/wiki/Active_State_Power_Management): enable/auto
   - Aggressive LPM (ALPM): enable
     - If you get blue screens, try disabling this.
+- ACPI
+  - PCI Advanced Error Reporting (AER): keep this at the default value at first.
+    Once you have verified that your system works, enable it.
+    If you get lots of (false positive) errors even when your computer is working fine, disable it.
 - Thunderbolt
   - Security level: user authorization.
     This prevents DMA attacks from unauthorized devices.
