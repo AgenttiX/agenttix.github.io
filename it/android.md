@@ -92,12 +92,15 @@ These are some of the apps that I have found useful.
 - [WireGuard](https://play.google.com/store/apps/details?id=com.wireguard.android)
 - [Xournal++](https://play.google.com/store/apps/details?id=online.xournal.mobile)
 - [X-Plore](https://play.google.com/store/apps/details?id=com.lonelycatgames.Xplore)
-- [YouTube ReVanved](https://github.com/revanced)
+- [YouTube ReVanced](https://github.com/revanced)
   - To install, download [ReVanced Manager](https://github.com/revanced/revanced-manager)
   - If you don't have root, you will also need the
     [official YouTube apk](https://www.apkmirror.com/apk/google-inc/youtube/)
     and
-    [Vanced MicroG](https://github.com/TeamVanced/VancedMicroG).
+    [ReVanced MicroG (GMSCore)](https://github.com/ReVanced/GmsCore), [instructions](https://rvx.to/gmscore/)
+- [YouTube ReX ReVanced Extended](https://rvx.to/youtube-rex/)
+  - First install [ReVanced MicroG (GMSCore)](https://github.com/ReVanced/GmsCore), [instructions](https://rvx.to/gmscore/)
+
 
 ### Play Integrity and SafetyNet testers
 - [Play Integrity API Checker](https://play.google.com/store/apps/details?id=gr.nikolasspyr.integritycheck)
