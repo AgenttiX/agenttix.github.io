@@ -17,8 +17,12 @@ Please follow the instructions below depending on the type of the device you nee
     [here](https://support.microsoft.com/en-us/windows/get-the-latest-windows-update-7d20e88c-0568-483a-37bc-c3885390d212)
   - Please reboot the computer after the updates if it asks you to do so.
 - Install and run my maintenance script
-  - Instructions are available [here](https://github.com/AgenttiX/windows-scripts/blob/master/README.md)
-  - Installing and running the script can be somewhat complicated, but please at least try.
+  - If you already have the "Maintenance" shortcut on your desktop, please click it.
+    If you don't, please follow the instructions to install it [here](https://github.com/AgenttiX/windows-scripts/blob/master/README.md).
+    The installation can be somewhat complicated, but please at least try.
+- If I have asked you to run the reporting script,
+  please click the "Create IT report" shortcut on your desktop.
+  This shortcut is created by running the maintenance script.
 - If I have asked you to install TeamViewer,
   please install it using my installer script that gets installed along with the maintenance script.
   If you have issues in installing using the installer script, you can download TeamViewer
