@@ -146,16 +146,49 @@ sudo ufw allow <port_number> comment "My program"
 
 ## Securing a router
 The most important thing about securing a router is keeping it up to date.
-If your router no longer receives security updates from the manufacturer,
-you should switch to an alternative firmware or buy a new router.
-These alternative firmwares include
-OpenWRT
-Tomato
-pfSense
-OPNSense
-When buying a new router, I recommend choosing a model that is supported by one or more of these,
+Most manufacturers are notoriously poor in providing security updates for their devices,
+and if they do, it's often only for a few years.
+If a router no longer receives security updates, you should not connect it to the internet!
+Depending on the latest security updates it received,
+you may be able to repurpose it as e.g. an additional Wi-Fi access point within your own network, though.
+
+Many old devices also lack important settings and features such as
+802.11w management frame protection that protects from
+[deauth jamming](https://github.com/SpacehuhnTech/esp8266_deauther),
+and countermeasures for the
+[KRACK attacks](https://www.krackattacks.com/).
+However, it should be noted that old client devices may not be compatible with these protections.
+If you are still using such devices, you should create a separate Wi-Fi SSID for them
+so that you don't have to reduce the security for the rest of your devices.
+
+[OpenWRT](https://openwrt.org/)
+is perhaps the most feature-rich and well-maintained custom firmware, and it's also open source.
+Please see whether your device is
+[compatible with OpenWRT](https://openwrt.org/supported_devices).
+If it's not, please see whether it's compatible with some other notable custom firmware, such as:
+- [Asuswrt-Merlin](https://www.asuswrt-merlin.net/) ([supported devices](https://www.asuswrt-merlin.net/about))
+- [DD-WRT](https://dd-wrt.com/) ([supported devices](https://wiki.dd-wrt.com/wiki/index.php/Supported_Devices))
+- [Gargoyle](https://www.gargoyle-router.com/) ([supported devices](https://www.gargoyle-router.com/wiki/doku.php?id=supported_routers_-_tested_routers)
+- [LibreCMC](https://librecmc.org/) ([supported devices](https://librecmc.org/fossil/librecmc/wiki?name=Supported_Hardware))
+- [Tomato by Shibby](https://tomato.groov.pl/) ([supported devices](https://tomato.groov.pl/?page_id=164))
+- [AdvancedTomato](https://advancedtomato.com/) ([supported devices](https://advancedtomato.com/downloads))
+- [FreshTomato](https://freshtomato.org/) ([supported devices](https://wiki.freshtomato.org/doku.php/hardware_compatibility))
+
+
+For further details on the firmware compatibility,
+please see my purchase guide.
+
+These alternative firmwares include:
+- [OpenWRT](https://openwrt.org/)
+- [pfSense](https://www.pfsense.org/)
+- [OPNSense](https://opnsense.org/)
+
+Please see the [purchase guide](./purchasing.md) on instructions for purchasing a router.
+
+- When buying a new router, I recommend choosing a model that is supported by one or more of these,
 as it will help ensuring that the router will have a long lifespan and not just the year or two that
 manufacturers typically provide security updates for.
+
 
 ### DNSSEC
 DNS is the protocol that connects human-readable urls such as "google.com"
@@ -164,6 +197,24 @@ By default this is done without any kind of validation, and is relatively trivia
 DNSSEC is a method for validating the authenticity of this information, preventing malicious modifications.
 You can test whether you have DNSSEC enabled with this
 [DNSSEC test](https://dnssec.vs.uni-due.de/).
+If you don't please switch to a secure DNS provider such as one of those in the following section.
+
+
+### DNS over TLS
+By default, DNS queries are sent without any kind of encryption.
+This means that anyone snooping on the connection can see the names of the websites you are visiting.
+You can avoid this by using DNS over TLS (DoT).
+
+
+### DNS providers
+The DNS provider can see the names of all websites you visit.
+Therefore, it is important to choose a provider that respects your privacy.
+Some DNS providers can also filter out ads and malware.
+When choosing a DNS provider, you should ensure that they support at least DNSSEC and DNS over TLS.
+My recommendations are:
+- [Mullvad](https://mullvad.net/en/help/dns-over-https-and-dns-over-tls)
+- [European public DNS resolvers](https://european-alternatives.eu/category/public-dns)
+
 
 ### OpenVPN
 I've found that these settings work well enough.
