@@ -473,6 +473,29 @@ If you're only using the computer for light tasks such as web browsing, consider
     [GrapheneOS](https://grapheneos.org/) ([supported models](https://grapheneos.org/build#build-targets)).
 
 
+## Smartwatches
+- The one thing smartwatches often lack is a good battery life.
+- Some smartwatches have integrated WWAN connectivity, usually 4G, aka. LTE.
+  This allows you to leave your phone at home.
+  However, the battery life is quite short when the WWAN is enabled, usually about a day.
+- On the other hand, simpler smartwatches can reach a battery life of several weeks.
+- Many smartwatches have proprietary operating systems that are not compatible with all phones.
+  Therefore, you should check the compatibility with your phone before purchasing.
+  - Google's [Wear OS](https://wearos.google.com/) is compatible with most Android phones and has a better selection of apps than most other smartwatches.
+- Useful features to have
+  - Heart rate monitor: this is among the most useful features, as it enables tracking the effects of exercise.
+  - Pulse oximeter (SpO2): this measures the oxygen content in your blood and is capable of detecting sleep apnea.
+  - ECG (electrocardiogram): this can detect heart issues.
+  - Qi wireless charging: with Qi support you can charge the watch with the same wireless chargers that you use for other devices.
+- Nice-to-have features
+  - GPS: useful for tracking your exercise, but only if you leave your phone at home.
+  - WWAN (4G/LTE): useful if you want to leave your phone at home.
+    However, note that it significantly shortens the battery life.
+- Smartwatches I have been using
+  - [Xiaomi Mi Band 3](https://en.wikipedia.org/wiki/Xiaomi_Mi_Band_3) (2018-2021)
+  - [Xiaomi Mi Band 6](https://en.wikipedia.org/wiki/Xiaomi_Mi_Smart_Band_6) (2021→)
+
+
 ## Media boxes
 - Instead of using a separate media box, consider purchasing an Android TV instead.
   That way you don't need to have multiple remotes, which is easier to use especially for older people.
