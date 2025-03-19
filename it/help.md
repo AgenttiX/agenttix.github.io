@@ -22,7 +22,10 @@ Please follow the instructions below depending on the type of the device you nee
     The installation can be somewhat complicated, but please at least try.
 - If I have asked you to run the reporting script,
   please click the "Create IT report" shortcut on your desktop.
-  This shortcut is created by running the maintenance script.
+  If the shortcut does not exist yet, you can create it by running the maintenance script above.
+  Once you have run the reporting script,
+  please send the zip file that it has generated on your desktop to me by e.g.
+  e-mail or instant messaging.
 - If I have asked you to install TeamViewer,
   please install it using my installer script that gets installed along with the maintenance script.
   If you have issues in installing using the installer script, you can download TeamViewer
@@ -31,9 +34,9 @@ Please follow the instructions below depending on the type of the device you nee
 
 ## Android device
 - If the device has a battery, connect it to a power supply and charge it to at least 80 %
-- Install the latest firmware update
+- Install the latest firmware updates
   - Instructions are available [here](https://support.google.com/android/answer/7680439)
-- Install app updates from Google Play
+- Install the latest app updates from Google Play
   - Instructions are available [here](https://support.google.com/googleplay/answer/113412)
 - Ensure that there is some available storage space
   - Instructions for freeing up space are available [here](https://support.google.com/android/answer/7431795)
