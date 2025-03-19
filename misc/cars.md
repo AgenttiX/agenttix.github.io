@@ -25,7 +25,7 @@ To avoid issues, check at least these before going to the inspection.
 - The fluid levels must be sufficient for all fluids
   - Windscreen washer fluid
   - Engine coolant
-  - Braking fluid
+  - Brake fluid
 - The engine compartment must be clean
   - If it's not properly cleaned, the inspector may interpret this as oil leakage.
     Therefore, wash the engine compartment before the inspection if you can.
