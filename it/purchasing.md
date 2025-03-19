@@ -49,6 +49,7 @@ Those also often have poor-quality components in their power delivery and bad ai
 
 If you're only using the computer for light tasks such as web browsing, consider buying a laptop and a Thunderbolt dock instead.
 
+
 ### CPU
 - Geizhals lists:
   [AMD](https://geizhals.eu/?cat=cpuamdam4&xf=14840_6~19779_24~5_AES-NI~5_AMD-V~5_AVX~5_AVX2~5_ECC-Unterst%FCtzung&sort=p),
@@ -62,6 +63,7 @@ If you're only using the computer for light tasks such as web browsing, consider
     [compatible with Windows 11](https://docs.microsoft.com/en-us/windows-hardware/design/minimum/windows-processor-requirements)
   - Try to buy the CPU and motherboard together, and possibly the RAM as well.
     If they don't work, it's easier to complain to one seller than multiple.
+
 
 ### GPU
 - [Geizhals list](https://geizhals.eu/?cat=gra16_512&xf=132_8192~20252_AV1~20252_H.264~20252_H.265~20253_AV1~20253_H.264~20253_H.265~5425_1&sort=p)
@@ -106,6 +108,7 @@ If you're only using the computer for light tasks such as web browsing, consider
   [Gamers Nexus](https://www.gamersnexus.net/news-pc/3692-intel-arc-isnt-dead-melting-gpu-cables),
   [JayzTwoCents](https://www.youtube.com/watch?v=K6FiGEAp928)
 
+
 ### RAM
 - [Geizhals list](https://geizhals.eu/?cat=ramddr3&xf=253_16384~254_2666~5828_DDR4~5828_DDR5~5830_DIMM~5830_DIMM+mit+ECC&sort=p#productlist)
 - 8 GB is sufficient for basic tasks, but I highly recommend 16 GB, especially for gaming.
@@ -118,6 +121,7 @@ If you're only using the computer for light tasks such as web browsing, consider
 - ECC memory is worth considering for professional use that requires reliability.
   On AMD this is unofficially supported by most CPUs and some consumer motherboards,
   whereas on Intel this is found only on professional hardware.
+
 
 ### Motherboard
 - Geizhals lists:
@@ -149,6 +153,7 @@ If you're only using the computer for light tasks such as web browsing, consider
   you should use a Wi-Fi adapter that is either included in the motherboard or connected over PCIe.
   A well-positioned external antenna is necessary for a fast and reliable connection.
 
+
 ### SSD
 - [Geizhals list](https://geizhals.eu/?cat=hdssd&xf=16325_3~221_3000~222_3000~2235_500~2236_500~252_960~4832_3&sort=p)
 - The operating system should be installed on an M.2 form factor SSD with PCIe connectivity (NVME).
@@ -163,6 +168,7 @@ If you're only using the computer for light tasks such as web browsing, consider
   Other protocols are often proprietary and poorly implemented.
 - As of 2022, PCIe 4.0 may not be worth the additional price.
 
+
 ### Power supply (PSU)
 - [Geizhals list](https://geizhals.eu/?cat=gehps&xf=18421_4~360_850~363_semi-passiv~4174_ATX&sort=p#productlist)
 - Aim for at least 80 Plus Gold certification. This is also an indicator of build quality.
@@ -172,6 +178,7 @@ If you're only using the computer for light tasks such as web browsing, consider
   for e.g. cryptocurrency mining or scientific computing,
   higher efficiencies are worth considering, as they will pay for themselves in the long run.
 - Newer GPUs tend to have higher power consumption, so it's a good idea to leave some headroom in the power budget.
+
 
 ### Cooling
 - The best air coolers are sufficient almost any CPU if you're not overclocking.
@@ -193,6 +200,7 @@ If you're only using the computer for light tasks such as web browsing, consider
 - The CPU socket orientation varies on server motherboards.
   If you have one, ensure that you get a CPU cooler with the correct orientation for the best airflow.
 
+
 ### Fans
 - Noctua is a good choice.
 - If you want RGB, consider the Corsair ML series,
@@ -201,6 +209,7 @@ If you're only using the computer for light tasks such as web browsing, consider
   The LEDs use the standard WS2818B protocol at 5 V and can therefore be controlled with an Arduino by attaching the
   control pin from the splitter box to the Arduino and having a common ground.
   Be careful with the pin connections, though, as wrong connections can easily burn out the LEDs.
+
 
 ### Case
 - [Geizhals list](https://geizhals.eu/?cat=gehatx&xf=20097_1~535_Staubfilter~9709_ATX&sort=p)
@@ -254,6 +263,7 @@ If you're only using the computer for light tasks such as web browsing, consider
 - The case should have a USB-c port in the front for attaching e.g. a phone or a USB-c FIDO2 security key.
 - Optical drives are no longer worth it, so there is no need to have space for them. Use an external drive instead.
 
+
 ### Expansion cards
 - PCIe USB controllers are the best way to add more USB ports.
   - If the card has multiple controllers,
@@ -297,12 +307,14 @@ If you're only using the computer for light tasks such as web browsing, consider
   and therefore performance test results for the individual components
   may not correspond to actual performance of the particular laptop model.
 
+
 ### Connectivity
 - Thunderbolt is a must-have, if you want to connect the laptop to a high-resolution monitor or multiple monitors.
   If you're gaming only at home and at LAN parties and have an external monitor, consider purchasing an external
   GPU to get desktop-level gaming performance out of your laptop.
 - USB-c charging makes it a lot easier to charge the laptop with docks, portable charges and power banks.
 - 4K 60 Hz output requires HDMI 2.0 or later, which is quite rare on older laptops.
+
 
 ###  Battery
 - Most laptops have either lithium-ion (Li-ion) or lithium polymer (LiPo) batteries.
@@ -315,17 +327,20 @@ If you're only using the computer for light tasks such as web browsing, consider
   Often user-replaceable batteries, especially the thick ones, are Li-ion, and the internal batteries are LiPo.
 - Internal batteries can also be replaced on most laptops, but the availability of replacement batteries is worse.
 
+
 ### Monitor
 - For good eyes, 1080p is the optimal resolution for 14". For older eyes, 1080p and 15" is a good combination.
 - Higher resolutions require the use of scaling to make text large enough to be readable.
   This may cause problems with older software,
   and on Linux the use of multiple monitors with different scaling levels requires Wayland.
 
+
 ### LTE/5G modem (WWAN)
 - If you can somehow get a multi-SIM cell phone plan or data plan or can afford the extra data plan,
   having an integrated modem in the laptop is a lot easier and more reliable than sharing internet from a phone.
 - This feature is often found only on business laptops such as ThinkPads.
 - 3G network will be shut down in a few years, so the modems on older laptops will then become pretty much useless.
+
 
 ### External GPUs
 - [eGPU.io](https://egpu.io/)
@@ -354,6 +369,7 @@ If you're only using the computer for light tasks such as web browsing, consider
   - Any static objects on the screen such as the taskbar will be permanently burned in within months of active use
 - VA and IPS are good panel technologies
 
+
 ### Sizing
 - For desktop monitors, 27" and 1440p has the best price-to-performance ratio as of 2022.
 - For older eyes, ~31" and 1440p may be preferred due to the larger default text size.
@@ -364,6 +380,7 @@ If you're only using the computer for light tasks such as web browsing, consider
   you can also use them as your TV.
 - Gaming on 4K requires a very powerful computer (RX 6000 or RTX 3000 series or later GPU).
 
+
 ### Connectivity
 - If you want to connect several devices to the same monitor,
   ensure that it has a sufficient number of connections that can drive the monitor at its full refresh rate.
@@ -371,6 +388,7 @@ If you're only using the computer for light tasks such as web browsing, consider
   and TVs can have the latest HDMI version on only some of their ports.
 - HDMI 2.0 is required for 4K 60 Hz, and HDMI 2.1 for 4K 120 Hz and variable refresh rate.
   However, with HDMI 2.1 most features such as the aforementioned are optional and their presence has to be verified manually.
+
 
 ### Refresh rate
 - High refresh rate is more important than variable refresh rate such as FreeSync or G-Sync,
@@ -383,11 +401,13 @@ If you're only using the computer for light tasks such as web browsing, consider
   On Linux variable refresh rate is not supported if you have multiple monitors.
 - Some TVs already have 120 Hz refresh rates
 
+
 ### HDR
 - On Windows HDR is supported with consumer GPUs only on fullscreen applications such as games.
   The support for HDR photos and videos is very limited.
 - Properly displaying HDR content requires a high maximum brightness such as 1000 nits, aka. HDR1000.
   Especially HDR400 is not worth it, unless you want to test the HDR compatibility of various sofware.
+
 
 ### Smart features
 - Prefer Android TV over manufacturer-specific proprietary implementations
@@ -402,6 +422,7 @@ If you're only using the computer for light tasks such as web browsing, consider
       [Reddit](https://www.reddit.com/r/jellyfin/comments/s0438d/build_and_deploy_jellyfin_app_to_samsung_tizen/)
   - Android TV is compatible with both Plex and Jellyfin,
     and this is yet another reason to choose Android TV over manufacturer-specific proprietary implementations.
+
 
 ### Misc
 - VESA mounting support is a must-have, as monitor arms save a lot of desk space, and you may want to install them later.
@@ -581,17 +602,12 @@ However, they are often called routers for simplicity.
 
 Most manufacturers are notoriously poor in providing security updates for their devices,
 and if they do, it's often only for a few years.
-If a router no longer receives security updates, you should not connect it to the internet!
-Depending on the latest security updates it received,
-you may be able to repurpose it as e.g. an additional Wi-Fi AP, though.
-Many devices also lack important settings and features such as
-802.11w management frame protection that protects from
-[deauth jamming](https://github.com/SpacehuhnTech/esp8266_deauther),
-and countermeasures for the
-[KRACK attacks](https://www.krackattacks.com/).
-However, it should be noted that old devices may not be compatible with these protections.
-If you are still using such devices, you should create a separate Wi-Fi SSID for them
-so that you don't have to reduce the security for the rest of your devices.
+Therefore, I recommend purchasing devices that are compatible with an alternative firmware
+that provides security updates for longer.
+[OpenWRT](https://openwrt.org/)
+is perhaps the most feature-rich and well-maintained custom firmware, and it's also open source.
+Therefore, you should prefer
+[devices that are compatible with OpenWRT](https://openwrt.org/supported_devices).
 
 If you're buying an enterprise device, and especially a used one, ensure that you have access to the firmware updates!
 Various manufacturers only provide firmware downloads for registered enterprise customers.
@@ -600,29 +616,42 @@ At least these are known to be problematic:
 - Huawei
 - WatchGuard
 
-[OpenWRT](https://openwrt.org/)
-is perhaps the most feature-rich and well-maintained custom firmware, and it's also open source.
-Therefore, you should prefer
-[devices that are compatible with OpenWRT](https://openwrt.org/supported_devices).
-If you have an existing device, you should install a custom firmware on it as well.
-If your device is not compatible with OpenWRT, you should use some other notable custom firmware, such as:
-- [Asuswrt-Merlin](https://www.asuswrt-merlin.net/) ([supported devices](https://www.asuswrt-merlin.net/about))
-- [DD-WRT](https://dd-wrt.com/) ([supported devices](https://wiki.dd-wrt.com/wiki/index.php/Supported_Devices))
-- [Gargoyle](https://www.gargoyle-router.com/) ([supported devices](https://www.gargoyle-router.com/wiki/doku.php?id=supported_routers_-_tested_routers)
-- [LibreCMC](https://librecmc.org/) ([supported devices](https://librecmc.org/fossil/librecmc/wiki?name=Supported_Hardware))
-- [Tomato by Shibby](https://tomato.groov.pl/) ([supported devices](https://tomato.groov.pl/?page_id=164))
-- [AdvancedTomato](https://advancedtomato.com/) ([supported devices](https://advancedtomato.com/downloads))
-- [FreshTomato](https://freshtomato.org/) ([supported devices](https://wiki.freshtomato.org/doku.php/hardware_compatibility))
 
 #### Features to look for, in the order of importance
 - OpenWRT compatibility
 - Enough flash (8 MB) and RAM (64 MB) for OpenWRT to work properly, preferably at least 16 MB flash and 128 MB RAM
 - WPA3
-  - For WPA3-enterprise, also look for 192-bit encryption support
-- Wi-Fi 6
+  - WPA3-enterprise requires also 192-bit encryption support
+- Wi-Fi 6 or Wi-Fi 7
 - High-speed ports (> 1 Gbps Ethernet, SFP+)
 
+
 #### Wi-Fi routers / access points
+- [Banana Pi](https://www.banana-pi.org/) BPI-R4:
+  [docs](https://docs.banana-pi.org/en/BPI-R4/BananaPi_BPI-R4),
+  [wiki](https://wiki.banana-pi.org/Banana_Pi_BPI-R4),
+  [Amazon](https://www.amazon.de/dp/B0DFCTLXJC)
+  - [OpenWRT](https://openwrt.org/inbox/toh/sinovoip/bananapi_bpi-r4) support
+  - Wi-Fi 7 and WPA3 (over 1 Gbps Wi-Fi)
+  - 2x 10 Gbps SFP+ ports
+  - Can be powered over USB-c, so you can also use the device on the go.
+  - Firmware is easy to install, as you can boot the device from an SD card.
+  - M.2 slot for 5G modem. My recommendation is the
+    [Quectel RM520N-GL](https://www.quectel.com/product/5g-rm520n-series/):
+    [Amazon](https://www.amazon.de/dp/B0DP69BYJW)
+    - The default package may contain only three antennas.
+      Contact the seller beforehand and ensure that they will ship four antennas as required by the device!
+  - Can be used as a NAS or a small general-purpose server thanks to its M.2 SSD slot and USB 3.0 port.
+    (The M.2 SSD and 5G modem can be installed simultaneously.)
+  - Serial console is easily accessible for debugging and initial installation of the firmware.
+- [Ubiquiti UniFi](https://ui.com/wi-fi)
+  - If you need multiple access points for enterprise use with centralized management,
+    UniFi access points are a cost-effective option with their default firmware.
+    If you have only a few access points (such as in home use), you should
+    [use OpenWRT instead](https://openwrt.org/toh/ubiquiti/start),
+    as many UniFi access points are compatible with OpenWRT.
+
+<!--
 - ~~Xiaomi Mi Router 3G v1~~
   - I'm using one of these
   - No longer available
@@ -638,16 +667,8 @@ If your device is not compatible with OpenWRT, you should use some other notable
   - [Geizhals](https://geizhals.eu/asus-rt-ax58u-ax3000-90ig04q0-mo3r10-a2152041.html)
   - [Asuswrt-Merlin](https://www.asuswrt-merlin.net/)
   - Wi-Fi 6 (802.11ax)
-- [Banana Pi](https://www.banana-pi.org/)
-  - There are several versions available
-  - [BPI-R3](https://wiki.banana-pi.org/Banana_Pi_BPI-R3)
-    - [OpenWRT](https://openwrt.org/toh/sinovoip/bananapi_bpi-r3)
-- [Ubiquiti UniFi](https://ui.com/wi-fi)
-  - If you need multiple access points for enterprise use with centralized management,
-    UniFi access points are a cost-effective option with their default firmware.
-    If you have only a few access points (such as in home use), you should
-    [use OpenWRT instead](https://openwrt.org/toh/ubiquiti/start),
-    as many UniFi access points are compatible with OpenWRT.
+-->
+
 
 #### "Routers" / firewalls
 - ~~[Huawei AR1200E](https://support.huawei.com/enterprise/en/routers/ar1220e-pid-24020781/)~~
@@ -683,6 +704,7 @@ If your device is not compatible with OpenWRT, you should use some other notable
     - 2x 1 Gbps Ethernet
     - [Supported by OpenWRT](https://openwrt.org/toh/friendlyarm/nanopi_r4s_v1)
 
+
 ### VDSL2 modems
 - The operator-provided modems often have ancient firmware with security issues and poor performance.
   Therefore, I recommend using a separately bought one instead, preferably one with OpenWRT if there are any available.
@@ -701,11 +723,13 @@ If your device is not compatible with OpenWRT, you should use some other notable
     - Note: 2.4 GHz Wi-Fi is not supported by OpenWRT!
   - [There may be issues in accessing the serial console for flashing](https://forum.openwrt.org/t/empty-serial-console-on-archer-vr200v/118390/)
 
+
 ### Cable modems ([DOCSIS](https://en.wikipedia.org/wiki/DOCSIS))
 - The operator-provided modems often have ancient firmware with security issues and poor performance.
   As of 2023, there are no cable modems with OpenWRT support.
   Therefore, I recommend the AVM FRITZ!Box modems.
 - [Geizhals list](https://geizhals.eu/?cat=wlanroutmod&xf=4024_Kabel-TV%7E529_802.11ax%7E546_WPA3)
+
 
 ### Network cards
 - Intel E1G42ET
@@ -742,6 +766,7 @@ If your device is not compatible with OpenWRT, you should use some other notable
   - [Mellanox ConnectX-2 vs ConnectX-3](https://www.reddit.com/r/homelab/comments/cf5tlg/mellnox_connectx2_vs_connectx3/)
 - [Overkill build](https://michael.stapelberg.ch/posts/2021-07-10-linux-25gbit-internet-router-pc-build/)
 
+
 ### Switches
 - Most rack-mountable switches make a lot of noise.
   Therefore, search for reviews and forum posts before buying,
@@ -760,9 +785,11 @@ If your device is not compatible with OpenWRT, you should use some other notable
 - [Ubiquiti UniFi Switch Enterprise 48 PoE](https://eu.store.ui.com/collections/unifi-network-routing-switching/products/switch-enterprise-48-poe)
   - [Relatively silent at low loads, but noisy with high PoE load](https://community.ui.com/questions/USW-Enterprise-24-PoE-noise-levels/d9ce70c5-d00a-4e0b-ac11-7beb94974aa5)
 
+
 ### Transceivers
 - [10Gtek 10GBase SFP+](https://www.amazon.de/-/en/gp/product/B01M8O3MAL/)
 - Intel E10GSFPSR
+
 
 ### Racks
 - [Various Ikea tables and shelves](https://wiki.eth0.nl/index.php/List_of_IkeaRacks)
@@ -796,6 +823,7 @@ If your device is not compatible with OpenWRT, you should use some other notable
 ## Headphones
 - Read reviews and go to a store to test the headphones yourself to determine the audio quality.
 - The headphones should have good audio quality without the installation of any additional software.
+
 
 ### Bluetooth
 - [Bluetooth audio codecs are a mess](https://www.headphonesty.com/2020/03/bluetooth-audio-codecs-explained/)
@@ -854,6 +882,7 @@ Wireless peripherals often have poor security.
 - [Logitech Unifying](https://www.logitech.com/en-eu/resource-center/what-is-unifying.html) is broken and should not be used
   - It's [vulnerable to both eavesdropping and keystroke injection](https://www.heise.de/news/Logitech-keyboards-and-mice-vulnerable-to-extensive-cyber-attacks-4464533.html).
 
+
 ### Keyboards
 A good keyboard should have
 - ISO or ANSI layout depending on your preference
@@ -867,6 +896,7 @@ A good keyboard should have
 Some good keyboards
 - [Keychron K8 Pro ISO](https://www.keychron.com/products/keychron-k8-pro-qmk-via-wireless-mechanical-keyboard-iso-layout-collection?variant=40283914731609)
 - [GMMK Pro ISO](https://www.gloriousgaming.com/products/glorious-gmmk-pro-75-barebone-iso-black-slate)
+
 
 ### Mice
 There are significant difference in the accuracy of mice,
@@ -888,29 +918,65 @@ Linux support for gaming mice, keyboards and headphones is provided by
 and
 [libratbag](https://github.com/libratbag/libratbag).
 
+
 ### Bluetooth adapters
 The documentation of the
 [Home Assistant Bluetooth integration](https://www.home-assistant.io/integrations/bluetooth)
 has a list of known good adapters.
 
+
 ### Adapters
-  - [DisplayPort -> DVI (active)](https://www.aliexpress.com/item/32981791094.html)
-  - [USB-c -> HDMI (4K 60 Hz)](https://www.aliexpress.com/item/32980806917.html)
-  - [USB-c -> micro-USB](https://www.amazon.de/gp/product/B08GLNRTCD)
+- [DisplayPort -> HDMI](https://www.amazon.de/-/en/dp/B0CPHXZG11)
+- [DVI <-> HDMI](https://www.amazon.de/-/en/dp/B07WNR45X9)
+- [HDMI 2.1 90 degrees](https://www.aliexpress.com/item/1005007749638497.html)
+- [USB-c -> micro-USB](https://www.amazon.de/gp/product/B08GLNRTCD)
+
 
 ### Cables
-  - [DisplayPort 1.4](https://www.aliexpress.com/item/4001299891742.html)
-  - [HDMI 2.1](https://www.aliexpress.com/item/1005002124697606.html)
-    - [Optical](https://www.aliexpress.com/item/4000860157677.html)
-  - [Thunderbolt 4](https://www.aliexpress.com/item/1005003026399770.html)
-  - [S/PDIF (optical audio)](https://www.amazon.de/-/en/gp/product/B00FQK3H8Q)
-  - [USB-A - USB-B](https://www.amazon.de/-/en/gp/product/B07FWFVDNV)
-  - [USB-A - USB-c](https://www.amazon.de/gp/product/B098DTBP29)
-  - USB-c
-    - [10 Gbps, 0.5-3 m, very stiff](https://www.aliexpress.com/item/1005003257832228.html)
-    - [10 Gbps, 1-3 m](https://www.aliexpress.com/item/1005001400212927.html)
-    - [20 Gbps, 0.5-3 m, very stiff](https://www.aliexpress.com/item/1005003257832228.html)
-    - [40 Gbps, 12 cm](https://www.aliexpress.com/item/1005004279822626.html)
+- [DisplayPort 1.4](https://www.amazon.de/-/en/DisplayPort-Certified-Supports-Compatible-Monitor-gray/dp/B0CLXZ26BW)
+- [DisplayPort 2.1](https://www.amazon.de/-/en/DisplayPort-Certified-Supports-Compatible-Monitor-gray/dp/B0BQ9ZGRNY)
+- [HDMI 2.1](https://www.amazon.de/-/en/UGREEN-48Gbps-Vision-Compatible-Monitor/dp/B0CFFFSFFN)
+  - [Optical](https://www.aliexpress.com/item/1005006860125774.html)
+- [S/PDIF (optical audio)](https://www.amazon.de/-/en/gp/product/B00FQK3H8Q)
+- [Thunderbolt 4, 100 W](https://www.amazon.de/-/en/dp/B084Z65YJQ)
+- [USB-A active extension cable](https://www.amazon.de/dp/B08ZNL4JPR)
+  - Nowadays, I'd prefer a USB-c cable with adapters for better future compatibility.
+- [USB-A - USB-B, 5 Gbps](https://www.amazon.de/-/en/gp/product/B07FWFVDNV)
+- [USB-A - USB-c, 10 Gbps](https://www.amazon.de/gp/product/B098DTBP29)
+- USB-c
+  - [480 Mbps, 240 W, 0.3-2 m](https://www.amazon.de/dp/B0DHJQLGPB)
+  - [480 Mbps, 240 W, 5 m](https://www.amazon.de/dp/B0CP94S896)
+  - [480 Mbps, 100 W, 3 m](https://www.amazon.de/dp/B0DH2GVLR4)
+  - [10 Gbps, 100 W, 0.5-3 m, very stiff](https://www.aliexpress.com/item/1005003257832228.html)
+  - [10 Gbps, 100 W, 1-3 m](https://www.aliexpress.com/item/1005001400212927.html)
+  - [20 Gbps, 100 W, 0.5-3 m, very stiff](https://www.aliexpress.com/item/1005003257832228.html)
+  - [20 Gbps, 240 W, 2 m](https://www.amazon.de/-/en/dp/B0BJ1NT76D)
+  - [40 Gbps, 100 W, 0.5-2 m](https://www.aliexpress.com/item/1005003026399770.html)
+- [USB-c to HDMI, 4K 60 Hz, USB-c PD](https://www.aliexpress.com/item/1005005736129454.html)
+
+
+### USB chargers
+- 250 W USB GaN multi-charger with display and Wi-Fi IoT:
+  [Amazon](https://www.amazon.de/dp/B0CZ7D9G8D),
+  [hinta.fi](https://hinta.fi/4958682/anker-innovations-prime-250w-gan-poytalaturi-hopea)
+- [200 W USB GaN multi-charger](https://www.amazon.de/dp/B0CZ7BN1MF)
+- [140 W USB GaN travel charger](https://www.amazon.de/dp/B0D3DSXRG4)
+- [110 W USB multi-charger](https://www.aliexpress.com/item/1005003903150067.html)
+  - The USB-c ports require USB-c PD negotiation,
+    and are therefore not compatible with the USB-c - micro-USB adapters I have tested
+- 100 W USB GaN multi-charger:
+  [Amazon](https://www.amazon.de/-/en/UGREEN-Charger-Multiple-Compatible-MacBook-black/dp/B0B6N75KFC),
+  [hinta.fi](https://hinta.fi/3824591/ugreen-nexode)
+  - With detachable power cord
+- [20 W Qi wireless charger](https://www.amazon.de/dp/B0CXDLWLDK)
+
+
+### USB hubs and docks
+- [USB-A, 10 Gbps, 4 ports, USB-c power input](https://www.amazon.de/-/en/dp/B0C5593DBH)
+- [USB-A KVM switch](https://www.amazon.de/dp/B0B74SPYFN)
+  - Client ports are unfortunately USB-A, not USB-B or USB-c. Unfortunately, this is the case with many KVM switches.
+- [USB-c dock with VGA](https://www.amazon.de/-/en/dp/B0D95W2FGJ)
+- [USB-c dock with 4K 60 Hz HDMI](https://www.amazon.de/-/en/dp/B0D1XLNWP2)
 
 
 ## Other
@@ -918,13 +984,20 @@ has a list of known good adapters.
   - Opus BT-C900
   - [SkyRC MC3000](https://www.skyrc.com/MC3000_Charger)
   - [SkyRC Q200](https://www.aliexpress.com/item/32878229674.html)
+- Power strips
+  - [10-port 5 m power strip with surge protection and USB ports](https://www.amazon.de/-/en/dp/B0CS68RVBL)
+  - [7-socket rack power strip](https://www.amazon.de/dp/B002U03PZU)
+  - [8-socket rack power strip](https://www.amazon.de/-/en/dp/B01MEHQ4T7)
+  - [5 m power strip with EMI filter and surge protection](https://www.amazon.de/dp/B09XQZR4G9)
+  - [Tiny 3x euro socket power strip](https://www.amazon.de/dp/B07JL476G3)
+- [HDMI 2.1 switch](https://www.aliexpress.com/item/1005005070087774.html)
+- [Rack mounting kit for HP switches](https://www.amazon.de/dp/B0B6RPMQYR)
 - [Bike lamp](https://www.aliexpress.com/item/4001316728026.html)
   - Problem: The USB-c port does not negotiate properly,
     and cannot therefore be charged from a USB-c PD negotiating port,
     but only with a USB-a <-> USB-c adapter cable
     from a port that does not require negotiation to provide power.
-- [Car charger](https://www.aliexpress.com/item/1005003400586617.html)
-- [KVM switch (USB 3.0)](https://www.aliexpress.com/item/1005001274346519.html)
-  - Problem: Client ports are USB-A, not USB-B
-- [Multi-charger](https://www.aliexpress.com/item/1005003903150067.html)
-  - Not compatible with the USB-c - micro-USB adapters I have tested
+- [Silicone soldering mat](https://www.amazon.de/dp/B07KJDMH62)
+- [Smart card reader](https://www.amazon.de/-/en/dp/B08HVYHMZH)
+- [IEC C14-C13 extension cable with switch](https://www.amazon.de/dp/B07ZJHZW2Q)
+- [Cable management sleeve](https://www.amazon.de/-/en/dp/B08V8HLQPQ)
