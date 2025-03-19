@@ -86,6 +86,15 @@ CIA model:
 - [VeraCrypt](https://www.veracrypt.fr/en/Home.html)
 
 
+## Securing cloud services
+- Apple
+  - Enable [Advanced Data Protection](https://support.apple.com/en-us/108756)
+- Google
+  - Enable [Advanced Protection Program](https://landing.google.com/advancedprotection/)
+- Microsoft
+  - Enable [multi-factor authentication](https://aka.ms/mfasetup)
+
+
 ## Securing a Linux desktop
 - Enable LUKS disk encryption when installing the OS.
 - Keep software updated: apt-get, snap, flatpak etc.
