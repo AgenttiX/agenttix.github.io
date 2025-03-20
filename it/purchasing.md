@@ -919,6 +919,25 @@ and
 [libratbag](https://github.com/libratbag/libratbag).
 
 
+### Webcams
+- [Logitech Brio](https://www.logitech.com/fi-fi/products/webcams/brio-4k-hdr-webcam.960-001106.html):
+  [hinta.fi](https://hinta.fi/1133348/logitech-960-001106),
+  [Amazon](https://www.amazon.de/-/en/Logitech-Webcam-4096x2160-Digital-Microp/dp/B06X92Z67Z/)
+  - Supports 4K 30 Hz and 1080p 60 Hz.
+  - USB-c 3.0
+  - Comes with a detachable privacy shutter.
+  - Supported by OBS Windows and Linux.
+- [Logitech C920e](https://www.logitech.com/fi-fi/products/webcams/c920e-business-webcam.html):
+  [hinta.fi](https://hinta.fi/2241644/logitech-960-001360)
+  - 1080p 30 Hz
+  - USB-A 2.0
+  - The C920e (e = enterprise) variant comes with a detachable privacy shutter.
+  - The microphone is disabled by default, and you have to use the Logi Tune software to enable it.
+  - Supported by OBS Windows and Linux.
+- If you are connecting through a USB hub, prefer webcams with USB 3.0 or later.
+  This way the webcam won't consume the limited bandwidth of the USB 2.0 lanes of the hub.
+
+
 ### Bluetooth adapters
 The documentation of the
 [Home Assistant Bluetooth integration](https://www.home-assistant.io/integrations/bluetooth)
@@ -957,16 +976,16 @@ has a list of known good adapters.
 
 ### USB chargers
 - 250 W USB GaN multi-charger with display and Wi-Fi IoT:
-  [Amazon](https://www.amazon.de/dp/B0CZ7D9G8D),
-  [hinta.fi](https://hinta.fi/4958682/anker-innovations-prime-250w-gan-poytalaturi-hopea)
+  [hinta.fi](https://hinta.fi/4958682/anker-innovations-prime-250w-gan-poytalaturi-hopea),
+  [Amazon](https://www.amazon.de/dp/B0CZ7D9G8D)
 - [200 W USB GaN multi-charger](https://www.amazon.de/dp/B0CZ7BN1MF)
 - [140 W USB GaN travel charger](https://www.amazon.de/dp/B0D3DSXRG4)
 - [110 W USB multi-charger](https://www.aliexpress.com/item/1005003903150067.html)
   - The USB-c ports require USB-c PD negotiation,
     and are therefore not compatible with the USB-c - micro-USB adapters I have tested
 - 100 W USB GaN multi-charger:
-  [Amazon](https://www.amazon.de/-/en/UGREEN-Charger-Multiple-Compatible-MacBook-black/dp/B0B6N75KFC),
-  [hinta.fi](https://hinta.fi/3824591/ugreen-nexode)
+  [hinta.fi](https://hinta.fi/3824591/ugreen-nexode),
+  [Amazon](https://www.amazon.de/-/en/UGREEN-Charger-Multiple-Compatible-MacBook-black/dp/B0B6N75KFC)
   - With detachable power cord
 - [20 W Qi wireless charger](https://www.amazon.de/dp/B0CXDLWLDK)
 
@@ -977,6 +996,11 @@ has a list of known good adapters.
   - Client ports are unfortunately USB-A, not USB-B or USB-c. Unfortunately, this is the case with many KVM switches.
 - [USB-c dock with VGA](https://www.amazon.de/-/en/dp/B0D95W2FGJ)
 - [USB-c dock with 4K 60 Hz HDMI](https://www.amazon.de/-/en/dp/B0D1XLNWP2)
+- Note that on USB hubs the USB 2.0 and USB >= 3.0 connectivity are separate.
+  Therefore, the total bandwidth of a USB >= 3.0 hub is only 480 Mbps for USB 2.0 devices.
+  This means that if you have several USB 2.0 devices connected to the hub, the link can easily become saturated,
+  even though the USB >= 3.0 lanes of the hub have plenty of capacity left.
+  This is a technical limitation of the USB standard.
 
 
 ## Other
