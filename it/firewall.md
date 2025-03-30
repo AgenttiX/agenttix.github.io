@@ -8,6 +8,11 @@ title: Firewall
 [OPNsense](https://opnsense.org/)
 [OpenWRT](https://openwrt.org/)
 
+## Installation
+- Install on a ZFS mirrored software RAID if you can.
+  This is supported by pfSense and OPNsense.
+  It's better than a hardware RAID, as it can detect data corruption and read from the disk that has the correct data.
+
 ## Misc settings
 For remote deployments,
 enable SSH access from the local network in addition to the web GUI,
