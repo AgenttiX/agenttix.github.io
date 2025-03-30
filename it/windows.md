@@ -111,8 +111,9 @@ These may be useful to do depending on your use case
 - Give local admin access to the domain user or create a separate local admin account for them
 - Install anti-virus software
 - Configure OneDrive
-- Increase Outlook cache size to speed up the search:
-  `Outlook -> Account Settings -> Change... -> Download email for the past: All`
+- Increase Outlook local retention of emails to speed up the search:
+  - Outlook (classic): `Account Settings -> Change... -> Download email for the past: All`
+  - Outlook (new): `General -> Offline -> Days of email to save: 180 days`
 
 
 ## Maintenance
