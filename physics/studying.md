@@ -8,8 +8,22 @@ title: Studying
 So you want to know what it's like to study physics?
 THIS PAGE IS A WORK IN PROGRESS.
 
+
+## What it's like
+The first year of university studies in physics is
+about building a solid foundation, that the later studies build upon.
+These courses cover the same topics as in high school,
+but go significantly deeper in the mathematical background.
+You will learn the elegant mathematical expressions,
+from which the formulae you used in high school arise.
+
+The life of a doctoral researcher (aka. PhD student) is quite accurately depicted in
+[PhD comics](https://phdcomics.com/).
+
+
 ## What skills are useful
 What would be useful to learn before starting to study physics?
+
 
 ### Math
 The most important tool for a physicist is math.
@@ -26,6 +40,7 @@ But we all do.
 Quantum field theory is an extreme example,
 where it's normal for a single calculation to take more than ten A4 pages.
 
+
 ### English
 In Finland the Bachelor's level courses (kandikurssit) are mostly in Finnish,
 whereas the Master's level courses (maisterikurssit) are mostly in English.
@@ -37,14 +52,17 @@ Before the high school matriculation exams I played the
 [Mass Effect trilogy](https://www.youtube.com/watch?v=wvqYN2RJfVA)
 and got the highest grade (laudatur).
 
+
 ### LaTeX
 [LaTeX](https://en.wikipedia.org/wiki/LaTeX)
 is the de facto writing tool in physics,
 and at the university you should use it from the very beginning of your studies.
 To get a head start it's a good idea to start using it already in high school for your reports.
 
+
 ### Python
 Nearly every physicist will need some form of programming during their career.
+
 
 ### Linux
 Lots of scientific software works only on Linux.
