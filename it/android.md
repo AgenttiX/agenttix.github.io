@@ -50,6 +50,10 @@ These are some of the apps that I have found useful.
 - [Manual Camera Compatibility](https://play.google.com/store/apps/details?id=pl.vipek.camera2_compatibility_test)
 - [Notify for Mi Band](https://play.google.com/store/apps/details?id=com.mc.miband1)
 - [Obsidian](https://play.google.com/store/apps/details?id=md.obsidian)
+- [Olauncher](https://play.google.com/store/apps/details?id=app.olauncher)
+  (GPLv3, [F-Droid](https://f-droid.org/en/packages/app.olauncher/),
+  [GitHub](https://github.com/tanujnotes/Olauncher))
+  - Paid version: [Pro Launcher](https://play.google.com/store/apps/details?id=app.prolauncher)
 - [OONI Probe](https://play.google.com/store/apps/details?id=org.openobservatory.ooniprobe)
 - [OpenCamera](https://play.google.com/store/apps/details?id=net.sourceforge.opencamera)
   - [AVIF is not yet supported, but support has been requested.](https://sourceforge.net/p/opencamera/tickets/963/)
