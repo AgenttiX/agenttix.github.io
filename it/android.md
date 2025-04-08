@@ -199,22 +199,26 @@ a vulnerability that allows any installed app to gain root access.
     - [OnePlus 9Pro LineageOS camera](https://www.reddit.com/r/LineageOS/comments/pkouh4/oneplus_9pro_lineageos_camera/)
 
 ### Samsung Galaxy Note 3 LTE (SM-N9005, hlte)
-- [LineageOS](https://download.lineageos.org/hlte)
+- [LineageOS](https://wiki.lineageos.org/devices/hlte/)
+  - Official download is no longer available
+  - [Unofficial LineageOS 20](https://xdaforums.com/t/rom-unofficial-13-lineageos-20-0-for-samsung-galaxy-note-3-hlte-h3gduoschn.4519389/) (Android 13)
 - [TWRP](https://twrp.me/samsung/samsunggalaxynote3qualcomm.html)
 - [Lolz kernel](https://forum.xda-developers.com/t/clang-13-lolz-kernel-v16-android-9-10-11-stable.3812469/)
   ([download](https://www.pling.com/p/1410846/))
 - [Stock ROM](https://sfirmware.com/samsung-sm-n9005/)
 
 ### Samsung Galaxy Note 2 LTE (GT-N7105, t0lte)
-- [LineageOS](https://forum.xda-developers.com/t/rom-eol-7-1-2-official-lineageos-for-t0lte.3538310/)
-  ([download](https://androidfilehost.com/?fid=1395089523397906488))
+- [LineageOS](https://wiki.lineageos.org/devices/t0lte/)
+  - [Unofficial LineageOS 14](https://forum.xda-developers.com/t/rom-eol-7-1-2-official-lineageos-for-t0lte.3538310/) (Android 7,
+    [download](https://androidfilehost.com/?fid=1395089523397906488))
+  - [Unofficial LineageOS 20](https://xdaforums.com/t/rom-unofficial-13-n7105-t0lte-samsung-galaxy-note-2-lte-lineageos-20-0-alpha.4516507/)
 - [TWRP](https://twrp.me/samsung/samsunggalaxynote2n7105.html)
 - [Stock ROM](https://sfirmware.com/samsung-gt-n7105/)
 
 ### Samsung Galaxy Note 8 (SM-N950F, greatlte)
-- [LineageOS 19](https://forum.xda-developers.com/t/lineageos-19-1-android-12l-signature-spoofing-ota-updates-for-s8-s8-note8.4370375/) (Android 12)
-- [LineageOS 20](https://forum.xda-developers.com/t/lineageos-20-0-android-13-signature-spoofing-ota-updates-for-s8-s8-note8.4485527/) (Android 13)
-- [LineageOS 21](https://xdaforums.com/t/lineageos-21-0-android-14-signature-spoofing-ota-updates-for-s8-s8-note8.4655373/) (Android 14)
+- [Unofficial LineageOS 19](https://forum.xda-developers.com/t/lineageos-19-1-android-12l-signature-spoofing-ota-updates-for-s8-s8-note8.4370375/) (Android 12)
+- [Unofficial LineageOS 20](https://forum.xda-developers.com/t/lineageos-20-0-android-13-signature-spoofing-ota-updates-for-s8-s8-note8.4485527/) (Android 13)
+- [Unofficial LineageOS 21](https://xdaforums.com/t/lineageos-21-0-android-14-signature-spoofing-ota-updates-for-s8-s8-note8.4655373/) (Android 14)
 - [TWRP](https://twrp.me/samsung/samsunggalaxynote8.html)
 - Kernel
   - All these have SELinux set to permissive and
