@@ -341,6 +341,26 @@ Support has been requested for
 ### SSH authentication with TPM
 If you want to use SSH without having to touch a physical security key,
 you can store the SSH keys on a TPM instead.
+
+#### Windows
+On Windows you can use the TPM for SSH with the SSH client included in Git.
+You can install Git with my installer script or with the command below.
+The parameter `/GitAndUnixToolsOnPath` enables the SSH client included in Git for the terminal.
+The parameter `/WindowsTerminalProfile` is optional.
+``` bash
+choco upgrade git.install -y --force --params "/GitAndUnixToolsOnPath /WindowsTerminalProfile"
+```
+Now you can create the SSH key with:
+``` bash
+ssh-keygen -t ed25519-sk
+```
+If your device does not support the ed25519 algorithm, you can create an ECDSA key with:
+``` bash
+ssh-keygen -t ecdsa-sk
+```
+
+#### Linux
+On Linux you can set up SSH keys on a TPM with the commands below.
 These instructions are based on
 [the instructions in Gentoo wiki](https://wiki.gentoo.org/wiki/Trusted_Platform_Module/SSH)
 ``` bash
@@ -362,12 +382,13 @@ TPM2_PKCS11_LOG_LEVEL=0 ssh-keygen -D /usr/lib/x86_64-linux-gnu/libtpm2_pkcs11.s
 ssh-add -s /usr/lib/x86_64-linux-gnu/libtpm2_pkcs11.so.1
 ```
 
-Use RSA instead of ECC, since ECC is difficult to implement without side-channel vulnerabilities.
+Use RSA instead of ECDSA, since ECDSA is difficult to implement without side-channel vulnerabilities.
 [Such vulnerabilities have already been found in TPMs](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-25082).
 ED25519 is in the TPM specification and
 [support for it has been requested for tpm2-pkcs11](https://github.com/tpm2-software/tpm2-pkcs11/issues/785),
 but TPM manufacturers will first have to implement the algorithm in their devices.
 As of 2023, no TPM manufacturer has yet done so.
+
 
 ### YubiKey with KeePassXC
 - [Security benefits](https://security.stackexchange.com/a/258414/)
