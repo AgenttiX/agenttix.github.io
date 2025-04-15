@@ -909,12 +909,19 @@ A good keyboard should have
   There should be a way to turn the wireless connectivity off.
 
 Some good keyboards
+- [GMMK Pro](https://www.gloriousgaming.com/en-eu/products/glorious-gmmk-pro-75-barebone-black)
+  - ANSI: [hinta.fi](https://hinta.fi/2613400/glorious-pc-gaming-race-gmmk-pro)
+  - ISO: [hinta.fi](https://hinta.fi/2613402/glorious-pc-gaming-race-gmmk-pro)
 - [Keychron K8 Pro ISO](https://www.keychron.com/products/keychron-k8-pro-qmk-via-wireless-mechanical-keyboard-iso-layout-collection?variant=40283914731609)
-- [GMMK Pro ISO](https://www.gloriousgaming.com/products/glorious-gmmk-pro-75-barebone-iso-black-slate)
+  ([hinta.fi](https://hinta.fi/5048972/keychron-k8-pro-qmk-via-rgb-wireless-mechanical-hot-swap-gat))
+- [Logitech Ergo K860 for Business](https://www.logitech.com/fi-fi/products/keyboards/ergo-k860-for-business.html)
+  ([hinta.fi](https://hinta.fi/3003614/logitech-920-010348))
+  - The regular model uses Logitech Unifying wireless connectivity, which has broken encryption,
+    whereas the for Business model uses Logi Bolt wireless connectivity, which among the most secure in 2025.
 
 
 ### Mice
-There are significant difference in the accuracy of mice,
+There are significant differences in the accuracy of mice,
 and price is not an indicator of good quality.
 Please see
 [this guide](https://sensor.fyi/info/)
@@ -922,11 +929,17 @@ for details, and
 [this list](https://sensor.fyi/mice/)
 for good mice.
 
-I'm using
-[Logitech G502](https://www.logitechg.com/en-us/products/gaming-mice/g502-hero-gaming-mouse.910-005469.html)
-and
-[Logitech PowerPlay](https://www.logitechg.com/en-us/products/gaming-mouse-pads/powerplay-wireless-charging.943-000109.html),
-and am very happy with those.
+Some good mice
+- [Logitech G502 Lightspeed](https://www.logitechg.com/fi-fi/products/gaming-mice/g502-lightspeed-wireless-gaming-mouse.html)
+  ([hinta.fi](https://hinta.fi/1681872/logitech-910-005568))
+- [Logitech MX Master 3S](https://www.logitech.com/fi-fi/shop/p/mx-master-3s.910-006559):
+  (hinta.fi: [graphite](https://hinta.fi/3442980/logitech-910-006559), [black](https://hinta.fi/4178976/logitech-mx-master-3s), [white](https://hinta.fi/3442981/logitech-910-006560))
+  - Good for office use but not for gaming
+
+Many Logitech wireless mice support the
+[Logitech PowerPlay](https://www.logitechg.com/fi-fi/products/gaming-mouse-pads/powerplay-wireless-charging.html)
+wireless charging mousepad,
+which I can recommend.
 
 Linux support for gaming mice, keyboards and headphones is provided by
 [Piper](https://github.com/libratbag/piper/)
@@ -935,15 +948,15 @@ and
 
 
 ### Webcams
-- [Logitech Brio](https://www.logitech.com/fi-fi/products/webcams/brio-4k-hdr-webcam.960-001106.html):
-  [hinta.fi](https://hinta.fi/1133348/logitech-960-001106),
-  [Amazon](https://www.amazon.de/-/en/Logitech-Webcam-4096x2160-Digital-Microp/dp/B06X92Z67Z/)
+- [Logitech Brio](https://www.logitech.com/fi-fi/products/webcams/brio-4k-hdr-webcam.960-001106.html)
+  ([hinta.fi](https://hinta.fi/1133348/logitech-960-001106),
+  [Amazon](https://www.amazon.de/-/en/Logitech-Webcam-4096x2160-Digital-Microp/dp/B06X92Z67Z/))
   - Supports 4K 30 Hz and 1080p 60 Hz.
   - USB-c 3.0
   - Comes with a detachable privacy shutter.
   - Supported by OBS Windows and Linux.
-- [Logitech C920e](https://www.logitech.com/fi-fi/products/webcams/c920e-business-webcam.html):
-  [hinta.fi](https://hinta.fi/2241644/logitech-960-001360)
+- [Logitech C920e](https://www.logitech.com/fi-fi/products/webcams/c920e-business-webcam.html)
+  ([hinta.fi](https://hinta.fi/2241644/logitech-960-001360))
   - 1080p 30 Hz
   - USB-A 2.0
   - The C920e (e = enterprise) variant comes with a detachable privacy shutter.
