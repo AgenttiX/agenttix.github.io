@@ -9,6 +9,7 @@ title: Artificial intelligence (AI)
 - [Copilot](https://copilot.microsoft.com)
 - [DeepSeek](https://chat.deepseek.com/)
 - [Gemini](https://gemini.google.com)
+- [NotebookLM](https://notebooklm.google.com/)
 - [STORM](https://storm.genie.stanford.edu/)
   - For creating scientific summaries
 
