@@ -582,8 +582,23 @@ There are various different technologies for providing internet access to consum
       - Uses the existing 4G network for control signaling
       - The 5G network is used only for data
       - High latency -> not suitable for gaming
+      - Requires that both 4G and 5G modems are on, which consumes significantly more battery.
     - SA = standalone
       - Low latency -> suitable for gaming
+  - The network is split to several frequencies.
+    In Finland the primary frequency is n78 and it is supported by the slower but longer-range n28.
+    Using multiple frequencies simultaneously is known as
+    [carrier aggregation (CA)](https://en.wikipedia.org/wiki/Carrier_aggregation).
+  - When purchasing a 5G plan, ensure that both the plan and your device support with 5G SA and carrier aggregation.
+    Without 5G SA you will have a high latency and high power consumption,
+    and without carrier aggregation the 5G SA connection will be unreliable
+    due to the short range of the 3.5 GHz frequency band (n78 in Finland).
+    - In Finland, the device must support at least the n28+n78 carrier aggregation for it to work reliably in 5G SA.
+      Ensure this from the seller or manufacturer before purchasing any 5G device.
+    - The regular Elisa 5G plans do not support 5G SA,
+      as the support for 5G SA is available only in the Elisa 5G+ plans.
+      5G+ is a marketing term invented by Elisa for 5G SA.
+      Therefore, when purchasing a 5G plan from Elisa, be extra careful that it supports 5G SA.
   - mmWave
     - Additional high-frequency band for higher speeds (n258 in Finland)
     - Very high speeds but very short range
