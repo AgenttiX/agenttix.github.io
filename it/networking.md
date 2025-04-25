@@ -92,3 +92,95 @@ Here is an example of what a possible separation of networks can look like:
   - Personal devices of employees etc.
 - VPN
   - VPN clients don't usually need access to the entire main network, but only to certain servers on the main network.
+
+
+## Wireless networking (WWAN: 4G, 5G)
+The wireless networking standards are a mess.
+
+### 5G SA vs NSA
+5G can be implemented in two different ways.
+In 5G non-standalone (NSA) mode,
+the existing 4G LTE infrastructure is used for control signaling,
+and 5G is used only as an additional band for data transfer.
+This means that the connection will have the high latency of 4G LTE,
+and that the client device will need to have both 4G and 5G modems online,
+resulting in higher power consumption and therefore battery drain.
+A better name for 5G NSA would be 4.5G.
+
+5G standalone (SA) mode is the true 5G that does not depend on 4G LTE.
+In 5G SA mode, the 5G network is used for all connectivity.
+This provides lower latency than in 4G LTE.
+This makes 5G SA a valid replacement for wired connectivity.
+Some network operators, such as Elisa, market 5G SA as "5G+".
+
+Many network operators support only 5G NSA or restrict 5G SA to certain plans.
+Therefore, when purchasing a 5G network plan, ensure that it has support for 5G SA.
+If not, consider the options of competing network operators.
+
+
+### 4G bands in Finland
+In Finland, there are five
+[4G LTE frequency bands](https://en.wikipedia.org/wiki/LTE_frequency_bands).
+When purchasing a 4G device, ensure that it supports as many of these as possible.
+When purchasing a 4G antenna, ensure that it has support for the frequency range of 700–2800 MHz,
+but preferably also for the 700–3500 MHz range of 5G for future-proofing.
+
+- b1: 2100 MHz
+- b3: 2800 MHz
+- b7: 2600 MHz
+- b28: 700 MHz
+- b20: 800 MHz
+
+
+### 5G bands in Finland
+In Finland, there are three
+[5G NR frequency bands](https://en.wikipedia.org/wiki/5G_NR_frequency_bands).
+When purchasing a 5G device, ensure that it supports all three bands,
+or at least the n78 band.
+For a 5G device to work reliably in Finland, it must support at least the n28 and n78 bands.
+When purchasing a 5G antenna, ensure that it has support for the frequency range of 700–3500 MHz.
+
+- n1: 2100 MHz
+- n28: 700 MHz
+  - Used to provide better upload speeds when used together with n78 with carrier aggregation
+  - May require support for Dynamic Spectrum Sharing, since it shares the frequencies with the LTE b28 band
+- n78: 3500 MHz
+  - High frequency → short range, high download speed, upload speed is highly dependent on the distance
+- n258: 26 GHz, mmWave
+  - Upcoming (as of 2025)
+
+The simultaneous use of several frequency bands is known as
+[carrier aggregation (CA)](https://en.wikipedia.org/wiki/Carrier_aggregation).
+When purchasing a 5G device in Finland, ensure that it supports at least the n28+n78 carrier aggregation.
+
+### 5G modem: Quectel RM520N-GL
+My recommendation for a 5G modem is the
+[Quectel RM520N-GL](https://www.quectel.com/product/5g-rm520n-series/)
+([hinta.fi](https://hinta.fi/haku?q=RM520N-GL), [Amazon](https://www.amazon.de/dp/B0DP69BYJW)).
+According to
+[the documentation](https://github.com/4IceG/RM520N-GL/blob/main/Documents/Quectel_RM520N-GL_CA%26EN-DC_Features_V1.0.xls),
+it supports the following 5G carrier aggregation profiles that are relevant in Finland:
+- CA_n1A-n28A
+- CA_n1A-n78A
+- CA_n28A-n78A
+
+Dual connectivity profiles with n1+n28:
+- DC_28A_n1A-n78A
+- DC_3A_n1A-n78A
+- DC_7A_n1A-n78A
+- DC_20A_n1A-n78A
+- DC_7A-7A_n1A-n78A
+- DC_3A-3A_n1A-n78A
+- DC_3C_n1A-n78A
+- DC_7C_n1A-n78A
+
+Dual connectivity profiles with n28+n78:
+- DC_1A_n28A-n78A
+- DC_3A_n28A-n78A
+- DC_3C_n28A-n78A
+- DC_7A_n28A-n78A
+- DC_7C_n28A-n78A
+- DC_20A_n28A-n78A
+
+The modem can be controlled with the AT commands available
+[here](https://github.com/4IceG/RM520N-GL/blob/main/Documents/Quectel_RG520N%26RG525F%26RG5x0F%26RM5x0N%26RM521F_Series_AT_Commands_Manual_V1.0.pdf).
