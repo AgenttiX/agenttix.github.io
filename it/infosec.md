@@ -367,18 +367,28 @@ These instructions are based on
 sudo apt-get install libtpm2-pkcs11-1 libtpm2-pkcs11-tools
 sudo usermod -a -G tss "${USER}"
 # Log out and back in for the group membership to be applied.
+
 # If this command does not work without sudo, reboot the computer.
 tpm2_ptool init
+
 # Create long random PINs and write them down in e.g. your password manager software
 tpm2_ptool addtoken --pid=1 --label=ssh --userpin=MySecretPassword --sopin=MyRecoveryPassword
+
 # See the list of supported algorithms. If ed25519 is there, use it. (As of 2023, it's not yet supported.)
 tpm2_ptool addkey --help
+
 # If you get an error, try rsa2048 instead
 tpm2_ptool addkey --label=ssh --userpin=MySecretPassword --algorithm=rsa4096
+
 # Retrieve the public key from the TPM
 # https://github.com/tpm2-software/tpm2-pkcs11/issues/792
+TPM2_PKCS11_LOG_LEVEL=0 ssh-keygen -D /usr/lib/x86_64-linux-gnu/pkcs11/libtpm2_pkcs11.so
+# If the command above does not work, try this instead:
 TPM2_PKCS11_LOG_LEVEL=0 ssh-keygen -D /usr/lib/x86_64-linux-gnu/libtpm2_pkcs11.so.1
+
 # Load the stored key into the SSH agent
+ssh-add -s /usr/lib/x86_64-linux-gnu/pkcs11/libtpm2_pkcs11.so
+# If the command above does not work, try this instead:
 ssh-add -s /usr/lib/x86_64-linux-gnu/libtpm2_pkcs11.so.1
 ```
 
