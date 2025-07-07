@@ -41,13 +41,68 @@ Before starting to look for devices, please ask yourself these questions:
   If the price goes below the limits you have set, buy the device. :D
 
 
+### What to check when buying used devices
+Ask for the original purchase receipt whenever possible.
+It is necessary for warranty claims, and also serves as proof that the device is not stolen.
+
+Ask for these before buying:
+- If the device should come with a charger, ensure that it is included.
+- Ask whether the seller is aware of any issues with the device.
+
+Check these at the purchase situation:
+- Check the screen and case for scratches.
+- Check that the ports don't have bent pins or dirt on them.
+- Check that the battery works and is not swollen.
+  - If the battery is swollen, it is a fire hazard and must not be used.
+- Check that the keyboard or keys work.
+- Check that the camera works.
+- Check that the speakers work.
+- Check that the fans work, and that they don't make any strange noises that would indicate failing bearings.
+- Check that the device has the hardware features the seller claims it has.
+
+#### Computers
+Ask these before buying if they are not mentioned in the description, and verify them at the purchase situation:
+- Ensure that the BIOS/UEFI settings are not locked.
+- Ensure that anti-theft, e.g. Computrace, is disabled in the BIOS/UEFI settings.
+- Check whether the computer is compatible with the latest version of Windows
+  - Windows 11 requires a recent CPU and TPM 2.0
+- Check whether the computer has a Windows license
+  - If the computer has Windows installed, you can check the license status in Windows Settings.
+  - The BIOS/UEFI may also have information on the Windows license.
+- Ask the seller to run the onboard diagnostics, if available.
+  - Many enterprise laptops such as ThinkPads have built-in diagnostics that can be run from the BIOS/UEFI.
+  - If the device does not have built-in diagnostics,
+    you should ask the seller to run a memory test with Memtest86+.
+  - Ask for a screenshot of the results.
+  - If the seller does not know how to run the diagnostics, you can send them instructions online.
+    As a backup option, you can run the diagnostics yourself after purchasing the device.
+    You should do this as soon as possible.
+
+#### Phones and tablets
+Ask these before buying if they are not mentioned in the description, and verify them at the purchase situation:
+- Ensure that the device is not locked to a specific carrier.
+- Ensure that anti-theft is disabled.
+- Ensure that the device is not locked to a specific Google or Apple account.
+
+#### What if the device is locked?
+Don't buy the device. It may be stolen.
+The original owner may also have remote access to the device.
+If you have already bought the device, try to contact the seller and ask them to unlock it.
+In the case this is not possible, try to contact the manufacturer or the carrier to unlock it.
+If this is not possible either, you can search online on how to unlock the device.
+Many older devices have vulnerabilities and backdoors that enable you to unlock them.
+BIOS passwords can often be reset by shorting a specific pin on the motherboard,
+or by connecting cables to the BIOS/UEFI chip and modifying its contents with a programmer.
+
+
 ## Desktop PC components
 If at all possible, buy your PC as components or as pre-assembled from individual components.
 Don't buy fully pre-made PCs, as those have often proprietary form factors and power delivery solutions
 that make upgrading and finding replacement parts difficult or even impossible.
 Those also often have poor-quality components in their power delivery and bad airflow design in the case.
 
-If you're only using the computer for light tasks such as web browsing, consider buying a laptop and a Thunderbolt dock instead.
+If you're only using the computer for light tasks such as web browsing,
+consider buying a laptop and a USB-c or Thunderbolt dock instead.
 
 
 ### CPU
