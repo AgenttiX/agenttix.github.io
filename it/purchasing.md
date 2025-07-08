@@ -486,7 +486,11 @@ consider buying a laptop and a USB-c or Thunderbolt dock instead.
 
 ## Phones
 - Phone manufacturers often provide security patches for only 1-2 years after the model is released.
-  If you want to use the phone for longer, look for a phone that is supported by an alternative Android version such as LineageOS.
+  If you want to use the phone for longer, look for a phone that is supported by an alternative operating system, aka. custom ROM.
+- GrapheneOS is perhaps the most secure operating system for mobile devices. If you want a secure phone, get
+  [a device recommended for GrapheneOS](https://grapheneos.org/faq#recommended-devices).
+  ([the list of all supported devices](https://grapheneos.org/faq#supported-devices) is slightly larger.)
+- If the devices supported by GrapheneOS don't suit your needs, please see the devices supported by LineageOS.
   - [Official list](https://download.lineageos.org/)
   - [Geizhals list](https://geizhals.eu/?cat=umtsover&xf=162_LineageOS+Support) (new models may appear with a delay)
 - RAM: at least 6 GB
@@ -515,9 +519,10 @@ consider buying a laptop and a USB-c or Thunderbolt dock instead.
 - NFC
   - The tags are cheap on AliExpress and can be used for various purposes
   - Makes the use of a physical security key such as a YubiKey a lot easier
-- Android version: at least 12 (as of 2022), preferably the latest available
+- Android version: at least 14 (as of 2025), preferably the latest available
   - Android 10 adds support for AV1 decoding
   - Android 12 adds support for the AVIF image format
+  - Android 13 adds support for Bluetooth LE audio and the LC3 audio codec
   - [Official list of supported media formats](https://developer.android.com/guide/topics/media/media-formats)
 - Devices with the aforementioned features
   - [Geizhals list with Android 12 and official LineageOS](https://geizhals.eu/?cat=umtsover&xf=10063_12.0%7E146_Videos+%402160p%2F60fps%7E157_131072%7E162_LineageOS+Support%7E17890_n28%7E17890_n78%7E18414_NFC%7E2607_6144)
@@ -533,9 +538,11 @@ consider buying a laptop and a USB-c or Thunderbolt dock instead.
     [Key Attestation Demo](https://play.google.com/store/apps/details?id=io.github.vvb2060.keyattestation)
     app.
 - Google Pixel
+  - Pixel phones are among the most secure Android devices, especially with
+    [GrapheneOS](https://grapheneos.org/) ([supported models](https://grapheneos.org/faq#supported-devices)).
   - The 5G, VoLTE and eSIM features work only in
       [networks that are certified by Google](https://pixel.withgoogle.com/5G/).
-      As of 2022, this does **not** include Finland.
+      As of 2024, they finally work in Finland as well.
       This is an artificial limitation created by Google.
     - Please go to the [Google issue tracker](https://issuetracker.google.com/issues/229334870)
       and press the "+1: I am impacted" button in the top-right corner to vote for this issue to get fixed.
@@ -545,8 +552,9 @@ consider buying a laptop and a USB-c or Thunderbolt dock instead.
       - [Pixel 4a and Pixel 5](https://github.com/swangjang/Pixel-Redbull-Carrier-Patch)
       - [Pixel 6 Pro](https://forum.xda-developers.com/t/activate-5g-on-non-5g-country.4457071/)
       - [Pixel 7](https://forum.xda-developers.com/t/root-enable-5g-volte-and-call-screening-in-unsupported-countries.4510243/)
-  - Pixel phones are among the most secure Android devices, especially with
-    [GrapheneOS](https://grapheneos.org/) ([supported models](https://grapheneos.org/build#build-targets)).
+- [Fairphone](https://www.fairphone.com/) is an environmentally friendly choice, but it
+  [does not have proper security updates](https://www.reddit.com/r/GrapheneOS/comments/10b5x4n/comment/j67pbny/).
+  These issues also affect many other manufacturers.
 
 
 ## Smartwatches
