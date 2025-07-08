@@ -46,7 +46,6 @@ These are some of the apps that I have found useful.
   (GPLv2, [GitHub](https://github.com/KDE/kdeconnect-android))
 - [Keepass2Android](https://play.google.com/store/apps/details?id=keepass2android.keepass2android)
   (GPLv3, [GitHub](https://github.com/PhilippC/keepass2android))
-- [Key Attestation Demo](https://play.google.com/store/apps/details?id=io.github.vvb2060.keyattestation)
 - [Manual Camera Compatibility](https://play.google.com/store/apps/details?id=pl.vipek.camera2_compatibility_test)
 - [Notify for Mi Band](https://play.google.com/store/apps/details?id=com.mc.miband1)
 - [Obsidian](https://play.google.com/store/apps/details?id=md.obsidian)
@@ -346,13 +345,32 @@ unless you have a device with the A/B partition scheme or without a separate rec
   - Enable Zygisk DenyList
   - [Show system and OS apps in Zygisk DenyList](https://i.imgur.com/jsu2Xsm.jpg)
 - Add these apps to the DenyList
-  - Google Pay
   - Google Play services
   - Google Play Store
+  - (Google Services Framework)
+  - Google Wallet
+  - All apps related to banking and payments
+  - All streaming apps
   - All other apps that refuse to work on rooted phones
-- Install [Play Integrity Fix](https://github.com/chiteroman/PlayIntegrityFix)
-- Install [Zygisk Assistant](https://github.com/snake-4/Zygisk-Assistant)
-- Test results for OnePlus 9 Pro on 2025-01-27
+- Install [Shamiko](https://github.com/LSPosed/LSPosed.github.io/releases)
+- Install [TrickyStore](https://github.com/5ec1cff/TrickyStore)
+- Install [PIFS](https://tryigit.dev/pif/) ([GitHub](https://github.com/tryigit/PlayIntegrityFix))
+- If using an old firmware or old device, these additional tools may help
+  - [LSposed_mod](https://github.com/mywalkb/LSPosed_mod)
+  - [Zygisk Next](https://github.com/Dr-TSNG/ZygiskNext)
+  - [Play Integrity Fix](https://github.com/chiteroman/PlayIntegrityFix)
+  - [Zygisk Assistant](https://github.com/snake-4/Zygisk-Assistant)
+  - [MagiskHide Props Config](https://github.com/Magisk-Modules-Repo/MagiskHidePropsConf)
+  - [Google Pay SQlite Fix Module](https://forum.xda-developers.com/t/working-magisk-with-google-pay-as-of-gms-17-1-22-on-pie.3929950/page-9#post-79643248)
+  - [Universal SafetyNet Fix](https://github.com/kdrag0n/safetynet-fix)
+- Reboot
+- Delete app data and cache for the aforementioned Google apps
+- Install and run one of the Play Integrity or SafetyNet testers mentioned above
+  - Your device should now pass the check
+- Test that key attestation works with the
+  [Key Attestation Demo](https://play.google.com/store/apps/details?id=io.github.vvb2060.keyattestation)
+- Delete app data and cache for the apps that still refuse to work
+- Test results for OnePlus 9 Pro on 2025-01-27 using Play Integrity Fix Magisk module
   - [YASNAC](https://play.google.com/store/apps/details?id=rikka.safetynetchecker)
     - Basic Integrity: OK
     - CTS profile match: OK
@@ -367,15 +385,6 @@ unless you have a device with the A/B partition scheme or without a separate rec
       - Account Verification: Success
       - Device Integrity: Success
       - App Integrity: Success
-- If using an old firmware or old device, these additional tools may help
-  - [MagiskHide Props Config](https://github.com/Magisk-Modules-Repo/MagiskHidePropsConf)
-  - [Google Pay SQlite Fix Module](https://forum.xda-developers.com/t/working-magisk-with-google-pay-as-of-gms-17-1-22-on-pie.3929950/page-9#post-79643248)
-  - [Universal SafetyNet Fix](https://github.com/kdrag0n/safetynet-fix)
-- Reboot
-- Delete app data and cache for the aforementioned Google apps
-- Install and run one of the Play Integrity or SafetyNet testers mentioned above
-  - Your device should now pass the check
-- Delete app data and cache for the apps that still refuse to work
 
 
 ## Setting up the device
