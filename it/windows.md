@@ -54,24 +54,40 @@ title: Windows
     Otherwise, you will get constant prompts to buy more OneDrive storage once your home folder exceeds the free plan (5 GB).
 
 ### After installation
+#### On-site
+These steps have to be performed on-site
 - If you're not going to install any other virtualization software than Hyper-V, enable
   [memory integrity](https://support.microsoft.com/en-us/windows/core-isolation-e30ed737-17d8-42f3-a2a9-87521df09b78)
   before installing any additional device drivers, as those may prevent you from enabling it later.
+  Drivers may be provided by Windows Update, which is why this step has to be the first.
 - Join the computer to a domain (if needed and not already joined).
   - Move the computer to the correct AD Organizational Unit.
   - Run `gpupdate /force`
   - Reboot
-- Create additional user accounts as needed
-  - You can give individual domain users admin privileges to the local computer at
-    `Control Panel -> User Accounts -> Give other users access to this computer -> Advanced -> Advanced -> Local users and groups -> Groups -> Administrators -> Add...`
-- Install Windows Updates (including optional updates e.g. firmware, but not preview versions)
+- Enable Remote Desktop if needed
+  - Enable Remote Desktop if not already enabled by group policy
+    (`Settings -> System -> Remote Desktop -> Remote Desktop -> On`)
+  - Disable going to sleep when plugged in
+    (`Settings -> System -> Power & battery -> Screen, sleep & hibernate timeouts -> Make my device sleep after -> Never`)
 - Enable BitLocker
-  - Any BIOS updates should be installed before this, as some computers don't allow BIOS updates when BitLocker is enabled.
-- If you're willing to pay for antivirus software, install [F-Secure](https://www.f-secure.com/)
-  - It's from Finland, so it's not subject to NSA surveillance like Norton and McAfee, and not from a rogue state like Kaspersky
+  - On old computers, any BIOS updates should be installed before this,
+    as some old computers don't allow BIOS updates when BitLocker is enabled.
+
+#### Can be done remotely
+These steps can be performed remotely if you have e.g. Remote Desktop enabled.
+- Create additional user accounts as needed
+  - You can give individual domain users admin privileges to the local computer at Local Users and Groups.
+    You can open it by pressing Windows+R and writing `lusrmgr.msc` or at
+    `Control Panel -> User Accounts -> Give other users access to this computer -> Advanced -> Advanced`.
+    In the Local users and Groups, go to `Local users and groups -> Groups -> Administrators -> Add...`.
+- Install Windows Updates (including optional updates e.g. firmware, but not preview versions)
+- If you're willing to pay for antivirus software, install [F-Secure](https://www.f-secure.com/) or [WithSecure](https://www.withsecure.com/)
+  - They are from Finland, so they are not subject to NSA surveillance like Norton and McAfee,
+    and not from a rogue state like Kaspersky.
 - Install Microsoft Office: [Download](https://aka.ms/office-install) (if you have a license)
   - Always download the 64-bit version unless you have a specific reason to use the 32-bit version
 - Install software with the [installer script](https://github.com/AgenttiX/windows-scripts)
+- Run the maintenance script for the first time to go through all the first-time prompts
 - Disable Bluetooth from the taskbar menu unless you need it at the moment, as Bluetooth is a huge attack surface
 - Set Windows settings
   - System
@@ -108,7 +124,6 @@ that has a GUI and can use both Chocolatey and winget to install software.
 
 ### Misc. notes and settings
 These may be useful to do depending on your use case
-- Give local admin access to the domain user or create a separate local admin account for them
 - Configure OneDrive
 - Increase Outlook local retention of emails to speed up the search:
   - Outlook (classic): `Account Settings -> Change... -> Download email for the past: All`
