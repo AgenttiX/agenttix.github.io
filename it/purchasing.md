@@ -1069,6 +1069,26 @@ has a list of known good adapters.
   This is a technical limitation of the USB standard.
 
 
+## Bluetooth trackers
+Finding lost and stolen items with Bluetooth trackers is based on the idea
+that a phone that is part of the tracker network will pass by.
+To enable this, the tracker should be part of a large network.
+At the moment, the largest tracker networks are Apple's Find My network and Google's Find My Device network.
+Therefore, the tracker should be compatible with at least one of these networks, preferably both.
+One such tracker is
+[Chipolo POP](https://chipolo.net/en/products/chipolo-pop-6-pack?variant=4001407).
+
+Directional tracking is possible with trackers that support
+[Ultra-wideband](https://en.wikipedia.org/wiki/Ultra-wideband) (UWB) communication.
+This requires an UWB radio in the phone.
+UWB is supported in
+[Android 13 and later](https://source.android.com/docs/core/connect/uwb), and in
+[iPhone 11 and later](https://support.apple.com/en-us/109512).
+However, as of 2025, Android devices with UWB support are still quite rare.
+Wikipedia has a
+[list of supported devices](https://en.wikipedia.org/wiki/List_of_UWB-enabled_mobile_devices).
+
+
 ## Other
 - Battery chargers
   - Opus BT-C900
