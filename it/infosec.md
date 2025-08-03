@@ -460,7 +460,8 @@ gpg -K
     - Mixed security mode: support for both mode 1 and 2
 - When purchasing Bluetooth keyboards, ensure that they support at least Bluetooth 4.2, preferably Bluetooth 5.0 or above.
 - Most devices prior to 2018 are vulnerable to the [KNOB attack](https://knobattack.com/).
-- Bluetooth 4.2 - 5.4 are vulnerable to BLUFFS MITM attack.
+- Bluetooth 4.2 - 5.4 are vulnerable to
+  [the BLUFFS MITM attack](https://francozappa.github.io/post/2023/bluffs-ccs23/).
 
 ## Cryptography
 See [this site](https://www.keylength.com/)
