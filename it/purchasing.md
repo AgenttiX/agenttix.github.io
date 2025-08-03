@@ -380,7 +380,18 @@ consider buying a laptop and a USB-c or Thunderbolt dock instead.
   expanding. I've seen several laptops where the thickness of the battery has more than doubled over time,
   cracking the laptop open. Therefore, Li-ion batteries should be preferred over LiPo batteries.
   Often user-replaceable batteries, especially the thick ones, are Li-ion, and the internal batteries are LiPo.
-- Internal batteries can also be replaced on most laptops, but the availability of replacement batteries is worse.
+- Internal batteries can also be replaced on many laptops, but the availability of replacement batteries is worse.
+- On the other hand, as of 2025, many laptops, e.g. Lenovo ThinkPads,
+  have DRM that prevents the use of many third-party batteries.
+  This means that you can only use an official Lenovo battery, which is often very expensive,
+  or a third-party battery that successfully disguises itself as an official one.
+  Unfortunately, UEFI/firmware upgrades may make the DRM more strict,
+  and therefore instantly disable the third-party battery.
+  This will change on 18.2.2027, when the article 11 of the EU regulation
+  [2023/1542](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02023R1542-20240718)
+  comes into effect, stating that
+  "Software shall not be used to impede the replacement of a portable battery or LMT battery,
+  or of their key components, with another compatible battery or key components."
 
 
 ### Monitor
@@ -485,6 +496,25 @@ consider buying a laptop and a USB-c or Thunderbolt dock instead.
 
 
 ## Phones
+- The EU mandates that
+  ["by 2027 portable batteries incorporated into appliances should be removable and replaceable by the end-user"](https://www.consilium.europa.eu/en/press/press-releases/2023/07/10/council-adopts-new-regulation-on-batteries-and-waste-batteries/).
+  Therefore, if you can wait with your phone purchase until 2027, you can get a phone with a user-replaceable battery.
+  This is mandated by the article 11 of the EU regulation
+  [2023/1542](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02023R1542-20240718),
+  which will come into effect on 18.2.2027.
+- The EU regulation
+  [2023/1670](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1670)
+  mandates that since 20.6.2025, smartphone and tablet manufacturers must provide the following,
+  and for the specified time after the model is released.
+  - Spare parts and maintenance manuals for at least seven years.
+  - Software updates for at least five years.
+  - Security patches must be released within four months of the upstream patches.
+  - Functionality updates must be released within six months of the upstream patches.
+  - The internal storage must be encrypted by default.
+  - If you encounter a device that is sold in the EU but does not comply with these requirements,
+    you can contact the manufacturer and ask them to comply with the requirements.
+    If they refuse, you can report them to the national consumer protection authority,
+    as the devices they are selling are illegal.
 - Phone manufacturers often provide security patches for only 1-2 years after the model is released.
   If you want to use the phone for longer, look for a phone that is supported by an alternative operating system, aka. custom ROM.
 - GrapheneOS is perhaps the most secure operating system for mobile devices. If you want a secure phone, get
