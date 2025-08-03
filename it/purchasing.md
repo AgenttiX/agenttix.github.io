@@ -850,6 +850,18 @@ At least these are known to be problematic:
 - [Overkill build](https://michael.stapelberg.ch/posts/2021-07-10-linux-25gbit-internet-router-pc-build/)
 
 
+### Wi-Fi cards and dongles
+- Some Intel Wi-Fi and Bluetooth cards use [Intel CNVi/CNVio](https://en.wikipedia.org/wiki/CNVi),
+  in which many of the components are on the CPU and the chipset instead of the card.
+  As a consequence, they are not compatible with AMD CPUs, and when purchasing such a card,
+  you should verify that it's compatible with your CPU and chipset.
+  This includes at least the following models:
+  - [AC 9560](https://www.intel.com/content/www/us/en/products/sku/99446/intel-wirelessac-9560/specifications.html)
+  - [BE200](https://www.intel.com/content/www/us/en/products/sku/230078/intel-wifi-7-be200/specifications.html):
+    [Reddit](https://www.reddit.com/r/Amd/comments/1h280mc/does_intel_be200_work_on_am5_boards_with_the_new/)
+  - [BE201](https://www.intel.com/content/www/us/en/products/sku/230079/intel-wifi-7-be201/specifications.html)
+
+
 ### Switches
 - Most rack-mountable switches make a lot of noise.
   Therefore, search for reviews and forum posts before buying,
