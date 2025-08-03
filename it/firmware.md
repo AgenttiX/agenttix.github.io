@@ -51,6 +51,8 @@ The order and naming of these settings may vary depending on the model of your m
     This prevents DMA attacks from unauthorized devices.
 - Resizable BAR: enable
   - This is important for GPU performance
+- [Data Link Feature Exchange](https://www.reddit.com/r/ASUSROG/comments/m0xv7j/comment/h1sqyzt/): enable
+  - This enables full use of the PCIe bandwidth.
 - Virtualization
   - Virtualization / VT-x / AMD-V: enable
   - IOMMU / VT-d: enable
