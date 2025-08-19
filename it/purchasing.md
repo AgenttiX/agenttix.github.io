@@ -549,11 +549,8 @@ consider buying a laptop and a USB-c or Thunderbolt dock instead.
 - NFC
   - The tags are cheap on AliExpress and can be used for various purposes
   - Makes the use of a physical security key such as a YubiKey a lot easier
-- Android version: at least 14 (as of 2025), preferably the latest available
-  - Android 10 adds support for AV1 decoding
-  - Android 12 adds support for the AVIF image format
-  - Android 13 adds support for Bluetooth LE audio and the LC3 audio codec
-  - [Official list of supported media formats](https://developer.android.com/guide/topics/media/media-formats)
+- Android version: at least 14 (as of 2025), preferably the latest available.
+  Please see the [Android page](./android) for details.
 - Devices with the aforementioned features
   - [Geizhals list with Android 12 and official LineageOS](https://geizhals.eu/?cat=umtsover&xf=10063_12.0%7E146_Videos+%402160p%2F60fps%7E157_131072%7E162_LineageOS+Support%7E17890_n28%7E17890_n78%7E18414_NFC%7E2607_6144)
   - [Geizhals list with Android 13](https://geizhals.eu/?cat=umtsover&xf=10063_13.0%7E146_Videos+%402160p%2F60fps%7E157_131072%7E17890_n28%7E17890_n78%7E18414_NFC%7E2607_6144)

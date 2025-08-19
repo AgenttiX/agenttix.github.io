@@ -6,6 +6,24 @@ title: Android
 # Android
 Android is a significantly more versatile OS than its competitors.
 
+## Version history
+- Android 10
+  - Support for [AV1](https://en.wikipedia.org/wiki/AV1) video decoding
+  - [Project Mainline](https://source.android.com/docs/core/ota/modular-system),
+    which enables system components to be updated through Google Play
+    instead of waiting for the device manufacturer to release a device-specific update.
+- Android 12
+  - Support for the [AVIF](https://en.wikipedia.org/wiki/AVIF) image format
+- Android 13
+  - Support for Bluetooth LE audio and the LC3 audio codec
+  - [Updatable Bluetooth module](https://source.android.com/docs/core/ota/modular-system/bluetooth)
+- Android 14
+  - Support for [AV1](https://en.wikipedia.org/wiki/AV1) video encoding
+- Android 16
+  - Support for [APV](https://en.wikipedia.org/wiki/Advanced_Professional_Video) encoding and decoding
+- [Official list of supported media formats](https://developer.android.com/guide/topics/media/media-formats)
+
+
 ## Apps
 These are some of the apps that I have found useful.
 
