@@ -621,6 +621,16 @@ consider buying a laptop and a USB-c or Thunderbolt dock instead.
     ([FSF statement](https://www.fsf.org/blogs/community/replicant-developers-find-and-close-samsung-galaxy-backdoor))
 
 
+### Lapdocks
+A [lapdock](https://en.wikipedia.org/wiki/Lapdock)
+is the combination of an external monitor and keyboard that can be used to convert a phone to a laptop.
+- [Dopesplay](https://dopesplay.com/en-fi/collections/laptop-monitor)
+- [Nexdock](https://nexdock.com/explore-nexdock/)
+- [Uperfect](https://uperfect.com/products/steam-deck-external-monitor)
+- As of 2025,
+  [there seems to be no lapdock with an ISO keyboard layout](https://www.reddit.com/r/SamsungDex/comments/10bmh7q/is_there_a_lapdock_with_iso_keyboard_layout/).
+
+
 ## Smartwatches
 - The one thing smartwatches often lack is a good battery life.
 - Some smartwatches have integrated WWAN connectivity, usually 4G, aka. LTE.
