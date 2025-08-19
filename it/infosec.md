@@ -442,26 +442,6 @@ Verify that the sub-keys have been moved to the YubiKey
 gpg -K
 ```
 
-## Bluetooth
-- Bluetooth versions prior to 4.2 are fundamentally broken.
-  - Bluetooth 4.0 and 4.1 key exchange is broken, allowing an attacker to decrypt the traffic,
-    sometimes in less than a second.
-- Bluetooth 4.2 introduces the LE Secure Connections (LESC), which improves the security significantly.
-  - LESC has four security levels
-    - Level 1: no encryption
-    - Level 2: AES-CMAC (aka. AES-128, RFC 4493, FIPS-compliant), no pairing required
-    - Level 3: encryption and with pairing requirement
-    - Level 4: ECDHE authentication with the P-256 curve
-      - P-256 is one of the NIST curves and notoriously difficult to implement.
-        Therefore, I won't be surprised if and when vulnerabilities are found in the implementations.
-  - LESC also has four security modes
-    - Mode 1: no signing
-    - Mode 2: signing for both paired and unpaired connections
-    - Mixed security mode: support for both mode 1 and 2
-- When purchasing Bluetooth keyboards, ensure that they support at least Bluetooth 4.2, preferably Bluetooth 5.0 or above.
-- Most devices prior to 2018 are vulnerable to the [KNOB attack](https://knobattack.com/).
-- Bluetooth 4.2 - 5.4 are vulnerable to
-  [the BLUFFS MITM attack](https://francozappa.github.io/post/2023/bluffs-ccs23/).
 
 ## Cryptography
 See [this site](https://www.keylength.com/)

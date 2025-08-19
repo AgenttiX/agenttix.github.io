@@ -915,38 +915,9 @@ At least these are known to be problematic:
 ## Headphones
 - Read reviews and go to a store to test the headphones yourself to determine the audio quality.
 - The headphones should have good audio quality without the installation of any additional software.
+- When choosing a Bluetooth headphones, headset or speaker, pay close attention to the supported audio codecs.
+  The audio quality varies a lot between different codecs, and the most of them are not supported by all devices.
 
-
-### Bluetooth
-- [Bluetooth audio codecs are a mess](https://www.headphonesty.com/2020/03/bluetooth-audio-codecs-explained/)
-  - [Comparison of various codecs](https://habr.com/en/post/456182/)
-  - [AAC](https://en.wikipedia.org/wiki/Advanced_Audio_Coding)
-    - Proprietary
-    - [AAC over Bluetooth is unstable on Android](https://www.soundguys.com/the-ultimate-guide-to-bluetooth-headphones-aac-20296/)
-  - [aptX](https://en.wikipedia.org/wiki/AptX)
-    - Proprietary
-    - There are several variations with varying quality. In general, they are not much better than SBC.
-  - [CVSD](https://en.wikipedia.org/wiki/Continuously_variable_slope_delta_modulation)
-    - With microphone support. Horrible quality. Use mSBC instead.
-  - [LC3](https://en.wikipedia.org/wiki/LC3_(codec))
-    - Successor of SBC for Bluetooth 5.2 and Android 13 ->. Use this if you can.
-  - [LDAC](https://en.wikipedia.org/wiki/LDAC_(codec))
-    - The encoder is open source, but the decoder is proprietary. Supported by Android 8 -> and PipeWire (Ubuntu).
-    - Much better than SBC and AAC. Use this if you can.
-  - [LHDC](https://en.wikipedia.org/wiki/LHDC_(codec))
-    - Supported by Android 10 ->
-  - [LLAC](https://en.wikipedia.org/wiki/LHDC_(codec)#LLAC)
-    - Low latency verison of LHDC, aka. LHDC LL
-  - [mSBC](https://www.rfwireless-world.com/Terminology/SBC-vs-mSBC-codec.html)
-    - SBC with microphone support. Horrible quality, but much better than CVSD.
-  - [SBC](https://en.wikipedia.org/wiki/SBC_(codec))
-    - Basic codec. Support is mandatory for all stereo Bluetooth audio devices.
-  - [SBC-XQ](https://en.wikipedia.org/wiki/SBC_(codec)#Higher_quality_variants)
-    - SBC with a higher bitrate, resulting in quality comparable to aptX HD.
-      Supported by LineageOS 15 -> and PipeWire (Ubuntu 22.10 ->)
-- Standard Bluetooth does not support stereo audio output and mic input at the same time.
-  If you enable the microphone, the audio will be mono and of horrible quality.
-  [This is a fundamental limitation of the Bluetooth protocol.](https://superuser.com/a/1123841/)
 
 ### Headphones / headsets
 - Very few headsets have a good microphone.
@@ -962,7 +933,9 @@ At least these are known to be problematic:
 ## Accessories
 ### Security
 Wireless peripherals often have poor security.
-- Bluetooth-based devices should have at least Bluetooth 4.2. Previous versions are fundamentally broken.
+- Bluetooth-based devices should have at least Bluetooth 4.2, preferably 5.0 or later.
+  Previous versions are fundamentally broken.
+  Please see the [Bluetooth page](./bluetooth) for details.
 - [Logi Bolt](https://www.logitech.com/en-eu/business/work-setups/logi-bolt-wireless-technology.html) is quite secure
   - It's based on Bluetooth Low Energy 5.0,
     and uses all the security mechanisms in the Bluetooth Low Energy Core Specification 4.2.
@@ -1044,9 +1017,7 @@ and
 
 
 ### Bluetooth adapters
-The documentation of the
-[Home Assistant Bluetooth integration](https://www.home-assistant.io/integrations/bluetooth)
-has a list of known good adapters.
+Please see the [Bluetooth page](./bluetooth).
 
 
 ### Adapters
@@ -1108,24 +1079,7 @@ has a list of known good adapters.
   This is a technical limitation of the USB standard.
 
 
-## Bluetooth trackers
-Finding lost and stolen items with Bluetooth trackers is based on the idea
-that a phone that is part of the tracker network will pass by.
-To enable this, the tracker should be part of a large network.
-At the moment, the largest tracker networks are Apple's Find My network and Google's Find My Device network.
-Therefore, the tracker should be compatible with at least one of these networks, preferably both.
-One such tracker is
-[Chipolo POP](https://chipolo.net/en/products/chipolo-pop-6-pack?variant=4001407).
 
-Directional tracking is possible with trackers that support
-[Ultra-wideband](https://en.wikipedia.org/wiki/Ultra-wideband) (UWB) communication.
-This requires an UWB radio in the phone.
-UWB is supported in
-[Android 13 and later](https://source.android.com/docs/core/connect/uwb), and in
-[iPhone 11 and later](https://support.apple.com/en-us/109512).
-However, as of 2025, Android devices with UWB support are still quite rare.
-Wikipedia has a
-[list of supported devices](https://en.wikipedia.org/wiki/List_of_UWB-enabled_mobile_devices).
 
 
 ## Other
