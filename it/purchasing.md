@@ -371,7 +371,7 @@ consider buying a laptop and a USB-c or Thunderbolt dock instead.
 - 4K 60 Hz output requires HDMI 2.0 or later, which is quite rare on older laptops.
 
 
-###  Battery
+### Battery
 - Most laptops have either lithium-ion (Li-ion) or lithium polymer (LiPo) batteries.
 - The lifetime expectancy of both battery types is about three years.
   Around this time the batteries have lost a significant fraction of their capacity,
@@ -575,8 +575,12 @@ consider buying a laptop and a USB-c or Thunderbolt dock instead.
       [Mastodon](https://grapheneos.social/@GrapheneOS/114721666000552094),
       [Reddit](https://www.reddit.com/r/GrapheneOS/comments/1lldo83/will_grapheneos_support_newer_android_versions/)
     - Please go to [this issue page](https://support.google.com/android/thread/349989465) and press the "I have the same question" button!
-  - Pixel phones are among the most secure Android devices, especially with
-    [GrapheneOS](https://grapheneos.org/) ([supported models](https://grapheneos.org/faq#supported-devices)).
+  - Pixel phones are among the most secure Android devices
+    - [Security features](https://g.co/pixel/security)
+    - [Certifications](https://g.co/pixel/certifications)
+  - Pixel phones are compatible with
+    [GrapheneOS](https://grapheneos.org/) ([supported models](https://grapheneos.org/faq#supported-devices)),
+    which is even more secure than the stock Android.
   - The 5G, VoLTE and eSIM features work only in
       [networks that are certified by Google](https://pixel.withgoogle.com/5G/).
       As of 2024, they finally work in Finland as well.
