@@ -4,7 +4,50 @@ title: Android
 ---
 
 # Android
-Android is a significantly more versatile OS than its competitors.
+
+## Installation of third-party apps
+Warning!
+[Google will block the installation of unverified applications](https://arstechnica.com/gadgets/2025/08/google-will-block-sideloading-of-unverified-android-apps-starting-next-year/)
+starting in March 2026 on all devices with Google Play services.
+If your device has the Google Play Store, you won't be able to install apps from outside the Play Store,
+unless the app developer has submitted their government ID to Google and got Google to sign their app.
+**This is the end of Google's Android as an open platform.**
+To avoid this, switch to
+[GrapheneOS](https://grapheneos.org/),
+since it enables the installation of Google Play services in a sandbox,
+or switch to a custom ROM that does not have Google Play services at all.
+
+
+## EU digital wallet and age verification app
+EU is developing its
+[digital wallet](https://github.com/eu-digital-identity-wallet) and
+[age verification (AV) app](https://github.com/eu-digital-identity-wallet/av-app-android-wallet-ui)
+for Android and iOS.
+Unfortunately, as of 2025 according to the current plans, they will require Google Play Integrity verification.
+This means that in order to use the apps, the user must have Google Play services installed on their phone,
+and they will therefore have to accept
+[Google Play terms of service](https://play.google.com/about/play-terms/)
+and
+[Google terms of service](https://policies.google.com/terms).
+In order to access the basic functions of a citizen,
+one must not be required to accept the terms of a private company,
+especially of one from outside the EU.
+
+To avoid this, please comment and vote on these GitHub issues:
+[#15](https://github.com/eu-digital-identity-wallet/av-app-android-wallet-ui/issues/15),
+[#19](https://github.com/eu-digital-identity-wallet/av-app-android-wallet-ui/issues/19),
+[#22](https://github.com/eu-digital-identity-wallet/av-app-android-wallet-ui/issues/22),
+[#29](https://github.com/eu-digital-identity-wallet/av-app-android-wallet-ui/issues/29),
+[#38](https://github.com/eu-digital-identity-wallet/av-app-android-wallet-ui/issues/38).
+
+And these discussions:
+[#19](https://github.com/eu-digital-identity-wallet/av-doc-technical-specification/discussions/19)
+
+Other already closed issues:
+[#287](https://github.com/eu-digital-identity-wallet/eudi-app-android-wallet-ui/issues/287),
+[#390](https://github.com/eu-digital-identity-wallet/eudi-app-android-wallet-ui/issues/390)
+[#576](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/576)
+
 
 ## Version history
 - Android 10
