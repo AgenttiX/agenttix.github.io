@@ -515,7 +515,7 @@ consider buying a laptop and a USB-c or Thunderbolt dock instead.
     you can contact the manufacturer and ask them to comply with the requirements.
     If they refuse, you can report them to the national consumer protection authority,
     as the devices they are selling are illegal.
-- Phone manufacturers often provide security patches for only 1-2 years after the model is released.
+- For models released before 20.6.2025, the official support is often much shorter, e.g. 1-2 years.
   If you want to use the phone for longer, look for a phone that is supported by an alternative operating system, aka. custom ROM.
 - GrapheneOS is perhaps the most secure operating system for mobile devices. If you want a secure phone, get
   [a device recommended for GrapheneOS](https://grapheneos.org/faq#recommended-devices).
@@ -523,6 +523,8 @@ consider buying a laptop and a USB-c or Thunderbolt dock instead.
 - If the devices supported by GrapheneOS don't suit your needs, please see the devices supported by LineageOS.
   - [Official list](https://download.lineageos.org/)
   - [Geizhals list](https://geizhals.eu/?cat=umtsover&xf=162_LineageOS+Support) (new models may appear with a delay)
+- [PostmarketOS](https://postmarketos.org/) is also worth checking out.
+  The list of compatible devices is available [here](https://wiki.postmarketos.org/wiki/Devices).
 - RAM: at least 6 GB
   - Having less RAM will result in sluggishness.
 - Storage: at least 128 GB
@@ -599,6 +601,15 @@ consider buying a laptop and a USB-c or Thunderbolt dock instead.
   - An environmentally friendly choice
   - [Does not have proper security updates](https://www.reddit.com/r/GrapheneOS/comments/10b5x4n/comment/j67pbny/).
     However, these issues also affect many other manufacturers.
+- Sony
+  - The bootloader on most Sony phones can be unlocked with
+    [these official instructions](https://developer.sony.com/open-source/aosp-on-xperia-open-devices/get-started/unlock-bootloader).
+- Xiaomi
+  - The bootloader on most Xiaomi phones can be unlocked with
+    [these official instructions](https://en.miui.com/unlock).
+- Motorola
+  - The bootloder on most Motorola phones can be unlocked with
+    [these official instructions](https://en-us.support.motorola.com/app/standalone/bootloader/unlock-your-device-a).
 - OnePlus
   - OnePlus used to be good for custom ROMS by providing
     [firmware file downloads](https://service.oneplus.com/se/search/search-detail?id=2096330)
@@ -629,6 +640,29 @@ is the combination of an external monitor and keyboard that can be used to conve
 - [Uperfect](https://uperfect.com/products/steam-deck-external-monitor)
 - As of 2025,
   [there seems to be no lapdock with an ISO keyboard layout](https://www.reddit.com/r/SamsungDex/comments/10bmh7q/is_there_a_lapdock_with_iso_keyboard_layout/).
+
+
+## Tablets
+- Geizhals lists
+  - [With Android, 5G, >= 120 GB storage and USB-c with DisplayPort output](https://geizhals.eu/?cat=nbtabl&xf=13735_1%7E2179_122880%7E2187_Android%7E7677_5G%7E8383_11)
+- Google Pixel Tablet
+  - [hinta.fi](https://hinta.fi/4818116/google-pixel)
+
+
+### E-readers
+- Geizhals lists
+  - [With Android](https://geizhals.eu/?cat=pdapceb&xf=2040_Android)
+  - [With Android, pen and color display](https://geizhals.eu/?cat=pdapceb&xf=2040_Android%7E2040_Digitizer%7E2040_Farb-Display)
+- [BOOX](https://www.boox.com/)
+  - [BOOX Note Air4 C](https://shop.boox.com/collections/all/products/noteair4c):
+    [Hintaopas](https://hintaopas.fi/product.php?p=13968012)
+    [Amazon.de](](https://www.amazon.de/-/en/Tablet-Note-Air4-Notepad-Android-black/dp/B0DJ76N9HQ)),
+  - [BOOX Tab Ultra C](https://shop.boox.com/collections/all/products/tabultrac):
+    [hinta.fi](https://hinta.fi/5402632/onyx-boox-tab-ultra-c-e-reader)
+  - [BOOX Tab Ultra C Pro](https://shop.boox.com/collections/all/products/tabultracpro):
+    [hinta.fi](https://hinta.fi/4546834/onyx-boox-tab-ultra-c-pro)
+  - [BOOX Tablet Go Color 7](https://shop.boox.com/collections/all/products/gocolor7):
+    [Amazon.de](https://www.amazon.de/-/en/gp/product/B0F5B6KZ1H)
 
 
 ## Smartwatches
@@ -750,6 +784,11 @@ At least these are known to be problematic:
   - WPA3-enterprise requires also 192-bit encryption support
 - Wi-Fi 6 or Wi-Fi 7
 - High-speed ports (> 1 Gbps Ethernet, SFP+)
+
+The [EU Radio Equipment Directive (RED)](https://en.wikipedia.org/wiki/Radio_Equipment_Directive_(2014))
+mandates, that since 1.8.2025, devices with radio equipment that are sold within the EU
+must prevent modifications to the radio firmware.
+This prevents modifying e.g. the transmission power and operational frequencies of Wi-Fi devices.
 
 
 #### Wi-Fi routers / access points
