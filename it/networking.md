@@ -12,6 +12,7 @@ which enables easy setup and control of IoT devices such as smart plugs, TVs and
 The downside is that if one device is compromised,
 it can contaminate other devices on the same network.
 
+
 ### Secure option
 To reduce the attack surface,
 yo can separate IoT and guest devices to separate networks using virtual LANs (VLANs).
@@ -39,6 +40,7 @@ Once you no longer have legacy devices, you should disable the Legacy SSID for s
 If your legacy devices have Ethernet ports (e.g. gaming consoles),
 you should connect them to the network with a cable instead of wireless,
 and disable the legacy SSID.
+
 
 ### Cabling
 It's a lot easier to install cables when you're renovating other things at the same time.
@@ -96,6 +98,7 @@ Here is an example of what a possible separation of networks can look like:
 
 ## Wireless networking (WWAN: 4G, 5G)
 The wireless networking standards are a mess.
+
 
 ### 5G SA vs NSA
 5G can be implemented in two different ways.
@@ -159,6 +162,7 @@ The simultaneous use of several frequency bands is known as
 [carrier aggregation (CA)](https://en.wikipedia.org/wiki/Carrier_aggregation).
 When purchasing a 5G device in Finland, ensure that it supports at least the n28+n78 carrier aggregation.
 
+
 ### 5G modem: Quectel RM520N-GL
 My recommendation for a 5G modem is the
 [Quectel RM520N-GL](https://www.quectel.com/product/5g-rm520n-series/)
@@ -190,3 +194,4 @@ Dual connectivity profiles with n28+n78:
 
 The modem can be controlled with the AT commands available
 [here](https://github.com/4IceG/RM520N-GL/blob/main/Documents/Quectel_RG520N%26RG525F%26RG5x0F%26RM5x0N%26RM521F_Series_AT_Commands_Manual_V1.0.pdf).
+
