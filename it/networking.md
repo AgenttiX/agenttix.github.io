@@ -118,6 +118,12 @@ Therefore, when purchasing a 5G network plan, ensure that it has support for 5G 
 If not, consider the options of competing network operators.
 
 
+### 5G Advanced
+[5G Advanced](https://en.wikipedia.org/wiki/5G#5G-Advanced),
+also known as 5.5G or 5G-A, is an upgrade to the 5G standard.
+[In Finland, the deployment of 5G Advanced started in February 2025.](https://elisa.fi/yhtiotieto/uutishuone/tiedotteet/odotettu-parannus-mobiiliyhteyksiin-%E2%80%93-maailman-ensimm%C3%A4iset-kuluttaja-asiakkaat-k%C3%A4ytt%C3%A4v%C3%A4t-5-5g:t%C3%A4-elisan-verkossa/76140715069966/)
+
+
 ### 4G bands in Finland
 In Finland, there are five
 [4G LTE frequency bands](https://en.wikipedia.org/wiki/LTE_frequency_bands).
