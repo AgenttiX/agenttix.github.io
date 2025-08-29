@@ -111,6 +111,8 @@ At the moment, the largest tracker networks are Apple's Find My network and Goog
 Therefore, the tracker should be compatible with at least one of these networks, preferably both.
 One such tracker is
 [Chipolo POP](https://chipolo.net/en/products/chipolo-pop-6-pack?variant=4001407).
+However, no tracker can work with both networks simultaneously, as
+[this is forbidden by both Apple and Google licensing agreements](https://www.reddit.com/r/AirTags/comments/170px48/comment/kwhismm).
 
 Directional tracking is possible with trackers that support
 [Ultra-wideband](https://en.wikipedia.org/wiki/Ultra-wideband) (UWB) communication.
@@ -121,3 +123,7 @@ UWB is supported in
 However, as of 2025, Android devices with UWB support are still quite rare.
 Wikipedia has a
 [list of supported devices](https://en.wikipedia.org/wiki/List_of_UWB-enabled_mobile_devices).
+
+If you want to create your own Bluetooth tracker,
+please have a look at
+[OpenHaystack](https://github.com/seemoo-lab/openhaystack).
