@@ -21,6 +21,9 @@ Android is a significantly more versatile OS than its competitors.
   - Support for [AV1](https://en.wikipedia.org/wiki/AV1) video encoding
 - Android 16
   - Support for [APV](https://en.wikipedia.org/wiki/Advanced_Professional_Video) encoding and decoding
+  - Desktop mode
+  - [Linux terminal](#linux-terminal)
+  - Connection to multiple speakers and headphones simultaneously with Bluetooth LE Audio Auracast
 - [Official list of supported media formats](https://developer.android.com/guide/topics/media/media-formats)
 
 
@@ -128,11 +131,13 @@ These are some of the apps that I have found useful.
 - [SafetyNet Integrity Checker](https://play.google.com/store/apps/details?id=com.flinkapps.safteynet)
 - [YASNAC](https://play.google.com/store/apps/details?id=rikka.safetynetchecker)
 
+
 ### Apps that are likely not to work on rooted devices
 Tested on OnePlus 9 Pro with the Play Integrity Fix Magisk module.
 - [Bank Norwegian](https://play.google.com/store/apps/details?id=com.banknorwegian)
 - [Ingress](https://play.google.com/store/apps/details?id=com.nianticproject.ingress)
 - [S-mobiili](https://play.google.com/store/apps/details?id=fi.spankki)
+
 
 ### Apps that work on rooted devices
 Tested on OnePlus 9 Pro with the Play Integrity Fix Magisk module.
@@ -142,6 +147,7 @@ Tested on OnePlus 9 Pro with the Play Integrity Fix Magisk module.
 - [Nordnet](https://play.google.com/store/apps/details?id=com.nordnet)
 - [OmaElisa](https://play.google.com/store/apps/details?id=com.saunalahti.oma)
 - [OP-mobiili](https://play.google.com/store/apps/details?id=fi.op.android.opmobiili)
+
 
 ## 5G connectivity
 5G can be implemented in two ways that are significantly different from each other.
@@ -161,12 +167,23 @@ For further details, enable developer mode and enter *#*#4636#*#* in the dialer.
 - [Apple devices do not support 5G SA without custom configuration](https://yhteiso.elisa.fi/puheliittymaet-7/milloin-5g-standalone-tulee-iphone-puhelimiin-526522)
 
 
+## Linux terminal
+Android 16 introduces Linux Terminal,
+which in fact is a full Linux virtual machine running on top of the
+[Android Virtualization Framework (AVF)](https://source.android.com/docs/core/virtualization)
+using
+[KVM](https://en.wikipedia.org/wiki/Kernel-based_Virtual_Machine) or
+[Gunyah](https://github.com/quic/gunyah-hypervisor).
+It also supports GUI applications with Wayland.
+
+
 ## Pros and cons of custom ROMs
 ### Pros
 - Better privacy: no telemetry to the manufacturer
 - Better security
   - Faster updates and newer Android version
 - Newer Android version with new and better features
+
 
 ### Cons
 - The camera may not work at its full resolution for either photos or videos
@@ -188,6 +205,7 @@ a vulnerability that allows any installed app to gain root access.
 [Reddit](https://www.reddit.com/r/Android/comments/lfye5r/comment/gmoi05a/),
 [GitHub](https://github.com/vvb2060/Magica))
 
+
 ### OnePlus 6 (enchilada)
 - [LineageOS](https://download.lineageos.org/enchilada)
 - [TWRP](https://twrp.me/oneplus/oneplus6.html)
@@ -195,6 +213,7 @@ a vulnerability that allows any installed app to gain root access.
 - Kernel
   - [CleanSlate](https://forum.xda-developers.com/t/kernel-cleanslate-q-v3-7-9-flashlight-led-kcal-fingerprnt-battery-25jul.3797668/) (OxygenOS-based ROMs only?)
   - [ElementalX](https://forum.xda-developers.com/t/kernel-april-4-elementalx-op6-6-02.3799054/) (OxygenOS-based ROMs only?)
+
 
 ### OnePlus 9 Pro (lemonadep)
 - [LineageOS](https://wiki.lineageos.org/devices/lemonadep/)
@@ -215,6 +234,7 @@ a vulnerability that allows any installed app to gain root access.
     - [OnePlus9Pro What's working or isn't?](https://www.reddit.com/r/LineageOS/comments/s7gz6l/oneplus9pro_whats_working_or_isnt/)
     - [OnePlus 9Pro LineageOS camera](https://www.reddit.com/r/LineageOS/comments/pkouh4/oneplus_9pro_lineageos_camera/)
 
+
 ### Samsung Galaxy Note 3 LTE (SM-N9005, hlte)
 - [LineageOS](https://wiki.lineageos.org/devices/hlte/)
   - Official download is no longer available
@@ -224,6 +244,7 @@ a vulnerability that allows any installed app to gain root access.
   ([download](https://www.pling.com/p/1410846/))
 - [Stock ROM](https://sfirmware.com/samsung-sm-n9005/)
 
+
 ### Samsung Galaxy Note 2 LTE (GT-N7105, t0lte)
 - [LineageOS](https://wiki.lineageos.org/devices/t0lte/)
   - [Unofficial LineageOS 14](https://forum.xda-developers.com/t/rom-eol-7-1-2-official-lineageos-for-t0lte.3538310/) (Android 7,
@@ -231,6 +252,7 @@ a vulnerability that allows any installed app to gain root access.
   - [Unofficial LineageOS 20](https://xdaforums.com/t/rom-unofficial-13-n7105-t0lte-samsung-galaxy-note-2-lte-lineageos-20-0-alpha.4516507/)
 - [TWRP](https://twrp.me/samsung/samsunggalaxynote2n7105.html)
 - [Stock ROM](https://sfirmware.com/samsung-gt-n7105/)
+
 
 ### Samsung Galaxy Note 8 (SM-N950F, greatlte)
 - [Unofficial LineageOS 19](https://forum.xda-developers.com/t/lineageos-19-1-android-12l-signature-spoofing-ota-updates-for-s8-s8-note8.4370375/) (Android 12)
@@ -247,6 +269,7 @@ a vulnerability that allows any installed app to gain root access.
 - Stock ROM:
   [SamMobile](https://www.sammobile.com/samsung/galaxy-note-8/firmware/)
   [Samsung Fan Club](https://sfirmware.com/samsung-sm-n950f/)
+
 
 ### Samsung Galaxy Tab 3 10.1 (GT-P5220)
 - [LineageOS](https://forum.xda-developers.com/t/rom-gt-p52xx-unofficial-7-1-2-lineageos-14-1.3587761/)
