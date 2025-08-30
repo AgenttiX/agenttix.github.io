@@ -1061,6 +1061,8 @@ A good keyboard should have
 - Detachable cable with USB-c
 - Wireless connectivity is a plus, but be mindful of security.
   There should be a way to turn the wireless connectivity off.
+- In office use, the keyboard should be as silent as possible.
+  (At least no clicky mechanical switches.)
 
 
 #### Mechanical keyboards
@@ -1132,6 +1134,7 @@ which I can recommend.
 
 
 #### Mice for office use
+In office use, the mouse should be as silent as possible.
 - [Logitech MX Master 3S](https://www.logitech.com/fi-fi/shop/p/mx-master-3s.910-006559):
   hinta.fi:
   [graphite](https://hinta.fi/3442980/logitech-910-006559),
