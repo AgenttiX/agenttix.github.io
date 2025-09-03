@@ -6,6 +6,7 @@ title: Hardware
 # Hardware
 
 ## Setting up a new computer
+- Start downloading the installer(s) for the operating system(s) you're going to install, as the download can take a while.
 - Unbox the parts.
   - Take a video of the unboxing so that you have proof if anything is missing.
 - Take pictures of the serial numbers for later warranty registration.
