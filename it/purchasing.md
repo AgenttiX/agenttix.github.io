@@ -1089,6 +1089,7 @@ A good keyboard should have
 - [Keychron Q10](https://www.keychron.com/products/keychron-q10-alice-layout-qmk-custom-mechanical-keyboard-iso-layout-collection?variant=40350592073817)
 - [Keychron V10](https://www.keychron.com/products/keychron-v10-alice-layout-qmk-custom-mechanical-keyboard-iso-layout-collection?variant=40474617905241)
 
+
 #### Wireless keyboards
 - [Logitech MX Keys for Business](https://www.logitech.com/fi-fi/products/keyboards/mx-keys-for-business.html):
   [hinta.fi](https://hinta.fi/3003615/logitech-920-010249)
@@ -1096,6 +1097,11 @@ A good keyboard should have
 - [Logitech MX Keys Mini for Business](https://www.logitech.com/fi-fi/products/keyboards/mx-keys-mini-for-business.html):
   [hinta.fi](https://hinta.fi/3146694/logitech-920-010604)
   - Logi Bolt
+
+
+#### Basic keyboards
+- [Logitech Keyboard K120 for Business](https://www.logitech.com/fi-fi/shop/p/k120-usb-windows):
+  [hinta.fi](https://hinta.fi/291/logitech-keyboard-k120-for-business)
 
 
 ### Mice
@@ -1185,8 +1191,6 @@ which use the broken Logitech Unifying wireless connectivity.
 - [Logitech MX Anywhere 3S for Business](https://www.logitech.com/fi-fi/products/mice/mx-anywhere-3s-business-wireless-mouse.html):
   [hinta.fi](https://hinta.fi/4202884/logitech-910-006929),
   [Amazon.de](https://www.amazon.de/-/en/gp/product/B07W6GJWZR)
-- [Logitech Keyboard K120 for Business](https://www.logitech.com/fi-fi/shop/p/k120-usb-windows):
-  [hinta.fi](https://hinta.fi/291/logitech-keyboard-k120-for-business)
 
 
 ### Mouse & keyboard combos
