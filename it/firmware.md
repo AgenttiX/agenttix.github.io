@@ -9,6 +9,7 @@ Unfortunately many manufacturers don't provide a proper way to automatically not
 If you don't have a way to receive update notifications automatically,
 you should check your manufacturer's website regularly.
 
+
 ## UEFI/BIOS settings
 The order and naming of these settings may vary depending on the model of your motherboard.
 
@@ -65,11 +66,16 @@ The order and naming of these settings may vary depending on the model of your m
   - These reduce the risk of evil maid attacks.
 - SATA controller mode: AHCI
   - If you need RAID, software RAID is better than motherboard RAID.
+- [Intel SIPP](https://en.wikipedia.org/wiki/Stable_Image_Platform_Program):
+  leave at the default, but if you have installed additional hardware that does not work,
+  or if you notice that your drivers are too old, then you should try disabling this.
+
 
 ## Updating UEFI/BIOS
 In general, you should download the update from the manufacturer's website
 and flash it either with the provided tool or directly from the UEFI/BIOS.
 Flashing directly from the UEFI/BIOS or from a bootable USB is safer than flashing from the OS.
+
 
 ### HP enterprise workstations
 - Download the update .exe from HP.
@@ -86,6 +92,7 @@ Flashing directly from the UEFI/BIOS or from a bootable USB is safer than flashi
 - [Reddit](https://www.reddit.com/r/hardware/comments/vpalik/a_dream_come_true_running_coreboot_on_a_modern/)
 
 [me_cleaner](https://github.com/corna/me_cleaner)
+
 
 ## Intel AMT / ME settings
 - Change the Management Engine (ME) password even if you don't plan to use the ME at all.
@@ -156,28 +163,33 @@ as it somewhat prevents an attacker from booting the computer from a USB drive w
 
 Throttled also supports undervolting, which is a great way to get even more performance out of a laptop.
 
+
 ## Custom UEFI/BIOS versions
 A modified UEFI/BIOS can solve various issues and
 remove artificial limitations imposed by the device manufacturer.
 However, be careful what you install,
 UEFI/BIOS and other firmware have very deep access to your system.
 
+
 ### Lenovo battery DRM
 Lenovo laptops have a DRM that prevents third-party batteries from charging.
 - [Reddit thread](https://www.reddit.com/r/Lenovo/comments/dcnpzg/the_battery_installed_is_not_supported_by_this/)
 - [Hackaday article](https://hackaday.com/2016/02/11/unlocking-thinkpad-batteries/)
 
+
 ### Lenovo WLAN/WWAN DRM
 - [G510](https://medium.com/@p0358/removing-wlan-wwan-bios-whitelist-on-a-lenovo-laptop-to-use-a-custom-wi-fi-card-f6033a5a5e5a)
 - [X1 Carbon](https://www.reddit.com/r/thinkpad/comments/8813ub/x1_carbon_whitelist/?utm_source=share&utm_medium=web2x&context=3)
 
+
 ### Lenovo XX30 series
 - [Custom BIOS](https://github.com/n4ru/1vyrain)
 - [Custom EC firmware](https://github.com/hamishcoleman/thinkpad-ec)
+
 
 ### Meltdown and Spectre patch for X58 motherboards
 - [Techpowerup](https://www.techpowerup.com/forums/threads/meltdown-and-spectre-patched-bios-for-x58-motherboards.246101/)
 - [Gigabyte UK](https://forum.giga-byte.co.uk/index.php?topic=22899.0)
 - [Gigabyte US](https://forum.gigabyte.us/thread/4901/spectre-patched-bios-gigabyte-motherboards)
 
-Tested to work on GA-X58A-UD7.
+Tested to work on Gigabyte GA-X58A-UD7.
