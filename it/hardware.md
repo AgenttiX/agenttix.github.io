@@ -27,8 +27,16 @@ title: Hardware
   - Do not overclock yet.
 - Run a RAM test such as [Memtest86+](https://www.memtest.org/).
 - Boot the computer from a Linux USB drive, e.g. Ubuntu
-  - If the NVMe SSD has been used before, wipe it using
-    [`nvme sanitize`](https://wiki.archlinux.org/title/Solid_state_drive/Memory_cell_clearing#NVMe_drive)
+  - If the NVMe SSDs have been used before, wipe them using
+    [`nvme sanitize`](https://wiki.archlinux.org/title/Solid_state_drive/Memory_cell_clearing#NVMe_drive).
+  - On modern systems, configure HDDs and NVMe SSDs to use 4K LBA.
+    This is known as [Advanced Format](https://en.wikipedia.org/wiki/Advanced_Format)
+    and is supported on Windows 8 ->, Windows Server 2012 -> and Linux 2.6.31 ->.
+    (As a matter of personal opinion, I'd do this for PCIe 4.0 NVMe SSDs and newer.)
+    [It should provide a performance boost](https://unix.stackexchange.com/questions/761398/are-there-any-benefits-in-setting-a-hdds-logical-sector-size-to-4kn), but
+    [on some older SSDs it can result in a performance drop instead](https://forums.sandisk.com/t/sn550-why-it-uses-512b-sector-instead-of-4096/265472/3).
+    - For HDDs, you can use [`hdparm`](https://wiki.archlinux.org/title/Advanced_Format#Advanced_Format_hard_disk_drives).
+    - For NVMe SSDs, you can use [`nvme format`](https://wiki.archlinux.org/title/Advanced_Format#NVMe_solid_state_drives).
   - Run SMART tests on the SSDs and [badblocks](https://wiki.archlinux.org/title/badblocks) on the HDDs.
 - [Install Windows](./windows.md) (if needed).
 - [Install Linux](./linux.md) (if needed).
@@ -91,3 +99,7 @@ A good way to find out the values above is to connect a device and run `sudo lsh
     - Require Admin. Pass. for F12 Boot: Yes
     - Configuration Change Detection: Yes
     - Chassis Intrusion Detection: Yes
+    - Hard Disk Password
+      - M.2 Drive 1 Password: User
+      - Reboot
+      - Security Erase HDD Data -> Erase M.2 Drive 1 Data
