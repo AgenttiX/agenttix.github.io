@@ -44,8 +44,10 @@ title: Hardware
 - Use the computer for a few days or weeks to see that it's stable.
 - Overclock (if you want to).
 
-## Personal IT hardware
+
+## Personal / familiar IT hardware
 [Geekbench results](https://browser.geekbench.com/user/AgenttiX)
+
 
 ### [ASUS Zenith II Extreme](https://rog.asus.com/motherboards/rog-zenith/rog-zenith-ii-extreme-model/)
 #### USB ports
@@ -68,3 +70,21 @@ title: Hardware
 The USB controllers are in the IOMMU groups 18, 31, 35 and 55.
 This table does not yet include the front panel and USB-c ports.
 A good way to find out the values above is to connect a device and run `sudo lshw -html > lshw.html`.
+
+
+### [Lenovo ThinkStation P330 Tiny](https://www.lenovo.com/fi/fi/p/workstations/thinkstationp/thinkstation-p330-tiny/33ts3tp330x)
+- Thunderbolt
+  - [Motherboard hearders](https://www.reddit.com/r/AskElectronics/comments/1i0w0ec/can_you_help_me_identify_these_ports_on_a_lenovo/)
+- Boot keys
+  - F1: BIOS/UEFI settings
+  - F10: Hardware diagnostics
+  - F12: Boot selection
+  - Ctrl+P: Intel ME
+  - Alt+P: Power on by keyboard
+- BIOS/UEFI settings to change from the defaults
+  - Advanced -> CPU Setup -> TxT: Enable
+  - Security
+    - Allow Flashing BIOS to a Previous Version: No
+    - Require Admin. Pass. for F12 Boot: Yes
+    - Configuration Change Detection: Yes
+    - Chassis Intrusion Detection: Yes
