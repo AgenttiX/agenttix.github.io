@@ -224,6 +224,11 @@ consider buying a laptop and a USB-c or Thunderbolt dock instead.
 - As of 2022, PCIe 4.0 may not be worth the additional price.
 
 
+## HDD
+- CMR vs. SMR
+- RAID 5 & RAID 6
+
+
 ### Power supply (PSU)
 - [Geizhals list](https://geizhals.eu/?cat=gehps&xf=18421_4~360_850~363_semi-passiv~4174_ATX&sort=p#productlist)
 - Aim for at least 80 Plus Gold certification. This is also an indicator of build quality.
