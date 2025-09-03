@@ -26,7 +26,10 @@ title: Hardware
     Store it in a safe place, as resetting a forgotten UEFI/BIOS password can be difficult.
   - Do not overclock yet.
 - Run a RAM test such as [Memtest86+](https://www.memtest.org/).
-- Boot the computer from a Linux USB drive and run SMART tests on the SSDs and [badblocks](https://wiki.archlinux.org/title/badblocks) on the HDDs.
+- Boot the computer from a Linux USB drive, e.g. Ubuntu
+  - If the NVMe SSD has been used before, wipe it using
+    [`nvme sanitize`](https://wiki.archlinux.org/title/Solid_state_drive/Memory_cell_clearing#NVMe_drive)
+  - Run SMART tests on the SSDs and [badblocks](https://wiki.archlinux.org/title/badblocks) on the HDDs.
 - [Install Windows](./windows.md) (if needed).
 - [Install Linux](./linux.md) (if needed).
 - Update UEFI/BIOS and firmware (if not already updated).

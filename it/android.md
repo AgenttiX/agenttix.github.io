@@ -4,7 +4,71 @@ title: Android
 ---
 
 # Android
-Android is a significantly more versatile OS than its competitors.
+
+## Installation of third-party apps
+Warning!
+[Google will block the installation of unverified applications](https://arstechnica.com/gadgets/2025/08/google-will-block-sideloading-of-unverified-android-apps-starting-next-year/)
+starting in March 2026 on all devices with Google Play services.
+If your device has the Google Play Store, you won't be able to install apps from outside the Play Store,
+unless the app developer has submitted their government ID to Google and got Google to sign their app.
+**This is the end of Google's Android as an open platform.**
+To avoid this, switch to
+[GrapheneOS](https://grapheneos.org/),
+since it enables the installation of Google Play services in a sandbox,
+or switch to a custom ROM that does not have Google Play services at all.
+
+
+## EU digital wallet and age verification app
+EU is developing its
+[digital wallet](https://github.com/eu-digital-identity-wallet) and
+[age verification (AV) app](https://github.com/eu-digital-identity-wallet/av-app-android-wallet-ui)
+for Android and iOS.
+Unfortunately, as of 2025 according to the current plans, they will require Google Play Integrity verification.
+This means that in order to use the apps, the user must have Google Play services installed on their phone,
+and they will therefore have to accept
+[Google Play terms of service](https://play.google.com/about/play-terms/)
+and
+[Google terms of service](https://policies.google.com/terms).
+In order to access the basic functions of a citizen,
+one must not be required to accept the terms of a private company,
+especially of one from outside the EU.
+
+To avoid this, please comment and vote on these GitHub issues:
+[#15](https://github.com/eu-digital-identity-wallet/av-app-android-wallet-ui/issues/15),
+[#19](https://github.com/eu-digital-identity-wallet/av-app-android-wallet-ui/issues/19),
+[#22](https://github.com/eu-digital-identity-wallet/av-app-android-wallet-ui/issues/22),
+[#29](https://github.com/eu-digital-identity-wallet/av-app-android-wallet-ui/issues/29),
+[#38](https://github.com/eu-digital-identity-wallet/av-app-android-wallet-ui/issues/38).
+
+And these discussions:
+[#19](https://github.com/eu-digital-identity-wallet/av-doc-technical-specification/discussions/19)
+
+Other already closed issues:
+[#287](https://github.com/eu-digital-identity-wallet/eudi-app-android-wallet-ui/issues/287),
+[#390](https://github.com/eu-digital-identity-wallet/eudi-app-android-wallet-ui/issues/390)
+[#576](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/576)
+
+
+## Version history
+- Android 10
+  - Support for [AV1](https://en.wikipedia.org/wiki/AV1) video decoding
+  - [Project Mainline](https://source.android.com/docs/core/ota/modular-system),
+    which enables system components to be updated through Google Play
+    instead of waiting for the device manufacturer to release a device-specific update.
+- Android 12
+  - Support for the [AVIF](https://en.wikipedia.org/wiki/AVIF) image format
+- Android 13
+  - Support for Bluetooth LE audio and the LC3 audio codec
+  - [Updatable Bluetooth module](https://source.android.com/docs/core/ota/modular-system/bluetooth)
+- Android 14
+  - Support for [AV1](https://en.wikipedia.org/wiki/AV1) video encoding
+- Android 16
+  - Support for [APV](https://en.wikipedia.org/wiki/Advanced_Professional_Video) encoding and decoding
+  - Desktop mode
+  - [Linux terminal](#linux-terminal)
+  - Connection to multiple speakers and headphones simultaneously with Bluetooth LE Audio Auracast
+- [Official list of supported media formats](https://developer.android.com/guide/topics/media/media-formats)
+
 
 ## Apps
 These are some of the apps that I have found useful.
@@ -110,11 +174,13 @@ These are some of the apps that I have found useful.
 - [SafetyNet Integrity Checker](https://play.google.com/store/apps/details?id=com.flinkapps.safteynet)
 - [YASNAC](https://play.google.com/store/apps/details?id=rikka.safetynetchecker)
 
+
 ### Apps that are likely not to work on rooted devices
 Tested on OnePlus 9 Pro with the Play Integrity Fix Magisk module.
 - [Bank Norwegian](https://play.google.com/store/apps/details?id=com.banknorwegian)
 - [Ingress](https://play.google.com/store/apps/details?id=com.nianticproject.ingress)
 - [S-mobiili](https://play.google.com/store/apps/details?id=fi.spankki)
+
 
 ### Apps that work on rooted devices
 Tested on OnePlus 9 Pro with the Play Integrity Fix Magisk module.
@@ -124,6 +190,7 @@ Tested on OnePlus 9 Pro with the Play Integrity Fix Magisk module.
 - [Nordnet](https://play.google.com/store/apps/details?id=com.nordnet)
 - [OmaElisa](https://play.google.com/store/apps/details?id=com.saunalahti.oma)
 - [OP-mobiili](https://play.google.com/store/apps/details?id=fi.op.android.opmobiili)
+
 
 ## 5G connectivity
 5G can be implemented in two ways that are significantly different from each other.
@@ -143,12 +210,23 @@ For further details, enable developer mode and enter *#*#4636#*#* in the dialer.
 - [Apple devices do not support 5G SA without custom configuration](https://yhteiso.elisa.fi/puheliittymaet-7/milloin-5g-standalone-tulee-iphone-puhelimiin-526522)
 
 
+## Linux terminal
+Android 16 introduces Linux Terminal,
+which in fact is a full Linux virtual machine running on top of the
+[Android Virtualization Framework (AVF)](https://source.android.com/docs/core/virtualization)
+using
+[KVM](https://en.wikipedia.org/wiki/Kernel-based_Virtual_Machine) or
+[Gunyah](https://github.com/quic/gunyah-hypervisor).
+It also supports GUI applications with Wayland.
+
+
 ## Pros and cons of custom ROMs
 ### Pros
 - Better privacy: no telemetry to the manufacturer
 - Better security
   - Faster updates and newer Android version
 - Newer Android version with new and better features
+
 
 ### Cons
 - The camera may not work at its full resolution for either photos or videos
@@ -170,6 +248,7 @@ a vulnerability that allows any installed app to gain root access.
 [Reddit](https://www.reddit.com/r/Android/comments/lfye5r/comment/gmoi05a/),
 [GitHub](https://github.com/vvb2060/Magica))
 
+
 ### OnePlus 6 (enchilada)
 - [LineageOS](https://download.lineageos.org/enchilada)
 - [TWRP](https://twrp.me/oneplus/oneplus6.html)
@@ -177,6 +256,7 @@ a vulnerability that allows any installed app to gain root access.
 - Kernel
   - [CleanSlate](https://forum.xda-developers.com/t/kernel-cleanslate-q-v3-7-9-flashlight-led-kcal-fingerprnt-battery-25jul.3797668/) (OxygenOS-based ROMs only?)
   - [ElementalX](https://forum.xda-developers.com/t/kernel-april-4-elementalx-op6-6-02.3799054/) (OxygenOS-based ROMs only?)
+
 
 ### OnePlus 9 Pro (lemonadep)
 - [LineageOS](https://wiki.lineageos.org/devices/lemonadep/)
@@ -197,6 +277,7 @@ a vulnerability that allows any installed app to gain root access.
     - [OnePlus9Pro What's working or isn't?](https://www.reddit.com/r/LineageOS/comments/s7gz6l/oneplus9pro_whats_working_or_isnt/)
     - [OnePlus 9Pro LineageOS camera](https://www.reddit.com/r/LineageOS/comments/pkouh4/oneplus_9pro_lineageos_camera/)
 
+
 ### Samsung Galaxy Note 3 LTE (SM-N9005, hlte)
 - [LineageOS](https://wiki.lineageos.org/devices/hlte/)
   - Official download is no longer available
@@ -206,6 +287,7 @@ a vulnerability that allows any installed app to gain root access.
   ([download](https://www.pling.com/p/1410846/))
 - [Stock ROM](https://sfirmware.com/samsung-sm-n9005/)
 
+
 ### Samsung Galaxy Note 2 LTE (GT-N7105, t0lte)
 - [LineageOS](https://wiki.lineageos.org/devices/t0lte/)
   - [Unofficial LineageOS 14](https://forum.xda-developers.com/t/rom-eol-7-1-2-official-lineageos-for-t0lte.3538310/) (Android 7,
@@ -213,6 +295,7 @@ a vulnerability that allows any installed app to gain root access.
   - [Unofficial LineageOS 20](https://xdaforums.com/t/rom-unofficial-13-n7105-t0lte-samsung-galaxy-note-2-lte-lineageos-20-0-alpha.4516507/)
 - [TWRP](https://twrp.me/samsung/samsunggalaxynote2n7105.html)
 - [Stock ROM](https://sfirmware.com/samsung-gt-n7105/)
+
 
 ### Samsung Galaxy Note 8 (SM-N950F, greatlte)
 - [Unofficial LineageOS 19](https://forum.xda-developers.com/t/lineageos-19-1-android-12l-signature-spoofing-ota-updates-for-s8-s8-note8.4370375/) (Android 12)
@@ -229,6 +312,7 @@ a vulnerability that allows any installed app to gain root access.
 - Stock ROM:
   [SamMobile](https://www.sammobile.com/samsung/galaxy-note-8/firmware/)
   [Samsung Fan Club](https://sfirmware.com/samsung-sm-n950f/)
+
 
 ### Samsung Galaxy Tab 3 10.1 (GT-P5220)
 - [LineageOS](https://forum.xda-developers.com/t/rom-gt-p52xx-unofficial-7-1-2-lineageos-14-1.3587761/)

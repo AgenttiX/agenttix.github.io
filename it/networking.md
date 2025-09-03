@@ -12,6 +12,7 @@ which enables easy setup and control of IoT devices such as smart plugs, TVs and
 The downside is that if one device is compromised,
 it can contaminate other devices on the same network.
 
+
 ### Secure option
 To reduce the attack surface,
 yo can separate IoT and guest devices to separate networks using virtual LANs (VLANs).
@@ -39,6 +40,7 @@ Once you no longer have legacy devices, you should disable the Legacy SSID for s
 If your legacy devices have Ethernet ports (e.g. gaming consoles),
 you should connect them to the network with a cable instead of wireless,
 and disable the legacy SSID.
+
 
 ### Cabling
 It's a lot easier to install cables when you're renovating other things at the same time.
@@ -97,6 +99,7 @@ Here is an example of what a possible separation of networks can look like:
 ## Wireless networking (WWAN: 4G, 5G)
 The wireless networking standards are a mess.
 
+
 ### 5G SA vs NSA
 5G can be implemented in two different ways.
 In 5G non-standalone (NSA) mode,
@@ -116,6 +119,12 @@ Some network operators, such as Elisa, market 5G SA as "5G+".
 Many network operators support only 5G NSA or restrict 5G SA to certain plans.
 Therefore, when purchasing a 5G network plan, ensure that it has support for 5G SA.
 If not, consider the options of competing network operators.
+
+
+### 5G Advanced
+[5G Advanced](https://en.wikipedia.org/wiki/5G#5G-Advanced),
+also known as 5.5G or 5G-A, is an upgrade to the 5G standard.
+[In Finland, the deployment of 5G Advanced started in February 2025.](https://elisa.fi/yhtiotieto/uutishuone/tiedotteet/odotettu-parannus-mobiiliyhteyksiin-%E2%80%93-maailman-ensimm%C3%A4iset-kuluttaja-asiakkaat-k%C3%A4ytt%C3%A4v%C3%A4t-5-5g:t%C3%A4-elisan-verkossa/76140715069966/)
 
 
 ### 4G bands in Finland
@@ -153,6 +162,7 @@ The simultaneous use of several frequency bands is known as
 [carrier aggregation (CA)](https://en.wikipedia.org/wiki/Carrier_aggregation).
 When purchasing a 5G device in Finland, ensure that it supports at least the n28+n78 carrier aggregation.
 
+
 ### 5G modem: Quectel RM520N-GL
 My recommendation for a 5G modem is the
 [Quectel RM520N-GL](https://www.quectel.com/product/5g-rm520n-series/)
@@ -184,3 +194,4 @@ Dual connectivity profiles with n28+n78:
 
 The modem can be controlled with the AT commands available
 [here](https://github.com/4IceG/RM520N-GL/blob/main/Documents/Quectel_RG520N%26RG525F%26RG5x0F%26RM5x0N%26RM521F_Series_AT_Commands_Manual_V1.0.pdf).
+

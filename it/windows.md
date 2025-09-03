@@ -38,12 +38,13 @@ title: Windows
 
 ### Installation
 - Select manual/custom partitioning when asked.
-  Preferably delete all existing partitions and select the unallocated as the installation target.
+  Preferably delete all existing partitions from the target device, and select the unallocated space as the installation target.
   - If you choose to create the Windows partitions manually instead, give at least 1 GB of space for the EFI partition.
     Windows will create a 100 MB partition by default, but it may not be enough to dual boot Linux.
-- When asked to log in with a Microsoft account, disconnect the computer from the Internet
+- When asked to log in with a Microsoft account, disconnect the computer from the Internet and create a local account instead.
   - Wired connection: disconnect cable
   - Wi-Fi: use a physical button (if available) or press Shift+F10 and write `netsh wlan disconnect`
+  - If this is not sufficient, press Shift+F10 and write `OOBE\BYPASSNRO`
 - Create a local account with your first name (first character capitalized)
   - Any spaces or special characters except - and _, but including spaces, ä, ö etc., may cause problems later, especially with old software.
 - When asked about privacy options, select no for each question about sending data to Microsoft

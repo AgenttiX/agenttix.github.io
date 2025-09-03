@@ -376,7 +376,7 @@ consider buying a laptop and a USB-c or Thunderbolt dock instead.
 - 4K 60 Hz output requires HDMI 2.0 or later, which is quite rare on older laptops.
 
 
-###  Battery
+### Battery
 - Most laptops have either lithium-ion (Li-ion) or lithium polymer (LiPo) batteries.
 - The lifetime expectancy of both battery types is about three years.
   Around this time the batteries have lost a significant fraction of their capacity,
@@ -385,7 +385,18 @@ consider buying a laptop and a USB-c or Thunderbolt dock instead.
   expanding. I've seen several laptops where the thickness of the battery has more than doubled over time,
   cracking the laptop open. Therefore, Li-ion batteries should be preferred over LiPo batteries.
   Often user-replaceable batteries, especially the thick ones, are Li-ion, and the internal batteries are LiPo.
-- Internal batteries can also be replaced on most laptops, but the availability of replacement batteries is worse.
+- Internal batteries can also be replaced on many laptops, but the availability of replacement batteries is worse.
+- On the other hand, as of 2025, many laptops, e.g. Lenovo ThinkPads,
+  have DRM that prevents the use of many third-party batteries.
+  This means that you can only use an official Lenovo battery, which is often very expensive,
+  or a third-party battery that successfully disguises itself as an official one.
+  Unfortunately, UEFI/firmware upgrades may make the DRM more strict,
+  and therefore instantly disable the third-party battery.
+  This will change on 18.2.2027, when the article 11 of the EU regulation
+  [2023/1542](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02023R1542-20240718)
+  comes into effect, stating that
+  "Software shall not be used to impede the replacement of a portable battery or LMT battery,
+  or of their key components, with another compatible battery or key components."
 
 
 ### Monitor
@@ -490,7 +501,26 @@ consider buying a laptop and a USB-c or Thunderbolt dock instead.
 
 
 ## Phones
-- Phone manufacturers often provide security patches for only 1-2 years after the model is released.
+- The EU mandates that
+  ["by 2027 portable batteries incorporated into appliances should be removable and replaceable by the end-user"](https://www.consilium.europa.eu/en/press/press-releases/2023/07/10/council-adopts-new-regulation-on-batteries-and-waste-batteries/).
+  Therefore, if you can wait with your phone purchase until 2027, you can get a phone with a user-replaceable battery.
+  This is mandated by the article 11 of the EU regulation
+  [2023/1542](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02023R1542-20240718),
+  which will come into effect on 18.2.2027.
+- The EU regulation
+  [2023/1670](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1670)
+  mandates that since 20.6.2025, smartphone and tablet manufacturers must provide the following,
+  and for the specified time after the model is released.
+  - Spare parts and maintenance manuals for at least seven years.
+  - Software updates for at least five years.
+  - Security patches must be released within four months of the upstream patches.
+  - Functionality updates must be released within six months of the upstream patches.
+  - The internal storage must be encrypted by default.
+  - If you encounter a device that is sold in the EU but does not comply with these requirements,
+    you can contact the manufacturer and ask them to comply with the requirements.
+    If they refuse, you can report them to the national consumer protection authority,
+    as the devices they are selling are illegal.
+- For models released before 20.6.2025, the official support is often much shorter, e.g. 1-2 years.
   If you want to use the phone for longer, look for a phone that is supported by an alternative operating system, aka. custom ROM.
 - GrapheneOS is perhaps the most secure operating system for mobile devices. If you want a secure phone, get
   [a device recommended for GrapheneOS](https://grapheneos.org/faq#recommended-devices).
@@ -498,10 +528,13 @@ consider buying a laptop and a USB-c or Thunderbolt dock instead.
 - If the devices supported by GrapheneOS don't suit your needs, please see the devices supported by LineageOS.
   - [Official list](https://download.lineageos.org/)
   - [Geizhals list](https://geizhals.eu/?cat=umtsover&xf=162_LineageOS+Support) (new models may appear with a delay)
+- [PostmarketOS](https://postmarketos.org/) is also worth checking out.
+  The list of compatible devices is available [here](https://wiki.postmarketos.org/wiki/Devices).
 - RAM: at least 6 GB
   - Having less RAM will result in sluggishness.
 - Storage: at least 128 GB
   - Apps take a horrible amount of space these days.
+    Also, if you travel with your phone, the photos, videos and offline music will take a lot of space.
 - Camera
   - 4K 60 Hz video recording. 60 Hz video is a lot smoother than the 30 Hz video that most phones record.
   - Camera2 API support for RAW photography and manual control of various features such as focus,
@@ -520,15 +553,12 @@ consider buying a laptop and a USB-c or Thunderbolt dock instead.
     and therefore consume more battery and have higher latencies.
     As of 2025, e.g.
     [the list of devices supported by Elisa](https://elisa.fi/5g/itsenainen-5g/#sa_puhelimet)
-    is quite small. If your device is not on the list, a 5G data plan is probably not worth the price.
+    is quite small. If your device is not on the list, a 5G data plan is probably not worth the additional price compared to 4G.
 - NFC
   - The tags are cheap on AliExpress and can be used for various purposes
   - Makes the use of a physical security key such as a YubiKey a lot easier
-- Android version: at least 14 (as of 2025), preferably the latest available
-  - Android 10 adds support for AV1 decoding
-  - Android 12 adds support for the AVIF image format
-  - Android 13 adds support for Bluetooth LE audio and the LC3 audio codec
-  - [Official list of supported media formats](https://developer.android.com/guide/topics/media/media-formats)
+- Android version: at least 14 (as of 2025), preferably the latest available.
+  Please see the [Android page](./android) for details.
 - Devices with the aforementioned features
   - [Geizhals list with Android 12 and official LineageOS](https://geizhals.eu/?cat=umtsover&xf=10063_12.0%7E146_Videos+%402160p%2F60fps%7E157_131072%7E162_LineageOS+Support%7E17890_n28%7E17890_n78%7E18414_NFC%7E2607_6144)
   - [Geizhals list with Android 13](https://geizhals.eu/?cat=umtsover&xf=10063_13.0%7E146_Videos+%402160p%2F60fps%7E157_131072%7E17890_n28%7E17890_n78%7E18414_NFC%7E2607_6144)
@@ -543,8 +573,21 @@ consider buying a laptop and a USB-c or Thunderbolt dock instead.
     [Key Attestation Demo](https://play.google.com/store/apps/details?id=io.github.vvb2060.keyattestation)
     app.
 - Google Pixel
-  - Pixel phones are among the most secure Android devices, especially with
-    [GrapheneOS](https://grapheneos.org/) ([supported models](https://grapheneos.org/faq#supported-devices)).
+  - As of June 2025,
+    [Google has discontinued Pixel devices as their reference devices for Android development](https://www.androidauthority.com/google-not-killing-aosp-3566882/).
+    - This means that Google will no longer provide the device trees for the Pixel devices,
+      and they will therefore no longer be easier for custom ROM development than competing devices.
+      However, this should not affect the easy unlocking of the bootloader, which is an advantage of Pixel devices.
+    - GrapheneOS development will still continue for Pixel devices:
+      [Mastodon](https://grapheneos.social/@GrapheneOS/114721666000552094),
+      [Reddit](https://www.reddit.com/r/GrapheneOS/comments/1lldo83/will_grapheneos_support_newer_android_versions/)
+    - Please go to [this issue page](https://support.google.com/android/thread/349989465) and press the "I have the same question" button!
+  - Pixel phones are among the most secure Android devices
+    - [Security features](https://g.co/pixel/security)
+    - [Certifications](https://g.co/pixel/certifications)
+  - Pixel phones are compatible with
+    [GrapheneOS](https://grapheneos.org/) ([supported models](https://grapheneos.org/faq#supported-devices)),
+    which is even more secure than the stock Android.
   - The 5G, VoLTE and eSIM features work only in
       [networks that are certified by Google](https://pixel.withgoogle.com/5G/).
       As of 2024, they finally work in Finland as well.
@@ -557,9 +600,74 @@ consider buying a laptop and a USB-c or Thunderbolt dock instead.
       - [Pixel 4a and Pixel 5](https://github.com/swangjang/Pixel-Redbull-Carrier-Patch)
       - [Pixel 6 Pro](https://forum.xda-developers.com/t/activate-5g-on-non-5g-country.4457071/)
       - [Pixel 7](https://forum.xda-developers.com/t/root-enable-5g-volte-and-call-screening-in-unsupported-countries.4510243/)
-- [Fairphone](https://www.fairphone.com/) is an environmentally friendly choice, but it
-  [does not have proper security updates](https://www.reddit.com/r/GrapheneOS/comments/10b5x4n/comment/j67pbny/).
-  These issues also affect many other manufacturers.
+  - [Satellite SOS](https://support.google.com/pixelphone/answer/15254448) is only available in certain countries,
+    but the list does include Finland.
+- [Fairphone](https://www.fairphone.com/)
+  - An environmentally friendly choice
+  - [Does not have proper security updates](https://www.reddit.com/r/GrapheneOS/comments/10b5x4n/comment/j67pbny/).
+    However, these issues also affect many other manufacturers.
+- Sony
+  - The bootloader on most Sony phones can be unlocked with
+    [these official instructions](https://developer.sony.com/open-source/aosp-on-xperia-open-devices/get-started/unlock-bootloader).
+- Xiaomi
+  - The bootloader on most Xiaomi phones can be unlocked with
+    [these official instructions](https://en.miui.com/unlock).
+- Motorola
+  - The bootloder on most Motorola phones can be unlocked with
+    [these official instructions](https://en-us.support.motorola.com/app/standalone/bootloader/unlock-your-device-a).
+- OnePlus
+  - OnePlus used to be good for custom ROMS by providing
+    [firmware file downloads](https://service.oneplus.com/se/search/search-detail?id=2096330)
+    and device trees for their users,
+    but they stopped doing this in 2022.
+    OnePlus 9, 9 Pro and Nord CE are the last models that have official firmware downloads available.
+    For later models,
+    [the compatibility for e.g. LineageOS](https://wiki.lineageos.org/devices/#oneplus)
+    varies on a case-by-case basis.
+- Samsung
+  - Samsung devices are notorious for having a lot of bloatware preinstalled.
+  - Unlocking the bootloader creates a permanent marker known as
+    [Knox warranty bit](https://docs.samsungknox.com/admin/fundamentals/whitepaper/samsung-knox-mobile-security/system-security/hw-backed-security/)
+    in the device,
+    which prevents the bootloader from being locked again.
+    Therefore, unlocking the bootloader will cause a permanent warning in the boot screen,
+    and will permanently disable the payment features.
+  - [Some old Samsung phones have a backdoor](https://redmine.replicant.us/projects/replicant/wiki/samsunggalaxybackdoor)
+    that gives the mobile network operator access to the phone's filesystem.
+    ([FSF statement](https://www.fsf.org/blogs/community/replicant-developers-find-and-close-samsung-galaxy-backdoor))
+
+
+### Lapdocks
+A [lapdock](https://en.wikipedia.org/wiki/Lapdock)
+is the combination of an external monitor and keyboard that can be used to convert a phone to a laptop.
+- [Dopesplay](https://dopesplay.com/en-fi/collections/laptop-monitor)
+- [Nexdock](https://nexdock.com/explore-nexdock/)
+- [Uperfect](https://uperfect.com/products/steam-deck-external-monitor)
+- As of 2025,
+  [there seems to be no lapdock with an ISO keyboard layout](https://www.reddit.com/r/SamsungDex/comments/10bmh7q/is_there_a_lapdock_with_iso_keyboard_layout/).
+
+
+## Tablets
+- Geizhals lists
+  - [With Android, 5G, >= 120 GB storage and USB-c with DisplayPort output](https://geizhals.eu/?cat=nbtabl&xf=13735_1%7E2179_122880%7E2187_Android%7E7677_5G%7E8383_11)
+- Google Pixel Tablet
+  - [hinta.fi](https://hinta.fi/4818116/google-pixel)
+
+
+### E-readers
+- Geizhals lists
+  - [With Android](https://geizhals.eu/?cat=pdapceb&xf=2040_Android)
+  - [With Android, pen and color display](https://geizhals.eu/?cat=pdapceb&xf=2040_Android%7E2040_Digitizer%7E2040_Farb-Display)
+- [BOOX](https://www.boox.com/)
+  - [BOOX Note Air4 C](https://shop.boox.com/collections/all/products/noteair4c):
+    [Hintaopas](https://hintaopas.fi/product.php?p=13968012)
+    [Amazon.de](](https://www.amazon.de/-/en/Tablet-Note-Air4-Notepad-Android-black/dp/B0DJ76N9HQ)),
+  - [BOOX Tab Ultra C](https://shop.boox.com/collections/all/products/tabultrac):
+    [hinta.fi](https://hinta.fi/5402632/onyx-boox-tab-ultra-c-e-reader)
+  - [BOOX Tab Ultra C Pro](https://shop.boox.com/collections/all/products/tabultracpro):
+    [hinta.fi](https://hinta.fi/4546834/onyx-boox-tab-ultra-c-pro)
+  - [BOOX Tablet Go Color 7](https://shop.boox.com/collections/all/products/gocolor7):
+    [Amazon.de](https://www.amazon.de/-/en/gp/product/B0F5B6KZ1H)
 
 
 ## Smartwatches
@@ -681,6 +789,11 @@ At least these are known to be problematic:
   - WPA3-enterprise requires also 192-bit encryption support
 - Wi-Fi 6 or Wi-Fi 7
 - High-speed ports (> 1 Gbps Ethernet, SFP+)
+
+The [EU Radio Equipment Directive (RED)](https://en.wikipedia.org/wiki/Radio_Equipment_Directive_(2014))
+mandates, that since 1.8.2025, devices with radio equipment that are sold within the EU
+must prevent modifications to the radio firmware.
+This prevents modifying e.g. the transmission power and operational frequencies of Wi-Fi devices.
 
 
 #### Wi-Fi routers / access points
@@ -809,6 +922,11 @@ At least these are known to be problematic:
   - PCIe 2.0 x8
   - Compatible only with Intel SFP+ modules and cables
   - [Compatibility table](https://compatibleproducts.intel.com/ProductDetails?activeModule=Intel%C2%AE%20Ethernet&prdName=Intel%C2%AE%20Ethernet%20Converged%20Network%20Adapter%20X520-DA2)
+- Intel X540-T2: [AliExpress](https://www.aliexpress.com/item/1005005968543474.html)
+  - 2x 10 Gbps Ethernet
+  - PCIe 2.1 x8
+  - [May not work on Windows 11](https://www.reddit.com/r/homelab/comments/1gdxhuc/stay_far_far_away_from_intel_x540_nics/),
+    but works fine on Linux.
 - Mellanox ConnectX-2
   - 2x SFP+
   - PCIe 2.0 x8
@@ -823,6 +941,18 @@ At least these are known to be problematic:
   - [What 10 Gigabit Sfp+ Cards](https://www.reddit.com/r/PFSENSE/comments/syq7w4/what_10_gigabit_sfp_cards/)
   - [Mellanox ConnectX-2 vs ConnectX-3](https://www.reddit.com/r/homelab/comments/cf5tlg/mellnox_connectx2_vs_connectx3/)
 - [Overkill build](https://michael.stapelberg.ch/posts/2021-07-10-linux-25gbit-internet-router-pc-build/)
+
+
+### Wi-Fi cards and dongles
+- Some Intel Wi-Fi and Bluetooth cards use [Intel CNVi/CNVio](https://en.wikipedia.org/wiki/CNVi),
+  in which many of the components are on the CPU and the chipset instead of the card.
+  As a consequence, they are not compatible with AMD CPUs, and when purchasing such a card,
+  you should verify that it's compatible with your CPU and chipset.
+  This includes at least the following models:
+  - [AC 9560](https://www.intel.com/content/www/us/en/products/sku/99446/intel-wirelessac-9560/specifications.html)
+  - [BE200](https://www.intel.com/content/www/us/en/products/sku/230078/intel-wifi-7-be200/specifications.html):
+    [Reddit](https://www.reddit.com/r/Amd/comments/1h280mc/does_intel_be200_work_on_am5_boards_with_the_new/)
+  - [BE201](https://www.intel.com/content/www/us/en/products/sku/230079/intel-wifi-7-be201/specifications.html)
 
 
 ### Switches
@@ -881,38 +1011,9 @@ At least these are known to be problematic:
 ## Headphones
 - Read reviews and go to a store to test the headphones yourself to determine the audio quality.
 - The headphones should have good audio quality without the installation of any additional software.
+- When choosing a Bluetooth headphones, headset or speaker, pay close attention to the supported audio codecs.
+  The audio quality varies a lot between different codecs, and the most of them are not supported by all devices.
 
-
-### Bluetooth
-- [Bluetooth audio codecs are a mess](https://www.headphonesty.com/2020/03/bluetooth-audio-codecs-explained/)
-  - [Comparison of various codecs](https://habr.com/en/post/456182/)
-  - [AAC](https://en.wikipedia.org/wiki/Advanced_Audio_Coding)
-    - Proprietary
-    - [AAC over Bluetooth is unstable on Android](https://www.soundguys.com/the-ultimate-guide-to-bluetooth-headphones-aac-20296/)
-  - [aptX](https://en.wikipedia.org/wiki/AptX)
-    - Proprietary
-    - There are several variations with varying quality. In general, they are not much better than SBC.
-  - [CVSD](https://en.wikipedia.org/wiki/Continuously_variable_slope_delta_modulation)
-    - With microphone support. Horrible quality. Use mSBC instead.
-  - [LC3](https://en.wikipedia.org/wiki/LC3_(codec))
-    - Successor of SBC for Bluetooth 5.2 and Android 13 ->. Use this if you can.
-  - [LDAC](https://en.wikipedia.org/wiki/LDAC_(codec))
-    - The encoder is open source, but the decoder is proprietary. Supported by Android 8 -> and PipeWire (Ubuntu).
-    - Much better than SBC and AAC. Use this if you can.
-  - [LHDC](https://en.wikipedia.org/wiki/LHDC_(codec))
-    - Supported by Android 10 ->
-  - [LLAC](https://en.wikipedia.org/wiki/LHDC_(codec)#LLAC)
-    - Low latency verison of LHDC, aka. LHDC LL
-  - [mSBC](https://www.rfwireless-world.com/Terminology/SBC-vs-mSBC-codec.html)
-    - SBC with microphone support. Horrible quality, but much better than CVSD.
-  - [SBC](https://en.wikipedia.org/wiki/SBC_(codec))
-    - Basic codec. Support is mandatory for all stereo Bluetooth audio devices.
-  - [SBC-XQ](https://en.wikipedia.org/wiki/SBC_(codec)#Higher_quality_variants)
-    - SBC with a higher bitrate, resulting in quality comparable to aptX HD.
-      Supported by LineageOS 15 -> and PipeWire (Ubuntu 22.10 ->)
-- Standard Bluetooth does not support stereo audio output and mic input at the same time.
-  If you enable the microphone, the audio will be mono and of horrible quality.
-  [This is a fundamental limitation of the Bluetooth protocol.](https://superuser.com/a/1123841/)
 
 ### Headphones / headsets
 - Very few headsets have a good microphone.
@@ -920,7 +1021,8 @@ At least these are known to be problematic:
   Therefore, for the best audio quality you should use an external microphone such
   as a [Modmic](https://antlionaudio.com/) that you can attach to the headset.
 
-### Wireless earplugs
+
+### Wireless earbuds
 - Active noise cancellation is a highly useful feature
 - [Geizhals list](https://geizhals.eu/?cat=sphd&xf=1228_aktive+Ger%E4uschunterdr%FCckung+(ANC)%7E1231_Bluetooth%7E17987_Ladeetui%7E17987_USB-C+Ladeanschluss%7E6714_mit+Mikrofon)
 
@@ -928,7 +1030,9 @@ At least these are known to be problematic:
 ## Accessories
 ### Security
 Wireless peripherals often have poor security.
-- Bluetooth-based devices should have at least Bluetooth 4.2. Previous versions are fundamentally broken.
+- Bluetooth-based devices should have at least Bluetooth 4.2, preferably 5.0 or later.
+  Previous versions are fundamentally broken.
+  Please see the [Bluetooth page](./bluetooth) for details.
 - [Logi Bolt](https://www.logitech.com/en-eu/business/work-setups/logi-bolt-wireless-technology.html) is quite secure
   - It's based on Bluetooth Low Energy 5.0,
     and uses all the security mechanisms in the Bluetooth Low Energy Core Specification 4.2.
@@ -937,8 +1041,20 @@ Wireless peripherals often have poor security.
     P-256 ECDH and AES-128-CCM and is FIPS compliant.
     However, the NIST ECDH curves such as P-256 are notoriously difficult to implement securely,
     which is why I won't be surprised if vulnerabilities are found in the future.
+
+#### Known vulnerable devices
+- Apple Magic Keyboard ([CVE-2024-0230](https://nvd.nist.gov/vuln/detail/CVE-2024-0230))
+  - Fixed in the [Firmware Update 2.0.6](https://support.apple.com/en-us/120303) on 9.1.2024.
 - [Logitech Unifying](https://www.logitech.com/en-eu/resource-center/what-is-unifying.html) is broken and should not be used
   - It's [vulnerable to both eavesdropping and keystroke injection](https://www.heise.de/news/Logitech-keyboards-and-mice-vulnerable-to-extensive-cyber-attacks-4464533.html).
+
+#### Known vulnerabilities
+- [KeySniffer](https://keysniffer.net/)
+  - [Affected devices](https://keysniffer.net/affected-devices)
+- [MouseJack](https://www.mousejack.com/)
+  - [Affected devices](https://bastille.net/research/vulnerabilities-mousejack/#affected-devices)
+- [KeyJack](https://bastille.net/research/vulnerabilities-keyjack/)
+  - [Affected devices](https://bastille.net/research/vulnerabilities-keyjack/#affected-devices)
 
 
 ### Keyboards
@@ -950,17 +1066,36 @@ A good keyboard should have
 - Detachable cable with USB-c
 - Wireless connectivity is a plus, but be mindful of security.
   There should be a way to turn the wireless connectivity off.
+- In office use, the keyboard should be as silent as possible.
+  (At least no clicky mechanical switches.)
 
-Some good keyboards
+
+#### Mechanical keyboards
 - [GMMK Pro](https://www.gloriousgaming.com/en-eu/products/glorious-gmmk-pro-75-barebone-black)
   - ANSI: [hinta.fi](https://hinta.fi/2613400/glorious-pc-gaming-race-gmmk-pro)
   - ISO: [hinta.fi](https://hinta.fi/2613402/glorious-pc-gaming-race-gmmk-pro)
 - [Keychron K8 Pro ISO](https://www.keychron.com/products/keychron-k8-pro-qmk-via-wireless-mechanical-keyboard-iso-layout-collection?variant=40283914731609)
   ([hinta.fi](https://hinta.fi/5048972/keychron-k8-pro-qmk-via-rgb-wireless-mechanical-hot-swap-gat))
-- [Logitech Ergo K860 for Business](https://www.logitech.com/fi-fi/products/keyboards/ergo-k860-for-business.html)
-  ([hinta.fi](https://hinta.fi/3003614/logitech-920-010348))
-  - The regular model uses Logitech Unifying wireless connectivity, which has broken encryption,
-    whereas the for Business model uses Logi Bolt wireless connectivity, which among the most secure in 2025.
+
+
+#### Ergonomic keyboards
+- [Logitech Ergo K860 for Business](https://www.logitech.com/fi-fi/products/keyboards/ergo-k860-for-business.html):
+  [hinta.fi](https://hinta.fi/3003614/logitech-920-010348)
+  - Logi Bolt
+  - I'm using this at work and can recommend.
+- [Logitech Wave Keys for Business](https://www.logitech.com/fi-fi/products/keyboards/wave-keys-business-ergonomic-wireless.html):
+  [hinta.fi](https://hinta.fi/4461337/logitech-wave-keys)
+  - Logi Bolt
+- [Keychron Q10](https://www.keychron.com/products/keychron-q10-alice-layout-qmk-custom-mechanical-keyboard-iso-layout-collection?variant=40350592073817)
+- [Keychron V10](https://www.keychron.com/products/keychron-v10-alice-layout-qmk-custom-mechanical-keyboard-iso-layout-collection?variant=40474617905241)
+
+#### Wireless keyboards
+- [Logitech MX Keys for Business](https://www.logitech.com/fi-fi/products/keyboards/mx-keys-for-business.html):
+  [hinta.fi](https://hinta.fi/3003615/logitech-920-010249)
+  - Logi Bolt
+- [Logitech MX Keys Mini for Business](https://www.logitech.com/fi-fi/products/keyboards/mx-keys-mini-for-business.html):
+  [hinta.fi](https://hinta.fi/3146694/logitech-920-010604)
+  - Logi Bolt
 
 
 ### Mice
@@ -972,47 +1107,151 @@ for details, and
 [this list](https://sensor.fyi/mice/)
 for good mice.
 
-Some good mice
-- [Logitech G502 Lightspeed](https://www.logitechg.com/fi-fi/products/gaming-mice/g502-lightspeed-wireless-gaming-mouse.html)
-  ([hinta.fi](https://hinta.fi/1681872/logitech-910-005568))
-- [Logitech MX Master 3S](https://www.logitech.com/fi-fi/shop/p/mx-master-3s.910-006559):
-  (hinta.fi: [graphite](https://hinta.fi/3442980/logitech-910-006559), [black](https://hinta.fi/4178976/logitech-mx-master-3s), [white](https://hinta.fi/3442981/logitech-910-006560))
-  - Good for office use but not for gaming
-
-Many Logitech wireless mice support the
-[Logitech PowerPlay](https://www.logitechg.com/fi-fi/products/gaming-mouse-pads/powerplay-wireless-charging.html)
-wireless charging mousepad,
-which I can recommend.
-
 Linux support for gaming mice, keyboards and headphones is provided by
 [Piper](https://github.com/libratbag/piper/)
 and
 [libratbag](https://github.com/libratbag/libratbag).
 
 
+#### Gaming mice
+- [Logitech G502](https://www.logitechg.com/fi-fi/products/gaming-mice/g502-hero-gaming-mouse.html):
+  [hinta.fi](https://hinta.fi/1547718/logitech-910-005470),
+  [Amazon.de](https://www.amazon.de/-/en/Logitech-programmable-computer-customizable-packaging/dp/B07GS6ZS8J)
+- [Logitech G502 Lightspeed](https://www.logitechg.com/fi-fi/products/gaming-mice/g502-lightspeed-wireless-gaming-mouse.html):
+  [hinta.fi](https://hinta.fi/1681872/logitech-910-005568)
+  - I'm using this at home and can recommend.
+- [Logitech G502 X](https://www.logitechg.com/fi-fi/products/gaming-mice/g502-x-wired-lightforce.910-006139.html):
+  [hinta.fi](https://hinta.fi/3614883/logitech-g-910-006139),
+  [Amazon.de](https://www.amazon.de/-/en/gp/product/B07W6HSTNR),
+  [hinta.fi with mousepad](https://hinta.fi/4551754/logitech-g502-x-pelihiiri-logitech-g240-hiirimatto-musta)
+- [Logitech G203](https://www.logitechg.com/fi-fi/products/gaming-mice/g203-lightsync-rgb-gaming-mouse.910-005796.html):
+  [hinta.fi](https://hinta.fi/1907849/logitech-910-005796),
+  [Amazon.de](https://www.amazon.de/-/en/adjustable-LIGHTSYNC-programmable-Ruggedized-Lightweight/dp/B07W5JKFQC)
+- [Logitech G305](https://www.logitechg.com/fi-fi/products/gaming-mice/g305-lightspeed-wireless-gaming-mouse.910-005283.html):
+  [hinta.fi](https://hinta.fi/1412101/logitech-910-005283),
+  [Amazon.de](https://www.amazon.de/-/en/Logitech-wireless-programmable-Customizable-lightweight/dp/B07CGNDZR3)
+
+
+Many Logitech wireless mice support the
+[Logitech PowerPlay](https://www.logitechg.com/fi-fi/products/gaming-mouse-pads/powerplay-wireless-charging.html)
+wireless charging mousepad,
+which I can recommend.
+
+
+#### Mice for office use
+In office use, the mouse should be as silent as possible.
+- [Logitech MX Master 3S](https://www.logitech.com/fi-fi/shop/p/mx-master-3s.910-006559):
+  hinta.fi:
+  [graphite](https://hinta.fi/3442980/logitech-910-006559),
+  [black](https://hinta.fi/4178976/logitech-mx-master-3s),
+  [white](https://hinta.fi/3442981/logitech-910-006560)
+  - Good for office use but not for gaming
+- ~~[Logitech MX Vertical](https://www.logitech.com/fi-fi/shop/p/mx-vertical-ergonomic-mouse.910-005448)~~
+  [hinta.fi](https://hinta.fi/1523663/logitech-910-005448)
+  [Amazon.de](https://www.amazon.de/-/en/gp/product/B07FNHV4MW)
+  - Uses the broken Logitech Unifying wireless connectivity.
+    Wait for a Logi Bolt compatible version.
+
+
+#### Mice for businesses
+The Logitech "for Business" devices use different software than the regular models.
+Many of them also have the more secure Logi Bolt wireless connectivity unlike their regular counterparts,
+which use the broken Logitech Unifying wireless connectivity.
+- [Logitech MX Master 3S for Business](https://www.logitech.com/fi-fi/products/mice/mx-master-3s-business-wireless-mouse.html):
+  [hinta.fi](https://hinta.fi/3636775/logitech-910-006582),
+  [Amazon.de](https://www.amazon.de/-/en/Logitech-MX-Master-3S-Business/dp/B07W6HCFYS)
+  - Logi Bolt
+  - I'm using this at work and can recommend.
+- [Logitech Lift for Business, right-handed](https://www.logitech.com/fi-fi/products/mice/lift-vertical-ergonomic-mouse-business.html):
+  [hinta.fi](https://hinta.fi/3405098/logitech-910-006494),
+  [Amazon.de](https://www.amazon.de/-/en/Ergonomic-Bluetooth-Connection-Worldwide-910-006494/dp/B07W6JBR4D)
+  - An ergonomic mouse for small to medium hands
+  - Logi Bolt
+- [Logitech Lift for Business, left-handed](https://www.logitech.com/fi-fi/products/mice/lift-vertical-ergonomic-mouse-business.html):
+  [hinta.fi](https://hinta.fi/3405096/logitech-910-006495),
+  [Amazon.de](https://www.amazon.de/-/en/Logitech-Business-Vertical-Ergonomic-Mouse/dp/B07W7L9FBN)
+  - An ergonomic mouse for small to medium left hands
+  - Logi Bolt
+- [Logitech Signature M650 for Business](https://www.logitech.com/fi-fi/products/mice/m650-signature-for-business.html):
+  [hinta.fi](https://hinta.fi/3219432/logitech-910-006274),
+  [Amazon.de](https://www.amazon.de/-/en/Logitech-Signature-Business-Bluetooth-SmartWheel/dp/B07W6JN5YF)
+  - For small to medium hands or finger grip
+  - Logi Bolt
+- [Logitech Signature M650 L for Business](https://www.logitech.com/fi-fi/products/mice/m650-signature-for-business.html):
+  [hinta.fi](https://hinta.fi/3245796/logitech-910-006348),
+  [Amazon.de](https://www.amazon.de/-/en/gp/product/B07W5JKPJY)
+  - For larger hands or palm grip
+    - Logi Bolt
+- [Logitech MX Anywhere 3S for Business](https://www.logitech.com/fi-fi/products/mice/mx-anywhere-3s-business-wireless-mouse.html):
+  [hinta.fi](https://hinta.fi/4202884/logitech-910-006929),
+  [Amazon.de](https://www.amazon.de/-/en/gp/product/B07W6GJWZR)
+- [Logitech Keyboard K120 for Business](https://www.logitech.com/fi-fi/shop/p/k120-usb-windows):
+  [hinta.fi](https://hinta.fi/291/logitech-keyboard-k120-for-business)
+
+
+### Mouse & keyboard combos
+- [Logitech Signature MK650 Combo for Business](https://www.logitech.com/fi-fi/products/combos/mk650-signature-combo-business.html):
+  [hinta.fi](https://hinta.fi/3468960/logitech-signature-mk650-for-business-graphite-nordic)
+  - Logitech K650 for Business keyboard
+  - Logitech M650 for Business mouse
+  - Logi Bolt
+- [Logitech Signature Slim Combo MK950 for Business](https://www.logitech.com/fi-fi/products/combos/signature-slim-mk950-business.html):
+  [hinta.fi](https://hinta.fi/4769689/logitech-mk950)
+  - Logitech Signature MK950 for Business keyboard
+  - Logitech Signature Plus M750 for Business mouse
+  - Logi Bolt
+- [Logitech MX Keys Combo for Business | Gen 2](https://www.logitech.com/fi-fi/products/combos/mx-keys-combo-business-gen-2.html):
+  [hinta.fi](https://hinta.fi/3612364/logitech-920-010931)
+  - Logitech MX Keys for Business keyboard
+  - Logitech MX Master 3S for Business mouse
+
+
 ### Webcams
-- [Logitech Brio](https://www.logitech.com/fi-fi/products/webcams/brio-4k-hdr-webcam.960-001106.html)
-  ([hinta.fi](https://hinta.fi/1133348/logitech-960-001106),
-  [Amazon](https://www.amazon.de/-/en/Logitech-Webcam-4096x2160-Digital-Microp/dp/B06X92Z67Z/))
+- [Logitech Brio 4K](https://www.logitech.com/fi-fi/products/webcams/brio-4k-hdr-webcam.960-001106.html):
+  hinta.fi [1](https://hinta.fi/5346806/logitech-brio-4k), [2](https://hinta.fi/1133348/logitech-960-001106),
+  [Amazon.de](https://www.amazon.de/-/en/Logitech-Webcam-4096x2160-Digital-Microp/dp/B06X92Z67Z/)
   - Supports 4K 30 Hz and 1080p 60 Hz.
   - USB-c 3.0
   - Comes with a detachable privacy shutter.
-  - Supported by OBS Windows and Linux.
-- [Logitech C920e](https://www.logitech.com/fi-fi/products/webcams/c920e-business-webcam.html)
-  ([hinta.fi](https://hinta.fi/2241644/logitech-960-001360))
+  - Supported by OBS on Windows and Linux.
+- Logitech Brio 4K for Business:
+  hinta.fi [1](https://hinta.fi/5346806/logitech-brio-4k), [2](https://hinta.fi/1133348/logitech-960-001106),
+  [Amazon.de](https://www.amazon.de/-/en/Biometric-Automatic-Correction-Cancelling-Microsoft/dp/B0F1TYFRYT)
+  - With support for enterprise management
+- [Logitech MX Brio 705 for Business](https://www.logitech.com/fi-fi/products/webcams/mx-brio-705-for-business.html):
+  [hinta.fi](https://hinta.fi/4686820/logitech-mx-brio)
+  [Amazon.de](https://www.amazon.de/-/en/Logitech-Business-Exposure-Compensation-Microsoft/dp/B07W5JHF5G)
+- [Logitech Brio 505 for Business](https://www.logitech.com/fi-fi/products/webcams/brio-505-webcam.html):
+  [hinta.fi](https://hinta.fi/3636345/logitech-brio-505),
+  [Amazon.de](https://www.amazon.de/-/en/Logitech-Compensation-Presentation-Cancelling-Microphones/dp/B07W6HPP3T)
+- [Logitech C925e](https://www.logitech.com/fi-fi/products/webcams/c925e-business-webcam.html):
+  [hinta.fi](https://hinta.fi/1078554/logitech-960-001076),
+  [Amazon.de](https://www.amazon.de/-/en/gp/product/B01GRE7W9O)
+- ~~[Logitech C930e](https://www.logitech.com/fi-fi/products/webcams/c930e-business-webcam.html):~~
+  [hinta.fi](https://hinta.fi/492430/logitech-960-000972),
+  [Amazon.de](https://www.amazon.de/-/en/960-000972-Logitech-Webcam/dp/B00CES5A60)
+  - Not cost-effective as of 2025.
+- ~~[Logitech C920e](https://www.logitech.com/fi-fi/products/webcams/c920e-business-webcam.html):~~
+  [hinta.fi](https://hinta.fi/2241644/logitech-960-001360)
+  - Superseded by the C925e
   - 1080p 30 Hz
   - USB-A 2.0
-  - The C920e (e = enterprise) variant comes with a detachable privacy shutter.
-  - The microphone is disabled by default, and you have to use the Logi Tune software to enable it.
+  - The C920e (e = enterprise) and C920s variants comes with a detachable privacy shutter.
+  - The microphone is disabled by default on the C920e, and you have to use the Logi Tune software to enable it.
   - Supported by OBS Windows and Linux.
+- ~~[Logitech C920s](https://www.logitech.com/en-eu/shop/p/c920s-pro-hd-webcam):~~
+  [hinta.fi](https://hinta.fi/1611317/logitech-960-001252),
+  [Amazon.de](https://www.amazon.de/-/en/Logitech-autofocus-exposure-correction-connection/dp/B07MM4V7NR)
+  - The microphone is enabled by default, unlike on the C920e.
+- [Comparison sheet of Logitech cameras](https://www.logitech.com/content/dam/logitech/en/video-collaboration/pdf/webcams-portfolio.pdf)
+- [Logitech cameras no longer contain an H.264 encoder, despite the marketing that claims otherwise.](https://www.reddit.com/r/linux/comments/f2icry/psa_logitech_has_removed_hardware_h264_encoder/)
+  - This is blatantly false advertising from Logitech.
 - If you are connecting through a USB hub, prefer webcams with USB 3.0 or later.
   This way the webcam won't consume the limited bandwidth of the USB 2.0 lanes of the hub.
 
 
 ### Bluetooth adapters
-The documentation of the
-[Home Assistant Bluetooth integration](https://www.home-assistant.io/integrations/bluetooth)
-has a list of known good adapters.
+Please see the [Bluetooth page](./bluetooth).
 
 
 ### Adapters
@@ -1023,17 +1262,25 @@ has a list of known good adapters.
 
 
 ### Cables
-- [DisplayPort 1.4](https://www.amazon.de/-/en/DisplayPort-Certified-Supports-Compatible-Monitor-gray/dp/B0CLXZ26BW)
-- [DisplayPort 2.1](https://www.amazon.de/-/en/DisplayPort-Certified-Supports-Compatible-Monitor-gray/dp/B0BQ9ZGRNY)
-- [HDMI 2.1](https://www.amazon.de/-/en/UGREEN-48Gbps-Vision-Compatible-Monitor/dp/B0CFFFSFFN)
-  - [Optical](https://www.aliexpress.com/item/1005006860125774.html)
+- DisplayPort
+  - [DisplayPort 1.4](https://www.amazon.de/-/en/DisplayPort-Certified-Supports-Compatible-Monitor-gray/dp/B0CLXZ26BW)
+  - [DisplayPort 2.1](https://www.amazon.de/-/en/DisplayPort-Certified-Supports-Compatible-Monitor-gray/dp/B0BQ9ZGRNY)
+- [Ethernet Cat 6 15 m](https://www.aliexpress.com/item/1005008828729164.html)
+- HDMI
+  - [HDMI 2.0, thin 1.5 m](https://www.aliexpress.com/item/1005008937325139.html)
+  - [HDMI 2.1](https://www.amazon.de/-/en/UGREEN-48Gbps-Vision-Compatible-Monitor/dp/B0CFFFSFFN)
+  - [HDMI 2.1, optical](https://www.aliexpress.com/item/1005006860125774.html)
 - [S/PDIF (optical audio)](https://www.amazon.de/-/en/gp/product/B00FQK3H8Q)
 - [Thunderbolt 4, 100 W](https://www.amazon.de/-/en/dp/B084Z65YJQ)
-- [USB-A active extension cable](https://www.amazon.de/dp/B08ZNL4JPR)
-  - Nowadays, I'd prefer a USB-c cable with adapters for better future compatibility.
-- [USB-A - USB-B, 5 Gbps](https://www.amazon.de/-/en/gp/product/B07FWFVDNV)
-- [USB-A - USB-c, 10 Gbps](https://www.amazon.de/gp/product/B098DTBP29)
+- USB-A
+  - [USB-A active extension cable](https://www.amazon.de/dp/B08ZNL4JPR)
+    - Nowadays, I'd prefer a USB-c cable with adapters for better future compatibility.
+  - USB-A - USB-B, 5 Gbps
+    - [Amazon.de](https://www.amazon.de/-/en/gp/product/B07FWFVDNV)
+    - [AliExpress](https://www.aliexpress.com/item/1005008315910472.html)
+  - [USB-A - USB-c, 10 Gbps](https://www.amazon.de/gp/product/B098DTBP29)
 - USB-c
+  - [480 Mbps, 60 W, 5 m](https://www.aliexpress.com/item/1005005704708735.html)
   - [480 Mbps, 240 W, 0.3-2 m](https://www.amazon.de/dp/B0DHJQLGPB)
   - [480 Mbps, 240 W, 5 m](https://www.amazon.de/dp/B0CP94S896)
   - [480 Mbps, 100 W, 3 m](https://www.amazon.de/dp/B0DH2GVLR4)
@@ -1043,6 +1290,7 @@ has a list of known good adapters.
   - [20 Gbps, 240 W, 2 m](https://www.amazon.de/-/en/dp/B0BJ1NT76D)
   - [40 Gbps, 100 W, 0.5-2 m](https://www.aliexpress.com/item/1005003026399770.html)
 - [USB-c to HDMI, 4K 60 Hz, USB-c PD](https://www.aliexpress.com/item/1005005736129454.html)
+- [IEC C14-C13 extension cable with switch](https://www.amazon.de/dp/B07ZJHZW2Q)
 
 
 ### USB chargers
@@ -1062,9 +1310,8 @@ has a list of known good adapters.
 
 
 ### USB hubs and docks
+- [USB-A, 5 Gbps, 7 ports, USB-c power input](https://www.aliexpress.com/item/1005006912967139.html)
 - [USB-A, 10 Gbps, 4 ports, USB-c power input](https://www.amazon.de/-/en/dp/B0C5593DBH)
-- [USB-A KVM switch](https://www.amazon.de/dp/B0B74SPYFN)
-  - Client ports are unfortunately USB-A, not USB-B or USB-c. Unfortunately, this is the case with many KVM switches.
 - [USB-c dock with VGA](https://www.amazon.de/-/en/dp/B0D95W2FGJ)
 - [USB-c dock with 4K 60 Hz HDMI](https://www.amazon.de/-/en/dp/B0D1XLNWP2)
 - Note that on USB hubs the USB 2.0 and USB >= 3.0 connectivity are separate.
@@ -1072,6 +1319,24 @@ has a list of known good adapters.
   This means that if you have several USB 2.0 devices connected to the hub, the link can easily become saturated,
   even though the USB >= 3.0 lanes of the hub have plenty of capacity left.
   This is a technical limitation of the USB standard.
+
+
+### KVM / monitor switches
+- [DisplayPort, HDMI & USB 3.0 KVM switch](https://www.aliexpress.com/item/1005008308170830.html)
+- [HDMI 2.1 switch](https://www.aliexpress.com/item/1005005070087774.html)
+- [USB 2.0 switch](https://www.aliexpress.com/item/1005006359432952.html)
+- [USB 3.0 switch](https://www.amazon.de/dp/B0B74SPYFN)
+  - Client ports are unfortunately USB-A, not USB-B or USB-c. Unfortunately, this is the case with many KVM switches.
+
+
+### External storage
+- [M.2 NVMe enclosure, 20 Gbps](https://www.aliexpress.com/item/1005007445461097.html)
+- [3.5" SATA enclosure, USB 3.0](https://www.aliexpress.com/item/32823248641.html)
+- [2.5" SATA enclosure, USB-c 10 Gbps, SATA III 6 Gbps](https://www.aliexpress.com/item/1005007922848954.html)
+- [Kingston DataTraveler Max](https://www.kingston.com/en/usb-flash-drives/datatraveler-max?capacity=1tb&connector=usb-c):
+  a fast USB-c or USB-A stick, 256 - 1000 GB,
+  [hinta.fi](https://hinta.fi/haku?q=Kingston+DataTraveler+Max),
+  [Amazon.de](https://www.amazon.de/-/en/Kingston-DataTraveler-Type-1000R-1TB/dp/B09DVQ32XQ)
 
 
 ## Other
@@ -1085,7 +1350,6 @@ has a list of known good adapters.
   - [8-socket rack power strip](https://www.amazon.de/-/en/dp/B01MEHQ4T7)
   - [5 m power strip with EMI filter and surge protection](https://www.amazon.de/dp/B09XQZR4G9)
   - [Tiny 3x euro socket power strip](https://www.amazon.de/dp/B07JL476G3)
-- [HDMI 2.1 switch](https://www.aliexpress.com/item/1005005070087774.html)
 - [Rack mounting kit for HP switches](https://www.amazon.de/dp/B0B6RPMQYR)
 - [Bike lamp](https://www.aliexpress.com/item/4001316728026.html)
   - Problem: The USB-c port does not negotiate properly,
@@ -1094,5 +1358,4 @@ has a list of known good adapters.
     from a port that does not require negotiation to provide power.
 - [Silicone soldering mat](https://www.amazon.de/dp/B07KJDMH62)
 - [Smart card reader](https://www.amazon.de/-/en/dp/B08HVYHMZH)
-- [IEC C14-C13 extension cable with switch](https://www.amazon.de/dp/B07ZJHZW2Q)
 - [Cable management sleeve](https://www.amazon.de/-/en/dp/B08V8HLQPQ)
