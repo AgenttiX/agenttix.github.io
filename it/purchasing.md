@@ -353,6 +353,7 @@ consider buying a laptop and a USB-c or Thunderbolt dock instead.
 
 
 ## Laptops
+- The [Ubuntu Certified](https://ubuntu.com/certified) laptops are known to work with Linux.
 - The ThinkPad T-series is built to last. If you don't need high gaming performance, get one if you can afford it.
   They have:
   - High build quality
@@ -369,9 +370,13 @@ consider buying a laptop and a USB-c or Thunderbolt dock instead.
 
 
 ### Connectivity
-- Thunderbolt is a must-have, if you want to connect the laptop to a high-resolution monitor or multiple monitors.
-  If you're gaming only at home and at LAN parties and have an external monitor, consider purchasing an external
-  GPU to get desktop-level gaming performance out of your laptop.
+- Thunderbolt is a must-have, if you want to connect the laptop to multiple monitors.
+  Regular USB-c supports only a single DisplayPort stream,
+  and its multi-monitor support is provided by Multi-Stream Transport (MST),
+  which requires that all monitors support the same DisplayPort version and compression options.
+  Thunderbolt, on the other hand, has built-in support for multiple monitors.
+  - If you're gaming only at home and at LAN parties and have an external monitor, consider purchasing an external
+    Thunderbolt GPU to get desktop-level gaming performance out of your laptop.
 - USB-c charging makes it a lot easier to charge the laptop with docks, portable charges and power banks.
 - 4K 60 Hz output requires HDMI 2.0 or later, which is quite rare on older laptops.
 
