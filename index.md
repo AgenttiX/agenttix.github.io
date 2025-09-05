@@ -22,3 +22,11 @@ please feel free to send me a message or create a pull request
 Script setup links:
 [Linux](https://raw.githubusercontent.com/AgenttiX/linux-scripts/master/install_repo.sh),
 [Windows](https://raw.githubusercontent.com/AgenttiX/windows-scripts/master/Install-Repo.bat)
+
+``` bash
+git clone git@github.com:AgenttiX/linux-scripts.git
+git clone git@github.com:AgenttiX/windows-scripts.git
+
+git clone https://github.com/AgenttiX/linux-scripts.git
+git clone https://github.com/AgenttiX/windows-scripts.git
+```
