@@ -36,6 +36,7 @@ title: Windows
   - Enable virtualization (VT-x, AMD-V etc.) including the additional features (IOMMU, SR-IOV, VT-d etc.),
     as those are required for various security features of Windows.
 
+
 ### Installation
 - Select manual/custom partitioning when asked.
   Preferably delete all existing partitions from the target device, and select the unallocated space as the installation target.
@@ -53,6 +54,7 @@ title: Windows
     as the login may not apply properly for login & BitLocker recovery configuration etc.
   - When enabling OneDrive, disable the backup unless you have bought additional storage (e.g. as a part of Office 365).
     Otherwise, you will get constant prompts to buy more OneDrive storage once your home folder exceeds the free plan (5 GB).
+
 
 ### After installation
 #### On-site
@@ -73,6 +75,12 @@ These steps have to be performed on-site
 - Enable BitLocker
   - On old computers, any BIOS updates should be installed before this,
     as some old computers don't allow BIOS updates when BitLocker is enabled.
+  - Windows 11 24H2 encrypts the drive during the installation and
+    if you log in with a Microsoft account during the installation, then BitLocker / device encryption by default.
+    However, if you use a local account or join the machine to a domain,
+    you may have to activate BitLocker manually,
+    even though the underlying encryption is already enabled.
+
 
 #### Can be done remotely
 These steps can be performed remotely if you have e.g. Remote Desktop enabled.
@@ -122,6 +130,7 @@ and are therefore not as user-friendly as they could be.
 Therefore, I have created
 [my own installer script](https://github.com/AgenttiX/windows-scripts)
 that has a GUI and can use both Chocolatey and winget to install software.
+
 
 ### Misc. notes and settings
 These may be useful to do depending on your use case
