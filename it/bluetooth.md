@@ -26,6 +26,11 @@ to ensure proper security and functionality such as audio quality.
     which provide knowledge on the direction of nearby devices.
 - Bluetooth 5.2 (2019)
   - LE Audio, including the [LC3 codec](#audio)
+- Bluetooth 6.0 (2024)
+  - [Channel Sounding](https://www.bluetooth.com/learn-about-bluetooth/feature-enhancements/channel-sounding/):
+    distance estimation of nearby devices
+    - Phase-Based Ranging (PBR)
+    - Round-Trip Time (RTT)
 
 
 ## Security
@@ -109,10 +114,10 @@ that a phone that is part of the tracker network will pass by.
 To enable this, the tracker should be part of a large network.
 At the moment, the largest tracker networks are Apple's Find My network and Google's Find My Device network.
 Therefore, the tracker should be compatible with at least one of these networks, preferably both.
-One such tracker is
-[Chipolo POP](https://chipolo.net/en/products/chipolo-pop-6-pack?variant=4001407).
 However, no tracker can work with both networks simultaneously, as
 [this is forbidden by both Apple and Google licensing agreements](https://www.reddit.com/r/AirTags/comments/170px48/comment/kwhismm).
+The tracker should also support Bluetooth 6.0 (or later) or UWB
+for finding its precise location when close to the device.
 
 Directional tracking is possible with trackers that support
 [Ultra-wideband](https://en.wikipedia.org/wiki/Ultra-wideband) (UWB) communication.
@@ -123,6 +128,22 @@ UWB is supported in
 However, as of 2025, Android devices with UWB support are still quite rare.
 Wikipedia has a
 [list of supported devices](https://en.wikipedia.org/wiki/List_of_UWB-enabled_mobile_devices).
+
+To use trackers on Android or to help others find their devices by contributing to the network, install the
+[Google Find Hub app](https://play.google.com/store/apps/details?id=com.google.android.apps.adm).
+
+As of 2025, my recommended devices are the
+[Chipolo POP](https://chipolo.net/en/products/chipolo-pop-6-pack?variant=4001400),
+[Chipolo CARD](https://chipolo.net/en/products/chipolo-card-4-pack?variant=4142891) and
+[Chipolo LOOP](https://chipolo.net/en/products/chipolo-loop-6-pack?variant=4142763).
+They support both Apple and Google networks and BLE 6.0 and are
+[made in Europe](https://chipolo.net/en/pages/our-story).
+However, they lack support for UWB.
+<!-- Side note: the Chipolo Pop has these antenna specifications in its manual:
+- Modulation method: GFSK
+- Antenna power: < 1 mW
+- Operating frequency band: 2402 - 2480 MHz
+-->
 
 If you want to create your own Bluetooth tracker,
 please have a look at
