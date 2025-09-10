@@ -30,7 +30,17 @@ These instructions are from a discussion with an Amazon support representative.
 There are no e-ink devices that can run LineageOS (as of 2022,
 [Reddit](https://www.reddit.com/r/LineageOS/comments/nullqz/linageos_eink_theme/)).
 
+
+### Bigme
+[Bigme store](https://bigmestore.com/)
+([previous domain](https://store.bigme.vip/),
+[Reddit link of the differences](https://www.reddit.com/r/Bigme/comments/1gerbog/a_letter_to_bigme_friends/))
+- [The software may be of questionable quality](https://www.reddit.com/r/ereader/comments/1lqk2k6/comment/n147kvx/)
+
+
 ### [Boox](https://www.boox.com/)
+[Boox EU shop](https://euroshop.boox.com/)
+
 Some Boox devices can be rooted.
 - [Reddit](https://www.reddit.com/r/Onyx_Boox/comments/n22xc5/rootingcustom_roms/)
 - [Onyx Boox Max 3](https://www.mobileread.com/forums/showthread.php?t=323254)
@@ -38,8 +48,10 @@ Some Boox devices can be rooted.
 - [Onyx Boox Note Air](https://blog.tho.ms/hacks/2021/03/27/hacking-onyx-boox-note-air.html)
 - [Onyx Boox Nova Air C](https://www.mobileread.com/forums/showthread.php?t=346175)
 
+
 ## [Inkplate](https://inkplate.io/)
 - Third-party [EPub reader firmware](https://github.com/turgu1/EPub-InkPlate)
+
 
 ## [PineNote](https://www.pine64.org/pinenote/)
 - Open-source
