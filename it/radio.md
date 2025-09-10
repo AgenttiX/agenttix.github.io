@@ -37,6 +37,14 @@ Frequency bands in other countries:
 - [MURS (Multi-Use Radio Service)](https://en.wikipedia.org/wiki/Multi-Use_Radio_Service)
 
 
+## Modulation methods
+- FM (Frequency Modulation)
+  - [FSK (Frequency-Shift Keying)](https://en.wikipedia.org/wiki/Frequency-shift_keying)
+    - GFSK (Gaussian Frequency-Shift Keying)
+      - Used by e.g. Bluetooth
+- AM (Amplitude Modulation)
+
+
 ## Squelching
 Squelching enables the use of the same frequency band by multiple users without disturbing each other,
 as long as they don't transmit at the same time.
