@@ -187,6 +187,7 @@ Tested on OnePlus 9 Pro with the Play Integrity Fix Magisk module.
 - [Danske ID](https://play.google.com/store/apps/details?id=com.danskebank.danskeid)
 - [Danske Mobiilipankki](https://play.google.com/store/apps/details?id=com.danskebank.mobilebank3.fi)
 - [Google Wallet](https://play.google.com/store/apps/details?id=com.google.android.apps.walletnfcrel)
+- [MobilePay](https://play.google.com/store/apps/details?id=fi.danskebank.mobilepay)
 - [Nordnet](https://play.google.com/store/apps/details?id=com.nordnet)
 - [OmaElisa](https://play.google.com/store/apps/details?id=com.saunalahti.oma)
 - [OP-mobiili](https://play.google.com/store/apps/details?id=fi.op.android.opmobiili)
