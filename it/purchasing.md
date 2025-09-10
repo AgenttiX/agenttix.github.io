@@ -15,6 +15,10 @@ Before starting to look for devices, please ask yourself these questions:
   Some parts are worth future-proofing, whereas with some parts the additional features and performance are not worth the additional cost.
 - Does the device have to be new, or would a used one be sufficient?
 
+Please note that nothing on this site is financial or legal advice.
+You are responsible that the devices you purchase and the ways you use them
+are compatible with the local laws and regulations, e.g. for radio frequencies.
+
 
 ## Where to find good quality reviews
 - [Gamers Nexus](https://www.gamersnexus.net/)
@@ -654,9 +658,17 @@ is the combination of an external monitor and keyboard that can be used to conve
 
 ## Tablets
 - Geizhals lists
-  - [With Android, 5G, >= 120 GB storage and USB-c with DisplayPort output](https://geizhals.eu/?cat=nbtabl&xf=13735_1%7E2179_122880%7E2187_Android%7E7677_5G%7E8383_11)
+  - [Android, 5G, >= 120 GB storage and USB-c with DisplayPort output](https://geizhals.eu/?cat=nbtabl&xf=13735_1%7E2179_122880%7E2187_Android%7E7677_5G%7E8383_11)
+  - [Android 16, 5G](https://geizhals.eu/?cat=nbtabl&xf=2187_Android%7E7531_Android+16%7E7677_5G)
 - Google Pixel Tablet
   - [hinta.fi](https://hinta.fi/4818116/google-pixel)
+- Samsung Galaxy Tab S11
+  - As of September 2025, this seems to be one of the very few tablets with Android 16.
+  - hinta.fi
+    - [11", Wi-Fi, 128 GB](https://hinta.fi/5499488/samsung-galaxy-tab-s11)
+    - [11", 5G, 128 GB](https://hinta.fi/5499486/samsung-galaxy-tab-s11)
+    - [14.6", Wi-Fi, 256 GB](https://hinta.fi/5499487/samsung-galaxy-tab-s11-ultra)
+    - [14.6", 5G, 256 GB](https://hinta.fi/5499489/samsung-galaxy-tab-s11-ultra)
 
 
 ### E-readers
@@ -696,6 +708,20 @@ is the combination of an external monitor and keyboard that can be used to conve
 - Smartwatches I have been using
   - [Xiaomi Mi Band 3](https://en.wikipedia.org/wiki/Xiaomi_Mi_Band_3) (2018-2021)
   - [Xiaomi Mi Band 6](https://en.wikipedia.org/wiki/Xiaomi_Mi_Smart_Band_6) (2021→)
+  - Xiaomi Mi Band 9 Pro (2025→)
+- Google Pixel Watch 4
+  - 41 mm Wi-Fi obsidian/black:
+    [hinta.fi](https://hinta.fi/5452453/google-pixel-watch-4-alykello-41mm-wifi-obsidiaani-musta)
+  - 41 mm LTE obsidian/black:
+    [hinta.fi](https://hinta.fi/5452451/google-pixel-watch-4-alykello-41-mm-lte-obsidiaani-musta)
+  - 45 mm Wi-Fi obsidian/black:
+    [hinta.fi](https://hinta.fi/5452446/google-pixel-watch-4-alykello-45-mm-wifi-obsidiaani-musta)
+  - 45 mm Wi-Fi moonstone:
+    [hinta.fi](https://hinta.fi/5452445/google-pixel-watch-4-alykello-45-mm-wifi-kuukivi)
+  - 45 mm LTE silver:
+    [hinta.fi](https://hinta.fi/5452449/google-pixel-watch-4-alykello-45-mm-lte-hopea-posliini)
+  - 45 mm LTE moonstone:
+    [hinta.fi](https://hinta.fi/5452450/google-pixel-watch-4-alykello-45-mm-lte-kuukivi)
 
 
 ## Media boxes
