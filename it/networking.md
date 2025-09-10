@@ -195,3 +195,19 @@ Dual connectivity profiles with n28+n78:
 The modem can be controlled with the AT commands available
 [here](https://github.com/4IceG/RM520N-GL/blob/main/Documents/Quectel_RG520N%26RG525F%26RG5x0F%26RM5x0N%26RM521F_Series_AT_Commands_Manual_V1.0.pdf).
 
+
+## Installing a router
+Things to configure
+- Change the admin password
+- Configure SSH access
+- If you have multiple networks
+  - Configure VLANs
+  - Configure firewall rules between VLANs
+- Configure the firewall
+  - Block all incoming connections from WAN by default
+  - Allow incoming connections only to the services that you need
+- Configure Wi-Fi
+- Configure SNMP
+- Configure VPNs
+  - Site-to-site VPNs
+  - Remote access VPNs
