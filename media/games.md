@@ -38,6 +38,7 @@ so please install it first using the instructions below.
 For instructions on setting up a server, please see my
 [Minecraft server GitHub repository](https://github.com/AgenttiX/minecraft-server).
 
+
 ### Rules for my server
 Enjoy the game and let others do the same.
 However, if you want to be specific, this includes:
@@ -49,6 +50,7 @@ However, if you want to be specific, this includes:
   - Discuss with the admins before building a base near the spawn
   - No large quarries < 2000 blocks from the spawn
 - No political symbols or offensive art visible from the spawn or on the map
+
 
 ### Installing Java on Ubuntu
 Minecraft 1.16 and later are based on Java 16,
@@ -68,6 +70,7 @@ Open FTBA and go to Library -> your modpack -> Settings -> Java version
 and select the Java 8 you just installed.
 You should increase the instance memory to at least 4 GB, preferably more.
 
+
 ### Using a discrete Nvidia GPU on a Linux laptop
 Run the FTB App with these environment variables:
 ``` bash
@@ -75,16 +78,24 @@ __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia ~/FTBA/FTBApp
 ```
 You can use the command `nvidia-smi` to check that Minecraft is indeed using the discrete GPU.
 
+
+### Resource packs
+- [Faithful](https://faithfulpack.net/)
+
+
 ### Mods
 - [Applied Energistics 2](https://appliedenergistics.github.io/)
 - [Mekanism](https://wiki.aidancbrady.com/)
+
 
 #### [Rubidium](https://www.curseforge.com/minecraft/mc-mods/rubidium)
 Rubidium can double your FPS, and it works with FTB modpacks.
 Just copy it to the mods folder of your client.
 
+
 #### [Oculus](https://www.curseforge.com/minecraft/mc-mods/oculus)
 Shader mod.
+
 
 #### OptiFine
 [OptiFine](https://www.optifine.net/)
@@ -130,5 +141,6 @@ WINE_CPU_TOPOLOGY=31:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,
 ## [Supreme Commander](https://store.steampowered.com/sub/11732/)
 - [Forged Alliance Forever](https://www.faforever.com/)
 - [Linux instructions](https://github.com/FAForever/faf-linux)
+
 
 ## [Zero-K](https://zero-k.info/)
