@@ -468,6 +468,12 @@ consider buying a laptop and a USB-c or Thunderbolt dock instead.
   and TVs can have the latest HDMI version on only some of their ports.
 - HDMI 2.0 is required for 4K 60 Hz, and HDMI 2.1 for 4K 120 Hz and variable refresh rate.
   However, with HDMI 2.1 most features such as the aforementioned are optional and their presence has to be verified manually.
+- Prefer DisplayPort to HDMI.
+  HDMI is a closed standard, and the licensing committee requires
+  that the implementations for HDMI 2.1 and above are closed-source.
+  [This is why AMD GPUs don't support HDMI 2.1 on Linux.](https://www.phoronix.com/news/HDMI-2.1-OSS-Rejected)
+  [Even the HDMI specification is not publicly available.](https://www.phoronix.com/news/HDMI-Closed-Spec-Hurts-Open)
+  [You may be able to get around these limitations by using a DisplayPort to HDMI adapter.](https://www.reddit.com/r/linux_gaming/comments/1kuet1m/comment/muwp68c/)
 
 
 ### Refresh rate
