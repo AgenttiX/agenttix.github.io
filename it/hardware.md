@@ -92,14 +92,42 @@ A good way to find out the values above is to connect a device and run `sudo lsh
   - F12: Boot selection
   - Ctrl+P: Intel ME
   - Alt+P: Power on by keyboard
-- BIOS/UEFI settings to change from the defaults
-  - Advanced -> CPU Setup -> TxT: Enable
-  - Security
-    - Allow Flashing BIOS to a Previous Version: No
-    - Require Admin. Pass. for F12 Boot: Yes
-    - Configuration Change Detection: Yes
-    - Chassis Intrusion Detection: Yes
-    - Hard Disk Password
-      - M.2 Drive 1 Password: User
-      - Reboot
-      - Security Erase HDD Data -> Erase M.2 Drive 1 Data
+- Installation process
+  - Update the BIOS from a USB drive
+  - (Take a note of the MAC address in the BIOS)
+  - Reset BIOS settings
+    - Load optimized defaults
+    - Reboot
+  - Reset the firmware TPM
+    - Reboot
+  - Reset discrete TPM
+    - Reboot
+  - Reset Intel SGX
+    - Advanced -> SGX -> Change owner EPOCH
+  - Reset Secure Boot
+  - Reset Intel ME
+    - Advanced -> Intel Manageability
+    - Reboot
+  - BIOS/UEFI settings to change from the defaults
+    - Advanced -> CPU Setup -> TxT: Enable
+    - Security
+      - Set Administrator Password
+      - Allow Flashing BIOS to a Previous Version: No
+      - Require Admin. Pass. for F12 Boot: Yes
+      - Chassis Intrusion Detection: Yes
+      - Configuration Change Detection: Yes
+      - Hard Disk Password (if supported by your SSD)
+        - M.2 Drive 1 Password: User
+        - Reboot
+  - Wipe the SSD
+    - Security Erase HDD Data -> Erase M.2 Drive 1 Data
+    - (This requires the HDD password to be set, and this will disable the password.)
+  - Install Windows (or Linux)
+  - Join to the domain
+    - Reboot
+  - Windows Update
+  - Install the scripts
+  - Reboot
+  - Update Intel ME
+  - Update SIO firmware
+  - Configure ME
