@@ -123,11 +123,15 @@ A good way to find out the values above is to connect a device and run `sudo lsh
     - Security Erase HDD Data -> Erase M.2 Drive 1 Data
     - (This requires the HDD password to be set, and this will disable the password.)
   - Install Windows (or Linux)
+  - (Disable automatic sleep)
   - Join to the domain
+    - Move the computer to the correct OU
     - Reboot
+  - Enable BitLocker
   - Windows Update
   - Install the scripts
   - Reboot
   - Update Intel ME
   - Update SIO firmware
+  - Run maintenance script for the first time
   - Configure ME
