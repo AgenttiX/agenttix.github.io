@@ -57,6 +57,10 @@ Other already closed issues:
     instead of waiting for the device manufacturer to release a device-specific update.
 - Android 12
   - Support for the [AVIF](https://en.wikipedia.org/wiki/AVIF) image format
+  - [WireGuard VPN support is enabled by default in the Generic Kernel Image (GKI).](https://www.xda-developers.com/google-adds-wireguard-vpn-android-12-linux-kernel-5-4/)
+    However, you need root access to use the kernel module.
+    Also, the availability of the kernel module may depend on the device,
+    as some manufacturers may use kernels that have WireGuard disabled.
 - Android 13
   - Support for Bluetooth LE audio and the LC3 audio codec
   - [Updatable Bluetooth module](https://source.android.com/docs/core/ota/modular-system/bluetooth)
