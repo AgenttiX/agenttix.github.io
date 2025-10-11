@@ -525,6 +525,7 @@ consider buying a laptop and a USB-c or Thunderbolt dock instead.
 
 
 ## Phones
+### EU regulations
 - The EU mandates that
   ["by 2027 portable batteries incorporated into appliances should be removable and replaceable by the end-user"](https://www.consilium.europa.eu/en/press/press-releases/2023/07/10/council-adopts-new-regulation-on-batteries-and-waste-batteries/).
   Therefore, if you can wait with your phone purchase until 2027, you can get a phone with a user-replaceable battery.
@@ -546,6 +547,9 @@ consider buying a laptop and a USB-c or Thunderbolt dock instead.
     as the devices they are selling are illegal.
 - For models released before 20.6.2025, the official support is often much shorter, e.g. 1-2 years.
   If you want to use the phone for longer, look for a phone that is supported by an alternative operating system, aka. custom ROM.
+
+
+### Operating systems
 - GrapheneOS is perhaps the most secure operating system for mobile devices. If you want a secure phone, get
   [a device recommended for GrapheneOS](https://grapheneos.org/faq#recommended-devices).
   ([the list of all supported devices](https://grapheneos.org/faq#supported-devices) is slightly larger.)
@@ -554,9 +558,12 @@ consider buying a laptop and a USB-c or Thunderbolt dock instead.
   - [Geizhals list](https://geizhals.eu/?cat=umtsover&xf=162_LineageOS+Support) (new models may appear with a delay)
 - [PostmarketOS](https://postmarketos.org/) is also worth checking out.
   The list of compatible devices is available [here](https://wiki.postmarketos.org/wiki/Devices).
+
+
+### Features
 - RAM: at least 6 GB
   - Having less RAM will result in sluggishness.
-- Storage: at least 128 GB
+- Storage: at least 128 GB, preferably 256 GB or more
   - Apps take a horrible amount of space these days.
     Also, if you travel with your phone, the photos, videos and offline music will take a lot of space.
 - Camera
@@ -567,6 +574,12 @@ consider buying a laptop and a USB-c or Thunderbolt dock instead.
     [Manual Camera Compatibility test app](https://play.google.com/store/apps/details?id=pl.vipek.camera2_compatibility_test)
     and the
     [Open Camera app](https://play.google.com/store/apps/details?id=net.sourceforge.opencamera).
+  - AV1 encoding
+    - You can check this from the settings of the camera app.
+  - Ensure that the camera features you want can be used together.
+    On some phones, e.g. 4K, 60 Hz and HDR video recording can be used separately, but not together,
+    and on some phones, using them together may require sending the videos to a cloud service for post-processing.
+    Check this from the settings of the camera app before purchasing.
 - Modem: 5G with support for at least the n78 band, which is the primary 5G band
   [in Finland](https://www.mikrobitti.fi/uutiset/tallainen-on-uusi-5g-taajuuskaista-listasimme-myos-kaikkien-suomessa-myytavien-5g-puhelinten-tuettavat-kaistat/9597cbae-27a4-4f86-9d40-7f2bf4407216)
   - n28 band is for longer ranges with lower speeds,
@@ -578,16 +591,13 @@ consider buying a laptop and a USB-c or Thunderbolt dock instead.
     As of 2025, e.g.
     [the list of devices supported by Elisa](https://elisa.fi/5g/itsenainen-5g/#sa_puhelimet)
     is quite small. If your device is not on the list, a 5G data plan is probably not worth the additional price compared to 4G.
+- GPU
+  - If you game on the phone, choose a non-PowerVR GPU, as PowerVR GPUs may have compatibility issues with games.
 - NFC
   - The tags are cheap on AliExpress and can be used for various purposes
   - Makes the use of a physical security key such as a YubiKey a lot easier
 - Android version: at least 14 (as of 2025), preferably the latest available.
   Please see the [Android page](./android) for details.
-- Devices with the aforementioned features
-  - [Geizhals list with Android 12 and official LineageOS](https://geizhals.eu/?cat=umtsover&xf=10063_12.0%7E146_Videos+%402160p%2F60fps%7E157_131072%7E162_LineageOS+Support%7E17890_n28%7E17890_n78%7E18414_NFC%7E2607_6144)
-  - [Geizhals list with Android 13](https://geizhals.eu/?cat=umtsover&xf=10063_13.0%7E146_Videos+%402160p%2F60fps%7E157_131072%7E17890_n28%7E17890_n78%7E18414_NFC%7E2607_6144)
-  - [Geizhals list with Android 14 and official LineageOS](https://geizhals.eu/?cat=umtsover&xf=10063_14.0%7E146_Videos+%402160p%2F60fps%7E157_131072%7E162_LineageOS+Support%7E17890_n28%7E17890_n78%7E18414_NFC%7E2607_6144)
-  - The 5G mmWave band n258 has been left out from the list, as it's supported by only a few devices
 - Security:
   [StrongBox secure element (SE)](https://developer.android.com/training/articles/keystore#HardwareSecurityModule)
   - Enables secure hardware-backed storage of credentials.
@@ -596,6 +606,16 @@ consider buying a laptop and a USB-c or Thunderbolt dock instead.
   - Its presence can be verified with the
     [Key Attestation Demo](https://play.google.com/store/apps/details?id=io.github.vvb2060.keyattestation)
     app.
+
+
+### Devices
+- Geizhals lists of devices with official LineageOS and the aforementioned features:
+  - [Android 12 and official LineageOS](https://geizhals.eu/?cat=umtsover&xf=10063_12.0%7E146_Videos+%402160p%2F60fps%7E157_131072%7E162_LineageOS+Support%7E17890_111%7E17890_n28%7E17890_n78%7E18414_NFC%7E2607_6144)
+  - [Android 13](https://geizhals.eu/?cat=umtsover&xf=10063_13.0%7E146_Videos+%402160p%2F60fps%7E157_131072%7E17890_111%7E17890_n28%7E17890_n78%7E18414_NFC%7E2607_6144)
+  - [Android 14](https://geizhals.eu/?cat=umtsover&xf=10063_14.0%7E146_Videos+%402160p%2F60fps%7E157_131072%7E162_LineageOS+Support%7E17890_111%7E17890_n28%7E17890_n78%7E18414_NFC%7E2607_6144)
+  - [Android 15](https://geizhals.eu/?cat=umtsover&xf=10063_15.0%7E146_Videos+%402160p%2F60fps%7E157_131072%7E162_LineageOS+Support%7E17890_111%7E17890_n28%7E17890_n78%7E18414_NFC%7E2607_6144)
+  - [Android 16](https://geizhals.eu/?cat=umtsover&xf=10063_16.0%7E146_Videos+%402160p%2F60fps%7E157_131072%7E162_LineageOS+Support%7E17890_111%7E17890_n28%7E17890_n78%7E18414_NFC%7E2607_6144)
+  - The 5G mmWave band n258 has been left out from the list, as it's supported by only a few devices
 - Google Pixel
   - As of June 2025,
     [Google has discontinued Pixel devices as their reference devices for Android development](https://www.androidauthority.com/google-not-killing-aosp-3566882/).
@@ -609,6 +629,8 @@ consider buying a laptop and a USB-c or Thunderbolt dock instead.
   - Pixel phones are among the most secure Android devices
     - [Security features](https://g.co/pixel/security)
     - [Certifications](https://g.co/pixel/certifications)
+    - Google Pixel devices are approved for the
+      [US Department of Defense Information Network (DoDIN) Approved Products List (APL)](https://aplits.disa.mil/).
   - Pixel phones are compatible with
     [GrapheneOS](https://grapheneos.org/) ([supported models](https://grapheneos.org/faq#supported-devices)),
     which is even more secure than the stock Android.
@@ -626,6 +648,15 @@ consider buying a laptop and a USB-c or Thunderbolt dock instead.
       - [Pixel 7](https://forum.xda-developers.com/t/root-enable-5g-volte-and-call-screening-in-unsupported-countries.4510243/)
   - [Satellite SOS](https://support.google.com/pixelphone/answer/15254448) is only available in certain countries,
     but the list does include Finland.
+  - Google Pixel 10 series
+    - Google Pixel 10: [specs](https://www.gsmarena.com/google_pixel_10_5g-13979.php)
+    - Google Pixel 10 Pro: [specs](https://www.gsmarena.com/google_pixel_10_pro_5g-13987.php)
+    - Google Pixel 10 Pro XL: [specs](https://www.gsmarena.com/google_pixel_10_pro_xl_5g-13988.php)
+    - Google Pixel 10 Pro Fold: [specs](https://www.gsmarena.com/google_pixel_10_pro_fold-14014.php)
+    - GPU: PowerVR DXT-48-1536: [Notebookcheck](https://www.notebookcheck.net/IMG-DXT-48-1536-Benchmarks-and-Specs.1101573.0.html)
+      - This is a PowerVR GPU, which may cause compatibility issues with games.
+        ([9to5Google](https://9to5google.com/2025/10/07/pixel-10-genshin-impact-issues/),
+        [Reddit](https://www.reddit.com/r/GooglePixel/comments/1nzjp5f/pixel_10_can_barely_handle_genshin_impact_as_gpu/))
 - [Fairphone](https://www.fairphone.com/)
   - An environmentally friendly choice
   - [Does not have proper security updates](https://www.reddit.com/r/GrapheneOS/comments/10b5x4n/comment/j67pbny/).
@@ -659,6 +690,8 @@ consider buying a laptop and a USB-c or Thunderbolt dock instead.
   - [Some old Samsung phones have a backdoor](https://redmine.replicant.us/projects/replicant/wiki/samsunggalaxybackdoor)
     that gives the mobile network operator access to the phone's filesystem.
     ([FSF statement](https://www.fsf.org/blogs/community/replicant-developers-find-and-close-samsung-galaxy-backdoor))
+  - Samsung Galaxy devices are approved for the
+    [US Department of Defense Information Network (DoDIN) Approved Products List (APL)](https://aplits.disa.mil/).
 
 
 ### Lapdocks
