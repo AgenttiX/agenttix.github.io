@@ -163,10 +163,25 @@ The simultaneous use of several frequency bands is known as
 When purchasing a 5G device in Finland, ensure that it supports at least the n28+n78 carrier aggregation.
 
 
-### 5G modem: Quectel RM520N-GL
+### 4G/5G modems
+
+#### Control modes
+- QMI: Qualcomm MSM Interface
+  - Proprietary protocol by Qualcomm
+- MBIM: Mobile Broadband Interface Model
+  - A standardized protocol
+- MHI: Modem Host Interface
+  - Developed by Qualcomm
+  - [Linux kernel documentation](https://docs.kernel.org/mhi/mhi.html)
+
+
+#### Quectel RM520N-GL
 My recommendation for a 5G modem is the
 [Quectel RM520N-GL](https://www.quectel.com/product/5g-rm520n-series/)
 ([hinta.fi](https://hinta.fi/haku?q=RM520N-GL), [Amazon](https://www.amazon.de/dp/B0DP69BYJW)).
+Please note, that the default package on Amazon may contain only three antennas.
+Contact the seller beforehand and ensure that they will ship four antennas as required by the device!
+
 According to
 [the documentation](https://github.com/4IceG/RM520N-GL/blob/main/Documents/Quectel_RM520N-GL_CA%26EN-DC_Features_V1.0.xls),
 it supports the following 5G carrier aggregation profiles that are relevant in Finland:
@@ -191,6 +206,12 @@ Dual connectivity profiles with n28+n78:
 - DC_7A_n28A-n78A
 - DC_7C_n28A-n78A
 - DC_20A_n28A-n78A
+
+Supported data transfer protocols:
+- QMI
+  - Enabled by default
+  - On OpenWRT with BPI-R4, the default is QMI over USB
+- [MBIM over both USB and PCIe](https://forums.quectel.com/t/at-qcfg-pcie-mbim-on-rm520n-gl/35359)
 
 The modem can be controlled with the AT commands available
 [here](https://github.com/4IceG/RM520N-GL/blob/main/Documents/Quectel_RG520N%26RG525F%26RG5x0F%26RM5x0N%26RM521F_Series_AT_Commands_Manual_V1.0.pdf).
