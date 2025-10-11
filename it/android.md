@@ -90,9 +90,6 @@ These are some of the apps that I have found useful.
 - [Call Recorder](https://f-droid.org/en/packages/com.github.axet.callrecorder/) (GPLv3, [GitLab](https://gitlab.com/axet/android-call-recorder))
 - [CellMapper](https://play.google.com/store/apps/details?id=cellmapper.net.cellmapper)
 - [CREDO Detector](https://play.google.com/store/apps/details?id=science.credo.mobiledetector)
-- [Digital Wellbeing](https://play.google.com/store/apps/details?id=com.google.android.apps.wellbeing)
-  - Preinstalled on some devices, and included in some Google Apps packages.
-    Possibilities of installing it afterwards are very limited.
 - [DriveDroid](https://www.drivedroid.io/)
 - [DRM Info](https://play.google.com/store/apps/details?id=com.androidfung.drminfo)
 - [F-Droid](https://f-droid.org/)
@@ -100,7 +97,12 @@ These are some of the apps that I have found useful.
 - [Firefox](https://play.google.com/store/apps/details?id=org.mozilla.firefox)
 - [FlorisBoard](https://play.google.com/store/apps/details?id=dev.patrickgold.florisboard) (Apache 2.0, [GitHub](https://github.com/florisboard/florisboard))
 - [Fossify Keyboard](https://play.google.com/store/apps/details?id=org.fossify.keyboard) (GPLv3, [GitHub](https://github.com/FossifyOrg/Keyboard))
+- [Google Digital Wellbeing](https://play.google.com/store/apps/details?id=com.google.android.apps.wellbeing)
+  - Preinstalled on some devices, and included in some Google Apps packages.
+    Possibilities of installing it afterwards are very limited.
 - [Google Fit](https://play.google.com/store/apps/details?id=com.google.android.apps.fitness)
+- [Google Health Connect](https://play.google.com/store/apps/details?id=com.google.android.apps.healthdata)
+- [Google Maps](https://play.google.com/store/apps/details?id=com.google.android.apps.maps)
 - [Google SMB client](https://github.com/google/samba-documents-provider)
 - [GSam Battery Monitor](https://play.google.com/store/apps/details?id=com.gsamlabs.bbm)
   ([pro](https://play.google.com/store/apps/details?id=com.gsamlabs.bbm.pro))
@@ -115,7 +117,9 @@ These are some of the apps that I have found useful.
 - [Keepass2Android](https://play.google.com/store/apps/details?id=keepass2android.keepass2android)
   (GPLv3, [GitHub](https://github.com/PhilippC/keepass2android))
 - [Manual Camera Compatibility](https://play.google.com/store/apps/details?id=pl.vipek.camera2_compatibility_test)
-- [Notify for Mi Band](https://play.google.com/store/apps/details?id=com.mc.miband1)
+- [Minimalist Launcher](https://play.google.com/store/apps/details?id=com.qqlabs.minimalistlauncher)
+- [Notify for Mi Band 1-7](https://play.google.com/store/apps/details?id=com.mc.miband1)
+- [Notify for Xiaomi/Mi Band 8-10](https://play.google.com/store/apps/details?id=com.mc.xiaomi1)
 - [Obsidian](https://play.google.com/store/apps/details?id=md.obsidian)
 - [Olauncher](https://play.google.com/store/apps/details?id=app.olauncher)
   (GPLv3, [F-Droid](https://f-droid.org/en/packages/app.olauncher/),
@@ -223,6 +227,32 @@ using
 [KVM](https://en.wikipedia.org/wiki/Kernel-based_Virtual_Machine) or
 [Gunyah](https://github.com/quic/gunyah-hypervisor).
 It also supports GUI applications with Wayland.
+
+For Linux Terminal, the chipset has to support unprotected VMs,
+which means VMs whose memory can be accessed by the host OS.
+
+
+### Support by chipset
+- [Google Tensor](https://en.wikipedia.org/wiki/Google_Tensor):
+  [supported by all models](https://www.androidauthority.com/galaxy-tab-s11-linux-terminal-3602231/)
+- Qualcomm Snapdragon: varies, but many don't support
+  - Snapdragon 8 Elite: not supported (supports only protected VMs)
+- Samsung Exynos
+  - Exynos 2500: supported
+
+
+### Support by device
+- Google Pixel: all Tensor-powered models (Pixel 6 &rarr;)
+- Samsung Galaxy S25:
+  [not supported](https://www.reddit.com/r/androidterminal/comments/1nk24pq/non_protected_vms_are_not_supported_on_this/)
+  due to the Qualcomm CPU
+- Samsung Galaxy Tab S11:
+  [supported](https://www.androidauthority.com/galaxy-tab-s11-linux-terminal-3602231/)
+  ([Reddit](https://www.reddit.com/r/androidterminal/comments/1ntspvq/the_galaxy_tab_s11s_best_new_feature_turns_it/))
+- Samsung Galazy Z Flip 7 (with Exynos):
+  [supported](https://www.androidauthority.com/galaxy-z-flip-7-linux-terminal-3578675/)
+- Samsung Galaxy Z Fold 7 (with Snapdragon):
+  [not supported](https://www.androidauthority.com/galaxy-z-flip-7-linux-terminal-3578675/)
 
 
 ## Pros and cons of custom ROMs
@@ -426,6 +456,20 @@ unless you have a device with the A/B partition scheme or without a separate rec
 
 
 ## Root installation steps
+- Do NOT use any of these rooting utilities.
+  They cannot be trusted and may contain spyware.
+  [Note 1](https://www.reddit.com/r/androidroot/comments/1nmzay0/comment/nfgu396/),
+  [Note 2](https://www.reddit.com/r/androidroot/comments/1nmzay0/comment/nfjoxvw/).
+  - CF-Auto-Root
+  - iRoot
+  - KingRoot
+  - KingoRoot
+  - OneClickRoot
+  - SuperSU
+    - [SuperSU was bought in 2015 by an American shell company that's owned by a Chinese company.](https://www.reddit.com/r/Android/comments/6fl5wj/what_is_the_endgame_of_chinese_company_ccmt_which/)
+      Since SuperSU is closed source, it's unknown whether it contains spyware or backdoors.
+  - TowelRoot
+  - vRoot
 - Install Magisk when installing the ROM as above
 - Install [Magisk Manager](https://github.com/topjohnwu/Magisk)
 - Go to Magisk Manager settings and set these:
@@ -477,14 +521,49 @@ unless you have a device with the A/B partition scheme or without a separate rec
 
 
 ## Setting up the device
-The initial setup menu can be very buggy, and easily gets stuck in an eternal loop.
+- Fully charge both your old and new device.
+- Transfer all unnecessary files from the old device to a computer or cloud storage.
+- Create a full backup of the old device. Please see the [backup instructions](#backups) below.
+- If your old and new devices are both rooted, skip the initial setup menu on the new device,
+  and use Swift Backup to transfer your apps.
+- Otherwise, use the initial setup menu to transfer your apps to the new device.
+  Please note, that for most apps only the app itself is transferred, and not the app data.
+  - Some apps have to be transferred manually using their own tools.
+    Please see the app-specific instructions below.
+    - [Signal](https://support.signal.org/hc/en-us/articles/360007059752-Backup-and-Restore-Messages)
+    - [WhatsApp](https://faq.whatsapp.com/1197347060992858/)
+- These cannot be transferred if the old and new devices are not both rooted:
+  - [Telegram secret chats](https://www.reddit.com/r/Telegram/comments/ka6g62/lose_secret_chats_when_moving_to_a_new_phone/)
+- Go through the settings menus and ensure that all settings are as you want them to be.
+- Configure Android settings
+  - Bluetooth &rarr; Device name
+  - Display and touch &rarr; Other display controls &rarr; Screen resolution: Max resolution
+  - Back up or copy data &rarr; Back up data &rarr; Other device data &rarr: enable
+  - (About phone &rarr; Device identifiers &rarr; Build number: tap until developer mode is enabled)
+  - System
+    - Software updates: check for all updates
+    - (Developer options)
+      - Debubbing &rarr; Linux development environment: enable
+      - Window management &rarr; Enable desktop experience features: enable
+  - Security and privacy: review these settings carefully
+  - Safety and emergency: Fill in your emergency info
+- Configure apps
+  - Google Chrome
+    - Account &rarr; Encryption &rarr; Use your own passphrase to encrypt all the Chrome data in your Google Account
+  - Google Find Hub
+    - Remote Lock
+    - Tracking in all areas
+
+
+### Additional instructions for custom ROMs
+The initial setup menu can be very buggy on custom ROMs, and easily gets stuck in an eternal loop.
 Therefore, when initially setting up the device, skip all optional setup menus and do the configuration later.
 If you decide not to follow my advice and end up with a stuck initial setup menu,
 just factory reset the device without having to reinstall the firmware,
 and try again.
 
 Skip especially these:
-- Copying data from an old phone
+- Copying data from an old phone (if your old phone is also rooted)
   - If your old phone is not rooted and this is therefore the only way to migrate your data,
     you should first do the setup once so that you know it works.
     Then, when you are at the Android home screen,
@@ -496,6 +575,17 @@ Skip especially these:
 
 
 ## Backups
+### How to make a full backup
+- Remove unnecessary apps and files
+  - Also e.g. downloaded playlists if yo(this menu only appears after the instructions below)u don't need them anymore
+- Enable Google cloud backup from Android settings
+- If your phone is rooted
+  - Install and run Titanium Backup
+  - Install and run Swift Backup
+  - Create a full backup image from recovery mode, e.g. TWRP
+    - You can do this directly to a USB drive (or a microSD card if your phone has a slot for it)
+
+
 ### Apps that should be restored using backup software
 - Syncthing (if using the same device)
   - Either backup restore the contents of the synced folders manually to enable the app to find them,
@@ -514,7 +604,7 @@ The most of these apps support only manual backups.
 
 - Authy
 - K-9 mail
-- Notify for Mi Band
+- Notify for Xiaomi / Mi Band
 - OpenCamera
 - QKSMS
 - Signal
