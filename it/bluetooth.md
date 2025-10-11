@@ -131,6 +131,23 @@ Wikipedia has a
 
 To use trackers on Android or to help others find their devices by contributing to the network, install the
 [Google Find Hub app](https://play.google.com/store/apps/details?id=com.google.android.apps.adm).
+By default, the app only sends location information to the network
+when detecting trackers in high-traffic areas
+so that the location information cannot be used by Google to identify you,
+at least according to what Google claims.
+However, the downside is that if you lose your tracker, especially in a low-traffic area,
+it may take a long time before enough users have passed by the tracker for its location to be reported.
+If you want to find your trackers faster and to help others
+at the expense of providing more location information about yourself to Google,
+you should open the Google Find Hub app, go to "Settings &rarr; Find Hub &rarr; Find your offline devices"
+and set it to "With network in all areas".
+If you have
+[any issues](https://www.reddit.com/r/Chipolo/comments/1nl4z8l/chipolo_is_mostly_useless_compared_to_samsung/)
+with slow or missing location updates,
+then you should try enabling this feature.
+Please see
+[the Google Find Hub privacy documentation](https://support.google.com/android/answer/14796936)
+for more details.
 
 As of 2025, my recommended devices are the
 [Chipolo POP](https://chipolo.net/en/products/chipolo-pop-6-pack?variant=4001400),
