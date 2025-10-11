@@ -5,6 +5,25 @@ title: Windows
 
 # Windows
 
+## Windows versions
+
+- Windows 10
+  - End of support: 14.10.2025
+  - Security updates can be extended for another year with Extended Security Updates (ESU).
+    For consumer devices,
+    [this is available from Windows Settings](https://www.microsoft.com/en-us/windows/end-of-support),
+    but requires a Microsoft account or a 30 $ fee.
+- Windows 11
+  - System requirements
+    - [A Microsoft-approved 64-bit CPU](https://learn.microsoft.com/en-us/windows-hardware/design/minimum/windows-processor-requirements)
+      - AMD: ~Ryzen 3000 series or newer
+      - Intel: ~Core 8th gen (8000 series) or newer
+    - TPM 2.0
+    - UEFI with Secure Boot
+  - As of 2025, Windows 10 licenses can be used to install Windows 11.
+    However, this may change in the future.
+
+
 ## Installing Windows
 ### Preparation
 - Update BIOS/UEFI and firmware before the installation as much as you practically can.
