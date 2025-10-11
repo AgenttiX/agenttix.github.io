@@ -68,9 +68,11 @@ Check these at the purchase situation:
 Ask these before buying if they are not mentioned in the description, and verify them at the purchase situation:
 - Ensure that the BIOS/UEFI settings are not locked.
 - Ensure that anti-theft, e.g. Computrace, is disabled in the BIOS/UEFI settings.
-- Check whether the computer is compatible with the latest version of Windows
-  - Windows 11 requires a recent CPU and TPM 2.0
-- Check whether the computer has a Windows license
+- Check whether the computer is compatible with the latest version of Windows.
+  - Windows 11 requires a recent CPU and TPM 2.0.
+  - TPM 2.0 is good to have also for advanced use of Linux,
+    as it enables secure storing of various credentials.
+- Check whether the computer has a Windows license.
   - If the computer has Windows installed, you can check the license status in Windows Settings.
   - The BIOS/UEFI may also have information on the Windows license.
 - Ask the seller to run the onboard diagnostics, if available.
