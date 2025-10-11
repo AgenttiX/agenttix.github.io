@@ -721,7 +721,30 @@ is the combination of an external monitor and keyboard that can be used to conve
 - Smartwatches I have been using
   - [Xiaomi Mi Band 3](https://en.wikipedia.org/wiki/Xiaomi_Mi_Band_3) (2018-2021)
   - [Xiaomi Mi Band 6](https://en.wikipedia.org/wiki/Xiaomi_Mi_Smart_Band_6) (2021→)
-  - Xiaomi Mi Band 9 Pro (2025→)
+    - Can be controlled with the
+      [Notify for Mi Band 1-7](https://play.google.com/store/apps/details?id=com.mc.miband1) app.
+  - [Xiaomi Mi Band 9 Pro](https://en.wikipedia.org/wiki/Xiaomi_Smart_Band_9) (2025→)
+    - hinta.fi
+      - [Obsidian Black](https://hinta.fi/5045483/xiaomi-smart-band-9-pro)
+      - [Moonlight Silver](https://hinta.fi/5054060/xiaomi-smart-band-9-pro)
+      - [Rose Gold](https://hinta.fi/5045229/xiaomi-smart-band-9-pro)
+    - [Amazon.de](https://www.amazon.de/-/en/Xiaomi-Smart-Band-Pro-Silver/dp/B0DK71CTCK)
+    - [GNSS](https://en.wikipedia.org/wiki/Satellite_navigation) (GPS, GLONASS, Beidou, Galileo, QZSS)
+    - Bluetooth 5.4
+    - The larger screen makes it a lot more versatile than the regular Mi Bands.
+      It can e.g. show the content of notifications, and the battery is larger.
+    - Can be controlled with the
+      [Notify for Xiaomi/Mi Band 8-10](https://play.google.com/store/apps/details?id=com.mc.xiaomi1)
+      app instead of the official Xiaomi app, so no data is transmitted to Xiaomi.
+      As of 2025, the app has two one-time purchases: pro version 4.39 €, 3rd party app sync 2,49 €.
+      With these, the app can be connected to various other services, including:
+      - Google Fit
+      - Google Health Connect
+      - Google Sheets
+      - Home Assistant (see [my home automation](https://github.com/AgenttiX/home-automation))
+      - Pulsoid
+      - Sleep as Android
+      - Tasker
 - Google Pixel Watch 4
   - 41 mm Wi-Fi obsidian/black:
     [hinta.fi](https://hinta.fi/5452453/google-pixel-watch-4-alykello-41mm-wifi-obsidiaani-musta)
