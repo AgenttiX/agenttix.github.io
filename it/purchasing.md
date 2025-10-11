@@ -841,24 +841,8 @@ This prevents modifying e.g. the transmission power and operational frequencies 
 
 
 #### Wi-Fi routers / access points
-- [Banana Pi](https://www.banana-pi.org/) BPI-R4:
-  [docs](https://docs.banana-pi.org/en/BPI-R4/BananaPi_BPI-R4),
-  [wiki](https://wiki.banana-pi.org/Banana_Pi_BPI-R4),
-  [Amazon](https://www.amazon.de/dp/B0DFCTLXJC)
-  - [OpenWRT](https://openwrt.org/inbox/toh/sinovoip/bananapi_bpi-r4) support
-  - Wi-Fi 7 and WPA3 (over 1 Gbps Wi-Fi)
-  - 2x 10 Gbps SFP+ ports
-  - Can be powered over USB-c, so you can also use the device on the go.
-  - Firmware is easy to install, as you can boot the device from an SD card.
-  - M.2 slot for 5G modem. My recommendation is the
-    [Quectel RM520N-GL](https://www.quectel.com/product/5g-rm520n-series/):
-    [hinta.fi](https://hinta.fi/haku?q=RM520N-GL),
-    [Amazon](https://www.amazon.de/dp/B0DP69BYJW)
-    - The default package may contain only three antennas.
-      Contact the seller beforehand and ensure that they will ship four antennas as required by the device!
-  - Can be used as a NAS or a small general-purpose server thanks to its M.2 SSD slot and USB 3.0 port.
-    (The M.2 SSD and 5G modem can be installed simultaneously.)
-  - Serial console is easily accessible for debugging and initial installation of the firmware.
+- OpenWRT routers such as Banana Pi BPI-R4
+  - Please see my [OpenWRT repository](https://github.com/AgenttiX/openwrt-scripts) for details
 - [Ubiquiti UniFi](https://ui.com/wi-fi)
   - If you need multiple access points for enterprise use with centralized management,
     UniFi access points are a cost-effective option with their default firmware.
