@@ -91,6 +91,9 @@ CIA model:
   - Enable [Advanced Data Protection](https://support.apple.com/en-us/108756)
 - Google
   - Enable [Advanced Protection Program](https://landing.google.com/advancedprotection/)
+    if you're not planning to install apps from outside the Play Store.
+    The Advanced Protection Program is otherwise highly useful,
+    but unfortunately it blocks app installations from outside the Play Store.
 - Microsoft
   - Enable [multi-factor authentication](https://aka.ms/mfasetup)
 
