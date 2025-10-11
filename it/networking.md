@@ -232,3 +232,24 @@ Things to configure
 - Configure VPNs
   - Site-to-site VPNs
   - Remote access VPNs
+
+
+## [Eduroam](https://eduroam.org/)
+If you can, use the certificate authentication provided by the Eduroam app.
+If it does not work, the password authentication is a viable backup option.
+However, the Eduroam app may not configure all the settings properly for password authentication.
+Therefore, if you have any connection issues, please ensure that the settings have been set correctly.
+- Security: WPA2 Enterprise
+- Authentication: PEAP
+- Anonymous identity: anonymous@YOUR_ORGANIZATION.DOMAIN
+- CA certificate: This field must be filled!
+  If this is not filled, then your device will send your password with a bad encryption
+  to any malicious network posing as Eduroam.
+  You can download the CA certificate from your organization's IT support pages.
+- PEAP version: Automatic
+- Inner authentication: MSCHAPv2
+- Username USERNAME@ORGANIZATION.DOMAIN
+  - The "@ORGANIZATION.DOMAIN" part is important.
+    The eduroam app may not add it, which will result in authentication failure,
+    especially when connecting to Eduroam in other locations.
+- Password: YOUR_PASSWORD
