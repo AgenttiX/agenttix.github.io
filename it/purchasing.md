@@ -81,6 +81,13 @@ Ask these before buying if they are not mentioned in the description, and verify
   - If the seller does not know how to run the diagnostics, you can send them instructions online.
     As a backup option, you can run the diagnostics yourself after purchasing the device.
     You should do this as soon as possible.
+- Prefer devices, for which it's possible to disable Intel Management Engine (ME) or equivalent,
+  either from UEFI/BIOS settings or using external utilities.
+  These proprietary firmware-level management tools are notorious
+  for having critical vulnerabilities every now and then,
+  and used devices often no longer receive security updates that would patch these vulnerabilities.
+  Please see the [firmware page](./firmware) for more info.
+
 
 #### Phones and tablets
 Ask these before buying if they are not mentioned in the description, and verify them at the purchase situation:

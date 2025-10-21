@@ -110,6 +110,7 @@ A good way to find out the values above is to connect a device and run `sudo lsh
     - Reboot
   - BIOS/UEFI settings to change from the defaults
     - Advanced -> CPU Setup -> TxT: Enable
+    - Advanced -> Intel Manageability -> Intel Manageability Control: Disabled
     - Security
       - Set Administrator Password
       - Allow Flashing BIOS to a Previous Version: No
@@ -134,4 +135,3 @@ A good way to find out the values above is to connect a device and run `sudo lsh
   - Update Intel ME
   - Update SIO firmware
   - Run maintenance script for the first time
-  - Configure ME

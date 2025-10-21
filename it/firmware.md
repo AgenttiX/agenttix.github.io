@@ -95,9 +95,22 @@ Flashing directly from the UEFI/BIOS or from a bootable USB is safer than flashi
 
 [me_cleaner](https://github.com/corna/me_cleaner)
 
+## Intel AMT / ME vulnerabilities
+This list is not comprehensive, but illustrates the point that ME is a significant security risk
+if it's not kept up to date.
+- [CVE-2022-26845](https://nvd.nist.gov/vuln/detail/CVE-2022-26845):
+  [INTEL-SA-00610](https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00610.html)
+  - Unauthenticated privilege escalation
+  - Affected versions: before 11.8.93, 11.22.93, 11.12.93, 12.0.92, 14.1.67, 15.0.42, 16.1.25
+- [CVE-2022-30601](https://nvd.nist.gov/vuln/detail/cve-2022-30601):
+  [INTEL-SA-00709](https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00709.html)
+  - Unauthenticated privilege escalation
+  - Affected versions: all versions before 2022-08-09
+
 
 ## Intel AMT / ME settings
-- Change the Management Engine (ME) password even if you don't plan to use the ME at all.
+- Disable Intel AMT / ME / MEBx in the BIOS if you can.
+- If you cannot disable it, then change the Management Engine (ME) password even if you don't plan to use the ME at all.
   [Not changing the default password is a security risk.](https://threatpost.com/intel-amt-loophole-allows-hackers-to-gain-control-of-some-pcs-in-under-a-minute/129408/)
 - General settings
   - Power control
