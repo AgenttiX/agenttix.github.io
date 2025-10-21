@@ -134,4 +134,5 @@ A good way to find out the values above is to connect a device and run `sudo lsh
   - Reboot
   - Update Intel ME
   - Update SIO firmware
-  - Run maintenance script for the first time
+  - Install default software
+  - Run the maintenance script
