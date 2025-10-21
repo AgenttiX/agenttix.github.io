@@ -1141,6 +1141,17 @@ A good keyboard should have
 - [Logitech MX Keys Mini for Business](https://www.logitech.com/fi-fi/products/keyboards/mx-keys-mini-for-business.html):
   [hinta.fi](https://hinta.fi/3146694/logitech-920-010604)
   - Logi Bolt
+- [Logitech MX Mechanical Mini](https://www.logitech.com/fi-fi/shop/p/mx-mechanical-mini):
+  hinta.fi:
+  [tactile](https://hinta.fi/3447515/logitech-920-010776),
+  [linear](https://hinta.fi/3447513/logitech-920-010777),
+  [clicky](https://hinta.fi/3447512/logitech-920-010778)
+  - Logi Bolt
+- [Logitech K380s Pebble Keys 2](https://www.logitech.com/fi-fi/shop/p/pebble-keys-2):
+  hinta.fi:
+  [graphite](https://hinta.fi/4323232/logitech-920-011879),
+  [white](https://hinta.fi/4358336/logitech-920-011880)
+  - Logi Bolt
 
 
 #### Basic keyboards
@@ -1196,6 +1207,13 @@ In office use, the mouse should be as silent as possible.
   [black](https://hinta.fi/4178976/logitech-mx-master-3s),
   [white](https://hinta.fi/3442981/logitech-910-006560)
   - Good for office use but not for gaming
+- [Logitech MX Master 4](https://www.logitech.com/fi-fi/shop/p/mx-master-4):
+  hinta.fi:
+  [graphite](https://hinta.fi/3442980/logitech-910-006559),
+  [black](https://hinta.fi/5459371/logitech-mx-master-4),
+  [white](https://hinta.fi/5538057/logitech-mx-master-4)
+- [Logitech MX Master 4 for Business](https://www.logitech.com/fi-fi/products/mice/mx-master-4-business.910-007617.html):
+  [hinta.fi](https://hinta.fi/5539045/logitech-mx-master-4-for-business)
 - ~~[Logitech MX Vertical](https://www.logitech.com/fi-fi/shop/p/mx-vertical-ergonomic-mouse.910-005448)~~
   [hinta.fi](https://hinta.fi/1523663/logitech-910-005448)
   [Amazon.de](https://www.amazon.de/-/en/gp/product/B07FNHV4MW)
@@ -1206,7 +1224,7 @@ In office use, the mouse should be as silent as possible.
 #### Mice for businesses
 The Logitech "for Business" devices use different software than the regular models.
 Many of them also have the more secure Logi Bolt wireless connectivity unlike their regular counterparts,
-which use the broken Logitech Unifying wireless connectivity.
+many of which use the broken Logitech Unifying wireless connectivity.
 - [Logitech MX Master 3S for Business](https://www.logitech.com/fi-fi/products/mice/mx-master-3s-business-wireless-mouse.html):
   [hinta.fi](https://hinta.fi/3636775/logitech-910-006582),
   [Amazon.de](https://www.amazon.de/-/en/Logitech-MX-Master-3S-Business/dp/B07W6HCFYS)
@@ -1231,13 +1249,23 @@ which use the broken Logitech Unifying wireless connectivity.
   [hinta.fi](https://hinta.fi/3245796/logitech-910-006348),
   [Amazon.de](https://www.amazon.de/-/en/gp/product/B07W5JKPJY)
   - For larger hands or palm grip
-    - Logi Bolt
+  - Logi Bolt
 - [Logitech MX Anywhere 3S for Business](https://www.logitech.com/fi-fi/products/mice/mx-anywhere-3s-business-wireless-mouse.html):
   [hinta.fi](https://hinta.fi/4202884/logitech-910-006929),
   [Amazon.de](https://www.amazon.de/-/en/gp/product/B07W6GJWZR)
+- [Logitech Ergo M575 trackball for Business](https://www.logitech.com/fi-fi/products/mice/ergo-m575-for-business.html):
+  hinta.fi:
+  [graphite](https://hinta.fi/2986420/logitech-910-006221),
+  [white](https://hinta.fi/3010019/logitech-910-006438),
+  Amazon.de:
+  [graphite](https://www.amazon.de/-/en/Logitech-ERGO-Business-Wireless-Trackball/dp/B07W6GFN9S),
+  [white](https://www.amazon.de/-/en/Logitech-ERGO-Business-Wireless-Trackball/dp/B07W4DHNFZ)
 
 
 ### Mouse & keyboard combos
+- ~~[Logitech MK370 Combo for Business](https://www.logitech.com/fi-fi/products/combos/mk370-keyboard-mouse.html):
+  [hinta.fi](https://hinta.fi/4151229/logitech-920-012072)~~
+  - No thumb buttons in the mouse
 - [Logitech Signature MK650 Combo for Business](https://www.logitech.com/fi-fi/products/combos/mk650-signature-combo-business.html):
   [hinta.fi](https://hinta.fi/3468960/logitech-signature-mk650-for-business-graphite-nordic)
   - Logitech K650 for Business keyboard
@@ -1245,13 +1273,21 @@ which use the broken Logitech Unifying wireless connectivity.
   - Logi Bolt
 - [Logitech Signature Slim Combo MK950 for Business](https://www.logitech.com/fi-fi/products/combos/signature-slim-mk950-business.html):
   [hinta.fi](https://hinta.fi/4769689/logitech-mk950)
-  - Logitech Signature MK950 for Business keyboard
+  - Logitech Signature K950 for Business keyboard
   - Logitech Signature Plus M750 for Business mouse
   - Logi Bolt
+- [Logitech Signature Slim Combo MK955 for Business](https://www.logitech.com/en-us/products/combos/signature-slim-mk955-for-business-copilot-edition.920-013271.html)
+  - Not available in Finland yet (as of October 2025)?
 - [Logitech MX Keys Combo for Business | Gen 2](https://www.logitech.com/fi-fi/products/combos/mx-keys-combo-business-gen-2.html):
   [hinta.fi](https://hinta.fi/3612364/logitech-920-010931)
   - Logitech MX Keys for Business keyboard
   - Logitech MX Master 3S for Business mouse
+- [Logitech Wave Keys & Lift](https://www.logitech.com/fi-fi/ergo/ergo-setups/wave-keys-lift.html):
+  [hinta.fi](https://hinta.fi/5502654/logitech-wave-lift-combo-langaton-nappaimisto-ja-hiiri)
+  - Logitech Wave keyboard
+  - Logitech Lift mouse
+  - Logi Bolt
+  - Not a business edition?
 
 
 ### Webcams
