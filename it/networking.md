@@ -96,7 +96,37 @@ Here is an example of what a possible separation of networks can look like:
   - VPN clients don't usually need access to the entire main network, but only to certain servers on the main network.
 
 
-## Wireless networking (WWAN: 4G, 5G)
+## Wireless LAN networking (Wi-Fi)
+
+### [Wi-Fi calling](https://en.wikipedia.org/wiki/Wi-Fi_calling)
+Wi-Fi calling is also known as Voice over wireless LAN (VoWLAN) or Voice over Wi-Fi (VoWiFi).
+It's based on an [IPsec](https://en.wikipedia.org/wiki/IPsec) tunnel.
+Therefore, to use Wi-Fi calling, the Wi-Fi network must allow IPsec traffic.
+On phones, this connection usually bypasses any user-configured VPN settings.
+
+
+### [Eduroam](https://eduroam.org/)
+If you can, use the certificate authentication provided by the Eduroam app.
+If it does not work, the password authentication is a viable backup option.
+However, the Eduroam app may not configure all the settings properly for password authentication.
+Therefore, if you have any connection issues, please ensure that the settings have been set correctly.
+- Security: WPA2 Enterprise
+- Authentication: PEAP
+- Anonymous identity: anonymous@YOUR_ORGANIZATION.DOMAIN
+- CA certificate: This field must be filled!
+  If this is not filled, then your device will send your password with a bad encryption
+  to any malicious network posing as Eduroam.
+  You can download the CA certificate from your organization's IT support pages.
+- PEAP version: Automatic
+- Inner authentication: MSCHAPv2
+- Username USERNAME@ORGANIZATION.DOMAIN
+  - The "@ORGANIZATION.DOMAIN" part is important.
+    The eduroam app may not add it, which will result in authentication failure,
+    especially when connecting to Eduroam in other locations.
+- Password: YOUR_PASSWORD
+
+
+## Wireless WAN networking (WWAN: 4G, 5G)
 The wireless networking standards are a mess.
 
 
@@ -232,24 +262,3 @@ Things to configure
 - Configure VPNs
   - Site-to-site VPNs
   - Remote access VPNs
-
-
-## [Eduroam](https://eduroam.org/)
-If you can, use the certificate authentication provided by the Eduroam app.
-If it does not work, the password authentication is a viable backup option.
-However, the Eduroam app may not configure all the settings properly for password authentication.
-Therefore, if you have any connection issues, please ensure that the settings have been set correctly.
-- Security: WPA2 Enterprise
-- Authentication: PEAP
-- Anonymous identity: anonymous@YOUR_ORGANIZATION.DOMAIN
-- CA certificate: This field must be filled!
-  If this is not filled, then your device will send your password with a bad encryption
-  to any malicious network posing as Eduroam.
-  You can download the CA certificate from your organization's IT support pages.
-- PEAP version: Automatic
-- Inner authentication: MSCHAPv2
-- Username USERNAME@ORGANIZATION.DOMAIN
-  - The "@ORGANIZATION.DOMAIN" part is important.
-    The eduroam app may not add it, which will result in authentication failure,
-    especially when connecting to Eduroam in other locations.
-- Password: YOUR_PASSWORD
