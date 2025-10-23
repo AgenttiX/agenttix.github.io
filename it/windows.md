@@ -13,6 +13,8 @@ title: Windows
     For consumer devices,
     [this is available from Windows Settings](https://www.microsoft.com/en-us/windows/end-of-support),
     but requires a Microsoft account or a 30 $ fee.
+    You can enable the ESU by running this command in the run window (Windows+R):
+    [`ms-settings:windowsupdate-esu?OCID=WEB_EOS_CY25_ESU&source=WEB`](https://www.reddit.com/r/Windows10/comments/1o989bw/comment/nk0h0ne/)
 - Windows 11
   - System requirements
     - [A Microsoft-approved 64-bit CPU](https://learn.microsoft.com/en-us/windows-hardware/design/minimum/windows-processor-requirements)
