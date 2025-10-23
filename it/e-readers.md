@@ -56,3 +56,7 @@ Some Boox devices can be rooted.
 ## [PineNote](https://www.pine64.org/pinenote/)
 - Open-source
 - Experimental, software is in its infancy (as of 2022)
+
+
+## Pens
+[Lamy](https://www.lamy.com/en-de/digital-writing)
