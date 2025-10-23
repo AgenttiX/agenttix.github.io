@@ -122,6 +122,46 @@ if it's not kept up to date.
   - Network Name Settings: Set your hostname and FQDN
 
 
+## UEFI/BIOS alternatives
+- [Coreboot](https://www.coreboot.org/)
+  - Open source UEFI / BIOS replacement
+  - [Supported devices](https://doc.coreboot.org/mainboard/index.html)
+- Coreboot variants
+  - [Canoeboot](https://canoeboot.org/)
+    - [Supported devices](https://canoeboot.org/docs/install/#which-systems-are-supported-by-canoeboot)
+  - [Dasharo](https://www.dasharo.com/)
+    - [Supported hardware](https://docs.dasharo.com/variants/overview/)
+  - [Heads](https://osresearch.net/)
+    - [Supported hardware](https://github.com/linuxboot/heads/tree/master/boards)
+  - [Libreboot](https://libreboot.org/)
+    - [Supported hardware](https://libreboot.org/docs/install/#which-systems-are-supported-by-libreboot)
+  - [MrChromebox](https://docs.mrchromebox.tech/)
+    - [Supported devices](https://docs.mrchromebox.tech/docs/supported-devices.html)
+  - [Skulls](https://github.com/merge/skulls)
+    - [Supported devices](https://github.com/merge/skulls?tab=readme-ov-file#supported-laptops)
+  - [System76 Open Firmware](https://github.com/system76/firmware-open)
+- [TianoCore](https://www.tianocore.org/)
+  - Open source implementation of UEFI
+  - [EDK-II development environment](https://github.com/tianocore/tianocore.github.io/wiki/EDK-II)
+
+
+### Devices with secure UEFI/BIOS alternatives
+- [NovaCustom](https://novacustom.com/)
+  - Laptops with Dasharo Coreboot (by default Coreboot + EDK-II) and optionally:
+    - UEFI Secure Boot
+    - Coreboot + Heads
+      - Not compatible with UEFI Secure Boot or Intel Boot Guard,
+        since it uses its own solutions that verify platform integrity from an even lower level
+    - Disabled Intel ME
+      - Disabling ME breaks suspend support for Windows and requires post-installation steps on Linux
+    - Intel Boot Guard
+- NUC desktops with Dasharo Coreboot and optionally:
+  - UEFI Secure Boot
+  - Disabled Intel ME
+    - Disabling ME breaks suspend support for Windows and requires post-installation steps on Linux
+  - Intel Boot Guard
+
+
 ## Sleep issues
 Have you ever pulled your laptop from your backpack and found out that it's hot and the battery is drained?
 This is the big issue with
