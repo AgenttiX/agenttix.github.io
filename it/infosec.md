@@ -332,19 +332,21 @@ ykman fido access change-pin
 See [this site](https://www.keylength.com/)
 for the key length recommendations of various organizations.
 
-RSA
+
+### RSA
 - Use key sizes of at least 2048 bits, and 4096 bits for CAs.
 - Note that many hardware devices, such as TPMs, cannot store keys longer than 2048 bits.
 - With TLS and OpenVPN, the key sizes affect the performance of only the negotiation handshake at the start of the connection
   and during renegotiation, which for OpenVPN happens once per hour.
 
 
-Diffie-Hellman parameters
+### Diffie-Hellman parameters
 - At least 2048 bits.
   [1024 bit Diffie-Hellman can be cracked by nation states.](https://weakdh.org/)
 - Generate your own parameters whenever possible.
 
-Elliptic Curve Diffie-Hellman (ECDH)
+
+### Elliptic Curve Diffie-Hellman (ECDH)
 - See [this list](https://safecurves.cr.yp.to/) for safe curves,
   and [this list](https://en.wikipedia.org/wiki/Comparison_of_TLS_implementations#Supported_elliptic_curves)
   for compatibility with TLS implementations.
@@ -376,8 +378,26 @@ Elliptic Curve Diffie-Hellman (ECDH)
     where safe curves such as Curve25519 are not available,
     I'd go with this over secp384r1.
 
-Hashing
-- Do not use SHA-1, as [it has been broken](https://shattered.io/).
-- [SHA-256 is good enough](https://security.stackexchange.com/a/165568),
-  and SHA-512 is not worth it for online systems due to the longer hashes.
+
+### Hashing
+- MS-CHAPv2
+  - Based on NTLMv1 (not NTLMv2!) and is therefore broken and should not be used.
+    Can be cracked in less than a day on modern hardware.
+    However, its use is often necessary in e.g. Wi-Fi authentication for compatibility reasons.
+    If using MS-CHAPv2 for e.g. Wi-Fi authentication, you must have proper certificate configuration!
+    Otherwise, your clients are effectively broadcasting their passwords.
+- NTLMv1
+  - Totally broken and should not be used.
+    Based on MD4 and DES.
+    Susceptible to offline cracking, replay attacks and hash reuse.
+- NTLMv2
+  - Vulnerable and should not be used.
+    Replaces the DES in NTLMv1 with HMAC-MD5 and includes timestamps, which helps with replay attacks and hash reuse.
+    However, the algorithm is still weak for offline cracking.
+- SHA-1
+  - [Broken](https://shattered.io/) and should not be used.
+- SHA-256
+  - [Good enough](https://security.stackexchange.com/a/165568),
+- SHA-512
+  - Theoretically more secure than SHA-256, but not worth it for online systems due to the longer hashes.
   - [Windows 7 and 8 require an update to enable SHA512 for TLS 1.2](https://support.microsoft.com/en-us/topic/sha512-is-disabled-in-windows-when-you-use-tls-1-2-5863e74e-e5b6-cc3b-759b-ece8da875825)
