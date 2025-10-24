@@ -43,6 +43,12 @@ are compatible with the local laws and regulations, e.g. for radio frequencies.
   If you have decided that you actually need the device, take your time to find the models that suit your needs.
   Then place price alerts on them on several comparison sites and wait for a discount season such as Black Friday.
   If the price goes below the limits you have set, buy the device. :D
+- Ask your local stores to add the products in their selection.
+  First see if they have a form for product requests,
+  and if they don't, then contact their customer service.
+  Here are some links to product request forms:
+  - [Verkkokauppa.com](https://asiakaspalvelu.verkkokauppa.com/hc/fi/articles/360000290888-Yhteystiedot)
+    (See the section "Tuotetoiveet ja sisäänostot")
 
 
 ### What to check when buying used devices
