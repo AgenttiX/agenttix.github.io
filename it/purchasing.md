@@ -966,6 +966,8 @@ This prevents modifying e.g. the transmission power and operational frequencies 
   - NanoPi R4S
     - 2x 1 Gbps Ethernet
     - [Supported by OpenWRT](https://openwrt.org/toh/friendlyarm/nanopi_r4s_v1)
+- [Protectli](https://eu.protectli.com/)
+  - Versatile and highly performant firewall devices with Coreboot support
 
 
 ### VDSL2 modems
