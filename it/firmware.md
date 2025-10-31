@@ -140,6 +140,8 @@ if it's not kept up to date.
   - [Skulls](https://github.com/merge/skulls)
     - [Supported devices](https://github.com/merge/skulls?tab=readme-ov-file#supported-laptops)
   - [System76 Open Firmware](https://github.com/system76/firmware-open)
+- [Patina](https://opendevicepartnership.github.io/patina/)
+  - Rust-based UEFI implementation
 - [TianoCore](https://www.tianocore.org/)
   - Open source implementation of UEFI
   - [EDK-II development environment](https://github.com/tianocore/tianocore.github.io/wiki/EDK-II)
