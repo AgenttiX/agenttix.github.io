@@ -355,6 +355,8 @@ a vulnerability that allows any installed app to gain root access.
 
 
 ## Google Apps
+- Please note that having Google Apps installed
+  [gives a lot of control over the device and its data to Google](https://www.howtogeek.com/how-google-tracks-and-scans-everything-on-your-android-device/).
 - [MindTheGapps](https://wiki.lineageos.org/gapps) ([Repository](https://gitlab.com/MindTheGapps))
   - Recommended for LineageOS
   - Can be installed with the Lineage recovery,
@@ -553,6 +555,8 @@ unless you have a device with the A/B partition scheme or without a separate rec
   - Google Find Hub
     - Remote Lock
     - Tracking in all areas
+  - Google Meet
+    - General &rarr; [Use additional encryption](https://support.google.com/meet/answer/12387251): enable
 
 
 ### Additional instructions for custom ROMs
