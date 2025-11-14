@@ -156,12 +156,28 @@ As of 2025, my recommended devices are the
 They support both Apple and Google networks and BLE 6.0 and are
 [made in Europe](https://chipolo.net/en/pages/our-story).
 However, they lack support for UWB.
-<!-- Side note: the Chipolo Pop has these antenna specifications in its manual:
+
+<!--
+Side note: antenna specifications from device manuals
+
+Chipolo Pop
 - Modulation method: GFSK
 - Antenna power: < 1 mW
+- Operating frequency band: 2402 - 2480 MHz
+
+Chipolo Card
+- Modulation method: GFSK
+- Antenna power: < 10 mW
 - Operating frequency band: 2402 - 2480 MHz
 -->
 
 If you want to create your own Bluetooth tracker,
 please have a look at
 [OpenHaystack](https://github.com/seemoo-lab/openhaystack).
+
+When travelling with Bluetooth trackers by airplane,
+please keep in mind the airline restrictions for batteries,
+especially for checked-in baggage.
+Usually Bluetooth trackers are allowed,
+but to be sure,
+you may want to prefer trackers with non-rechargeable batteries for checked-in bags.
