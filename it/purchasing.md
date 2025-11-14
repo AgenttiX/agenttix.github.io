@@ -1473,6 +1473,72 @@ Please see the [Bluetooth page](./bluetooth).
   [Amazon.de](https://www.amazon.de/-/en/Kingston-DataTraveler-Type-1000R-1TB/dp/B09DVQ32XQ)
 
 
+## Security tokens
+### Features
+- Challenge-response
+  - [Used for KeePassXC password database encryption](https://keepassxc.org/docs/#faq-yubikey-howto)
+- FIDO2 / WebAuthn
+  - The primary feature of USB security tokens.
+    Used for logging in to websites, Windows Hello for Business and many other services.
+  - Can be used for SSH authentication.
+    In this case, ensure that the device supports Ed25519, as the NIST ECC curves, e.g. P-256 and P-384,
+    are difficult to implement securely, which has resulted in several vulnerabilities in the implementations.
+  - [Certified Authenticator levels](https://fidoalliance.org/certification/authenticator-certification-levels/)
+    - [Certified products](https://fidoalliance.org/certification/fido-certified-products/)
+    - Prefer devices with at least [L2 certification](https://fidoalliance.org/certification/authenticator-certification-levels/authenticator-level-2/)
+- FIDO U2F
+  - A legacy authentication standard. Use FIDO2 / WebAuthn instead.
+- NFC
+  - Useful for mobile use, as you can just touch the security key with your mobile device instead of plugging it in.
+- PGP
+  - Git commit signing
+  - Email signing & encryption
+  - File signing & encryption
+- Smart card emulation (PIV)
+  - Used for S/MIME email signing and encryption
+- USB-c
+  - Choosing USB-c instead of USB-A will ensure compatibility with mobile devices and future laptops
+- Water / dust resistance
+  - Highly useful, since in most scenarios you should keep a key with you at all times.
+
+
+### Devices
+- Android 7 &rarr;
+  - FIDO2 / WebAuthn for on-device use ([certification info](https://fidoalliance.org/android-now-fido2-certified-accelerating-global-migration-beyond-passwords/))
+  - Use as FIDO2 token for external devices, e.g. computers,
+    [does not work out of the box](https://stackoverflow.com/a/66676370/10930376)
+    but requires additional software.
+  - Prefer phones with a discrete secure element (StrongBox) such as the
+    [Titan M2 security processor](https://www.androidauthority.com/titan-m2-google-3261547/)
+    on Google Pixel phones.
+- Finnish ID card (incl. Citizen Certificate)
+  - Requires a card reader (and on Windows also closed-source software)
+  - S/MIME
+- [Google Titan](https://store.google.com/product/titan_security_key)
+  - FIDO2 only. Prefer YubiKey the 5 series instead.
+- [Solo 2C+ NFC](https://solokeys.com/collections/all/products/solo-2a-nfc-security-key-built-with-trussed%C2%AE)
+  - FIDO2 & FIDO U2F
+  - Open Source
+- Windows Hello
+  - FIDO2 / WebAuthn for on-device use (incl. SSH with correct settings)
+  - The device must have a TPM 2.0 chip for storing the keys securely (which is a requirement for Windows 11).
+    Prefer devices with discrete TPM chips instead of firmware-based TPM.
+- [YubiKey 5C NFC](https://www.yubico.com/fi/product/yubikey-5c-nfc/):
+  [hinta.fi](https://hinta.fi/2051897/yubico-yubikey-5c-nfc),
+  [Amazon.de](https://www.amazon.de/-/en/Yubico-two-factor-authentication-USB-connections/dp/B08DHL1YDL)
+  - FIDO2 / WebAuthn, FIDO U2F, PIV, PGP
+  - USB-c, NFC
+  - IP68 water & dust resistant
+  - Firmware 5.7
+    - FIDO Authenticator Level 2 (L2) certified
+- [YubiKey 5C NFC FIPS](https://www.yubico.com/fi/product/yubikey-5-fips-series/yubikey-5c-nfc-fips/)
+  - Just like the regular model, but with FIPS validation and therefore with a higher price
+  - FIPS 140-2 validated
+  - Firmware 5.7
+    - [Undergoing FIPS 140-3 validation](https://www.yubico.com/blog/yubico-submits-yubikey-5-fips-series-for-fips-140-3-validation/),
+      so you will likely want to wait for it to be available before purchasing.
+
+
 ## Other
 - Battery chargers
   - Opus BT-C900
