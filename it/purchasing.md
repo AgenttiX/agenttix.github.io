@@ -1151,6 +1151,16 @@ Wireless peripherals often have poor security.
   - [Affected devices](https://bastille.net/research/vulnerabilities-keyjack/#affected-devices)
 
 
+### Linux compatibility
+Linux support for wireless Logitech Bolt, Lightspeed and Unifying devices is provided by
+[Solaar](https://pwr-solaar.github.io/Solaar/).
+
+Linux support for gaming mice, keyboards and headphones is provided by
+[Piper](https://github.com/libratbag/piper/)
+and
+[libratbag](https://github.com/libratbag/libratbag).
+
+
 ### Keyboards
 A good keyboard should have
 - ISO or ANSI layout depending on your preference
@@ -1217,11 +1227,6 @@ Please see
 for details, and
 [this list](https://sensor.fyi/mice/)
 for good mice.
-
-Linux support for gaming mice, keyboards and headphones is provided by
-[Piper](https://github.com/libratbag/piper/)
-and
-[libratbag](https://github.com/libratbag/libratbag).
 
 
 #### Gaming mice
