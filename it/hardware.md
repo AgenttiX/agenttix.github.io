@@ -43,6 +43,21 @@ title: Hardware
 - Use the computer for a few days or weeks to see that it's stable.
 - Overclock (if you want to).
 
+## Selling a computer
+- Take screenshots and pictures of the specifications and hardware
+- Reset firmware
+  - BIOS settings
+  - TPM
+  - Custom Secure Boot keys
+  - Intel ME (if configurable)
+- Wipe storage devices
+  - You can use [my scripts](https://github.com/AgenttiX/linux-scripts/tree/master/security) for this.
+  - If my scripts don't work and the computer is a laptop,
+    I recommend using manufacturer-provided software.
+  - If the computer is a desktop or no manufacturer-provided software is available,
+    you can use [DBAN](https://dban.org/) or boot the computer from a Linux USB drive and use `badblocks` to wipe the storage devices.
+
+
 ## Personal IT hardware
 [Geekbench results](https://browser.geekbench.com/user/AgenttiX)
 
