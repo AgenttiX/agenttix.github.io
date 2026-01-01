@@ -117,6 +117,11 @@ Many network operators support only 5G NSA or restrict 5G SA to certain plans.
 Therefore, when purchasing a 5G network plan, ensure that it has support for 5G SA.
 If not, consider the options of competing network operators.
 
+5G SA device compatibility
+- [Official list by Elisa](https://elisa.fi/5g/itsenainen-5g/#sa_puhelimet)
+- [Instructions for enabling 5G SA on OnePlus 7 - 9](https://mt-tech.fi/en/modify-oneplus-7-pro-5g-8-and-8-pro-nr-lte-a-band-combos/)
+- [Apple devices do not support 5G SA without custom configuration](https://yhteiso.elisa.fi/puheliittymaet-7/milloin-5g-standalone-tulee-iphone-puhelimiin-526522)
+
 
 ### 4G bands in Finland
 In Finland, there are five
@@ -153,6 +158,12 @@ The simultaneous use of several frequency bands is known as
 [carrier aggregation (CA)](https://en.wikipedia.org/wiki/Carrier_aggregation).
 When purchasing a 5G device in Finland, ensure that it supports at least the n28+n78 carrier aggregation.
 
+### Android
+To identify whether your Android phone is connected with SA or NSA, go to Settings -> About phone -> SIM status.
+In the "Mobile data network type" you should see "5G SA" or "5G NSA".
+For further details, enable developer mode and enter `*#*#4636#*#*` in the dialer.
+
+
 ### 5G modem: Quectel RM520N-GL
 My recommendation for a 5G modem is the
 [Quectel RM520N-GL](https://www.quectel.com/product/5g-rm520n-series/)
@@ -181,6 +192,10 @@ Dual connectivity profiles with n28+n78:
 - DC_7A_n28A-n78A
 - DC_7C_n28A-n78A
 - DC_20A_n28A-n78A
+
+Frequency bands I have verified to work in the Elisa 5G network:
+- n28+n78
+- B1+B3+n78
 
 The modem can be controlled with the AT commands available
 [here](https://github.com/4IceG/RM520N-GL/blob/main/Documents/Quectel_RG520N%26RG525F%26RG5x0F%26RM5x0N%26RM521F_Series_AT_Commands_Manual_V1.0.pdf).
