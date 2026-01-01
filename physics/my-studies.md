@@ -14,6 +14,7 @@ title: My studies
 - [FYS-1010 Physics Laboratory I (2017)](https://github.com/AgenttiX/fys-1010)
 - FYS-1320 Methods in Physics (2017): [Gas analysis, cloud formation & energy spectrum analysis](https://github.com/AgenttiX/fys-1320)
 - [MAT-60250 Basic Course on Mathematical Modelling (2017)](https://github.com/AgenttiX/bcmm-tut08)
+- TIE-02400 Ohjelmoinnin tekniikat: [ElectionGame](https://gitlab.com/tolvanea/electiongame)
 - FYS2085 Scientific Computing II (2021): [Planetary motion](https://github.com/AgenttiX/planetary-motion)
 - FYS2029 Quantum Computing (2021): [Quantum machine learning](https://github.com/AgenttiX/fys2029-project)
 - PAP328 Laboratory Course on Instrumentation (2021): [Proportional counter](https://github.com/AgenttiX/proportional-counter)
