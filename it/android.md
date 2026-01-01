@@ -117,31 +117,25 @@ Tested on OnePlus 9 Pro with the Play Integrity Fix Magisk module.
 - [Ingress](https://play.google.com/store/apps/details?id=com.nianticproject.ingress)
 - [S-mobiili](https://play.google.com/store/apps/details?id=fi.spankki)
 
-### Apps that work on rooted devices
-Tested on OnePlus 9 Pro with the Play Integrity Fix Magisk module.
-- [Danske ID](https://play.google.com/store/apps/details?id=com.danskebank.danskeid)
-- [Danske Mobiilipankki](https://play.google.com/store/apps/details?id=com.danskebank.mobilebank3.fi)
+### Apps that require Google Play Integrity
+These apps require Google Play Integrity to be passed,
+but work on rooted devices with the Play Integrity Fix Magisk module.
 - [Google Wallet](https://play.google.com/store/apps/details?id=com.google.android.apps.walletnfcrel)
-- [Nordnet](https://play.google.com/store/apps/details?id=com.nordnet)
-- [OmaElisa](https://play.google.com/store/apps/details?id=com.saunalahti.oma)
 - [OP-mobiili](https://play.google.com/store/apps/details?id=fi.op.android.opmobiili)
 
+### Apps that work on rooted devices
+These apps don't require additional fixes to work on rooted devices.
+TODO CHECK THESE
+- [Danske ID](https://play.google.com/store/apps/details?id=com.danskebank.danskeid)
+- [Danske Mobiilipankki](https://play.google.com/store/apps/details?id=com.danskebank.mobilebank3.fi)
+- [Nordnet](https://play.google.com/store/apps/details?id=com.nordnet)
+- [OmaElisa](https://play.google.com/store/apps/details?id=com.saunalahti.oma)
+
+
 ## 5G connectivity
-5G can be implemented in two ways that are significantly different from each other.
-Non-standalone 5G (NSA) uses the 4G network for control and signaling,
-whereas standalone 5G (SA) uses only the 5G network.
-NSA was the first implementation to arrive and is still the most common one,
-but it has high latency and high battery use.
-
-Most devices technically support 5G SA, but unfortunately many of them have SA disabled in the software.
-To identify whether your Android phone is connected with SA or NSA, go to Settings -> About phone -> SIM status.
-In the "Mobile data network type" you should see "5G SA" or "5G NSA".
-For further details, enable developer mode and enter *#*#4636#*#* in the dialer.
-
-5G SA device compatibility
-- [Official list by Elisa](https://elisa.fi/5g/itsenainen-5g/#sa_puhelimet)
-- [Instructions for enabling 5G SA on OnePlus 7 - 9](https://mt-tech.fi/en/modify-oneplus-7-pro-5g-8-and-8-pro-nr-lte-a-band-combos/)
-- [Apple devices do not support 5G SA without custom configuration](https://yhteiso.elisa.fi/puheliittymaet-7/milloin-5g-standalone-tulee-iphone-puhelimiin-526522)
+There are various levels of 5G connectivity,
+and some devices are much more capable than others.
+Please see the [networking page](./networking) for details.
 
 
 ## Pros and cons of custom ROMs
@@ -244,7 +238,6 @@ a vulnerability that allows any installed app to gain root access.
 - [FlameGApps](https://flamegapps.github.io/)
   - Good Google Apps for Android 12.
   - For Android 12 I used the basic package with the following extensions:
-  - I'm using the basic package with the following extensions
     - Android Auto
     - Google Search + Assistant
     - Google TTS
@@ -252,6 +245,10 @@ a vulnerability that allows any installed app to gain root access.
 - [Open GApps](https://opengapps.org/)
   - Good Google Apps for Android <= 11. The nano version was my go-to GApps.
 - [NikGApps](https://nikgapps.com/)
+  - My go-to Google Apps for Android >= 13 devices that don't support the Lineage recovery.
+  - Supports add-ons / extensions
+  - Only 64-bit builds
+- [BitGApps](https://bitgapps.io/)
 
 
 ## Custom ROM installation steps
