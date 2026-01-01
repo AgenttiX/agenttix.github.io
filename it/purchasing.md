@@ -155,7 +155,15 @@ consider buying a laptop and a USB-c or Thunderbolt dock instead.
 - New GPUs often have significant feature improvements such as video encoders and decoders and newer connector versions.
   Therefore, buying a lower-end model from a newer series instead of a higher-end model from older series
   may be worth the additional price, even when the raw performance would be similar.
-  - [AV1 decoding is supported from AMD RX 6000 series and Nvidia RTX 3000 series onwards](https://en.wikipedia.org/wiki/AV1#Hardware)
+  - [AV1 hardware decoding and encoding](https://en.wikipedia.org/wiki/AV1#Hardware_encoding_and_decoding_support)
+    - Hardware decoding
+      - Apple M3 &rarr;
+      - AMD RX 6000 series (RDNA2) &rarr;
+      - Nvidia RTX 3000 series &rarr;
+    - Hardware encoding
+      - Apple: not supported (as of 2025)
+      - AMD RX 7000 series (RDNA3) &rarr;
+      - Nvidia RTX 4000 series &rarr;
 - AMD GPU drivers are included in the Linux kernel and therefore work out of the box,
   whereas Nvidia GPU drivers have to be installed separately
   and are compatible with new Linux distribution versions only as long as the GPU is officially supported by Nvidia.
@@ -581,6 +589,7 @@ consider buying a laptop and a USB-c or Thunderbolt dock instead.
     and the
     [Open Camera app](https://play.google.com/store/apps/details?id=net.sourceforge.opencamera).
   - AV1 encoding
+    - Requires Android 14 &rarr; and a SoC with a hardware encoder
     - You can check this from the settings of the camera app.
   - Ensure that the camera features you want can be used together.
     On some phones, e.g. 4K, 60 Hz and HDR video recording can be used separately, but not together,
@@ -612,6 +621,14 @@ consider buying a laptop and a USB-c or Thunderbolt dock instead.
   - Its presence can be verified with the
     [Key Attestation Demo](https://play.google.com/store/apps/details?id=io.github.vvb2060.keyattestation)
     app.
+- Media format support
+  - AV1 hardware decoding
+    - Requires Android 11 &rarr; and a SoC with a hardware decoder
+    - On Apple devices, AV1 hardware decoding requires Apple A17 silicon or later. This includes these devices:
+      - iPhone 15 Pro &rarr;
+      - iPhone 16 &rarr;
+      - iPhone 16e &rarr;
+      - iPad Mini (7th generation) &rarr;
 
 
 ### Devices
