@@ -32,6 +32,14 @@ title: Physical security
     - USB 2.0
 - [Thingino](https://thingino.com/)
   - [Installation instructions](https://github.com/wltechblog/thingino-installers)
+  - Home Assistant compatible as generic cameras
+    - [Home Assistant integration has been requested](https://github.com/themactep/thingino-firmware/issues/701)
+    - Still image URL: http://CAMERA_IP/image.jpg
+    - Stream source URL: rtsp://CAMERA_IP/ch0
+    - RTSP transport protocol: TCP
+    - Authentication: basic
+    - Username & password: set at Thingino &rarr; Settings &rarr; RTSP/ONVIF Access
+    - Frame rate: same as the value at Settings &rarr; Streamer/OSD &rarr; Main stream &rarr; FPS
   - Upgrading
     - Full upgrade = update firmware and bootloader, and erase all data
     - Partial upgrade = upgrade firmware only
