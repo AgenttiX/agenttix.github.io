@@ -5,14 +5,22 @@ title: Linux
 
 # Linux
 
-## Distros
+## Distributions
 
+- [Alpine](https://www.alpinelinux.org/)
+  ([download](https://www.alpinelinux.org/downloads/))
+- [Debian](https://www.debian.org/)
+  ([download](https://www.debian.org/distrib/))
+  - 11.11.0 is the last version with a
+    [32-bit live image](https://cdimage.debian.org/mirror/cdimage/archive/11.11.0-live/i386/)
+- [Tiny Core Linux](http://www.tinycorelinux.net/)
+  ([download](http://www.tinycorelinux.net/downloads.html))
 - [Ubuntu](https://ubuntu.com/)
   ([download](https://releases.ubuntu.com/))
-- [Kubuntu](https://kubuntu.org/)
-  ([download](https://cdimage.ubuntu.com/kubuntu/releases/))
-- [Lubuntu](https://lubuntu.me/)
-  ([download](https://cdimage.ubuntu.com/lubuntu/releases/))
+  - [Kubuntu](https://kubuntu.org/)
+    ([download](https://cdimage.ubuntu.com/kubuntu/releases/))
+  - [Lubuntu](https://lubuntu.me/)
+    ([download](https://cdimage.ubuntu.com/lubuntu/releases/))
 
 
 ### Utilities
