@@ -9,6 +9,7 @@ Unfortunately many manufacturers don't provide a proper way to automatically not
 If you don't have a way to receive update notifications automatically,
 you should check your manufacturer's website regularly.
 
+
 ## UEFI/BIOS settings
 The order and naming of these settings may vary depending on the model of your motherboard.
 
@@ -51,6 +52,8 @@ The order and naming of these settings may vary depending on the model of your m
     This prevents DMA attacks from unauthorized devices.
 - Resizable BAR: enable
   - This is important for GPU performance
+- [Data Link Feature Exchange](https://www.reddit.com/r/ASUSROG/comments/m0xv7j/comment/h1sqyzt/): enable
+  - This enables full use of the PCIe bandwidth.
 - Virtualization
   - Virtualization / VT-x / AMD-V: enable
   - IOMMU / VT-d: enable
@@ -65,11 +68,16 @@ The order and naming of these settings may vary depending on the model of your m
   - These reduce the risk of evil maid attacks.
 - SATA controller mode: AHCI
   - If you need RAID, software RAID is better than motherboard RAID.
+- [Intel SIPP](https://en.wikipedia.org/wiki/Stable_Image_Platform_Program):
+  leave at the default, but if you have installed additional hardware that does not work,
+  or if you notice that your drivers are too old, then you should try disabling this.
+
 
 ## Updating UEFI/BIOS
 In general, you should download the update from the manufacturer's website
 and flash it either with the provided tool or directly from the UEFI/BIOS.
 Flashing directly from the UEFI/BIOS or from a bootable USB is safer than flashing from the OS.
+
 
 ### HP enterprise workstations
 - Download the update .exe from HP.
@@ -87,8 +95,22 @@ Flashing directly from the UEFI/BIOS or from a bootable USB is safer than flashi
 
 [me_cleaner](https://github.com/corna/me_cleaner)
 
+## Intel AMT / ME vulnerabilities
+This list is not comprehensive, but illustrates the point that ME is a significant security risk
+if it's not kept up to date.
+- [CVE-2022-26845](https://nvd.nist.gov/vuln/detail/CVE-2022-26845):
+  [INTEL-SA-00610](https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00610.html)
+  - Unauthenticated privilege escalation
+  - Affected versions: before 11.8.93, 11.22.93, 11.12.93, 12.0.92, 14.1.67, 15.0.42, 16.1.25
+- [CVE-2022-30601](https://nvd.nist.gov/vuln/detail/cve-2022-30601):
+  [INTEL-SA-00709](https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00709.html)
+  - Unauthenticated privilege escalation
+  - Affected versions: all versions before 2022-08-09
+
+
 ## Intel AMT / ME settings
-- Change the Management Engine (ME) password even if you don't plan to use the ME at all.
+- Disable Intel AMT / ME / MEBx in the BIOS if you can.
+- If you cannot disable it, then change the Management Engine (ME) password even if you don't plan to use the ME at all.
   [Not changing the default password is a security risk.](https://threatpost.com/intel-amt-loophole-allows-hackers-to-gain-control-of-some-pcs-in-under-a-minute/129408/)
 - General settings
   - Power control
@@ -98,6 +120,48 @@ Flashing directly from the UEFI/BIOS or from a bootable USB is safer than flashi
     Default Password Only = Allow changing the ME password over the web interface only if the default password has not been changed.
 - Network setup
   - Network Name Settings: Set your hostname and FQDN
+
+
+## UEFI/BIOS alternatives
+- [Coreboot](https://www.coreboot.org/)
+  - Open source UEFI / BIOS replacement
+  - [Supported devices](https://doc.coreboot.org/mainboard/index.html)
+- Coreboot variants
+  - [Canoeboot](https://canoeboot.org/)
+    - [Supported devices](https://canoeboot.org/docs/install/#which-systems-are-supported-by-canoeboot)
+  - [Dasharo](https://www.dasharo.com/)
+    - [Supported hardware](https://docs.dasharo.com/variants/overview/)
+  - [Heads](https://osresearch.net/)
+    - [Supported hardware](https://github.com/linuxboot/heads/tree/master/boards)
+  - [Libreboot](https://libreboot.org/)
+    - [Supported hardware](https://libreboot.org/docs/install/#which-systems-are-supported-by-libreboot)
+  - [MrChromebox](https://docs.mrchromebox.tech/)
+    - [Supported devices](https://docs.mrchromebox.tech/docs/supported-devices.html)
+  - [Skulls](https://github.com/merge/skulls)
+    - [Supported devices](https://github.com/merge/skulls?tab=readme-ov-file#supported-laptops)
+  - [System76 Open Firmware](https://github.com/system76/firmware-open)
+- [Patina](https://opendevicepartnership.github.io/patina/)
+  - Rust-based UEFI implementation
+- [TianoCore](https://www.tianocore.org/)
+  - Open source implementation of UEFI
+  - [EDK-II development environment](https://github.com/tianocore/tianocore.github.io/wiki/EDK-II)
+
+
+### Devices with secure UEFI/BIOS alternatives
+- [NovaCustom](https://novacustom.com/)
+  - Laptops with Dasharo Coreboot (by default Coreboot + EDK-II) and optionally:
+    - UEFI Secure Boot
+    - Coreboot + Heads
+      - Not compatible with UEFI Secure Boot or Intel Boot Guard,
+        since it uses its own solutions that verify platform integrity from an even lower level
+    - Disabled Intel ME
+      - Disabling ME breaks suspend support for Windows and requires post-installation steps on Linux
+    - Intel Boot Guard
+- NUC desktops with Dasharo Coreboot and optionally:
+  - UEFI Secure Boot
+  - Disabled Intel ME
+    - Disabling ME breaks suspend support for Windows and requires post-installation steps on Linux
+  - Intel Boot Guard
 
 
 ## Sleep issues
@@ -156,28 +220,33 @@ as it somewhat prevents an attacker from booting the computer from a USB drive w
 
 Throttled also supports undervolting, which is a great way to get even more performance out of a laptop.
 
+
 ## Custom UEFI/BIOS versions
 A modified UEFI/BIOS can solve various issues and
 remove artificial limitations imposed by the device manufacturer.
 However, be careful what you install,
 UEFI/BIOS and other firmware have very deep access to your system.
 
+
 ### Lenovo battery DRM
 Lenovo laptops have a DRM that prevents third-party batteries from charging.
 - [Reddit thread](https://www.reddit.com/r/Lenovo/comments/dcnpzg/the_battery_installed_is_not_supported_by_this/)
 - [Hackaday article](https://hackaday.com/2016/02/11/unlocking-thinkpad-batteries/)
 
+
 ### Lenovo WLAN/WWAN DRM
 - [G510](https://medium.com/@p0358/removing-wlan-wwan-bios-whitelist-on-a-lenovo-laptop-to-use-a-custom-wi-fi-card-f6033a5a5e5a)
 - [X1 Carbon](https://www.reddit.com/r/thinkpad/comments/8813ub/x1_carbon_whitelist/?utm_source=share&utm_medium=web2x&context=3)
 
+
 ### Lenovo XX30 series
 - [Custom BIOS](https://github.com/n4ru/1vyrain)
 - [Custom EC firmware](https://github.com/hamishcoleman/thinkpad-ec)
+
 
 ### Meltdown and Spectre patch for X58 motherboards
 - [Techpowerup](https://www.techpowerup.com/forums/threads/meltdown-and-spectre-patched-bios-for-x58-motherboards.246101/)
 - [Gigabyte UK](https://forum.giga-byte.co.uk/index.php?topic=22899.0)
 - [Gigabyte US](https://forum.gigabyte.us/thread/4901/spectre-patched-bios-gigabyte-motherboards)
 
-Tested to work on GA-X58A-UD7.
+Tested to work on Gigabyte GA-X58A-UD7.

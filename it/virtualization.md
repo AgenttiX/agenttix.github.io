@@ -32,6 +32,7 @@ and therefore multiple operating systems on a single physical device.
 ## Proxmox
 These instructions are a work in progress.
 
+
 ### Installation
 The
 [official ISO installer](https://pve.proxmox.com/wiki/Installation)
@@ -59,7 +60,7 @@ which disables access to some features.
 
 After a fresh installation you may want to install a few packages
 ``` bash
-apt-get install console-setup git screen sudo
+apt-get install console-setup git sudo tmux
 ```
 
 #### Mortar
@@ -257,6 +258,7 @@ zfs set acltype=posixacl <nameofzpool>/<nameofdataset>
 ### Backups and snapshots
 [zrepl](https://zrepl.github.io/)
 
+
 ### Creating a VM
 System
 - Machine: q35 (Necessary for PCIe passthrough)
@@ -280,7 +282,8 @@ Network:
 - Model: VirtIO (paravirtualized)
 
 When installing the OS, there's little need for LVM, as snapshots can be handled at the Proxmox level.
-Therefore I have chosen to install my Ubuntu VMs without LVM.
+Therefore, I have chosen to install my Ubuntu VMs without LVM.
+
 
 ### Samba
 ZFS has integrated SMB sharing, which uses Samba in the background, but it's rather rudimentary.
@@ -311,6 +314,7 @@ This is possible, but I haven't tried it myself, since I'm using primarily Linux
 
 ### pfSense
 [Official instructions](https://docs.netgate.com/pfsense/en/latest/recipes/virtualize-proxmox-ve.html)
+
 
 ### Docker in LXC
 Running Docker in LXC can be very handy, but it's not officially supported and may result in errors.
@@ -349,8 +353,8 @@ Workaround: [change from overlayfs2 to fuse-overlayfs](https://webdock.io/en/doc
   - [Enable the CUDA repository](https://developer.nvidia.com/cuda-downloads)
   - Install the drivers
     - If you have a [GPU supported by the open kernel module](https://github.com/NVIDIA/open-gpu-kernel-modules#compatible-gpus):
-      `apt-get install nvidia-kernel-open-dkms cuda-drivers nvidia-smi`
-    - If not, leave the `nvidia-kernel-open-dkms` out: `apt-get install cuda-drivers nvidia-smi`
+      `apt-get install nvidia-kernel-open nvidia-smi`
+    - If not: `apt-get install cuda-drivers nvidia-smi`
     - Be careful when installing! Attempting to install `firmware-misc-nonfree` may conflict with Proxmox!
   - Reboot
   - Test that the driver works using `nvidia-smi`. Take note of the driver version,
@@ -399,3 +403,23 @@ Workaround: [change from overlayfs2 to fuse-overlayfs](https://webdock.io/en/doc
   - If nvidia-smi works in the container but transcoding crashes, check the FFmpeg logs in the Jellyfin dashboard.
     You may be missing some libraries in the LXC container,
     such as the `libnvidia-encode` and `libnvidia-decode` mentioned above.
+
+
+### Proxmox upgrades
+- Ensure that you have access to the host either physically or via IPMI in the case anything goes wrong
+- Backup all VMs
+- Backup the host
+- Unhold any held packages: `sudo apt-mark unhold $(apt-mark showhold)`
+- Update the current Proxmox: `sudo apt update && sudo apt dist-upgrade`
+- Reboot
+- Follow the version-specific upgrade instructions
+  - [7 to 8](https://pve.proxmox.com/wiki/Upgrade_from_7_to_8)
+  - [8 to 9](https://pve.proxmox.com/wiki/Upgrade_from_8_to_9)
+- Run `mortar-compilesigninstall` to ensure that the Mortar boot image will be generated successfully
+- Reboot
+- Update other repositories for e.g. CUDA
+
+
+#### Possible issues when upgrading
+- `Could not locate EFISTUBFILE at /usr/lib/systemd/boot/efi/linuxx64.efi.stub`
+  - Fix: [`sudo apt install systemd-boot-efi`](https://askubuntu.com/a/1538527)

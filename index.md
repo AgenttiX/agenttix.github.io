@@ -16,9 +16,26 @@ The opinions expressed here are my own,
 and do not represent those of my employers or any other organization or person.
 
 If you notice something that's wrong or missing,
-please feel free to send me a message or create a pull request
+please feel free to send me a message or create an issue or a pull request
 [on GitHub](https://github.com/AgenttiX/agenttix.github.io).
 
-Script setup links:
-[Linux](https://raw.githubusercontent.com/AgenttiX/linux-scripts/master/install_repo.sh),
-[Windows](https://raw.githubusercontent.com/AgenttiX/windows-scripts/master/Install-Repo.bat)
+
+## Scripts
+### Direct links for scripts
+Right-click and "Save link as..."
+- [Linux scripts setup](https://raw.githubusercontent.com/AgenttiX/linux-scripts/master/install_repo.sh)
+  - [NVMe SSD erase](https://raw.githubusercontent.com/AgenttiX/linux-scripts/refs/heads/master/security/erase_nvme_ssd.sh)
+- [Windows scripts setup](https://raw.githubusercontent.com/AgenttiX/windows-scripts/master/Install-Repo.bat)
+
+### For local development
+Git SSH
+``` bash
+git clone git@github.com:AgenttiX/linux-scripts.git
+git clone git@github.com:AgenttiX/windows-scripts.git
+```
+
+Git HTTPS
+``` bash
+git clone https://github.com/AgenttiX/linux-scripts.git
+git clone https://github.com/AgenttiX/windows-scripts.git
+```

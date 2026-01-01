@@ -6,6 +6,7 @@ title: Hardware
 # Hardware
 
 ## Setting up a new computer
+- Start downloading the installer(s) for the operating system(s) you're going to install, as the download can take a while.
 - Unbox the parts.
   - Take a video of the unboxing so that you have proof if anything is missing.
 - Take pictures of the serial numbers for later warranty registration.
@@ -25,7 +26,18 @@ title: Hardware
     Store it in a safe place, as resetting a forgotten UEFI/BIOS password can be difficult.
   - Do not overclock yet.
 - Run a RAM test such as [Memtest86+](https://www.memtest.org/).
-- Boot the computer from a Linux USB drive and run SMART tests on the SSDs and [badblocks](https://wiki.archlinux.org/title/badblocks) on the HDDs.
+- Boot the computer from a Linux USB drive, e.g. Ubuntu
+  - If the NVMe SSDs have been used before, wipe them using
+    [`nvme sanitize`](https://wiki.archlinux.org/title/Solid_state_drive/Memory_cell_clearing#NVMe_drive).
+  - On modern systems, configure HDDs and NVMe SSDs to use 4K LBA.
+    This is known as [Advanced Format](https://en.wikipedia.org/wiki/Advanced_Format)
+    and is supported on Windows 8 ->, Windows Server 2012 -> and Linux 2.6.31 ->.
+    (As a matter of personal opinion, I'd do this for PCIe 4.0 NVMe SSDs and newer.)
+    [It should provide a performance boost](https://unix.stackexchange.com/questions/761398/are-there-any-benefits-in-setting-a-hdds-logical-sector-size-to-4kn), but
+    [on some older SSDs it can result in a performance drop instead](https://forums.sandisk.com/t/sn550-why-it-uses-512b-sector-instead-of-4096/265472/3).
+    - For HDDs, you can use [`hdparm`](https://wiki.archlinux.org/title/Advanced_Format#Advanced_Format_hard_disk_drives).
+    - For NVMe SSDs, you can use [`nvme format`](https://wiki.archlinux.org/title/Advanced_Format#NVMe_solid_state_drives).
+  - Run SMART tests on the SSDs and [badblocks](https://wiki.archlinux.org/title/badblocks) on the HDDs.
 - [Install Windows](./windows.md) (if needed).
 - [Install Linux](./linux.md) (if needed).
 - Update UEFI/BIOS and firmware (if not already updated).
@@ -43,6 +55,7 @@ title: Hardware
 - Use the computer for a few days or weeks to see that it's stable.
 - Overclock (if you want to).
 
+
 ## Selling a computer
 - Take screenshots and pictures of the specifications and hardware
 - Reset firmware
@@ -58,8 +71,9 @@ title: Hardware
     you can use [DBAN](https://dban.org/) or boot the computer from a Linux USB drive and use `badblocks` to wipe the storage devices.
 
 
-## Personal IT hardware
+## Personal / familiar IT hardware
 [Geekbench results](https://browser.geekbench.com/user/AgenttiX)
+
 
 ### [ASUS Zenith II Extreme](https://rog.asus.com/motherboards/rog-zenith/rog-zenith-ii-extreme-model/)
 #### USB ports
@@ -82,3 +96,58 @@ title: Hardware
 The USB controllers are in the IOMMU groups 18, 31, 35 and 55.
 This table does not yet include the front panel and USB-c ports.
 A good way to find out the values above is to connect a device and run `sudo lshw -html > lshw.html`.
+
+
+### [Lenovo ThinkStation P330 Tiny](https://www.lenovo.com/fi/fi/p/workstations/thinkstationp/thinkstation-p330-tiny/33ts3tp330x)
+- Thunderbolt
+  - [Motherboard hearders](https://www.reddit.com/r/AskElectronics/comments/1i0w0ec/can_you_help_me_identify_these_ports_on_a_lenovo/)
+- Boot keys
+  - F1: BIOS/UEFI settings
+  - F10: Hardware diagnostics
+  - F12: Boot selection
+  - Ctrl+P: Intel ME
+  - Alt+P: Power on by keyboard
+- Installation process
+  - Update the BIOS from a USB drive
+  - (Take a note of the MAC address in the BIOS)
+  - Reset BIOS settings
+    - Load optimized defaults
+    - Reboot
+  - Reset the firmware TPM
+    - Reboot
+  - Reset discrete TPM
+    - Reboot
+  - Reset Intel SGX
+    - Advanced -> SGX -> Change owner EPOCH
+  - Reset Secure Boot
+  - Reset Intel ME
+    - Advanced -> Intel Manageability
+    - Reboot
+  - BIOS/UEFI settings to change from the defaults
+    - Advanced -> CPU Setup -> TxT: Enable
+    - Advanced -> Intel Manageability -> Intel Manageability Control: Disabled
+    - Security
+      - Set Administrator Password
+      - Allow Flashing BIOS to a Previous Version: No
+      - Require Admin. Pass. for F12 Boot: Yes
+      - Chassis Intrusion Detection: Yes
+      - Configuration Change Detection: Yes
+      - Hard Disk Password (if supported by your SSD)
+        - M.2 Drive 1 Password: User
+        - Reboot
+  - Wipe the SSD
+    - Security Erase HDD Data -> Erase M.2 Drive 1 Data
+    - (This requires the HDD password to be set, and this will disable the password.)
+  - Install Windows (or Linux)
+  - (Disable automatic sleep)
+  - Join to the domain
+    - Move the computer to the correct OU
+    - Reboot
+  - Enable BitLocker
+  - Windows Update
+  - Install the scripts
+  - Reboot
+  - Update Intel ME
+  - Update SIO firmware
+  - Install default software
+  - Run the maintenance script

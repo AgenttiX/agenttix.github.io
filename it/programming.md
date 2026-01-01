@@ -85,6 +85,15 @@ VSCodium is an open-source distribution of Microsoft's VS Code.
 This is my go-to editor for other programming languages than Python.
 - [Fixing imports](https://stackoverflow.com/a/62581540)
 
+Please note that many Microsoft's own Visual Studio Code extensions are proprietary and closed-source,
+and their licensing prevents their use on other distributions than Microsoft's official Visual Studio Code binaries,
+which are also proprietary.
+Therefore, the official Remote Development extensions are not available on VSCodium.
+(VSCodium issues
+[196](https://github.com/VSCodium/vscodium/issues/196),
+[240](https://github.com/VSCodium/vscodium/issues/240) and
+[460](https://github.com/VSCodium/vscodium/issues/460))
+
 #### Plugins
 - [aw-watcher-vscode](https://open-vsx.org/extension/ActivityWatch/aw-watcher-vscode)
 - [EditorConfig for VS Code](https://open-vsx.org/extension/EditorConfig/EditorConfig)

@@ -5,6 +5,27 @@ title: Windows
 
 # Windows
 
+## Windows versions
+
+- Windows 10
+  - End of support: 14.10.2025
+  - Security updates can be extended for another year with Extended Security Updates (ESU).
+    For consumer devices,
+    [this is available from Windows Settings](https://www.microsoft.com/en-us/windows/end-of-support),
+    but requires a Microsoft account or a 30 $ fee.
+    You can enable the ESU by running this command in the run window (Windows+R):
+    [`ms-settings:windowsupdate-esu?OCID=WEB_EOS_CY25_ESU&source=WEB`](https://www.reddit.com/r/Windows10/comments/1o989bw/comment/nk0h0ne/)
+- Windows 11
+  - System requirements
+    - [A Microsoft-approved 64-bit CPU](https://learn.microsoft.com/en-us/windows-hardware/design/minimum/windows-processor-requirements)
+      - AMD: ~Ryzen 3000 series or newer
+      - Intel: ~Core 8th gen (8000 series) or newer
+    - TPM 2.0
+    - UEFI with Secure Boot
+  - As of 2025, Windows 10 licenses can be used to install Windows 11.
+    However, this may change in the future.
+
+
 ## Installing Windows
 ### Preparation
 - Update BIOS/UEFI and firmware before the installation as much as you practically can.
@@ -36,14 +57,16 @@ title: Windows
   - Enable virtualization (VT-x, AMD-V etc.) including the additional features (IOMMU, SR-IOV, VT-d etc.),
     as those are required for various security features of Windows.
 
+
 ### Installation
 - Select manual/custom partitioning when asked.
-  Preferably delete all existing partitions and select the unallocated as the installation target.
+  Preferably delete all existing partitions from the target device, and select the unallocated space as the installation target.
   - If you choose to create the Windows partitions manually instead, give at least 1 GB of space for the EFI partition.
     Windows will create a 100 MB partition by default, but it may not be enough to dual boot Linux.
-- When asked to log in with a Microsoft account, disconnect the computer from the Internet
+- When asked to log in with a Microsoft account, disconnect the computer from the Internet and create a local account instead.
   - Wired connection: disconnect cable
   - Wi-Fi: use a physical button (if available) or press Shift+F10 and write `netsh wlan disconnect`
+  - If this is not sufficient, press Shift+F10 and write `OOBE\BYPASSNRO`
 - Create a local account with your first name (first character capitalized)
   - Any spaces or special characters except - and _, but including spaces, ä, ö etc., may cause problems later, especially with old software.
 - When asked about privacy options, select no for each question about sending data to Microsoft
@@ -53,25 +76,48 @@ title: Windows
   - When enabling OneDrive, disable the backup unless you have bought additional storage (e.g. as a part of Office 365).
     Otherwise, you will get constant prompts to buy more OneDrive storage once your home folder exceeds the free plan (5 GB).
 
+
 ### After installation
+#### On-site
+These steps have to be performed on-site
 - If you're not going to install any other virtualization software than Hyper-V, enable
   [memory integrity](https://support.microsoft.com/en-us/windows/core-isolation-e30ed737-17d8-42f3-a2a9-87521df09b78)
   before installing any additional device drivers, as those may prevent you from enabling it later.
+  Drivers may be provided by Windows Update, which is why this step has to be the first.
 - Join the computer to a domain (if needed and not already joined).
   - Move the computer to the correct AD Organizational Unit.
   - Run `gpupdate /force`
   - Reboot
-- Create additional user accounts as needed
-  - You can give individual domain users admin privileges to the local computer at
-    `Control Panel -> User Accounts -> Give other users access to this computer -> Advanced -> Advanced -> Local users and groups -> Groups -> Administrators -> Add...`
-- Install Windows Updates (including optional updates e.g. firmware, but not preview versions)
+- Enable Remote Desktop if needed
+  - Enable Remote Desktop if not already enabled by group policy
+    (`Settings -> System -> Remote Desktop -> Remote Desktop -> On`)
+  - Disable going to sleep when plugged in
+    (`Settings -> System -> Power & battery -> Screen, sleep & hibernate timeouts -> Make my device sleep after -> Never`)
 - Enable BitLocker
-  - Any BIOS updates should be installed before this, as some computers don't allow BIOS updates when BitLocker is enabled.
-- If you're willing to pay for antivirus software, install [F-Secure](https://www.f-secure.com/)
-  - It's from Finland, so it's not subject to NSA surveillance like Norton and McAfee, and not from a rogue state like Kaspersky
+  - On old computers, any BIOS updates should be installed before this,
+    as some old computers don't allow BIOS updates when BitLocker is enabled.
+  - Windows 11 24H2 encrypts the drive during the installation and
+    if you log in with a Microsoft account during the installation, then BitLocker / device encryption by default.
+    However, if you use a local account or join the machine to a domain,
+    you may have to activate BitLocker manually,
+    even though the underlying encryption is already enabled.
+
+
+#### Can be done remotely
+These steps can be performed remotely if you have e.g. Remote Desktop enabled.
+- Create additional user accounts as needed
+  - You can give individual domain users admin privileges to the local computer at Local Users and Groups.
+    You can open it by pressing Windows+R and writing `lusrmgr.msc` or at
+    `Control Panel -> User Accounts -> Give other users access to this computer -> Advanced -> Advanced`.
+    In the Local users and Groups, go to `Local users and groups -> Groups -> Administrators -> Add...`.
+- Install Windows Updates (including optional updates e.g. firmware, but not preview versions)
+- If you're willing to pay for antivirus software, install [F-Secure](https://www.f-secure.com/) or [WithSecure](https://www.withsecure.com/)
+  - They are from Finland, so they are not subject to NSA surveillance like Norton and McAfee,
+    and not from a rogue state like Kaspersky.
 - Install Microsoft Office: [Download](https://aka.ms/office-install) (if you have a license)
   - Always download the 64-bit version unless you have a specific reason to use the 32-bit version
 - Install software with the [installer script](https://github.com/AgenttiX/windows-scripts)
+- Run the maintenance script for the first time to go through all the first-time prompts
 - Disable Bluetooth from the taskbar menu unless you need it at the moment, as Bluetooth is a huge attack surface
 - Set Windows settings
   - System
@@ -106,9 +152,9 @@ Therefore, I have created
 [my own installer script](https://github.com/AgenttiX/windows-scripts)
 that has a GUI and can use both Chocolatey and winget to install software.
 
+
 ### Misc. notes and settings
 These may be useful to do depending on your use case
-- Give local admin access to the domain user or create a separate local admin account for them
 - Configure OneDrive
 - Increase Outlook local retention of emails to speed up the search:
   - Outlook (classic): `Account Settings -> Change... -> Download email for the past: All`

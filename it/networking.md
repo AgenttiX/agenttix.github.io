@@ -12,6 +12,7 @@ which enables easy setup and control of IoT devices such as smart plugs, TVs and
 The downside is that if one device is compromised,
 it can contaminate other devices on the same network.
 
+
 ### Secure option
 To reduce the attack surface,
 yo can separate IoT and guest devices to separate networks using virtual LANs (VLANs).
@@ -39,6 +40,7 @@ Once you no longer have legacy devices, you should disable the Legacy SSID for s
 If your legacy devices have Ethernet ports (e.g. gaming consoles),
 you should connect them to the network with a cable instead of wireless,
 and disable the legacy SSID.
+
 
 ### Cabling
 It's a lot easier to install cables when you're renovating other things at the same time.
@@ -94,8 +96,39 @@ Here is an example of what a possible separation of networks can look like:
   - VPN clients don't usually need access to the entire main network, but only to certain servers on the main network.
 
 
-## Wireless networking (WWAN: 4G, 5G)
+## Wireless LAN networking (Wi-Fi)
+
+### [Wi-Fi calling](https://en.wikipedia.org/wiki/Wi-Fi_calling)
+Wi-Fi calling is also known as Voice over wireless LAN (VoWLAN) or Voice over Wi-Fi (VoWiFi).
+It's based on an [IPsec](https://en.wikipedia.org/wiki/IPsec) tunnel.
+Therefore, to use Wi-Fi calling, the Wi-Fi network must allow IPsec traffic.
+On phones, this connection usually bypasses any user-configured VPN settings.
+
+
+### [Eduroam](https://eduroam.org/)
+If you can, use the certificate authentication provided by the Eduroam app.
+If it does not work, the password authentication is a viable backup option.
+However, the Eduroam app may not configure all the settings properly for password authentication.
+Therefore, if you have any connection issues, please ensure that the settings have been set correctly.
+- Security: WPA2 Enterprise
+- Authentication: PEAP
+- Anonymous identity: anonymous@YOUR_ORGANIZATION.DOMAIN
+- CA certificate: This field must be filled!
+  If this is not filled, then your device will send your password with a bad encryption
+  to any malicious network posing as Eduroam.
+  You can download the CA certificate from your organization's IT support pages.
+- PEAP version: Automatic
+- Inner authentication: MSCHAPv2
+- Username USERNAME@ORGANIZATION.DOMAIN
+  - The "@ORGANIZATION.DOMAIN" part is important.
+    The eduroam app may not add it, which will result in authentication failure,
+    especially when connecting to Eduroam in other locations.
+- Password: YOUR_PASSWORD
+
+
+## Wireless WAN networking (WWAN: 4G, 5G)
 The wireless networking standards are a mess.
+
 
 ### 5G SA vs NSA
 5G can be implemented in two different ways.
@@ -121,6 +154,12 @@ If not, consider the options of competing network operators.
 - [Official list by Elisa](https://elisa.fi/5g/itsenainen-5g/#sa_puhelimet)
 - [Instructions for enabling 5G SA on OnePlus 7 - 9](https://mt-tech.fi/en/modify-oneplus-7-pro-5g-8-and-8-pro-nr-lte-a-band-combos/)
 - [Apple devices do not support 5G SA without custom configuration](https://yhteiso.elisa.fi/puheliittymaet-7/milloin-5g-standalone-tulee-iphone-puhelimiin-526522)
+
+
+### 5G Advanced
+[5G Advanced](https://en.wikipedia.org/wiki/5G#5G-Advanced),
+also known as 5.5G or 5G-A, is an upgrade to the 5G standard.
+[In Finland, the deployment of 5G Advanced started in February 2025.](https://elisa.fi/yhtiotieto/uutishuone/tiedotteet/odotettu-parannus-mobiiliyhteyksiin-%E2%80%93-maailman-ensimm%C3%A4iset-kuluttaja-asiakkaat-k%C3%A4ytt%C3%A4v%C3%A4t-5-5g:t%C3%A4-elisan-verkossa/76140715069966/)
 
 
 ### 4G bands in Finland
@@ -158,16 +197,32 @@ The simultaneous use of several frequency bands is known as
 [carrier aggregation (CA)](https://en.wikipedia.org/wiki/Carrier_aggregation).
 When purchasing a 5G device in Finland, ensure that it supports at least the n28+n78 carrier aggregation.
 
+
 ### Android
 To identify whether your Android phone is connected with SA or NSA, go to Settings -> About phone -> SIM status.
 In the "Mobile data network type" you should see "5G SA" or "5G NSA".
 For further details, enable developer mode and enter `*#*#4636#*#*` in the dialer.
 
 
-### 5G modem: Quectel RM520N-GL
+### 4G/5G modems
+
+#### Control modes
+- QMI: Qualcomm MSM Interface
+  - Proprietary protocol by Qualcomm
+- MBIM: Mobile Broadband Interface Model
+  - A standardized protocol
+- MHI: Modem Host Interface
+  - Developed by Qualcomm
+  - [Linux kernel documentation](https://docs.kernel.org/mhi/mhi.html)
+
+
+#### Quectel RM520N-GL
 My recommendation for a 5G modem is the
 [Quectel RM520N-GL](https://www.quectel.com/product/5g-rm520n-series/)
 ([hinta.fi](https://hinta.fi/haku?q=RM520N-GL), [Amazon](https://www.amazon.de/dp/B0DP69BYJW)).
+Please note, that the default package on Amazon may contain only three antennas.
+Contact the seller beforehand and ensure that they will ship four antennas as required by the device!
+
 According to
 [the documentation](https://github.com/4IceG/RM520N-GL/blob/main/Documents/Quectel_RM520N-GL_CA%26EN-DC_Features_V1.0.xls),
 it supports the following 5G carrier aggregation profiles that are relevant in Finland:
@@ -197,5 +252,28 @@ Frequency bands I have verified to work in the Elisa 5G network:
 - n28+n78
 - B1+B3+n78
 
+Supported data transfer protocols:
+- QMI
+  - Enabled by default
+  - On OpenWRT with BPI-R4, the default is QMI over USB
+- [MBIM over both USB and PCIe](https://forums.quectel.com/t/at-qcfg-pcie-mbim-on-rm520n-gl/35359)
+
 The modem can be controlled with the AT commands available
 [here](https://github.com/4IceG/RM520N-GL/blob/main/Documents/Quectel_RG520N%26RG525F%26RG5x0F%26RM5x0N%26RM521F_Series_AT_Commands_Manual_V1.0.pdf).
+
+
+## Installing a router
+Things to configure
+- Change the admin password
+- Configure SSH access
+- If you have multiple networks
+  - Configure VLANs
+  - Configure firewall rules between VLANs
+- Configure the firewall
+  - Block all incoming connections from WAN by default
+  - Allow incoming connections only to the services that you need
+- Configure Wi-Fi
+- Configure SNMP
+- Configure VPNs
+  - Site-to-site VPNs
+  - Remote access VPNs

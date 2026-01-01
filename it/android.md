@@ -4,7 +4,75 @@ title: Android
 ---
 
 # Android
-Android is a significantly more versatile OS than its competitors.
+
+## Installation of third-party apps
+Warning!
+[Google will block the installation of unverified applications](https://arstechnica.com/gadgets/2025/08/google-will-block-sideloading-of-unverified-android-apps-starting-next-year/)
+starting in March 2026 on all devices with Google Play services.
+If your device has the Google Play Store, you won't be able to install apps from outside the Play Store,
+unless the app developer has submitted their government ID to Google and got Google to sign their app.
+**This is the end of Google's Android as an open platform.**
+To avoid this, switch to
+[GrapheneOS](https://grapheneos.org/),
+since it enables the installation of Google Play services in a sandbox,
+or switch to a custom ROM that does not have Google Play services at all.
+
+
+## EU digital wallet and age verification app
+EU is developing its
+[digital wallet](https://github.com/eu-digital-identity-wallet) and
+[age verification (AV) app](https://github.com/eu-digital-identity-wallet/av-app-android-wallet-ui)
+for Android and iOS.
+Unfortunately, as of 2025 according to the current plans, they will require Google Play Integrity verification.
+This means that in order to use the apps, the user must have Google Play services installed on their phone,
+and they will therefore have to accept
+[Google Play terms of service](https://play.google.com/about/play-terms/)
+and
+[Google terms of service](https://policies.google.com/terms).
+In order to access the basic functions of a citizen,
+one must not be required to accept the terms of a private company,
+especially of one from outside the EU.
+
+To avoid this, please comment and vote on these GitHub issues:
+[#15](https://github.com/eu-digital-identity-wallet/av-app-android-wallet-ui/issues/15),
+[#19](https://github.com/eu-digital-identity-wallet/av-app-android-wallet-ui/issues/19),
+[#22](https://github.com/eu-digital-identity-wallet/av-app-android-wallet-ui/issues/22),
+[#29](https://github.com/eu-digital-identity-wallet/av-app-android-wallet-ui/issues/29),
+[#38](https://github.com/eu-digital-identity-wallet/av-app-android-wallet-ui/issues/38).
+
+And these discussions:
+[#19](https://github.com/eu-digital-identity-wallet/av-doc-technical-specification/discussions/19)
+
+Other already closed issues:
+[#287](https://github.com/eu-digital-identity-wallet/eudi-app-android-wallet-ui/issues/287),
+[#390](https://github.com/eu-digital-identity-wallet/eudi-app-android-wallet-ui/issues/390)
+[#576](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/576)
+
+
+## Version history
+- Android 10
+  - Support for [AV1](https://en.wikipedia.org/wiki/AV1) video decoding
+  - [Project Mainline](https://source.android.com/docs/core/ota/modular-system),
+    which enables system components to be updated through Google Play
+    instead of waiting for the device manufacturer to release a device-specific update.
+- Android 12
+  - Support for the [AVIF](https://en.wikipedia.org/wiki/AVIF) image format
+  - [WireGuard VPN support is enabled by default in the Generic Kernel Image (GKI).](https://www.xda-developers.com/google-adds-wireguard-vpn-android-12-linux-kernel-5-4/)
+    However, you need root access to use the kernel module.
+    Also, the availability of the kernel module may depend on the device,
+    as some manufacturers may use kernels that have WireGuard disabled.
+- Android 13
+  - Support for Bluetooth LE audio and the LC3 audio codec
+  - [Updatable Bluetooth module](https://source.android.com/docs/core/ota/modular-system/bluetooth)
+- Android 14
+  - Support for [AV1](https://en.wikipedia.org/wiki/AV1) video encoding
+- Android 16
+  - Support for [APV](https://en.wikipedia.org/wiki/Advanced_Professional_Video) encoding and decoding
+  - Desktop mode
+  - [Linux terminal](#linux-terminal)
+  - Connection to multiple speakers and headphones simultaneously with Bluetooth LE Audio Auracast
+- [Official list of supported media formats](https://developer.android.com/guide/topics/media/media-formats)
+
 
 ## Apps
 These are some of the apps that I have found useful.
@@ -22,9 +90,6 @@ These are some of the apps that I have found useful.
 - [Call Recorder](https://f-droid.org/en/packages/com.github.axet.callrecorder/) (GPLv3, [GitLab](https://gitlab.com/axet/android-call-recorder))
 - [CellMapper](https://play.google.com/store/apps/details?id=cellmapper.net.cellmapper)
 - [CREDO Detector](https://play.google.com/store/apps/details?id=science.credo.mobiledetector)
-- [Digital Wellbeing](https://play.google.com/store/apps/details?id=com.google.android.apps.wellbeing)
-  - Preinstalled on some devices, and included in some Google Apps packages.
-    Possibilities of installing it afterwards are very limited.
 - [DriveDroid](https://www.drivedroid.io/)
 - [DRM Info](https://play.google.com/store/apps/details?id=com.androidfung.drminfo)
 - [F-Droid](https://f-droid.org/)
@@ -32,7 +97,12 @@ These are some of the apps that I have found useful.
 - [Firefox](https://play.google.com/store/apps/details?id=org.mozilla.firefox)
 - [FlorisBoard](https://play.google.com/store/apps/details?id=dev.patrickgold.florisboard) (Apache 2.0, [GitHub](https://github.com/florisboard/florisboard))
 - [Fossify Keyboard](https://play.google.com/store/apps/details?id=org.fossify.keyboard) (GPLv3, [GitHub](https://github.com/FossifyOrg/Keyboard))
+- [Google Digital Wellbeing](https://play.google.com/store/apps/details?id=com.google.android.apps.wellbeing)
+  - Preinstalled on some devices, and included in some Google Apps packages.
+    Possibilities of installing it afterwards are very limited.
 - [Google Fit](https://play.google.com/store/apps/details?id=com.google.android.apps.fitness)
+- [Google Health Connect](https://play.google.com/store/apps/details?id=com.google.android.apps.healthdata)
+- [Google Maps](https://play.google.com/store/apps/details?id=com.google.android.apps.maps)
 - [Google SMB client](https://github.com/google/samba-documents-provider)
 - [GSam Battery Monitor](https://play.google.com/store/apps/details?id=com.gsamlabs.bbm)
   ([pro](https://play.google.com/store/apps/details?id=com.gsamlabs.bbm.pro))
@@ -46,9 +116,10 @@ These are some of the apps that I have found useful.
   (GPLv2, [GitHub](https://github.com/KDE/kdeconnect-android))
 - [Keepass2Android](https://play.google.com/store/apps/details?id=keepass2android.keepass2android)
   (GPLv3, [GitHub](https://github.com/PhilippC/keepass2android))
-- [Key Attestation Demo](https://play.google.com/store/apps/details?id=io.github.vvb2060.keyattestation)
 - [Manual Camera Compatibility](https://play.google.com/store/apps/details?id=pl.vipek.camera2_compatibility_test)
-- [Notify for Mi Band](https://play.google.com/store/apps/details?id=com.mc.miband1)
+- [Minimalist Launcher](https://play.google.com/store/apps/details?id=com.qqlabs.minimalistlauncher)
+- [Notify for Mi Band 1-7](https://play.google.com/store/apps/details?id=com.mc.miband1)
+- [Notify for Xiaomi/Mi Band 8-10](https://play.google.com/store/apps/details?id=com.mc.xiaomi1)
 - [Obsidian](https://play.google.com/store/apps/details?id=md.obsidian)
 - [Olauncher](https://play.google.com/store/apps/details?id=app.olauncher)
   (GPLv3, [F-Droid](https://f-droid.org/en/packages/app.olauncher/),
@@ -138,12 +209,49 @@ and some devices are much more capable than others.
 Please see the [networking page](./networking) for details.
 
 
+## Linux terminal
+Android 16 introduces Linux Terminal,
+which in fact is a full Linux virtual machine running on top of the
+[Android Virtualization Framework (AVF)](https://source.android.com/docs/core/virtualization)
+using
+[KVM](https://en.wikipedia.org/wiki/Kernel-based_Virtual_Machine) or
+[Gunyah](https://github.com/quic/gunyah-hypervisor).
+It also supports GUI applications with Wayland.
+
+For Linux Terminal, the chipset has to support unprotected VMs,
+which means VMs whose memory can be accessed by the host OS.
+
+
+### Support by chipset
+- [Google Tensor](https://en.wikipedia.org/wiki/Google_Tensor):
+  [supported by all models](https://www.androidauthority.com/galaxy-tab-s11-linux-terminal-3602231/)
+- Qualcomm Snapdragon: varies, but many don't support
+  - Snapdragon 8 Elite: not supported (supports only protected VMs)
+- Samsung Exynos
+  - Exynos 2500: supported
+
+
+### Support by device
+- Google Pixel: all Tensor-powered models (Pixel 6 &rarr;)
+- Samsung Galaxy S25:
+  [not supported](https://www.reddit.com/r/androidterminal/comments/1nk24pq/non_protected_vms_are_not_supported_on_this/)
+  due to the Qualcomm CPU
+- Samsung Galaxy Tab S11:
+  [supported](https://www.androidauthority.com/galaxy-tab-s11-linux-terminal-3602231/)
+  ([Reddit](https://www.reddit.com/r/androidterminal/comments/1ntspvq/the_galaxy_tab_s11s_best_new_feature_turns_it/))
+- Samsung Galazy Z Flip 7 (with Exynos):
+  [supported](https://www.androidauthority.com/galaxy-z-flip-7-linux-terminal-3578675/)
+- Samsung Galaxy Z Fold 7 (with Snapdragon):
+  [not supported](https://www.androidauthority.com/galaxy-z-flip-7-linux-terminal-3578675/)
+
+
 ## Pros and cons of custom ROMs
 ### Pros
 - Better privacy: no telemetry to the manufacturer
 - Better security
   - Faster updates and newer Android version
 - Newer Android version with new and better features
+
 
 ### Cons
 - The camera may not work at its full resolution for either photos or videos
@@ -165,6 +273,7 @@ a vulnerability that allows any installed app to gain root access.
 [Reddit](https://www.reddit.com/r/Android/comments/lfye5r/comment/gmoi05a/),
 [GitHub](https://github.com/vvb2060/Magica))
 
+
 ### OnePlus 6 (enchilada)
 - [LineageOS](https://download.lineageos.org/enchilada)
 - [TWRP](https://twrp.me/oneplus/oneplus6.html)
@@ -172,6 +281,7 @@ a vulnerability that allows any installed app to gain root access.
 - Kernel
   - [CleanSlate](https://forum.xda-developers.com/t/kernel-cleanslate-q-v3-7-9-flashlight-led-kcal-fingerprnt-battery-25jul.3797668/) (OxygenOS-based ROMs only?)
   - [ElementalX](https://forum.xda-developers.com/t/kernel-april-4-elementalx-op6-6-02.3799054/) (OxygenOS-based ROMs only?)
+
 
 ### OnePlus 9 Pro (lemonadep)
 - [LineageOS](https://wiki.lineageos.org/devices/lemonadep/)
@@ -192,6 +302,7 @@ a vulnerability that allows any installed app to gain root access.
     - [OnePlus9Pro What's working or isn't?](https://www.reddit.com/r/LineageOS/comments/s7gz6l/oneplus9pro_whats_working_or_isnt/)
     - [OnePlus 9Pro LineageOS camera](https://www.reddit.com/r/LineageOS/comments/pkouh4/oneplus_9pro_lineageos_camera/)
 
+
 ### Samsung Galaxy Note 3 LTE (SM-N9005, hlte)
 - [LineageOS](https://wiki.lineageos.org/devices/hlte/)
   - Official download is no longer available
@@ -201,6 +312,7 @@ a vulnerability that allows any installed app to gain root access.
   ([download](https://www.pling.com/p/1410846/))
 - [Stock ROM](https://sfirmware.com/samsung-sm-n9005/)
 
+
 ### Samsung Galaxy Note 2 LTE (GT-N7105, t0lte)
 - [LineageOS](https://wiki.lineageos.org/devices/t0lte/)
   - [Unofficial LineageOS 14](https://forum.xda-developers.com/t/rom-eol-7-1-2-official-lineageos-for-t0lte.3538310/) (Android 7,
@@ -208,6 +320,7 @@ a vulnerability that allows any installed app to gain root access.
   - [Unofficial LineageOS 20](https://xdaforums.com/t/rom-unofficial-13-n7105-t0lte-samsung-galaxy-note-2-lte-lineageos-20-0-alpha.4516507/)
 - [TWRP](https://twrp.me/samsung/samsunggalaxynote2n7105.html)
 - [Stock ROM](https://sfirmware.com/samsung-gt-n7105/)
+
 
 ### Samsung Galaxy Note 8 (SM-N950F, greatlte)
 - [Unofficial LineageOS 19](https://forum.xda-developers.com/t/lineageos-19-1-android-12l-signature-spoofing-ota-updates-for-s8-s8-note8.4370375/) (Android 12)
@@ -225,12 +338,15 @@ a vulnerability that allows any installed app to gain root access.
   [SamMobile](https://www.sammobile.com/samsung/galaxy-note-8/firmware/)
   [Samsung Fan Club](https://sfirmware.com/samsung-sm-n950f/)
 
+
 ### Samsung Galaxy Tab 3 10.1 (GT-P5220)
 - [LineageOS](https://forum.xda-developers.com/t/rom-gt-p52xx-unofficial-7-1-2-lineageos-14-1.3587761/)
 - [TWRP](https://forum.xda-developers.com/t/recovery-gt-p52xx-unofficial-twrp-3-x-for-samsung-galaxy-tab-3-10-1.3340938/)
 
 
 ## Google Apps
+- Please note that having Google Apps installed
+  [gives a lot of control over the device and its data to Google](https://www.howtogeek.com/how-google-tracks-and-scans-everything-on-your-android-device/).
 - [MindTheGapps](https://wiki.lineageos.org/gapps) ([Repository](https://gitlab.com/MindTheGapps))
   - Recommended for LineageOS
   - Can be installed with the Lineage recovery,
@@ -335,6 +451,20 @@ unless you have a device with the A/B partition scheme or without a separate rec
 
 
 ## Root installation steps
+- Do NOT use any of these rooting utilities.
+  They cannot be trusted and may contain spyware.
+  [Note 1](https://www.reddit.com/r/androidroot/comments/1nmzay0/comment/nfgu396/),
+  [Note 2](https://www.reddit.com/r/androidroot/comments/1nmzay0/comment/nfjoxvw/).
+  - CF-Auto-Root
+  - iRoot
+  - KingRoot
+  - KingoRoot
+  - OneClickRoot
+  - SuperSU
+    - [SuperSU was bought in 2015 by an American shell company that's owned by a Chinese company.](https://www.reddit.com/r/Android/comments/6fl5wj/what_is_the_endgame_of_chinese_company_ccmt_which/)
+      Since SuperSU is closed source, it's unknown whether it contains spyware or backdoors.
+  - TowelRoot
+  - vRoot
 - Install Magisk when installing the ROM as above
 - Install [Magisk Manager](https://github.com/topjohnwu/Magisk)
 - Go to Magisk Manager settings and set these:
@@ -343,13 +473,32 @@ unless you have a device with the A/B partition scheme or without a separate rec
   - Enable Zygisk DenyList
   - [Show system and OS apps in Zygisk DenyList](https://i.imgur.com/jsu2Xsm.jpg)
 - Add these apps to the DenyList
-  - Google Pay
   - Google Play services
   - Google Play Store
+  - (Google Services Framework)
+  - Google Wallet
+  - All apps related to banking and payments
+  - All streaming apps
   - All other apps that refuse to work on rooted phones
-- Install [Play Integrity Fix](https://github.com/chiteroman/PlayIntegrityFix)
-- Install [Zygisk Assistant](https://github.com/snake-4/Zygisk-Assistant)
-- Test results for OnePlus 9 Pro on 2025-01-27
+- Install [Shamiko](https://github.com/LSPosed/LSPosed.github.io/releases)
+- Install [TrickyStore](https://github.com/5ec1cff/TrickyStore)
+- Install [PIFS](https://tryigit.dev/pif/) ([GitHub](https://github.com/tryigit/PlayIntegrityFix))
+- If using an old firmware or old device, these additional tools may help
+  - [LSposed_mod](https://github.com/mywalkb/LSPosed_mod)
+  - [Zygisk Next](https://github.com/Dr-TSNG/ZygiskNext)
+  - [Play Integrity Fix](https://github.com/chiteroman/PlayIntegrityFix)
+  - [Zygisk Assistant](https://github.com/snake-4/Zygisk-Assistant)
+  - [MagiskHide Props Config](https://github.com/Magisk-Modules-Repo/MagiskHidePropsConf)
+  - [Google Pay SQlite Fix Module](https://forum.xda-developers.com/t/working-magisk-with-google-pay-as-of-gms-17-1-22-on-pie.3929950/page-9#post-79643248)
+  - [Universal SafetyNet Fix](https://github.com/kdrag0n/safetynet-fix)
+- Reboot
+- Delete app data and cache for the aforementioned Google apps
+- Install and run one of the Play Integrity or SafetyNet testers mentioned above
+  - Your device should now pass the check
+- Test that key attestation works with the
+  [Key Attestation Demo](https://play.google.com/store/apps/details?id=io.github.vvb2060.keyattestation)
+- Delete app data and cache for the apps that still refuse to work
+- Test results for OnePlus 9 Pro on 2025-01-27 using Play Integrity Fix Magisk module
   - [YASNAC](https://play.google.com/store/apps/details?id=rikka.safetynetchecker)
     - Basic Integrity: OK
     - CTS profile match: OK
@@ -364,26 +513,54 @@ unless you have a device with the A/B partition scheme or without a separate rec
       - Account Verification: Success
       - Device Integrity: Success
       - App Integrity: Success
-- If using an old firmware or old device, these additional tools may help
-  - [MagiskHide Props Config](https://github.com/Magisk-Modules-Repo/MagiskHidePropsConf)
-  - [Google Pay SQlite Fix Module](https://forum.xda-developers.com/t/working-magisk-with-google-pay-as-of-gms-17-1-22-on-pie.3929950/page-9#post-79643248)
-  - [Universal SafetyNet Fix](https://github.com/kdrag0n/safetynet-fix)
-- Reboot
-- Delete app data and cache for the aforementioned Google apps
-- Install and run one of the Play Integrity or SafetyNet testers mentioned above
-  - Your device should now pass the check
-- Delete app data and cache for the apps that still refuse to work
 
 
 ## Setting up the device
-The initial setup menu can be very buggy, and easily gets stuck in an eternal loop.
+- Fully charge both your old and new device.
+- Transfer all unnecessary files from the old device to a computer or cloud storage.
+- Create a full backup of the old device. Please see the [backup instructions](#backups) below.
+- If your old and new devices are both rooted, skip the initial setup menu on the new device,
+  and use Swift Backup to transfer your apps.
+- Otherwise, use the initial setup menu to transfer your apps to the new device.
+  Please note, that for most apps only the app itself is transferred, and not the app data.
+  - Some apps have to be transferred manually using their own tools.
+    Please see the app-specific instructions below.
+    - [Signal](https://support.signal.org/hc/en-us/articles/360007059752-Backup-and-Restore-Messages)
+    - [WhatsApp](https://faq.whatsapp.com/1197347060992858/)
+- These cannot be transferred if the old and new devices are not both rooted:
+  - [Telegram secret chats](https://www.reddit.com/r/Telegram/comments/ka6g62/lose_secret_chats_when_moving_to_a_new_phone/)
+- Go through the settings menus and ensure that all settings are as you want them to be.
+- Configure Android settings
+  - Bluetooth &rarr; Device name
+  - Display and touch &rarr; Other display controls &rarr; Screen resolution: Max resolution
+  - Back up or copy data &rarr; Back up data &rarr; Other device data &rarr: enable
+  - (About phone &rarr; Device identifiers &rarr; Build number: tap until developer mode is enabled)
+  - System
+    - Software updates: check for all updates
+    - (Developer options)
+      - Debubbing &rarr; Linux development environment: enable
+      - Window management &rarr; Enable desktop experience features: enable
+  - Security and privacy: review these settings carefully
+  - Safety and emergency: Fill in your emergency info
+- Configure apps
+  - Google Chrome
+    - Account &rarr; Encryption &rarr; Use your own passphrase to encrypt all the Chrome data in your Google Account
+  - Google Find Hub
+    - Remote Lock
+    - Tracking in all areas
+  - Google Meet
+    - General &rarr; [Use additional encryption](https://support.google.com/meet/answer/12387251): enable
+
+
+### Additional instructions for custom ROMs
+The initial setup menu can be very buggy on custom ROMs, and easily gets stuck in an eternal loop.
 Therefore, when initially setting up the device, skip all optional setup menus and do the configuration later.
 If you decide not to follow my advice and end up with a stuck initial setup menu,
 just factory reset the device without having to reinstall the firmware,
 and try again.
 
 Skip especially these:
-- Copying data from an old phone
+- Copying data from an old phone (if your old phone is also rooted)
   - If your old phone is not rooted and this is therefore the only way to migrate your data,
     you should first do the setup once so that you know it works.
     Then, when you are at the Android home screen,
@@ -395,6 +572,17 @@ Skip especially these:
 
 
 ## Backups
+### How to make a full backup
+- Remove unnecessary apps and files
+  - Also e.g. downloaded playlists if yo(this menu only appears after the instructions below)u don't need them anymore
+- Enable Google cloud backup from Android settings
+- If your phone is rooted
+  - Install and run Titanium Backup
+  - Install and run Swift Backup
+  - Create a full backup image from recovery mode, e.g. TWRP
+    - You can do this directly to a USB drive (or a microSD card if your phone has a slot for it)
+
+
 ### Apps that should be restored using backup software
 - Syncthing (if using the same device)
   - Either backup restore the contents of the synced folders manually to enable the app to find them,
@@ -413,7 +601,7 @@ The most of these apps support only manual backups.
 
 - Authy
 - K-9 mail
-- Notify for Mi Band
+- Notify for Xiaomi / Mi Band
 - OpenCamera
 - QKSMS
 - Signal
