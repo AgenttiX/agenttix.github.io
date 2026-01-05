@@ -103,6 +103,13 @@ These are some of the apps that I have found useful.
 - [Google Fit](https://play.google.com/store/apps/details?id=com.google.android.apps.fitness)
 - [Google Health Connect](https://play.google.com/store/apps/details?id=com.google.android.apps.healthdata)
 - [Google Maps](https://play.google.com/store/apps/details?id=com.google.android.apps.maps)
+- [Google Password Manager](https://play.google.com/store/apps/details?id=com.google.android.apps.credentialmanager)
+  - Before installing this, set up a Chrome sync passphrase
+    so that the cloud backup of your passwords and passkeys will be encrypted with it.
+    Otherwise, the cloud backup will be encrypted only with your Google account credentials.
+    If you have set up the encryption properly,
+    you should **not** be able to view your passwords at
+    [https://passwords.google.com/](https://passwords.google.com/).
 - [Google SMB client](https://github.com/google/samba-documents-provider)
 - [GSam Battery Monitor](https://play.google.com/store/apps/details?id=com.gsamlabs.bbm)
   ([pro](https://play.google.com/store/apps/details?id=com.gsamlabs.bbm.pro))
