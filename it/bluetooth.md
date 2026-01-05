@@ -16,13 +16,14 @@ to ensure proper security and functionality such as audio quality.
 - Bluetooth 4.0 (2010)
   - [Bluetooth Low Energy](https://en.wikipedia.org/wiki/Bluetooth_Low_Energy) (Bluetooth LE, aka. BLE),
     which is an independent protocol from classic Bluetooth.
+    This is required for most modern low-power devices such as home automation sensors.
 - Bluetooth 4.2 (2014)
   - LE Secure connections (LESC), which improves the security significantly
     and fixes the broken BLE key exchange protocol in Bluetooth 4.0 and 4.1.
 - Bluetooth 5.0 (2016)
   - Higher transmission speed (2 Mbps), longer range and lower battery consumption for BLE
 - Bluetooth 5.1 (2019)
-  - [Angle of arrival](https://en.wikipedia.org/wiki/Angle_of_arrival) (AoA) and Angel of Departure (AoD),
+  - [Angle of Arrival](https://en.wikipedia.org/wiki/Angle_of_arrival) (AoA) and Angle of Departure (AoD),
     which provide knowledge on the direction of nearby devices.
 - Bluetooth 5.2 (2019)
   - LE Audio, including the [LC3 codec](#audio)
@@ -94,18 +95,35 @@ to ensure proper security and functionality such as audio quality.
 
 
 ## Adapters
-The documentation of the
-[Home Assistant Bluetooth integration](https://www.home-assistant.io/integrations/bluetooth)
-has a list of known good adapters.
-However, many of those are for old Bluetooth versions,
-and therefore I recommend finding one with at least Bluetooth 5.0, preferably 6.0 or later.
-
-I'm currently using
-[this Bluetooth 6.0 adapter](https://www.aliexpress.com/item/1005009587868790.html)
-for my home automation.
-(The "official" Windows drivers are available from
-[this link](https://bit.ly/3GHevXY), which points to
-[this Dropbox folder](https://www.dropbox.com/scl/fi/mqqmyghnsfvqx5n3qz674/V6.0.rar?rlkey=n8ygq5zl2kcmzj7xosnvlw69t))
+- The documentation of the
+  [Home Assistant Bluetooth integration](https://www.home-assistant.io/integrations/bluetooth)
+  has a list of known good adapters.
+  However, many of those are for old Bluetooth versions,
+  and therefore I recommend finding one with at least Bluetooth 5.0, preferably 6.0 or later.
+- My old home automation adapter: Zexmte
+  - [Amazon](https://www.amazon.de/-/en/Bluetooth-anti-interference-transmission-headphones-compatible/dp/B08SC9M9K3/)
+  - [AliExpress](https://www.aliexpress.com/item/1005002931530115.html)
+  - Bluetooth 5.0
+  - Class 1 radio (100 m range)
+  - Realtek RTL8761B
+    - Requires Linux kernel >= 5.8, which can be installed on Ubuntu 20.04 with
+      `sudo apt-get install linux-generic-hwe-20.04`
+    - [Requires additional firmware for Linux](https://linuxreviews.org/Realtek_RTL8761B)
+      - On Ubuntu the firmware and config should be copied to `/lib/firmware/rtl_bt` with the file extension `.bin`.
+- My upcoming home automation adapter: Barrot
+  - [AliExpress](https://www.aliexpress.com/item/1005009587868790.html)
+  - Bluetooth 6.0
+  - lsusb identifier: `33fa:0012  BARROT Bluetooth 6.0 Adapter` <!-- The identifier indeed includes two -->
+  - "Official" Windows drivers: [bit.ly](https://bit.ly/3GHevXY), which points to
+    [this Dropbox folder](https://www.dropbox.com/scl/fi/mqqmyghnsfvqx5n3qz674/V6.0.rar?rlkey=n8ygq5zl2kcmzj7xosnvlw69t)
+  - Some Barrot USB Bluetooth adapters, including this one,
+    have a bug in their Host Controller Interface (HCI) implementation,
+    which prevents them from being initialized without accounting for their quirks.
+    A fix is implemented in Linux kernel 6.12.58 and 6.17.8 and later.
+    [Reddit](https://www.reddit.com/r/openSUSE/comments/1oeao39/comment/nq8cqqa/),
+    [Linux 6.17.8 changelog](https://cdn.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.17.8),
+    [GitHub issue](https://github.com/bluez/bluez/issues/1326)
+    - As of 2026-01-05, the Ubuntu 24.04 HWE kernel 6.14.0-37 is not recent enough.
 
 
 ## Trackers
