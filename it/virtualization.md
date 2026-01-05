@@ -7,6 +7,7 @@ title: Virtualization
 With virtualization, you can run multiple virtual computers
 and therefore multiple operating systems on a single physical device.
 
+
 ## Comparison of different software
 - KVM/QEMU/virt-manager/libvirt/Proxmox
   - Good PCIe passthrough support, even for consumer GPUs
@@ -62,6 +63,7 @@ After a fresh installation you may want to install a few packages
 ``` bash
 apt-get install console-setup git sudo tmux
 ```
+
 
 #### Mortar
 [Mortar](https://github.com/noahbliss/mortar)
@@ -255,8 +257,10 @@ If you need ACLs, you can enable them after creating the pool or dataset with:
 zfs set acltype=posixacl <nameofzpool>/<nameofdataset>
 ```
 
+
 ### Backups and snapshots
-[zrepl](https://zrepl.github.io/)
+- Proxmox has a rather good integrated backup solution
+- [zrepl](https://zrepl.github.io/)
 
 
 ### Creating a VM
@@ -318,7 +322,7 @@ This is possible, but I haven't tried it myself, since I'm using primarily Linux
 
 ### Docker in LXC
 Running Docker in LXC can be very handy, but it's not officially supported and may result in errors.
-- If you have any issues, ensure that the LXC features `keyctl=1,nesting=1` enabled.
+- If you have any issues, ensure that the LXC features `keyctl=1,nesting=1` are enabled.
 
 Using OpenZFS < 2.2 results in errors of the form `overlayfs: upper fs does not support RENAME_WHITEOUT`.
 [This will be fixed in OpenZFS 2.2](https://github.com/openzfs/zfs/issues/8648#issuecomment-1452448356)
@@ -347,24 +351,41 @@ Workaround: [change from overlayfs2 to fuse-overlayfs](https://webdock.io/en/doc
 
 
 ### Nvidia GPU Passthrough for Docker in LXC
+- This is highly useful for e.g. Jellyfin and Plex media transcoding.
+- Before starting, ensure that Nvidia has drivers for your GPU and kernel version.
+  - [Nvidia driver 580 is the last to support GTX 1000 and Quadro Pxxx series (Pascal microarchitecture) and older GPUs.](https://www.techradar.com/pro/nvidia-drops-linux-590-driver-support-for-gtx-900-and-10-series-signaling-the-end-of-game-ready-updates-for-older-gpus)
+    - [CUDA 13.0.2](https://developer.nvidia.com/cuda-13-0-2-download-archive) is the last version with this driver.
+  - Nvidia driver 590 supports RTX 2000 and newer GPUs.
 - On the host
-  - Remove previous versions of the Nvidia driver: `apt purge "^cuda.*$" "^libnvidia.*$" "^nvidia.*$"`
+  - Remove previous versions of the Nvidia driver:
+    `apt purge "^cuda.*$" "^libnvidia.*$" "^nvidia.*$" && apt autoremove`
   - [Enable the contrib and non-free repositories](https://wiki.debian.org/NvidiaGraphicsDrivers)
   - [Enable the CUDA repository](https://developer.nvidia.com/cuda-downloads)
+  - Run `apt update`
   - Install the drivers
     - If you have a [GPU supported by the open kernel module](https://github.com/NVIDIA/open-gpu-kernel-modules#compatible-gpus):
-      `apt-get install nvidia-kernel-open nvidia-smi`
-    - If not: `apt-get install cuda-drivers nvidia-smi`
+      `apt install nvidia-kernel-open nvidia-smi`
+    - If not:
+      `apt install cuda-drivers nvidia-smi`
+      - If you have an old GPU that is not supported by the latest drivers, you can specify the version manually, e.g.
+        `apt install cuda-drivers nvidia-driver-pinning-580`.
+        You will likely have to leave `nvidia-smi` out of the command and install it manually later,
+        because attempting to install it at this point would try to install the latest version,
+        which would conflict with the driver version.
     - Be careful when installing! Attempting to install `firmware-misc-nonfree` may conflict with Proxmox!
   - Reboot
   - Test that the driver works using `nvidia-smi`. Take note of the driver version,
     as you will have to install exactly the same driver version inside the LXC container.
   - If `nvidia-smi` gives the error
-    `NVIDIA-SMI has failed because it couldn't communicate with the NVIDIA driver. Make sure that the latest NVIDIA driver is installed and running.`,
-    and if you have had some different Nvidia packages installed,
-    please purge all Nvidia packages as instructed above, and start again.
-    If this does not help, please see [this thread](https://forum.proxmox.com/threads/unable-to-load-nvidia-drivers-not-blacklisted.79034/).
-    For me, purging and reinstalling all the packages was sufficient, but your experience may be different.
+    `NVIDIA-SMI has failed because it couldn't communicate with the NVIDIA driver. Make sure that the latest NVIDIA driver is installed and running.`.
+    - If you are using Mortar, then please see `dmesg` whether there are errors like `Loading of module with unavailable key is rejected`.
+      If yes, then you need to sign the Nvidia kernel modules with the Mortar Secure Boot keys.
+      You can do this with
+      [my Secure Boot DKMS script](https://github.com/AgenttiX/linux-scripts/blob/master/security/secure_boot_dkms.sh).
+    - If you have had some different Nvidia packages installed,
+      then please purge all Nvidia packages as instructed above, and start again.
+      If this does not help, please see [this thread](https://forum.proxmox.com/threads/unable-to-load-nvidia-drivers-not-blacklisted.79034/).
+      For me, purging and reinstalling all the packages was sufficient, but your experience may be different.
 - If you are using LXC directly on top of e.g. Ubuntu instead of Proxmox, follow the
   [Ubuntu instructions](https://ubuntu.com/tutorials/gpu-data-processing-inside-lxd)
   based on `nvidia.runtime=true`. If you're using Proxmox, continue following these instructions instead.
@@ -377,7 +398,7 @@ Workaround: [change from overlayfs2 to fuse-overlayfs](https://webdock.io/en/doc
       [here](https://forum.proxmox.com/threads/gpu-passthrough-to-lxc-container.114106/)
   - Start the container
   - Install the same version of the Nvidia drivers as on the host, but without the kernel module, e.g.
-    `apt-get install nvidia-headless-no-dkms-560 nvidia-utils-560 libnvidia-encode-560 libnvidia-decode-560`
+    `apt install nvidia-driver-pinning-580 nvidia-utils-580 nvidia-headless-no-dkms-580 libnvidia-encode-580 libnvidia-decode-580`
     - Use exactly the same driver version as on the host.
     - The LXC container shares its kernel with the host, which already has the DKMS kernel module.
     - If you don't install the encoding and decoding libraries, FFmpeg will crash when attempting to transcode.
@@ -386,16 +407,14 @@ Workaround: [change from overlayfs2 to fuse-overlayfs](https://webdock.io/en/doc
   Locking merely `nvidia-kernel-open-dkms` and `cuda-drivers` is not sufficient,
   as `apt` may still update their dependencies.
   Therefore, you also have to lock the dependencies that have the same version number as those packages.
-  - On the host:
-    `apt-mark hold firmware-nvidia-gsp libegl-nvidia0 libgl1-nvidia-glvnd-glx libgles-nvidia1 libgles-nvidia2 libglx-nvidia0 libnvidia-allocator1 libnvidia-cfg1 libnvidia-egl-xcb1 libnvidia-eglcore libnvidia-encode1 libnvidia-fbc1 libnvidia-glcore libnvidia-glvkspirv apt-mark hold firmware-nvidia-gsp libegl-nvidia0 libgl1-nvidia-glvnd-glx libgles-nvidia1 libgles-nvidia2 libglx-nvidia0 libnvidia-allocator1 libnvidia-cfg1 libnvidia-egl-xcb1 libnvidia-eglcore libnvidia-encode1 libnvidia-fbc1 libnvidia-glcore libnvidia-glvkspirv libnvidia-gpucomp libnvidia-ml1 libnvidia-nvvm4 libnvidia-opticalflow1 libnvidia-pkcs11 libnvidia-ptxjitcompiler1 libnvidia-rtcore libnvidia-vksc-core nvidia-alternative nvidia-cuda-mps nvidia-driver nvidia-driver-bin nvidia-driver-libs nvidia-egl-common nvidia-egl-icd nvidia-kernel-open-dkms nvidia-kernel-support nvidia-modprobe nvidia-opencl-common nvidia-opencl-icd nvidia-persistenced nvidia-settings nvidia-smi nvidia-suspend-common nvidia-vdpau-driver nvidia-vulkan-common nvidia-vulkan-icd nvidia-xconfig xserver-xorg-video-nvidia`
-    - Note that if you are not using the open kernel module, you have to replace `nvidia-kernel-open-dkms` with `nvidia-kernel-dkms`.
-  - On the container:
-    `apt-mark hold libnvidia-cfg1-560 libnvidia-compute-560 libnvidia-decode-560 libnvidia-encode-560 nvidia-compute-utils-560 nvidia-firmware-560-560.28.03 nvidia-headless-no-dkms-560 nvidia-kernel-common-560 nvidia-kernel-source-560 nvidia-utils-560`
+  You can do this by running this command on both the host and the container:
+  `apt-mark hold "^cuda.*$" "^libnvidia.*$" "^nvidia.*$"`
 - Setup Docker
   - Install Docker
   - Install [NVIDIA container runtime](https://gitlab.com/nvidia/container-toolkit/container-toolkit/-/tree/main/cmd/nvidia-container-runtime)
+  - Reboot the LXC container
   - Test that the GPU is visible in the container:
-    ```sudo docker run --gpus all nvidia/cuda:12.2.2-base-ubuntu22.04 nvidia-smi``` (change the version tag to the latest available)
+    ```sudo docker run --gpus all nvidia/cuda:13.1.0-base-ubuntu24.04 nvidia-smi``` (change the version tag to the latest available)
   - If you get an error about cgroups, follow
     [these instructions](https://www.reddit.com/r/Proxmox/comments/s0ud5y/comment/jl4lef2/).
 - Follow the instructions for your Docker container, e.g.
