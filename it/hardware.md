@@ -31,7 +31,7 @@ title: Hardware
     [`nvme sanitize`](https://wiki.archlinux.org/title/Solid_state_drive/Memory_cell_clearing#NVMe_drive).
   - On modern systems, configure HDDs and NVMe SSDs to use 4K LBA.
     This is known as [Advanced Format](https://en.wikipedia.org/wiki/Advanced_Format)
-    and is supported on Windows 8 ->, Windows Server 2012 -> and Linux 2.6.31 ->.
+    and is supported on Windows 8 &rarr;, Windows Server 2012 &rarr; and Linux 2.6.31 &rarr;.
     (As a matter of personal opinion, I'd do this for PCIe 4.0 NVMe SSDs and newer.)
     [It should provide a performance boost](https://unix.stackexchange.com/questions/761398/are-there-any-benefits-in-setting-a-hdds-logical-sector-size-to-4kn), but
     [on some older SSDs it can result in a performance drop instead](https://forums.sandisk.com/t/sn550-why-it-uses-512b-sector-instead-of-4096/265472/3).
@@ -116,6 +116,102 @@ title: Hardware
       - Some random waterblock from Tori.fi
 
 
+#### Issues
+- [BIOS 1603 is buggy and 1502 is more stable](https://rog-forum.asus.com/t5/zenith-extreme-x399-e/zenith-ii-extreme-alpha-instability-and-restarts-with-bios-1603/m-p/895749/highlight/true#M4540)
+
+
+##### Xid 79 / ACPI 15 GPU crash
+This is a common issue on TRX40 motherboards.
+Sometimes during uneven load, the computer crashes and the monitors go black.
+This issue occurs on both Windows and Linux.
+(For me, Subnautica is the game that most often triggers it.)
+- Reports of the issue with TRX40 motherboards
+  - [Reddit](https://www.reddit.com/r/AMDHelp/comments/w7dhoz/let_the_games_begin_the_infamous_acpi_15/)
+  - [ASUS forums](https://rog-forum.asus.com/t5/zenith-extreme-x399-e/let-the-games-begin-the-infamous-acpi-15-application-popup-error/td-p/914022)
+  - [Kernel.org Bugzilla](https://bugzilla.kernel.org/show_bug.cgi?id=215101)
+  - [MSI forums](https://forum-en.msi.com/index.php?threads/msi-creator-trx40-error-56-acpi-15-crashes.345081/)
+  - [Level1Techs forums](https://forum.level1techs.com/t/amd-threadripper-3970x-under-heavy-avx2-load-defective-design-no-but-there-is-an-issue/153883/100)
+- Reports of the issue with TR4 motherboards
+  - [ASUS forums](https://rog-forum.asus.com/t5/zenith-extreme-x399-e/freezing-computer-if-left-overnight/td-p/761900)
+  - [Microsoft forums](https://learn.microsoft.com/en-us/answers/questions/4097298/windows-10-11-full-system-crash)
+  - [Reddit](https://www.reddit.com/r/techsupport/comments/13pp771/amd_threadripper_mysterious_bsod_event_id_56_acp/)
+  - [Reddit](https://www.reddit.com/r/techsupport/comments/18wsmvt/pc_crashes_amds_acpi_15_error/)
+  - [ASRock forums](https://forum.asrock.com/forum_posts.asp?TID=8082&title=acpi-15-event-error-and-kernelpower-41-error)
+
+On Kubuntu, `journalctl` reports these errors:
+```
+Xid (PCI:0000:01:00): 79, GPU has fallen off the bus.
+GPU 0000:01:00.0: GPU has fallen off the bus.
+krcRcAndNotifyAllChannels_IMPL: RC all channels for critical error 79.
+_threadNodeCheckTimeout: API_GPU_ATTACHED_SANITY_CHECK failed!
+```
+
+On Windows, the issue creates three events in the Windows Event Viewer
+with the title "Event 56, Application Popup" and this description:
+```
+The description for Event ID 56 from source Application Popup cannot be found. Either the component that raises this event is not installed on your local computer or the installation is corrupted. You can install or repair the component on the local computer.
+
+If the event originated on another computer, the display information had to be saved with the event.
+
+The following information was included with the event:
+
+ACPI
+15
+
+The message resource is present but the message was not found in the message table
+```
+
+Event details:
+```
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Application Popup" Guid="{47bfa2b7-bd54-4fac-b70b-29021084ca8f}" EventSourceName="Application Popup" />
+    <EventID Qualifiers="49156">56</EventID>
+    <Version>0</Version>
+    <Level>2</Level>
+    <Task>0</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x80000000000000</Keywords>
+    <TimeCreated SystemTime="2026-01-08T16:10:25.6028441Z" />
+    <EventRecordID>12874</EventRecordID>
+    <Correlation />
+    <Execution ProcessID="4" ThreadID="992" />
+    <Channel>System</Channel>
+    <Computer>agx-z2e-win</Computer>
+    <Security />
+  </System>
+  <EventData>
+    <Data />
+    <Data>ACPI</Data>
+    <Data>15</Data>
+    <Binary>000000000300280000000000380004C000000000380004C000000000000000000000000000000000</Binary>
+  </EventData>
+</Event>
+```
+After these events, the event log contains a critical "Event 41, Kernel-Power".
+
+Things that I have tried to fix the issue, but which did not help:
+- Update BIOS to 2402 (2025-10-21)
+- Update both operating systems and GPU drivers
+- Re-seat the GPU in its PCIe socket
+- Force PCIe 3.0 mode in BIOS for the GPU PCIe slot
+- Disable these in BIOS
+  - ASPM
+    - These settings seem to have an effect only on the ASMedia controllers, though.)
+  - Global C-state control
+  - IOMMU
+  - Resizable BAR
+  - SR-IOV
+- Set kernel parameter `pcie_aspm=off`
+
+[Setting these voltages may help](https://www.reddit.com/r/AMDHelp/comments/w7dhoz/comment/iknlkj0/)
+- VDDSOC: 1.05 V
+- VDDG CCD: 0.95 V
+- VDDG IOD: 0.95 V
+- 1.00V SB: 1.0 V
+- 1.8V PLL: 1.8 V
+
+
 #### USB ports
 
 | Ports           | PCIe bus                    | IOMMU group | Name                                          |
@@ -146,9 +242,14 @@ You can do this in the BIOS settings at *Tool &rarr; Asus EZ Flash 3 Utility*.
 ##### Ai Tweaker
 These settings are specific to your CPU and RAM.
 Don't set these until you have first safely installed your OS and run some stress tests to ensure stability.
+- [Overclocking guide](www.techpowerup.com/review/amd-ryzen-threadripper-3000-overclocking-deep-dive-asus-rog-zenith-ii-extreme/)
+- [DRAM Calculator for Ryzen](https://www.techpowerup.com/download/ryzen-dram-calculator/)
+
 - Ai Overclock Tuner: Default
 - Performance Enhancer: Auto
 - Memory Frequency: DDR4-3466 MHz
+  - The maximum RAM frequency that does not require FCLK overclocking
+    or 2:1 RAM vs. Infinity fabric clock configuration is 3600 MHz
 - FCLK Frequency: Auto
 - Core Performance Boost: Auto
 - CPU Core Ratio: Auto
@@ -225,7 +326,7 @@ Don't set these until you have first safely installed your OS and run some stres
   - DRAM Switching Frequency(CHA, CHB): Auto
   - DRAM Switching Frequency(CHC, CHD): Auto
 - Tweaker's Paradise
-  - **Leave all on auto**
+  - **Leave all on auto unless you have issues**
   - SB Clock Spread Spectrum: Auto
   - VTTDDR AB Voltage: Auto
   - VTTDDR CD Voltage: Auto
@@ -251,17 +352,33 @@ Don't set these until you have first safely installed your OS and run some stres
   - Sense MI Offset: Auto
   - Promontory presence: Auto
   - Clock Amplitude: Auto
-  - CLDO VDDP voltage: Auto
+  - **CLDO VDDP voltage: 950 mV**
+    - Memory controller voltage
+    - CLDO = Chip [low-dropout regulator](https://en.wikipedia.org/wiki/Low-dropout_regulator)
+    - This setting looks greyed out, but you can still type the value
   - Mem P-State: Auto
 - CPU Core Voltage: Auto
-- CPU SOC Voltage: Manual
-  - VDDSOC Voltage Override: 1.0 V
+- **CPU SOC Voltage: Manual**
+  - I/O die voltage
+  - **VDDSOC Voltage Override: 1.05 V**
+    - Safe maximum: 1.2 V
 - DRAM AB Voltage: 1.25 V
+  - Default: 1.2 V
+  - Default for many XMP kits: 1.35 V
+  - Safe maximum: 1.4 V (if you have proper cooling)
 - DRAM CD Voltage: 1.25 V
-- VDDG CCD Voltage Control: 0.950 V
-- VDDG IOD Voltage Control: 0.950 V
-- 1.00V SB Voltage: Auto
-- 1.8V PLL Voltage: Auto
+  - Set the same as for DRAM AB Voltage
+- **VDDG CCD Voltage Control: 0.950 V**
+  - CCD Infinity Fabric voltage
+  - This must be smaller than VDD_SOC
+  - Safe maximum: 1.05 V
+- **VDDG IOD Voltage Control: 1.0 V**
+  - I/O die Infinity Fabric voltage
+  - Important for PCIe stability
+  - This must be smaller than VDD_SOC
+  - Safe maximum: 1.1 V
+- **1.00V SB Voltage: 1.0 V**
+- **1.8V PLL Voltage: 1.8 V**
 
 
 ##### Advanced
@@ -391,7 +508,9 @@ Below is a list of the default values.
     - L2 Stream HW Prefetcher: Auto
   - RedirectForReturnDis: Auto
   - Core Performance Boost: Auto
-  - Global C-state Control: Auto
+  - **Global C-state Control: Auto**
+    - On some AMD CPUs, enabling this manually may help with stuttering.
+    - For debugging system crashes, you may want to disable this.
 - DF Common Options
   - Scrubber
     - DRAM scrub time: Auto
@@ -494,7 +613,8 @@ Below is a list of the default values.
       - Write Voltage Sweep Step Size: 1
       - Write Timing Sweep Step Size: 1
 - NBIO Common Options
-  - IOMMU: Auto
+  - **IOMMU: Auto**
+    - This can be disabled for debugging PCIe issues
   - XFR Enhancement
     - Accepted
       - Precision Boost Overdrive: Auto
@@ -658,9 +778,9 @@ Q-Fan Tuning
       such as an external hardware RAID controller.
   - Setup Mode: Advanced Mode
 - CSM (Compatibility Support Module)
-  - Launch CSM: Disabled (Unless you need to boot a non-UEFI OS or tool)
+  - **Launch CSM: Disabled** (Unless you need to boot a non-UEFI OS or tool)
 - Secure Boot
-  - OS Type
+  - **OS Type**
     - If you have only Windows installed: Windows UEFI mode
     - If you have Linux installed (with or without Windows dual-boot): Other OS
   - Key Management
