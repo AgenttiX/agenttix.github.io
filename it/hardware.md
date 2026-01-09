@@ -90,6 +90,14 @@ title: Hardware
     [TechPowerUp](https://www.techpowerup.com/gpu-specs/powercolor-radeon-vii.b6665),
     [Wikipedia](https://en.wikipedia.org/wiki/Radeon_RX_Vega_series#Radeon_VII_branded_discrete_graphics)
     - FP64: 3.360 TFLOPS (1/4 of FP32)
+    - [No longer compatible with the latest ROCm](https://github.com/ROCm/ROCm/discussions/3893)
+    - The last ROCm version to fully support Radeon VII is 6.0.0.
+      It's deprecated for 6.0.2 - 6.3.3 and not supported for 6.4.0 &rarr;.
+    - Therefore, [ROCm 6.3.3](https://rocm.docs.amd.com/en/docs-6.3.3/)
+      is the last version with some Radeon VII compatibility.
+      - This release
+        [supports](https://rocm.docs.amd.com/projects/install-on-linux/en/docs-6.3.3/reference/system-requirements.html)
+        Ubuntu 24.04.2 with the 6.8 and 6.11 kernels, and Debian 12 with the 6.1 kernel.
     - For ROCm and virtual machines
   - NVIDIA GTX Titan:
     [TechPowerUp](https://www.techpowerup.com/gpu-specs/geforce-gtx-titan.c1996),
@@ -143,8 +151,58 @@ title: Hardware
       - Some random waterblock from Tori.fi
 
 
+#### CPU thermal monitoring
+- [Zenpower3](https://github.com/AliEmreSenel/zenpower3)
+  - The old [Zenpower](https://github.com/ocerman/zenpower) is
+    [not compatible with Linux >= 6.14](https://github.com/ocerman/zenpower/issues/50)
+
+
+#### Dual-GPU configuration
+GPU drivers can be disabled for the current boot only by adding
+`modprobe.blacklist=amdgpu` or `modprobe.blacklist=nvidia` to the kernel boot parameters in GRUB.
+
+To configure the GPU drivers permanently, set these lines accordingly in a .conf file in `/etc/modprobe.d`.
+```
+# Enable or disable the driver entirely.
+# This should not be necessary unless you are debugging issues.
+blacklist amdgpu
+blacklist nvidia
+
+# Enable or disable the GPU from becoming a display device
+# modeset = enable KMS, which is setting the display resolution already in the kernel
+# dc = enable display core
+options amdgpu modeset=0 dc=0
+# The NVIDIA driver already configures this in /etc/modprobe.d/nvidia-graphics-drivers-kms.conf
+options nvidia-drm modeset=1
+```
+
+
 #### Issues
 - [BIOS 1603 is buggy and 1502 is more stable](https://rog-forum.asus.com/t5/zenith-extreme-x399-e/zenith-ii-extreme-alpha-instability-and-restarts-with-bios-1603/m-p/895749/highlight/true#M4540)
+
+
+##### ACPI bugs
+During early boot, lots of the errors below are produced `dmesg`.
+This issue has been reported on
+[ASUS Forums](https://rog-forum.asus.com/t5/zenith-extreme-x399-e/zenith-ii-extreme-linux-amp-bios-bug/td-p/888074).
+
+Error 1. Only the "SB..." code changes.
+```
+ACPI BIOS Error (bug): Failure creating named object [\_SB.I2CA.WT1A], AE_ALREADY_EXISTS (20250404/dswload2-326)
+ACPI Error: AE_ALREADY_EXISTS, During name lookup/catalog (20250404/psobject-220)
+ACPI: Skipping parse of AML opcode: Device (0x5B82)
+```
+
+Error 2
+```
+ACPI BIOS Error (bug): AE_AML_PACKAGE_LIMIT, Index (0x000000007) is beyond end of object (length 0x6) (20250404/exoparg2-393)
+
+No Local Variables are initialized for Method [_PLD]
+
+No Arguments are initialized for method [_PLD]
+
+ACPI Error: Aborting method \_SB.S0D2.D2A0.BYUP.BYD8.XHC1.RHUB.PRT6._PLD due to previous error (AE_AML_PACKAGE_LIMIT) (20250404/psparse-529)
+```
 
 
 ##### Xid 79 / ACPI 15 GPU crash
