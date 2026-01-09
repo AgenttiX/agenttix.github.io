@@ -79,15 +79,42 @@ title: Hardware
 - Motherboard: [ASUS Zenith II Extreme](https://rog.asus.com/motherboards/rog-zenith/rog-zenith-ii-extreme-model/)
   - Asus TPM-M R2.0 (90MC03W0-M0XBN1)
 - CPU: [AMD Ryzen Threadripper 3970X (100-100000011WOF)](https://en.wikipedia.org/wiki/Zen_2#3000_series_(Matisse))
-- RAM: 8x 16 GB = 128 GB [Kingston 2666 MHz ECC (KSM26ED8/16ME)](https://www.kingston.com/datasheets/KSM26ED8_16ME.pdf)
+- RAM: 8x 16 GB = 128 GB
+  [Kingston 2666 MHz ECC (KSM26ED8/16ME)](https://www.kingston.com/datasheets/KSM26ED8_16ME.pdf)
 - GPU
-  - Nvidia RTX 3070
-  - [PowerColor Radeon VII (AXVII-16GBHBM2-3DH)](https://www.techpowerup.com/gpu-specs/powercolor-radeon-vii.b6665)
+  - NVIDIA RTX 3070:
+    [TechPowerUp](https://www.techpowerup.com/gpu-specs/geforce-rtx-3070.c3674),
+    [Wikipedia](https://en.wikipedia.org/wiki/GeForce_RTX_30_series#Desktop)
+    - FP64: 317.4 GFLOPS (1/64 of FP32)
+  - PowerColor Radeon VII (AXVII-16GBHBM2-3DH):
+    [TechPowerUp](https://www.techpowerup.com/gpu-specs/powercolor-radeon-vii.b6665),
+    [Wikipedia](https://en.wikipedia.org/wiki/Radeon_RX_Vega_series#Radeon_VII_branded_discrete_graphics)
+    - FP64: 3.360 TFLOPS (1/4 of FP32)
     - For ROCm and virtual machines
-  - Nvidia GTX Titan
+  - NVIDIA GTX Titan:
+    [TechPowerUp](https://www.techpowerup.com/gpu-specs/geforce-gtx-titan.c1996),
+    [Wikipedia](https://en.wikipedia.org/wiki/GeForce_700_series#GeForce_700_(7xx)_series)
+    - FP64: 1.570 TFLOPS (1/3 of FP32)
+    - Last supported driver: 580
+    - From my old desktop
     - For virtual machines
-- PSU: [Corsair 1600W AX1600i (CP-9020087-EU)](https://www.corsair.com/ww/en/p/psu/cp-9020087-eu/ax1600i-digital-atx-power-supply-1600-watt-fully-modular-psu-eu-cp-9020087-eu)
+- PSU: [Corsair 1600W AX1600i (CP-9020087-EU)](https://www.corsair.com/eu/en/p/psu/cp-9020087-eu/ax1600i-digital-atx-power-supply-1600-watt-fully-modular-psu-eu-cp-9020087-eu):
+  [hinta.fi](https://hinta.fi/1367212/corsair-ax-series-ax1600i)
+  - Reviews: [KitGuru](https://www.kitguru.net/components/power-supplies/zardon/corsair-ax1600i-digital-power-supply-review/)
+  - The first consumer PSU with GaN transistors
+  - 80 Plus Titanium
+  - Silent up to 640 W load
+  - In multi-rail mode, the +12V rail is split into 12 separate +12V rails, each with a default OCP of 40 A.
+    Therefore, each PCIe power connector has its own voltage rail.
+    [It does not matter, which ports on the PSU you use for PCIe and which for the CPU.](https://www.reddit.com/r/pcmasterrace/comments/etom3d/on_the_corsair_ax1600i_the_cpu_and_pcie_power/)
+  - PCIe [12VHPWR](https://en.wikipedia.org/wiki/12VHPWR) power cable (future update when I'll update the GPU)
+    - Straight: [Corsair](https://www.corsair.com/eu/en/p/pc-components-accessories/cp-8920423/elite-premium-individually-sleeved-2x-8-pin-to-pcie-12v-2x6-600w-cable-type-4-black-cp-8920423)
+      - [Elite Premium is a newer cable version than Premium](https://www.reddit.com/r/Corsair/comments/1pb23ha/what_is_the_difference_between_these_12v2x6/)
+    - 90 degree angle:
+      [Corsair](https://www.corsair.com/us/en/p/pc-components-accessories/cp-8920423/elite-premium-individually-sleeved-2x-8-pin-to-pcie-12v-2x6-600w-cable-type-4-black-cp-8920423),
+      [hinta.fi](https://hinta.fi/5061317/corsair-cp-8920347)
 - Case: [Phanteks Enthoo 719 Tempered Glass (PH-ES719LTG-DBK01)](https://phanteks.com/product/enthoo-719/)
+  - I had to modify the case a bit with a Dremel to fit the side 480 mm radiator
 - Water cooling
   - Pumps
     - [EK-Waterblocks EK-Quantum Kinetic TBE 300 D5 PWM D-RGB pump + reservoir](https://www.ekwb.com/shop/ek-quantum-kinetic-tbe-300-d5-pwm-d-rgb-plexi) (3831109818480)
@@ -192,8 +219,13 @@ After these events, the event log contains a critical "Event 41, Kernel-Power".
 
 Things that I have tried to fix the issue, but which did not help:
 - Update BIOS to 2402 (2025-10-21)
+- Clear CMOS
+- Restore default BIOS settings
 - Update both operating systems and GPU drivers
-- Re-seat the GPU in its PCIe socket
+- Physical fixes
+  - Re-seat the GPU in its PCIe socket
+  - Reconnect GPU power cables
+  - Reconnect all power cables on the PSU
 - Force PCIe 3.0 mode in BIOS for the GPU PCIe slot
 - Disable these in BIOS
   - ASPM
@@ -247,7 +279,7 @@ Don't set these until you have first safely installed your OS and run some stres
 
 - Ai Overclock Tuner: Default
 - Performance Enhancer: Auto
-- Memory Frequency: DDR4-3466 MHz
+- **Memory Frequency: DDR4-3466 MHz**
   - The maximum RAM frequency that does not require FCLK overclocking
     or 2:1 RAM vs. Infinity fabric clock configuration is 3600 MHz
 - FCLK Frequency: Auto
@@ -263,7 +295,7 @@ Don't set these until you have first safely installed your OS and run some stres
   - Max CPU Boost Clock Override: Auto
   - Platform Thermal Throttle Limit: Auto
 - DRAM Timing Control
-  - DRAM CAS# Latency: 20
+  - **DRAM CAS# Latency: 20**
   - **Leave the rest at auto**
   - Trcdrd: Auto
   - Trcdwr: Auto
@@ -352,10 +384,11 @@ Don't set these until you have first safely installed your OS and run some stres
   - Sense MI Offset: Auto
   - Promontory presence: Auto
   - Clock Amplitude: Auto
-  - **CLDO VDDP voltage: 950 mV**
+  - **CLDO VDDP voltage: Auto**
     - Memory controller voltage
     - CLDO = Chip [low-dropout regulator](https://en.wikipedia.org/wiki/Low-dropout_regulator)
-    - This setting looks greyed out, but you can still type the value
+    - This setting looks greyed out, but you can still type the value.
+    - If you have issues with PCIe devices, you can try setting this to 950 mV.
   - Mem P-State: Auto
 - CPU Core Voltage: Auto
 - **CPU SOC Voltage: Manual**
@@ -368,11 +401,11 @@ Don't set these until you have first safely installed your OS and run some stres
   - Safe maximum: 1.4 V (if you have proper cooling)
 - DRAM CD Voltage: 1.25 V
   - Set the same as for DRAM AB Voltage
-- **VDDG CCD Voltage Control: 0.950 V**
+- **VDDG CCD Voltage Control: 0.95 V**
   - CCD Infinity Fabric voltage
   - This must be smaller than VDD_SOC
   - Safe maximum: 1.05 V
-- **VDDG IOD Voltage Control: 1.0 V**
+- **VDDG IOD Voltage Control: 0.95 V**
   - I/O die Infinity Fabric voltage
   - Important for PCIe stability
   - This must be smaller than VDD_SOC
@@ -412,12 +445,12 @@ Don't set these until you have first safely installed your OS and run some stres
   - SMT Mode: Enabled
     - SMT = Simultaneous Multithreading
 - PCI Subsystem Settings
-  - Above 4G Decoding: Enabled
-  - Re-Size BAR Support: Enabled
+  - **Above 4G Decoding: Enabled**
+  - **Re-Size BAR Support: Auto**
     - This is important for GPU performance
-  - SR-IOV Support: Auto
+  - **SR-IOV Support: Enabled**
     - This is important if you use virtual machines with PCIe passthrough.
-  - BME DMA Mitigation: Enabled
+  - **BME DMA Mitigation: Enabled**
     - BME = Bus Master Enable. This setting prevents DMA until the OS is ready to handle it securely.
   - Hot-Plug Support: Enabled
 - USB Configuration
@@ -432,15 +465,15 @@ Don't set these until you have first safely installed your OS and run some stres
   - SATA Mode: AHCI
     - Motherboard RAID is also known as FakeRAID, as it's not a real hardware RAID.
       You should use software RAID instead, e.g. Windows Storage Spaces or ZFS.
-  - NVMe RAID mode: Disabled
+  - **NVMe RAID mode: Disabled**
   - SMART Self Test: Enabled
     - This enables monitoring the health of SATA and NVMe drives.
   - Hot Plug: Disabled for all ports unless you have e.g. a hot-swappable drive bay
 - Onboard Devices Configuration
   - ASMedia Storage Controller: Enabled
-    - ASPM Support: Enabled
+    - **ASPM Support: Enabled**
   - ASMedia Storage Controller 2: Enabled
-    - ASPM Support: Enabled
+    - **ASPM Support: Enabled**
   - Asmedia USB 3.2 Gen2x2 Controller: Enabled
   - USB Type C Power Switch: Auto
     - If you have USB-c devices that are not compliant with the
@@ -449,7 +482,7 @@ Don't set these until you have first safely installed your OS and run some stres
   - PCIEX16_1 Bandwidth: X16 Mode
   - PCIEX16_2 Bandwidth: X8 Mode
   - PCIEX16_3 Bandwidth: X16 Mode
-  - PCIEX16_4 Bandwidth: X8 Mode
+  - **PCIEX16_4 Bandwidth: X8 Mode**
     - I have a GPU installed in this slot and therefore it should have as much bandwidth as possible.
       This setting disables the M.2_2(SOCKET3) slot, which is the one right above this PCIe slot.
   - M.2_3 Bandwidth: X2 Mode
@@ -476,11 +509,11 @@ Don't set these until you have first safely installed your OS and run some stres
   - ASM1074 Controller (Front): Enabled
     - This is the USB 3.2 controller for the front/internal ports.
   - RGB LED lighting
-    - When system is in working state: Stealth Mode
+    - **When system is in working state: Stealth Mode**
       - I want to enable the lighting only when I'm showing my setup.
         Having it disabled will also slightly reduce the amount of light available
         for any possible algae in the liquid cooling, slowing their growth.
-    - When system is in sleep, hibernate or soft off states: Stealth Mode
+    - **When system is in sleep, hibernate or soft off states: Stealth Mode**
   - USB power delivery in Soft Off state (S5): Enabled
     (If you want to charge devices from the USB ports when the computer is off)
 - APM Configuration
@@ -489,7 +522,7 @@ Don't set these until you have first safely installed your OS and run some stres
   - ErP Ready: Disabled
     - If you don't need the USB ports to remain on and don't need wake-on-LAN,
       then you should enable this to reduce power consumption when the computer is off.
-  - Power on By PCI-E: Enabled
+  - **Power on By PCI-E: Enabled**
     - This enables wake-on-LAN.
   - Power On By RTC: Disabled
     - Enable this only if you want the computer to turn on automatically at a set time.
@@ -614,7 +647,8 @@ Below is a list of the default values.
       - Write Timing Sweep Step Size: 1
 - NBIO Common Options
   - **IOMMU: Auto**
-    - This can be disabled for debugging PCIe issues
+    - IOMMU is necessary for PCIe passthrough, and useful for virtualization in general.
+    - If there are PCIe issues, then disabling this may help.
   - XFR Enhancement
     - Accepted
       - Precision Boost Overdrive: Auto
@@ -737,7 +771,7 @@ Q-Fan Tuning
     - My system does not have a PSU fan connected to the motherboard.
 - WATER PUMP+ 1 Control: PWM Mode
   - WATER PUMP+ 1 Fan Q-Fan Source: CPU
-  - WATER PUMP+ 1 Upper Temperature: 80
+  - WATER PUMP+ 1 Upper Temperature: 70
   - WATER PUMP+ 1 Fan Max. Duty Cycle (%): 100
   - WATER PUMP+ 1 Middle Temperature: 50
   - WATER PUMP+ 1 Fan Middle Duty Cycle (%): 80
@@ -764,7 +798,7 @@ Q-Fan Tuning
 - Boot Configuration
   - Fast Boot: Enabled
     - Next Boot after AC Power Loss: Normal Boot
-  - Boot Logo Display: Disabled
+  - **Boot Logo Display: Disabled**
     - This way you get more info on the screen during boot.
   - POST Report: 5 sec
   - Bootup NumLock State: On
@@ -802,7 +836,7 @@ Q-Fan Tuning
     then you should use this tool to securely erase them before installing the OS.
     This will also tell the SSDs that there is no data on them,
     so that their controllers can reorganize the storage cells for optimal wear leveling.
-- Flexkey: Aura On/Off
+- **Flexkey: Aura On/Off**
 - ASUS User Profile
   - Once you have set all the settings you want and rebooted to ensure that they work,
     then you should save the settings as a profile so that you can easily restore them later if needed.
