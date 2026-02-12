@@ -905,6 +905,50 @@ Q-Fan Tuning
       It's used for e.g. controlling the OLED and RGB lighting.
 
 
+### agx-l14
+- ThinkPad L14 Gen 5 (21L2-S0V400)
+- CPU: [Intel Core Ultra 5 125U](https://www.intel.com/content/www/us/en/products/sku/237330/intel-core-ultra-5-processor-125u-12m-cache-up-to-4-30-ghz/specifications.html)
+- GPU: Intel integrated
+- RAM: 32 GB
+- SSD: 1 TB
+
+
+### agx-t480
+- ThinkPad T480
+- CPU: Intel Core i7-8550U
+- GPU: Nvidia GeForce MX150 2GB: [Techpowerup](https://www.techpowerup.com/gpu-specs/geforce-mx150.c2959)
+  - Pascal architecture
+  - Last supported driver: 580
+- RAM: 32 GB DDR4 2400 MHz
+- SSD: 1 TB, M.2 2280, NVMe, Opal 2.0
+- Display: 14" FHD IPS, 250 nits, anti-glare, touch
+- Battery: 24 Wh internal + 72 Wh removable = 96 Wh
+- Wi-Fi: [Intel Dual Band Wireless-AC 8265](https://www.intel.com/content/www/us/en/products/sku/94150/intel-dual-band-wirelessac-8265/specifications.html)
+- WWAN: Fibocom L830-EB
+- Fingerprint reader
+- Smart card reader
+- NFC
+
+
+### agx-ud7
+- CPU: Intel Core i7-930: [Techpowerup](https://www.techpowerup.com/cpu-specs/core-i7-930.c718)
+- Motherboard: [Gigabyte GA-X58A-UD7 (rev. 1.0)](https://www.gigabyte.com/Motherboard/GA-X58A-UD7-rev-10)
+- GPU
+  - 1st: ATI Radeon HD 5700
+  - 2nd: NVIDIA GTX 760: [Techpowerup](https://www.techpowerup.com/gpu-specs/geforce-gtx-760.c1857)
+  - 3rd: NVIDIA GTX Titan: [Techpowerup](https://www.techpowerup.com/gpu-specs/geforce-gtx-titan.c1996)
+- RAM: DDR4
+  - 1st: 3x 2 GB = 6 GB
+  - 2nd: 6x 4 GB = 24 GB
+- SSD: OCZ Vertex 4 256 GB (VTX4-25SAT3-256G)
+- HDD: 2x 1 TB RAID 1
+
+This setup overclocked quite nicely.
+When it was new, I was able to achieve these overclocks for a long time:
+- CPU: 2.8 GHz &rarr; over 4 GHz
+- Motherboard: 100 MHz &rarr; 200 MHz base clock
+
+
 ### [Lenovo ThinkStation P330 Tiny](https://www.lenovo.com/fi/fi/p/workstations/thinkstationp/thinkstation-p330-tiny/33ts3tp330x)
 - Thunderbolt
   - [Motherboard hearders](https://www.reddit.com/r/AskElectronics/comments/1i0w0ec/can_you_help_me_identify_these_ports_on_a_lenovo/)
