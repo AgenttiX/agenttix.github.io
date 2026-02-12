@@ -71,6 +71,16 @@ title: Hardware
     you can use [DBAN](https://dban.org/) or boot the computer from a Linux USB drive and use `badblocks` to wipe the storage devices.
 
 
+## Websites & YouTube channels
+- [Gamers Nexus](https://gamersnexus.net/)
+  [YouTube](https://www.youtube.com/gamersnexus)
+- Linus Tech Tips:
+  [YouTube](https://www.youtube.com/user/LinusTechTips),
+  [Floatplane](https://www.floatplane.com/channel/linustechtips),
+  [Forum](https://linustechtips.com/)
+- [Phoronix](https://www.phoronix.com/)
+
+
 ## Personal / familiar IT hardware
 [Geekbench results](https://browser.geekbench.com/user/AgenttiX)
 
