@@ -25,6 +25,8 @@ please feel free to send me a message or create an issue or a pull request
 Right-click and "Save link as..."
 - [Linux scripts setup](https://raw.githubusercontent.com/AgenttiX/linux-scripts/master/install_repo.sh)
   - [NVMe SSD erase](https://raw.githubusercontent.com/AgenttiX/linux-scripts/refs/heads/master/security/erase_nvme_ssd.sh)
+  - [SATA HDD erase](https://raw.githubusercontent.com/AgenttiX/linux-scripts/refs/heads/master/security/erase_and_check_hdd.sh)
+  - [SATA SSD erase](https://raw.githubusercontent.com/AgenttiX/linux-scripts/refs/heads/master/security/erase_sata_ssd.sh)
 - [Windows scripts setup](https://raw.githubusercontent.com/AgenttiX/windows-scripts/master/Install-Repo.bat)
 
 ### For local development
