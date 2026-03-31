@@ -56,19 +56,35 @@ title: Hardware
 - Overclock (if you want to).
 
 
-## Selling a computer
-- Take screenshots and pictures of the specifications and hardware
-- Reset firmware
-  - BIOS settings
-  - TPM
-  - Custom Secure Boot keys
-  - Intel ME (if configurable)
+## Disposing of a computer
+- Take screenshots and pictures of:
+  - Windows activation status
+  - Hardware specifications
+  - Possibly also the results of some performance benchmarks
 - Wipe storage devices
-  - You can use [my scripts](https://github.com/AgenttiX/linux-scripts/tree/master/security) for this.
-  - If my scripts don't work and the computer is a laptop,
-    I recommend using manufacturer-provided software.
-  - If the computer is a desktop or no manufacturer-provided software is available,
-    you can use [DBAN](https://dban.org/) or boot the computer from a Linux USB drive and use `badblocks` to wipe the storage devices.
+  - You can use my scripts for this.
+    There are direct download links available on the [agx.fi front page](https://agx.fi/)
+    so that they are easily available when booting from a USB flash drive.
+    Remember to use the correct script depending on the type of the storage device (HDD / SATA SSD / NVMe SSD).
+    Take a screenshot of the output of the script as proof that the storage devices work.
+  - If my scripts don't work,
+    I recommend using manufacturer-provided software if there is a bootable version available.
+  - If no manufacturer-provided software is available,
+    I recommend booting the computer from a Linux USB drive and using `badblocks` to wipe the storage devices.
+    This also provides a report that the drive works.
+    Remember to take a screenshot of the badblocks output and especially the last line, which should read
+    `Pass completed, 0 bad blocks found. (0/0/0 errors)`.
+    Another option is to use [DBAN](https://dban.org/).
+- Reset firmware
+  - UEFI/BIOS settings
+  - TPM
+  - Custom Secure Boot keys (if configured)
+  - Intel ME (if configurable)
+    - If the option to reset ME is not available in the UEFI/BIOS settings,
+      you may have to press Ctrl+P during the boot process, usually right after the BIOS startup screen.
+- Try to sell the computer or to give it away on e.g. Tori.fi.
+  You may be surprised on how many people are interested in old computers!
+  If no one is interested in the computer, then you can take it to an electronics recycling point.
 
 
 ## Websites & YouTube channels
