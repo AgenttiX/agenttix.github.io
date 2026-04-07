@@ -932,14 +932,6 @@ This prevents modifying e.g. the transmission power and operational frequencies 
     as many UniFi access points are compatible with OpenWRT.
 
 <!--
-- ~~Xiaomi Mi Router 3G v1~~
-  - I'm using one of these
-  - No longer available
-  - [AliExpress](https://www.aliexpress.com/item/32837907107.html)
-  - [OpenWRT](https://openwrt.org/toh/xiaomi/mir3g)
-  - v2 is a completely different device with a lot worse hardware!
-  - Wi-Fi 5 (802.11ac)
-  - Flashable over serial
 - ~~[ASUS RT-AX58U](https://www.asus.com/networking-iot-servers/wifi-routers/asus-wifi-routers/rt-ax58u/)~~
   - I don't have one, but have received positive feedback from friends and relatives who have these.
   - Now that there are finally devices compatible with both OpenWRT and Wi-Fi 6, you should get one of those instead.
