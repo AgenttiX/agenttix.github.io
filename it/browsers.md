@@ -49,3 +49,13 @@ is the only one that properly respects user privacy and open web standards.
 - User-Agent Switcher
 - Video Controls for Instagram
 - [Video DownloadHelper](https://www.downloadhelper.net/)
+
+
+## Fixes
+
+### Firefox and Thunderbird crash at launch
+This fix is for the
+[crash](https://crash-stats.mozilla.org/report/index/b389ce92-f07c-44f0-845f-a2df00260402)
+at module: `libvulkan.so.1`, signature: `linux_read_sorted_physical_devices` and source: `
+/usr/src/vulkan-loader-1.3.275.0-1build1/loader/loader_linux.c:277`.
+Add the environment variable `VK_DRIVER_FILES=""` in the `.desktop` launcher files of Firefox and Thunderbird.
