@@ -26,6 +26,14 @@ Android: [Amazon Appstore](https://www.amazon.com/Incandescent-Workshop-Artemis-
 The Google Play version has been removed.
 
 
+### [Civilization VI](https://civilization.2k.com/civ-vi/)
+If you have multiple GPUs on Linux and get a black screen with the game mouse cursor, check
+`${HOME}/.steam/debian-installation/steamapps/compatdata/289070/pfx/drive_c/users/steamuser/AppData/Local/Firaxis Games/Sid Meier's Civilization VI/Logs/Renderer.log`
+to see whether the game if using the correct GPU.
+If not, select the correct GPU in
+`${HOME}/.steam/debian-installation/steamapps/compatdata/289070/pfx/drive_c/users/steamuser/AppData/Local/Firaxis Games/Sid Meier's Civilization VI/AppOptions.txt`.
+
+
 ### [Empire Earth II](https://en.wikipedia.org/wiki/Empire_Earth_II)
 Empire Earth II is a classic real-time strategy (RTS) game that is great for LAN parties.
 The game starts from the stone age and progresses throughout human history
