@@ -350,6 +350,57 @@ Workaround: [change from overlayfs2 to fuse-overlayfs](https://webdock.io/en/doc
 - You may also have to enable FUSE for the container in the LXC settings.
 
 
+### Intel GPU Passthrough for Docker in LXC
+- This is highly useful for e.g. Jellyfin and Plex media transcoding.
+- In the LXC container
+  - Run `getent group render video` and take a note of the group numbers.
+    You will need them later.
+- On the host
+  - `apt install firmware-linux-nonfree intel-gpu-tools`
+    - Be careful when running this command! If it would remove the Proxmox kernel,
+      then replace `firmware-linux-nonfree` with `firmware-intel-graphics` in the command.
+    - [The firmware is necessary for low-power encoding.](https://jellyfin.org/docs/general/post-install/transcoding/hardware-acceleration/intel/#configure-and-verify-lp-mode-on-linux)
+  - Reboot the host.
+  - If you have multiple GPUs, run `intel_gpu_top` and take note of the `/dev/dri/card*` path in the output.
+    This is the card that you want to pass through.
+  - Run `ls -l /dev/dri` to see which GPUs you have.
+  - Edit `/etc/pve/lxc/<container_number>.conf` and add the following lines:
+    - `dev0: /dev/dri/card0,gid=44`
+    - `dev1: /dev/dri/renderD128,gid=108`
+    - Replace `card0` with the card you saw in `intel_gpu_top`, and `renderD128` with the corresponding render device.
+      (If you have several, you may have to use additional tools or guessing to find the correct one.)
+      Replace `44` with the ID of the `video` group and `108` with the ID of the `render` group
+      that you have in the LXC container.
+  - Reboot the LXC container.
+- In the LXC container
+  - Run `ls -l /dev/dri` and ensure that the forwarded devices are visible
+    and are owned by the `video` and `render` groups as on the host.
+  - Add this section for the container(s) in your `docker-compose.yml`:
+    ```
+    devices:
+      - /dev/dri/card1:/dev/dri/card1
+      - /dev/dri/renderD128:/dev/dri/renderD128
+    group_add:
+      - "44"   # video
+      - "108"  # render
+    ```
+  - (Re-)start the Docker containers.
+- Jellyfin settings
+  - Hardware acceleration: Intel Quicksync (QSV)
+  - QSV device: `/dev/dri/renderD128` (or whatever you set previously)
+  - Enable hardware decoding also for AV1 if your GPU supports it.
+  - Enable low-power decoders
+- Testing
+  - Start a stream in Jellyfin and set the quality settings so that the video is transcoded.
+  - Run `intel_gpu_top` on the host. You should see an ffmpeg process using the GPU.
+- Debugging
+  - If something is not working, run
+    `apt install intel-gpu-tools intel-media-va-driver-non-free vainfo ` and then `vainfo`.
+    You may have to run these as sudo.
+    You should see a list of the supported profiles.
+    - [The non-free driver variant is necessary for encoding.](https://wiki.debian.org/HardwareVideoAcceleration)
+
+
 ### Nvidia GPU Passthrough for Docker in LXC
 - This is highly useful for e.g. Jellyfin and Plex media transcoding.
 - Before starting, ensure that Nvidia has drivers for your GPU and kernel version.
