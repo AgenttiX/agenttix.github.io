@@ -56,6 +56,13 @@ is the only one that properly respects user privacy and open web standards.
 ### Firefox and Thunderbird crash at launch
 This fix is for the
 [crash](https://crash-stats.mozilla.org/report/index/b389ce92-f07c-44f0-845f-a2df00260402)
-at module: `libvulkan.so.1`, signature: `linux_read_sorted_physical_devices` and source: `
-/usr/src/vulkan-loader-1.3.275.0-1build1/loader/loader_linux.c:277`.
-Add the environment variable `VK_DRIVER_FILES=""` in the `.desktop` launcher files of Firefox and Thunderbird.
+at module: `libvulkan.so.1`, signature: `linux_read_sorted_physical_devices` and source:
+`/usr/src/vulkan-loader-1.3.275.0-1build1/loader/loader_linux.c:277`.
+Please see the folder `/usr/share/vulkan/icd.d` for the available Vulkan ICD files.
+Take a note of the one that matches your GPU and the driver you are using.
+Then add it as an environment variable `VK_DRIVER_FILES=/usr/share/vulkan/icd.d/YOUR_ICD.json`
+in the `.desktop` launcher files of Firefox and Thunderbird.
+On Kubuntu, you can use the (KDE) Menu Editor for this.
+If this helps Firefox to start, then check the `about:config` page to see that the graphics acceleration is enabled.
+If it doesn't work, then the issue is likely due to Snap confinement,
+and you need to remove the Snap versions of Firefox and Thunderbird, and install the deb or Flatpak versions instead.
