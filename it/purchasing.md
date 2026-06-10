@@ -70,6 +70,7 @@ Check these at the purchase situation:
 - Check that the fans work, and that they don't make any strange noises that would indicate failing bearings.
 - Check that the device has the hardware features the seller claims it has.
 
+
 #### Computers
 Ask these before buying if they are not mentioned in the description, and verify them at the purchase situation:
 - Ensure that the BIOS/UEFI settings are not locked.
@@ -102,6 +103,7 @@ Ask these before buying if they are not mentioned in the description, and verify
 - Ensure that the device is not locked to a specific carrier.
 - Ensure that anti-theft is disabled.
 - Ensure that the device is not locked to a specific Google or Apple account.
+
 
 #### What if the device is locked?
 Don't buy the device. It may be stolen.
@@ -142,12 +144,8 @@ consider buying a laptop and a USB-c or Thunderbolt dock instead.
 ### GPU
 - [Geizhals list](https://geizhals.eu/?cat=gra16_512&xf=132_8192~20252_AV1~20252_H.264~20252_H.265~20253_AV1~20253_H.264~20253_H.265~5425_1&sort=p)
 - GPU is the most important part for gaming.
-- Depending on the state of the cryptocurrency market, finding a GPU can be difficult, and the prices may be inflated.
+- Finding a GPU can be difficult, and the prices may be inflated, depending on what kind of a boom is going on at the moment (AI, cryptocurrency etc.).
   In those times finding a good deal can take a lot of work.
-- If you're streaming or recording your monitor, look for a GPU with a good encoder.
-  At the moment Nvidia's NVENC is superior to the alternatives.
-  However, many of the cheapest GPUs such as the MX series and the GTX 1600 series don't include NVENC,
-  so one should be careful when choosing the GPU.
 - At the moment GPUs are supported for about nine years after release.
   This is the maximum time you can expect the GPU to be compatible with the latest OS, both on Windows and on Linux.
   (For example the GTX 700 series is supported on Ubuntu 22.04 only with legacy drivers,
@@ -155,15 +153,6 @@ consider buying a laptop and a USB-c or Thunderbolt dock instead.
 - New GPUs often have significant feature improvements such as video encoders and decoders and newer connector versions.
   Therefore, buying a lower-end model from a newer series instead of a higher-end model from older series
   may be worth the additional price, even when the raw performance would be similar.
-  - [AV1 hardware decoding and encoding](https://en.wikipedia.org/wiki/AV1#Hardware_encoding_and_decoding_support)
-    - Hardware decoding
-      - Apple M3 &rarr;
-      - AMD RX 6000 series (RDNA2) &rarr;
-      - Nvidia RTX 3000 series &rarr;
-    - Hardware encoding
-      - Apple: not supported (as of 2025)
-      - AMD RX 7000 series (RDNA3) &rarr;
-      - Nvidia RTX 4000 series &rarr;
 - AMD GPU drivers are included in the Linux kernel and therefore work out of the box,
   whereas Nvidia GPU drivers have to be installed separately
   and are compatible with new Linux distribution versions only as long as the GPU is officially supported by Nvidia.
@@ -189,6 +178,41 @@ consider buying a laptop and a USB-c or Thunderbolt dock instead.
   The connector is also very fragile, so avoid bending the cables when doing cable management.
   [Gamers Nexus](https://www.gamersnexus.net/news-pc/3692-intel-arc-isnt-dead-melting-gpu-cables),
   [JayzTwoCents](https://www.youtube.com/watch?v=K6FiGEAp928)
+
+
+#### Hardware video encoding and decoding
+- Hardware video decoding is necessary for power-efficient video playback.
+- Hardware video encoding is necessary for streaming and screen recording.
+  If you're streaming or recording your screen, look for a GPU with a good encoder, preferably AV1.
+  As of 2026, Nvidia and Intel have good AV1 hardware encoders, and AMD's encoder is OK as well.
+  - However, note that many of Nvidia's cheapest GPUs such as the MX series and the GTX 1600 series don't include their hardware encoder (NVENC). 
+- [AV1 hardware decoding and encoding](https://en.wikipedia.org/wiki/AV1#Hardware_encoding_and_decoding_support)
+    - Hardware decoding
+      - Apple:
+        [A17 Pro](https://en.wikipedia.org/wiki/Apple_A17_Pro),
+        [A18 / A18 Pro](https://en.wikipedia.org/wiki/Apple_A18),
+        [M3](https://en.wikipedia.org/wiki/Apple_M3) &rarr;
+      - AMD: RX 6000 series
+        ([RDNA 2](https://en.wikipedia.org/wiki/RDNA_2)) &rarr;
+      - Nvidia: [RTX 3000 series](https://en.wikipedia.org/wiki/GeForce_RTX_30_series) &rarr;
+    - Hardware encoding
+      - Apple: not supported (as of 2025)
+      - AMD: [RDNA 3](https://en.wikipedia.org/wiki/RDNA_3) &rarr;
+        - RX 7000 series &rarr;
+        - Some Zen 4 CPUs
+          - Desktop: [Ryzen 8000G (Phoenix)](https://en.wikipedia.org/wiki/Zen_4#Phoenix)
+          - Mobile: [Ryzen 7040 (Phoenix)](https://en.wikipedia.org/wiki/Zen_4#Phoenix_2)
+        - Some Zen 5 CPUs
+          - [Ryzen AI Max (Strix Halo)](https://en.wikipedia.org/wiki/Zen_5#Strix_Halo)
+          - Ryzen AI 400
+            ([desktop](https://en.wikipedia.org/wiki/Zen_5#AI_400_Series),
+            [mobile (Gorgon Point)](https://en.wikipedia.org/wiki/Zen_5#Gorgon_Point))
+      - Intel mobile CPU: Core Ultra 1xx
+        ([Meteor Lake](https://en.wikipedia.org/wiki/Meteor_Lake)) &rarr;
+      - Intel desktop CPU: Core Ultra 2xx
+        ([Arrow Lake](https://en.wikipedia.org/wiki/Arrow_Lake_(microprocessor))) &rarr;
+      - Intel GPU: all [Arc GPUs](https://en.wikipedia.org/wiki/Intel_Arc)
+      - Nvidia: [RTX 4000 series](https://en.wikipedia.org/wiki/GeForce_RTX_40_series) &rarr;
 
 
 ### RAM
@@ -251,14 +275,15 @@ consider buying a laptop and a USB-c or Thunderbolt dock instead.
 - As of 2022, PCIe 4.0 may not be worth the additional price.
 
 
-## HDD
+### HDD
 - CMR vs. SMR
 - RAID 5 & RAID 6
 
 
 ### Power supply (PSU)
 - [Geizhals list](https://geizhals.eu/?cat=gehps&xf=18421_4~360_850~363_semi-passiv~4174_ATX&sort=p#productlist)
-- Aim for at least 80 Plus Gold certification. This is also an indicator of build quality.
+- Aim for at least [80 Plus](https://en.wikipedia.org/wiki/80_Plus) Gold certification.
+  This is also an indicator of build quality.
 - Look for a semi-passive model. This means that the fan should stop spinning with low loads.
   It will reduce the noise and extend the lifetime of the fan.
 - If you pay for your electricity yourself and have the computer on for the most of the time
