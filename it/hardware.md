@@ -88,7 +88,7 @@ title: Hardware
 
 
 ## Websites & YouTube channels
-- [Gamers Nexus](https://gamersnexus.net/)
+- [Gamers Nexus](https://gamersnexus.net/):
   [YouTube](https://www.youtube.com/gamersnexus)
 - Linus Tech Tips:
   [YouTube](https://www.youtube.com/user/LinusTechTips),
@@ -137,6 +137,11 @@ This is my primary desktop computer.
     - Last supported driver: 580
     - From my old desktop
     - For virtual machines
+- SSD: [WD Red SN700 4TB (WDS400T1R0C-68BDK0)](https://www.sandisk.com/en-ie/products/ssd/internal-ssd/wd-red-sn700-nvme-ssd?sku=WDS400T1R0C-68BDK0):
+  [TechPowerUp](https://www.techpowerup.com/ssd-specs/western-digital-red-sn700-4-tb.d1621),
+  [hinta.fi](https://hinta.fi/3051696/western-digital-red-wd-red-sn700-nvme),
+  [Amazon.de](https://www.amazon.de/-/en/Western-Digital-SN700-NVMe-PCIe/dp/B09H1M6ZRT)
+  - PCIe 3.0 x4 NVMe M.2 2280
 - PSU: [Corsair 1600W AX1600i (CP-9020087-EU)](https://www.corsair.com/eu/en/p/psu/cp-9020087-eu/ax1600i-digital-atx-power-supply-1600-watt-fully-modular-psu-eu-cp-9020087-eu):
   [hinta.fi](https://hinta.fi/1367212/corsair-ax-series-ax1600i)
   - Reviews: [KitGuru](https://www.kitguru.net/components/power-supplies/zardon/corsair-ax1600i-digital-power-supply-review/)
@@ -240,7 +245,7 @@ ACPI Error: Aborting method \_SB.S0D2.D2A0.BYUP.BYD8.XHC1.RHUB.PRT6._PLD due to 
 ##### Xid 79 / ACPI 15 GPU crash
 This issue appeared spontaneously after years of use with my RTX 3070,
 and it disappeared when I upgraded to the RTX 3090.
-The RTX 3070 has been working well in my server since.
+The RTX 3070 has been working well in my [agx-h12](#agx-h12) server since.
 Therefore, the issue may have been due to a degradation of signal quality over time,
 which became apparent only because of the PCB trace length and complexity of the TRX40 motherboard.
 
@@ -370,7 +375,7 @@ You can do this in the BIOS settings at *Tool &rarr; Asus EZ Flash 3 Utility*.
 ##### Ai Tweaker
 These settings are specific to your CPU and RAM.
 Don't set these until you have first safely installed your OS and run some stress tests to ensure stability.
-- [Overclocking guide](www.techpowerup.com/review/amd-ryzen-threadripper-3000-overclocking-deep-dive-asus-rog-zenith-ii-extreme/)
+- [Overclocking guide](https://www.techpowerup.com/review/amd-ryzen-threadripper-3000-overclocking-deep-dive-asus-rog-zenith-ii-extreme/)
 - [DRAM Calculator for Ryzen](https://www.techpowerup.com/download/ryzen-dram-calculator/)
 
 - Ai Overclock Tuner: Default
@@ -594,7 +599,7 @@ Don't set these until you have first safely installed your OS and run some stres
   - SB Link Mode: Auto
   - Intel LAN Controller: Enabled
     - Intel LAN OPROM: Disabled (Unless you need to use PXE booting on this LAN port)
-  - 10G LAN Cad: Enabled
+  - 10G LAN Card: Enabled
     - 10G LAN PXE Option ROM: Disabled (Unless you need to use PXE booting on this LAN port)
   - Wi-Fi 6 (802.11ax) Controller: Enabled
     - Don't forget to install the Wi-Fi antennae to the back of the computer case.
@@ -954,7 +959,7 @@ Q-Fan Tuning
 ### agx-t480
 - ThinkPad T480
 - CPU: Intel Core i7-8550U
-- GPU: Nvidia GeForce MX150 2GB: [Techpowerup](https://www.techpowerup.com/gpu-specs/geforce-mx150.c2959)
+- GPU: Nvidia GeForce MX150 2GB: [TechPowerUp](https://www.techpowerup.com/gpu-specs/geforce-mx150.c2959)
   - Pascal architecture
   - Last supported driver: 580
 - RAM: 32 GB DDR4 2400 MHz
@@ -1010,8 +1015,11 @@ Q-Fan Tuning
 - HDD
   - 6x 18 TB RAIDZ2 = 72 TB fault-tolerant
     - Seagate Exos X18 18 TB (ST18000NM000J, PN: 2TV103-002, SATA3, 7200 RPM, 256 MB cache)
-  - Mini SAS 36pin 4i (SFF-8087) &rarr; 4x SATA breakout cable:
+  - SAS Slim 4.0 74pin 8i (SFF-8654) &rarr; 2x Mini SAS 36pin 4i (SFF-8087):
+    [Amazon.de](https://www.amazon.de/-/en/dp/B09Q5GDFHZ)
+  - 4x SATA &rarr; Mini SAS 36pin 4i (SFF-8087) reverse breakout cable:
     [Amazon.de](https://www.amazon.de/dp/B07QMFB385)
+    - For connecting the onboard SATA ports to the Mini SAS port on the backplane of the case
 - Network card: Mellanox ConnectX-3 MCX312A-XCBT 10 Gbps SFP+:
   [Ebay](https://www.ebay.com/itm/133642060744)
 - TPM: [AOM-TPM-9665V-S](https://www.supermicro.com/en/products/accessories/addon/aom-tpm-9665v.php)
