@@ -101,20 +101,24 @@ title: Hardware
 [Geekbench results](https://browser.geekbench.com/user/AgenttiX)
 
 
-### agx-z2e (my desktop computer)
+### agx-z2e
+This is my primary desktop computer.
 - Motherboard: [ASUS Zenith II Extreme](https://rog.asus.com/motherboards/rog-zenith/rog-zenith-ii-extreme-model/)
   - Asus TPM-M R2.0 (90MC03W0-M0XBN1)
 - CPU: [AMD Ryzen Threadripper 3970X (100-100000011WOF)](https://en.wikipedia.org/wiki/Zen_2#3000_series_(Matisse))
 - RAM: 8x 16 GB = 128 GB
-  [Kingston 2666 MHz ECC (KSM26ED8/16ME)](https://www.kingston.com/datasheets/KSM26ED8_16ME.pdf)
+  [Kingston DDR4 2666 MHz ECC UDIMM (KSM26ED8/16ME)](https://www.kingston.com/datasheets/KSM26ED8_16ME.pdf)
 - GPU
-  - NVIDIA RTX 3070:
-    [TechPowerUp](https://www.techpowerup.com/gpu-specs/geforce-rtx-3070.c3674),
-    [Wikipedia](https://en.wikipedia.org/wiki/GeForce_RTX_30_series#Desktop)
-    - FP64: 317.4 GFLOPS (1/64 of FP32)
+  - NVIDIA RTX 3090:
+    [TechPowerUp](https://www.techpowerup.com/gpu-specs/geforce-rtx-3090.c3622),
+    [Wikipedia](https://en.wikipedia.org/wiki/GeForce_RTX_30_series#Desktop),
+    [Ebay](https://www.ebay.com/itm/236657006579)
+    - 24 GB GDDR6X
+    - FP64: 556.0 GFLOPS (1/64 of FP32)
   - PowerColor Radeon VII (AXVII-16GBHBM2-3DH):
     [TechPowerUp](https://www.techpowerup.com/gpu-specs/powercolor-radeon-vii.b6665),
     [Wikipedia](https://en.wikipedia.org/wiki/Radeon_RX_Vega_series#Radeon_VII_branded_discrete_graphics)
+    - 16 GB HBM2
     - FP64: 3.360 TFLOPS (1/4 of FP32)
     - [No longer compatible with the latest ROCm](https://github.com/ROCm/ROCm/discussions/3893)
     - The last ROCm version to fully support Radeon VII is 6.0.0.
@@ -124,10 +128,11 @@ title: Hardware
       - This release
         [supports](https://rocm.docs.amd.com/projects/install-on-linux/en/docs-6.3.3/reference/system-requirements.html)
         Ubuntu 24.04.2 with the 6.8 and 6.11 kernels, and Debian 12 with the 6.1 kernel.
-    - For ROCm and virtual machines
+    - Used for ROCm and virtual machines
   - NVIDIA GTX Titan:
     [TechPowerUp](https://www.techpowerup.com/gpu-specs/geforce-gtx-titan.c1996),
     [Wikipedia](https://en.wikipedia.org/wiki/GeForce_700_series#GeForce_700_(7xx)_series)
+    - 6 GB GDDR5
     - FP64: 1.570 TFLOPS (1/3 of FP32)
     - Last supported driver: 580
     - From my old desktop
@@ -205,6 +210,7 @@ options nvidia-drm modeset=1
 
 #### Issues
 - [BIOS 1603 is buggy and 1502 is more stable](https://rog-forum.asus.com/t5/zenith-extreme-x399-e/zenith-ii-extreme-alpha-instability-and-restarts-with-bios-1603/m-p/895749/highlight/true#M4540)
+- [On Kubuntu 26.04, KDE window manager restarts spontaneously after the computer has been on for a while](https://bugs.kde.org/show_bug.cgi?id=523384)
 
 
 ##### ACPI bugs
@@ -232,6 +238,12 @@ ACPI Error: Aborting method \_SB.S0D2.D2A0.BYUP.BYD8.XHC1.RHUB.PRT6._PLD due to 
 
 
 ##### Xid 79 / ACPI 15 GPU crash
+This issue appeared spontaneously after years of use with my RTX 3070,
+and it disappeared when I upgraded to the RTX 3090.
+The RTX 3070 has been working well in my server since.
+Therefore, the issue may have been due to a degradation of signal quality over time,
+which became apparent only because of the PCB trace length and complexity of the TRX40 motherboard.
+
 This is a common issue on TRX40 motherboards.
 Sometimes during uneven load, the computer crashes and the monitors go black.
 This issue occurs on both Windows and Linux.
@@ -956,13 +968,71 @@ Q-Fan Tuning
 - NFC
 
 
+### agx-h12
+- CPU: AMD EPYC 7302P:
+  [TechPowerUp](https://www.techpowerup.com/cpu-specs/epyc-7302p.c2262),
+  [Wikipedia](https://en.wikipedia.org/wiki/Zen_2#Server_CPUs)
+  - 16 cores, 32 threads, Zen 2 (Rome) architecture
+- Motherboard: [Supermicro H12SSL-i](https://www.supermicro.com/en/products/motherboard/h12ssl-i):
+  [Ebay](https://www.ebay.com/itm/394219440410)
+- RAM: 8x 32 GB = 256 GB
+  SK hynix DDR4 2400 MHz ECC RDIMM (HMA84GR7AFR4N-UH, HP PN 809083-091):
+  [Ebay](https://www.ebay.com/itm/305810502003)
+- GPU
+  - NVIDIA RTX 3070:
+    [TechPowerUp](https://www.techpowerup.com/gpu-specs/geforce-rtx-3070.c3674),
+    [Wikipedia](https://en.wikipedia.org/wiki/GeForce_RTX_30_series#Desktop)
+    - 8 GB GDDR6
+    - FP64: 317.4 GFLOPS (1/64 of FP32)
+    - Used for LLM inference
+    - This GPU used to be in my [agx-z2e](#agx-z2e) desktop.
+  - Intel Arc A380:
+    [TechPowerUp](https://www.techpowerup.com/gpu-specs/arc-a380.c3913),
+    [Wikipedia](https://en.wikipedia.org/wiki/Intel_Arc#Desktop),
+    [hinta.fi](https://hinta.fi/3642597/asrock-challenger-intel-arc-a380-challenger-itx-6gb-oc)
+    - 6 GB GDDR6
+    - Used for video transcoding, including AV1
+  - NVIDIA Quadro P2200:
+    [TechPowerUp](https://www.techpowerup.com/gpu-specs/quadro-p2200.c3442)
+    - 5 GB GDDR5X
+    - Last supported driver: 580
+    - Used for image recognition
+- SSD
+  - [Samsung 980 1TB (MZ-V8V1T0)](https://download.semiconductor.samsung.com/resources/data-sheet/Samsung_NVMe_SSD_980_Data_Sheet_Rev.1.1.pdf):
+    [hinta.fi](https://hinta.fi/2559345/samsung-980),
+    [Amazon.de](https://www.amazon.de/dp/B08TJ2649W)
+    - PCIe 3.0 x4 NVMe M.2 2280
+    - For hypervisor
+  - [Corsair Force MP600 2TB (CSSD-F2000GBMP600)](https://www.corsair.com/us/en/p/data-storage/cssd-f2000gbmp600/force-series-gen-4-pcie-mp600-2tb-nvme-m-2-ssd-cssd-f2000gbmp600):
+    [TechPowerUp](https://www.techpowerup.com/ssd-specs/corsair-mp600-2-tb.d374)
+    - PCIe 4.0 x4 NVMe M.2 2280
+    - For virtual machines
+- HDD
+  - 6x 18 TB RAIDZ2 = 72 TB fault-tolerant
+    - Seagate Exos X18 18 TB (ST18000NM000J, PN: 2TV103-002, SATA3, 7200 RPM, 256 MB cache)
+  - Mini SAS 36pin 4i (SFF-8087) &rarr; 4x SATA breakout cable:
+    [Amazon.de](https://www.amazon.de/dp/B07QMFB385)
+- Network card: Mellanox ConnectX-3 MCX312A-XCBT 10 Gbps SFP+:
+  [Ebay](https://www.ebay.com/itm/133642060744)
+- TPM: [AOM-TPM-9665V-S](https://www.supermicro.com/en/products/accessories/addon/aom-tpm-9665v.php)
+- PSU: [Corsair 1600W AX1600i (CP-9020087-EU)](https://www.corsair.com/eu/en/p/psu/cp-9020087-eu/ax1600i-digital-atx-power-supply-1600-watt-fully-modular-psu-eu-cp-9020087-eu)
+  - The same as in [agx-z2e](#agx-z2e)
+- Case: [Inter-Tech 4U-4416 88887120](https://www.inter-tech.de/productdetails/4U-4416_EN.html):
+  [Amazon.de](https://www.amazon.de/dp/B01D63MXUW)
+  - Rack mounting rails: [Amazon.de](https://www.amazon.de/dp/B074KDZGLK)
+- CPU cooler: [Arctic Freezer 4U SP3](https://www.arctic.de/en/Freezer-4U-SP3/ACFRE00081A)
+- Fans: 3x [Noctua NF-A12x25](https://www.noctua.at/en/products/nf-a12x25-pwm):
+  [Amazon.de](https://www.amazon.de/dp/B07C5VG64V)
+
+
 ### agx-ud7
-- CPU: Intel Core i7-930: [Techpowerup](https://www.techpowerup.com/cpu-specs/core-i7-930.c718)
+- CPU: Intel Core i7-930: [TechPowerUp](https://www.techpowerup.com/cpu-specs/core-i7-930.c718)
 - Motherboard: [Gigabyte GA-X58A-UD7 (rev. 1.0)](https://www.gigabyte.com/Motherboard/GA-X58A-UD7-rev-10)
 - GPU
   - 1st: ATI Radeon HD 5700
-  - 2nd: NVIDIA GTX 760: [Techpowerup](https://www.techpowerup.com/gpu-specs/geforce-gtx-760.c1857)
-  - 3rd: NVIDIA GTX Titan: [Techpowerup](https://www.techpowerup.com/gpu-specs/geforce-gtx-titan.c1996)
+  - 2nd: NVIDIA GTX 760: [TechPowerUp](https://www.techpowerup.com/gpu-specs/geforce-gtx-760.c1857)
+  - 3rd: NVIDIA GTX Titan: [TechPowerUp](https://www.techpowerup.com/gpu-specs/geforce-gtx-titan.c1996)
+    - Moved to [agx-z2e](#agx-z2e)
 - RAM: DDR4
   - 1st: 3x 2 GB = 6 GB
   - 2nd: 6x 4 GB = 24 GB
