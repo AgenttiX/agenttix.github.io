@@ -105,11 +105,12 @@ title: Hardware
 This is my primary desktop computer.
 - Motherboard: [ASUS Zenith II Extreme](https://rog.asus.com/motherboards/rog-zenith/rog-zenith-ii-extreme-model/)
   - Asus TPM-M R2.0 (90MC03W0-M0XBN1)
-- CPU: [AMD Ryzen Threadripper 3970X (100-100000011WOF)](https://en.wikipedia.org/wiki/Zen_2#3000_series_(Matisse))
+- CPU: [AMD Ryzen Threadripper 3970X (100-100000011WOF)](https://en.wikipedia.org/wiki/Zen_2#3000_series_(Matisse)),
+  [PassMark](https://www.cpubenchmark.net/cpu.php?cpu=AMD+Ryzen+Threadripper+3970X&id=3623)
 - RAM: 8x 16 GB = 128 GB
   [Kingston DDR4 2666 MHz ECC UDIMM (KSM26ED8/16ME)](https://www.kingston.com/datasheets/KSM26ED8_16ME.pdf)
 - GPU
-  - NVIDIA RTX 3090:
+  - [NVIDIA RTX 3090](https://www.nvidia.com/en-us/geforce/graphics-cards/30-series/rtx-3090-3090ti/):
     [TechPowerUp](https://www.techpowerup.com/gpu-specs/geforce-rtx-3090.c3622),
     [Wikipedia](https://en.wikipedia.org/wiki/GeForce_RTX_30_series#Desktop),
     [Ebay](https://www.ebay.com/itm/236657006579)
@@ -128,6 +129,8 @@ This is my primary desktop computer.
       - This release
         [supports](https://rocm.docs.amd.com/projects/install-on-linux/en/docs-6.3.3/reference/system-requirements.html)
         Ubuntu 24.04.2 with the 6.8 and 6.11 kernels, and Debian 12 with the 6.1 kernel.
+    - Support for newer Linux distributions and kernel versions is possible by installing ROCm in a Docker container.
+      See [my AI server configs](https://github.com/AgenttiX/agx-ai) for details.
     - Used for ROCm and virtual machines
   - NVIDIA GTX Titan:
     [TechPowerUp](https://www.techpowerup.com/gpu-specs/geforce-gtx-titan.c1996),
@@ -216,6 +219,14 @@ options nvidia-drm modeset=1
 #### Issues
 - [BIOS 1603 is buggy and 1502 is more stable](https://rog-forum.asus.com/t5/zenith-extreme-x399-e/zenith-ii-extreme-alpha-instability-and-restarts-with-bios-1603/m-p/895749/highlight/true#M4540)
 - [On Kubuntu 26.04, KDE window manager restarts spontaneously after the computer has been on for a while](https://bugs.kde.org/show_bug.cgi?id=523384)
+  - This is a bug in KWin 6.6 when used with Nvidia driver > 595.
+    [Linux 6.19 introduced the DRM Color Pipeline API](https://www.phoronix.com/news/Linux-6.19-Graphics-Drivers),
+    and support for it was implemented in
+    [KWin 6.6](https://www.phoronix.com/news/Plasma-6.6-Per-DRM-Plane-Color) and
+    [Nvidia driver > 595](https://www.phoronix.com/news/NVIDIA-Preview-DRM-Color-Pipe).
+    However, the compatibility between KWin 6.6 and the Nvidia implementation is buggy, resulting in a KWin crash.
+    This is fixed in KWin 6.6.6 and 6.7.1.
+  - As a workaround, you can set `options nvidia-drm color_pipeline=0` in `/etc/modprobe.d/`.
 
 
 ##### ACPI bugs
@@ -950,18 +961,23 @@ Q-Fan Tuning
 
 ### agx-l14
 - ThinkPad L14 Gen 5 (21L2-S0V400)
-- CPU: [Intel Core Ultra 5 125U](https://www.intel.com/content/www/us/en/products/sku/237330/intel-core-ultra-5-processor-125u-12m-cache-up-to-4-30-ghz/specifications.html)
+- CPU: [Intel Core Ultra 5 125U](https://www.intel.com/content/www/us/en/products/sku/237330/intel-core-ultra-5-processor-125u-12m-cache-up-to-4-30-ghz/specifications.html),
+  [PassMark](https://www.cpubenchmark.net/cpu.php?cpu=Intel+Core+Ultra+5+125U&id=5840)
 - GPU: Intel integrated
 - RAM: 32 GB
 - SSD: 1 TB
 
 
 ### agx-t480
-- ThinkPad T480
-- CPU: Intel Core i7-8550U
-- GPU: Nvidia GeForce MX150 2GB: [TechPowerUp](https://www.techpowerup.com/gpu-specs/geforce-mx150.c2959)
-  - Pascal architecture
-  - Last supported driver: 580
+- ThinkPad T480: [Wikipedia](https://en.wikipedia.org/wiki/ThinkPad_T_series#T480)
+- CPU: [Intel Core i7-8550U](https://www.intel.com/content/www/us/en/products/sku/122589/intel-core-i78550u-processor-8m-cache-up-to-4-00-ghz/specifications.html),
+  [PassMark](https://www.cpubenchmark.net/cpu.php?cpu=Intel+Core+i7-8550U+%40+1.80GHz&id=3064)
+- GPU
+  - Nvidia GeForce MX150: [TechPowerUp](https://www.techpowerup.com/gpu-specs/geforce-mx150.c2959)
+    - 2 GB GDDR5
+    - Pascal architecture
+    - Last supported driver: 580
+  - Intel HD Graphics 620
 - RAM: 32 GB DDR4 2400 MHz
 - SSD: 1 TB, M.2 2280, NVMe, Opal 2.0
 - Display: 14" FHD IPS, 250 nits, anti-glare, touch
@@ -976,7 +992,8 @@ Q-Fan Tuning
 ### agx-h12
 - CPU: AMD EPYC 7302P:
   [TechPowerUp](https://www.techpowerup.com/cpu-specs/epyc-7302p.c2262),
-  [Wikipedia](https://en.wikipedia.org/wiki/Zen_2#Server_CPUs)
+  [Wikipedia](https://en.wikipedia.org/wiki/Zen_2#Server_CPUs),
+  [PassMark](https://www.cpubenchmark.net/cpu.php?cpu=AMD+EPYC+7302P&id=3610)
   - 16 cores, 32 threads, Zen 2 (Rome) architecture
 - Motherboard: [Supermicro H12SSL-i](https://www.supermicro.com/en/products/motherboard/h12ssl-i):
   [Ebay](https://www.ebay.com/itm/394219440410)
@@ -1007,14 +1024,17 @@ Q-Fan Tuning
     [hinta.fi](https://hinta.fi/2559345/samsung-980),
     [Amazon.de](https://www.amazon.de/dp/B08TJ2649W)
     - PCIe 3.0 x4 NVMe M.2 2280
-    - For hypervisor
+    - For Proxmox hypervisor on [Mortar](./virtualization#mortar)-encrypted LUKS+LVM+ext4
   - [Corsair Force MP600 2TB (CSSD-F2000GBMP600)](https://www.corsair.com/us/en/p/data-storage/cssd-f2000gbmp600/force-series-gen-4-pcie-mp600-2tb-nvme-m-2-ssd-cssd-f2000gbmp600):
     [TechPowerUp](https://www.techpowerup.com/ssd-specs/corsair-mp600-2-tb.d374)
     - PCIe 4.0 x4 NVMe M.2 2280
-    - For virtual machines
+    - For virtual machines on encrypted ZFS
+    - This SSD used to be in my [agx-z2e](#agx-z2e) desktop.
 - HDD
   - 6x 18 TB RAIDZ2 = 72 TB fault-tolerant
-    - Seagate Exos X18 18 TB (ST18000NM000J, PN: 2TV103-002, SATA3, 7200 RPM, 256 MB cache)
+    - Seagate Exos X18 18 TB (ST18000NM000J, PN: 2TV103-002, SATA3, 7200 RPM, 256 MB cache, CMR):
+      [hinta.fi](https://hinta.fi/1967240/seagate-enterprise-st18000nm000j),
+      [Amazon.de](https://www.amazon.de/-/en/Seagate-Enterprise-Hyperscale-FastFormat-ST18000NM000J/dp/B08JV6PP9B)
   - SAS Slim 4.0 74pin 8i (SFF-8654) &rarr; 2x Mini SAS 36pin 4i (SFF-8087):
     [Amazon.de](https://www.amazon.de/-/en/dp/B09Q5GDFHZ)
   - 4x SATA &rarr; Mini SAS 36pin 4i (SFF-8087) reverse breakout cable:
@@ -1022,7 +1042,8 @@ Q-Fan Tuning
     - For connecting the onboard SATA ports to the Mini SAS port on the backplane of the case
 - Network card: Mellanox ConnectX-3 MCX312A-XCBT 10 Gbps SFP+:
   [Ebay](https://www.ebay.com/itm/133642060744)
-- TPM: [AOM-TPM-9665V-S](https://www.supermicro.com/en/products/accessories/addon/aom-tpm-9665v.php)
+- TPM: [AOM-TPM-9665V-S](https://www.supermicro.com/en/products/accessories/addon/aom-tpm-9665v.php):
+  [hinta.fi](https://hinta.fi/1236413/supermicro-tpm-module-tcg-2-0-any-tpm-mb)
 - PSU: [Corsair 1600W AX1600i (CP-9020087-EU)](https://www.corsair.com/eu/en/p/psu/cp-9020087-eu/ax1600i-digital-atx-power-supply-1600-watt-fully-modular-psu-eu-cp-9020087-eu)
   - The same as in [agx-z2e](#agx-z2e)
 - Case: [Inter-Tech 4U-4416 88887120](https://www.inter-tech.de/productdetails/4U-4416_EN.html):
@@ -1030,18 +1051,21 @@ Q-Fan Tuning
   - Rack mounting rails: [Amazon.de](https://www.amazon.de/dp/B074KDZGLK)
 - CPU cooler: [Arctic Freezer 4U SP3](https://www.arctic.de/en/Freezer-4U-SP3/ACFRE00081A)
 - Fans: 3x [Noctua NF-A12x25](https://www.noctua.at/en/products/nf-a12x25-pwm):
+  [hinta.fi](https://hinta.fi/1458444/noctua-nf-a12x25-pwm),
   [Amazon.de](https://www.amazon.de/dp/B07C5VG64V)
 
 
 ### agx-ud7
-- CPU: Intel Core i7-930: [TechPowerUp](https://www.techpowerup.com/cpu-specs/core-i7-930.c718)
+- CPU: Intel Core i7-930:
+  [TechPowerUp](https://www.techpowerup.com/cpu-specs/core-i7-930.c718),
+  [PassMark](https://www.cpubenchmark.net/cpu.php?cpu=Intel+Core+i7-930+%40+2.80GHz&id=835)
 - Motherboard: [Gigabyte GA-X58A-UD7 (rev. 1.0)](https://www.gigabyte.com/Motherboard/GA-X58A-UD7-rev-10)
 - GPU
   - 1st: ATI Radeon HD 5700
   - 2nd: NVIDIA GTX 760: [TechPowerUp](https://www.techpowerup.com/gpu-specs/geforce-gtx-760.c1857)
   - 3rd: NVIDIA GTX Titan: [TechPowerUp](https://www.techpowerup.com/gpu-specs/geforce-gtx-titan.c1996)
     - Moved to [agx-z2e](#agx-z2e)
-- RAM: DDR4
+- RAM: DDR3
   - 1st: 3x 2 GB = 6 GB
   - 2nd: 6x 4 GB = 24 GB
 - SSD: OCZ Vertex 4 256 GB (VTX4-25SAT3-256G)
