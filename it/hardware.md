@@ -61,6 +61,13 @@ title: Hardware
   - Windows activation status
   - Hardware specifications
   - Possibly also the results of some performance benchmarks
+- Back up all important data from the computer
+  - You can use [my backup scripts](https://github.com/AgenttiX/windows-scripts/tree/master/Backup) for this.
+- Reset firmware
+  - BIOS settings & password
+  - TPM
+  - Custom Secure Boot keys
+  - Intel ME (if configurable)
 - Wipe storage devices
   - You can use my scripts for this.
     There are direct download links available on the [agx.fi front page](https://agx.fi/)
