@@ -773,8 +773,8 @@ is the combination of an external monitor and keyboard that can be used to conve
   - [With Android, pen and color display](https://geizhals.eu/?cat=pdapceb&xf=2040_Android%7E2040_Digitizer%7E2040_Farb-Display)
 - [BOOX](https://www.boox.com/)
   - [BOOX Note Air4 C](https://shop.boox.com/collections/all/products/noteair4c):
-    [Hintaopas](https://hintaopas.fi/product.php?p=13968012)
-    [Amazon.de](](https://www.amazon.de/-/en/Tablet-Note-Air4-Notepad-Android-black/dp/B0DJ76N9HQ)),
+    [Hintaopas](https://hintaopas.fi/product.php?p=13968012),
+    [Amazon.de](https://www.amazon.de/-/en/Tablet-Note-Air4-Notepad-Android-black/dp/B0DJ76N9HQ)
   - [BOOX Tab Ultra C](https://shop.boox.com/collections/all/products/tabultrac):
     [hinta.fi](https://hinta.fi/5402632/onyx-boox-tab-ultra-c-e-reader)
   - [BOOX Tab Ultra C Pro](https://shop.boox.com/collections/all/products/tabultracpro):
@@ -934,7 +934,7 @@ At least these are known to be problematic:
 
 #### Features to look for, in the order of importance
 - OpenWRT compatibility
-- Enough flash (8 MB) and RAM (64 MB) for OpenWRT to work properly, preferably at least 16 MB flash and 128 MB RAM
+- At least 32 MB flash and 128 MB RAM for OpenWRT to work properly
 - WPA3
   - WPA3-enterprise requires also 192-bit encryption support
 - Wi-Fi 6 or Wi-Fi 7
@@ -949,12 +949,13 @@ This prevents modifying e.g. the transmission power and operational frequencies 
 #### Wi-Fi routers / access points
 - OpenWRT routers such as Banana Pi BPI-R4
   - Please see my [OpenWRT repository](https://github.com/AgenttiX/openwrt-scripts) for details
-- [Ubiquiti UniFi](https://ui.com/wi-fi)
+- [Ubiquiti UniFi](https://ui.com/wi-fi) ([EU store](https://eu.store.ui.com/eu/en/category/all-wifi))
   - If you need multiple access points for enterprise use with centralized management,
     UniFi access points are a cost-effective option with their default firmware.
     If you have only a few access points (such as in home use), you should
     [use OpenWRT instead](https://openwrt.org/toh/ubiquiti/start),
     as many UniFi access points are compatible with OpenWRT.
+    - Prefer models that support the 6 GHz band.
 
 <!--
 - ~~[ASUS RT-AX58U](https://www.asus.com/networking-iot-servers/wifi-routers/asus-wifi-routers/rt-ax58u/)~~

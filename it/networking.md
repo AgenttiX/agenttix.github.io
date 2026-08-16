@@ -186,12 +186,12 @@ When purchasing a 5G antenna, ensure that it has support for the frequency range
 
 - n1: 2100 MHz
 - n28: 700 MHz
-  - Used to provide better upload speeds when used together with n78 with carrier aggregation
+  - Used to provide better upload speeds when used together with n78 and carrier aggregation
   - May require support for Dynamic Spectrum Sharing, since it shares the frequencies with the LTE b28 band
 - n78: 3500 MHz
   - High frequency → short range, high download speed, upload speed is highly dependent on the distance
 - n258: 26 GHz, mmWave
-  - Upcoming (as of 2025)
+  - Upcoming (as of 2026)
 
 The simultaneous use of several frequency bands is known as
 [carrier aggregation (CA)](https://en.wikipedia.org/wiki/Carrier_aggregation).

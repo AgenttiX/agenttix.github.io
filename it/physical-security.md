@@ -14,7 +14,8 @@ title: Physical security
 - Power over Ethernet (PoE)
 - RTSP
 - Wi-Fi
-  - An intruder can jam Wi-Fi signal quite easily, so a physical connection should be used if at all possible.
+  - An intruder can jam Wi-Fi signal quite easily,
+    so a physical connection should be used if at all possible.
 
 
 ### Firmware
