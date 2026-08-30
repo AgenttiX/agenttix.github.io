@@ -440,8 +440,8 @@ Workaround: [change from overlayfs2 to fuse-overlayfs](https://webdock.io/en/doc
 - If you are using LXC directly on top of e.g. Ubuntu instead of Proxmox, follow the
   [Ubuntu instructions](https://ubuntu.com/tutorials/gpu-data-processing-inside-lxd)
   based on `nvidia.runtime=true`. If you're using Proxmox, continue following these instructions instead.
-- Setup the LXC container
-  - Setup the LXC container as usually
+- Set up the LXC container
+  - Set up the LXC container as usually
   - Stop the container
   - On the host, edit `/etc/pve/lxc/<container_number>.conf` as instructed [here](https://jocke.no/2022/02/23/plex-gpu-transcoding-in-docker-on-lxc-on-proxmox/)
     - For me the numbers were 195, 503 and 511
@@ -458,16 +458,19 @@ Workaround: [change from overlayfs2 to fuse-overlayfs](https://webdock.io/en/doc
   Locking merely `nvidia-kernel-open-dkms` and `cuda-drivers` is not sufficient,
   as `apt` may still update their dependencies.
   Therefore, you also have to lock the dependencies that have the same version number as those packages.
-  You can do this by running this command on both the host and the container:
-  `apt-mark hold "^cuda.*$" "^libnvidia.*$" "^nvidia.*$"`
+  You can do this with my [`./install_cuda.sh --hold`](https://github.com/AgenttiX/linux-scripts/blob/master/drivers/install_cuda.sh).
 - Setup Docker
   - Install Docker
   - Install [NVIDIA container runtime](https://gitlab.com/nvidia/container-toolkit/container-toolkit/-/tree/main/cmd/nvidia-container-runtime)
   - Reboot the LXC container
   - Test that the GPU is visible in the container:
     ```sudo docker run --gpus all nvidia/cuda:13.1.0-base-ubuntu24.04 nvidia-smi``` (change the version tag to the latest available)
-  - If you get an error about cgroups, follow
-    [these instructions](https://www.reddit.com/r/Proxmox/comments/s0ud5y/comment/jl4lef2/).
+  - If you get an error about cgroups such as
+    `nvidia-container-cli: mount error: failed to add device rules: unable to find any existing device filters attached to the cgroup: bpf_prog_query(BPF_CGROUP_DEVICE) failed: operation not permitted`,
+    set `no-cgroups = true` in `/etc/nvidia-container-runtime/config.toml`. Sources:
+    [1](https://www.reddit.com/r/Proxmox/comments/s0ud5y/comment/jl4lef2/),
+    [2](https://forum.proxmox.com/threads/docker-is-unable-to-access-gpu-in-lxc-gpu-passthrough.125066/post-582866),
+    [3](https://discuss.linuxcontainers.org/t/how-to-build-nvidia-docker-inside-lxd-lxc-container/17582/5)
 - Follow the instructions for your Docker container, e.g.
   [Jellyfin](https://jellyfin.org/docs/general/administration/hardware-acceleration/nvidia/).
   - If nvidia-smi works in the container but transcoding crashes, check the FFmpeg logs in the Jellyfin dashboard.
