@@ -85,6 +85,7 @@ These steps have to be performed on-site
   before installing any additional device drivers, as those may prevent you from enabling it later.
   Drivers may be provided by Windows Update, which is why this step has to be the first.
 - Join the computer to a domain (if needed and not already joined).
+  - This can be done by running `sysdm.cpl`
   - Move the computer to the correct AD Organizational Unit.
   - Run `gpupdate /force`
   - Reboot
@@ -172,3 +173,10 @@ Another option would be to use enterprise management tools such as
 [Microsoft Intune](https://learn.microsoft.com/en-us/mem/intune/fundamentals/what-is-intune)
 or
 [Puppet](https://puppet.com/).
+
+
+## Repair
+```
+sfc /scannow /offbootdir=D:\ /offwindir=D:\Windows /offlogfile=D:\sfg_LOGNAME.txt
+dism /Image:D:\ /Cleanup-Image /ScanHealth /ScratchDir:D:\dism-temp-dir
+```
