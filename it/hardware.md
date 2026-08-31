@@ -147,7 +147,7 @@ This is my primary desktop computer.
   [hinta.fi](https://hinta.fi/3051696/western-digital-red-wd-red-sn700-nvme),
   [Amazon.de](https://www.amazon.de/-/en/Western-Digital-SN700-NVMe-PCIe/dp/B09H1M6ZRT)
   - PCIe 3.0 x4 NVMe M.2 2280
-- PSU: [Corsair 1600W AX1600i (CP-9020087-EU)](https://www.corsair.com/eu/en/p/psu/cp-9020087-eu/ax1600i-digital-atx-power-supply-1600-watt-fully-modular-psu-eu-cp-9020087-eu):
+- PSU: [Corsair AX1600i 1600 W (CP-9020087-EU)](https://www.corsair.com/eu/en/p/psu/cp-9020087-eu/ax1600i-digital-atx-power-supply-1600-watt-fully-modular-psu-eu-cp-9020087-eu):
   [hinta.fi](https://hinta.fi/1367212/corsair-ax-series-ax1600i)
   - Reviews: [KitGuru](https://www.kitguru.net/components/power-supplies/zardon/corsair-ax1600i-digital-power-supply-review/)
   - The first consumer PSU with GaN transistors
@@ -890,7 +890,7 @@ Q-Fan Tuning
   - WATER PUMP+ 1 Middle Temperature: 50
   - WATER PUMP+ 1 Fan Middle Duty Cycle (%): 80
   - WATER PUMP+ 1 Lower Temperature: 40
-  - WATER PUMP+ 1 Fan Min. Duty Cycle (%): 20
+  - WATER PUMP+ 1 Fan Min. Duty Cycle (%): 50
 - WATER PUMP+ 2 Control: PWM Mode
   - Same settings as for WATER PUMP+ 1
 - VRM Heatsink Fan Q-Fan Control: Disabled
