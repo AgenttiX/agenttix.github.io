@@ -11,6 +11,10 @@ title: My studies
 - [PhD presentations](https://agx.fi/phd-presentations/)
 
 
+## PhD presentations
+You can find my PhD presentations [here](https://agx.fi/phd-presentations/).
+
+
 ## PhD events
 ### 2025
 | Name                                                                                                                                         | Dates       |
