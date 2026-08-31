@@ -57,6 +57,7 @@ Other already closed issues:
     instead of waiting for the device manufacturer to release a device-specific update.
 - Android 12
   - Support for the [AVIF](https://en.wikipedia.org/wiki/AVIF) image format
+    - This was not mandatory until Android 14.
   - [WireGuard VPN support is enabled by default in the Generic Kernel Image (GKI).](https://www.xda-developers.com/google-adds-wireguard-vpn-android-12-linux-kernel-5-4/)
     However, you need root access to use the kernel module.
     Also, the availability of the kernel module may depend on the device,
@@ -67,10 +68,16 @@ Other already closed issues:
 - Android 14
   - Support for [AV1](https://en.wikipedia.org/wiki/AV1) video encoding
 - Android 16
-  - Support for [APV](https://en.wikipedia.org/wiki/Advanced_Professional_Video) encoding and decoding
+  - Support for [APV](https://en.wikipedia.org/wiki/Advanced_Professional_Video) video encoding and decoding
   - Desktop mode
   - [Linux terminal](#linux-terminal)
   - Connection to multiple speakers and headphones simultaneously with Bluetooth LE Audio Auracast
+- Android 17
+  - Support for [VVC (H.266)](https://en.wikipedia.org/wiki/Versatile_Video_Coding)
+    - Encoder and decoder are not included, and have to be provided by the OEM.
+  - Support for 14-bit RAW images (RAW14)
+  - Official API for vendor-defined camera extensions
+  - App Lock: individual apps can be locked with a password
 - [Official list of supported media formats](https://developer.android.com/guide/topics/media/media-formats)
 
 
@@ -86,6 +93,7 @@ These are some of the apps that I have found useful.
 - [BOINC](https://f-droid.org/en/packages/edu.berkeley.boinc/) (GPLv3+)
   - Use only on devices that don't have a battery, e.g. media boxes,
     as batteries can't withstand the prolonged high temperatures.
+- [Box](./ai)
 - [Briar](https://briarproject.org/) (GPLv3, [GitLab](https://code.briarproject.org/briar/briar))
 - [Call Recorder](https://f-droid.org/en/packages/com.github.axet.callrecorder/) (GPLv3, [GitLab](https://gitlab.com/axet/android-call-recorder))
 - [CellMapper](https://play.google.com/store/apps/details?id=cellmapper.net.cellmapper)
@@ -128,6 +136,8 @@ These are some of the apps that I have found useful.
 - [Notify for Mi Band 1-7](https://play.google.com/store/apps/details?id=com.mc.miband1)
 - [Notify for Xiaomi/Mi Band 8-10](https://play.google.com/store/apps/details?id=com.mc.xiaomi1)
 - [Obsidian](https://play.google.com/store/apps/details?id=md.obsidian)
+- [Obtainium](https://obtainium.imranr.dev/)
+  - I recommend using this to download those apps that are not available from F-Droid or Google Play Store.
 - [Olauncher](https://play.google.com/store/apps/details?id=app.olauncher)
   (GPLv3, [F-Droid](https://f-droid.org/en/packages/app.olauncher/),
   [GitHub](https://github.com/tanujnotes/Olauncher))
@@ -189,17 +199,20 @@ These are some of the apps that I have found useful.
 - [SafetyNet Integrity Checker](https://play.google.com/store/apps/details?id=com.flinkapps.safteynet)
 - [YASNAC](https://play.google.com/store/apps/details?id=rikka.safetynetchecker)
 
+
 ### Apps that are likely not to work on rooted devices
 Tested on OnePlus 9 Pro with the Play Integrity Fix Magisk module.
 - [Bank Norwegian](https://play.google.com/store/apps/details?id=com.banknorwegian)
 - [Ingress](https://play.google.com/store/apps/details?id=com.nianticproject.ingress)
 - [S-mobiili](https://play.google.com/store/apps/details?id=fi.spankki)
 
+
 ### Apps that require Google Play Integrity
 These apps require Google Play Integrity to be passed,
 but work on rooted devices with the Play Integrity Fix Magisk module.
 - [Google Wallet](https://play.google.com/store/apps/details?id=com.google.android.apps.walletnfcrel)
 - [OP-mobiili](https://play.google.com/store/apps/details?id=fi.op.android.opmobiili)
+
 
 ### Apps that work on rooted devices
 These apps don't require additional fixes to work on rooted devices.
