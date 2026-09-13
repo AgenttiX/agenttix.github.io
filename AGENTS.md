@@ -2,8 +2,9 @@
 
 ## Project description
 This is the personal website of Mika "AgenttiX" Mäki.
-The website is built with Jekyll using `./.github/workflows/jekyll.yml`
+The website is built with Jekyll using the "Deploy from a branch" feature of GitHub Pages
 and hosted on GitHub Pages at https://agx.fi.
+The GitHub Actions workflow at `./.github/workflows/jekyll.yml` is therefore disabled.
 
 ## Project structure
 - `./.github` contains GitHub Actions workflows.
