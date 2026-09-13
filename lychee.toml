@@ -1,0 +1,48 @@
+# Configuration for the lychee link checker, used both by
+# ./linkcheck.sh and by ./.github/workflows/linkcheck.yml
+# https://github.com/lycheeverse/lychee#configuration-file
+#
+# URL patterns to ignore are listed in ./.lycheeignore
+
+# Only check external links. Relative links between pages are resolved by
+# Jekyll and cannot be verified from the Markdown sources.
+scheme = ["https", "http"]
+
+# Skip localhost, private IP ranges and link-local addresses.
+exclude_all_private = true
+
+# Skip files that are not part of the website sources.
+exclude_path = ["_site", ".jekyll-cache", "vendor", "node_modules"]
+
+# Some sites (e.g. those behind Cloudflare) respond with 403 to non-browser
+# user agents, and 429 is rate limiting rather than a broken link.
+accept = ["200..=299", "403", "429"]
+
+# Many sites reject HEAD requests, so fall back to GET when HEAD fails.
+method = "get"
+
+# Pretend to be a browser, as some sites block unknown user agents.
+user_agent = "Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0"
+
+# Timeouts and retries
+timeout = 20
+max_retries = 2
+retry_wait_time = 2
+max_concurrency = 32
+
+# Limit the requests per host to avoid triggering rate limiting
+host_concurrency = 4
+host_request_interval = "200ms"
+
+# Cache the results so that repeated runs don't re-check every link.
+# The cache is stored in ./.lycheecache (gitignored).
+cache = true
+max_cache_age = "1d"
+# Don't cache errors, so that transient failures are re-checked on the next run.
+cache_exclude_status = "400.."
+
+# Per-host settings. These must be at the end of the file, as they are TOML tables.
+# hinta.fi responds with 503 when it receives many requests at once.
+[hosts."hinta.fi"]
+concurrency = 1
+request_interval = "1s"

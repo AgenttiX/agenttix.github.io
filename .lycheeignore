@@ -1,0 +1,23 @@
+# URL patterns (regular expressions) that the link checker should skip.
+# https://github.com/lycheeverse/lychee#ignoring-links
+# One pattern per line. Lines starting with # are comments.
+
+# Placeholders in code examples, not real hosts
+CAMERA_IP
+
+# Sites that block automated link checkers but work in a browser
+# LinkedIn responds with 999
+linkedin\.com
+# Respond with 400 to non-browser clients
+faq\.whatsapp\.com
+www\.facebook\.com
+# TLS handshake fails with the rustls library used by lychee
+www\.fsf\.org
+# HTTP/2 protocol error with lychee
+gemini\.google\.com
+# Times out for automated clients at random, which makes the results flaky
+forum\.xda-developers\.com
+xdaforums\.com
+
+# Dynamically generated image on the about page, often rate limited (503)
+github-readme-stats\.vercel\.app

@@ -1,0 +1,54 @@
+# Check that the external links on the website are still valid.
+# This is similar to the linkcheck feature of Sphinx.
+# The same check can be run locally with ./linkcheck.sh
+# Configuration: ./lychee.toml and ./.lycheeignore
+name: Check links
+
+on:
+  # Links break over time even when the site doesn't change, so check them regularly.
+  schedule:
+    # Every Monday at 04:00 UTC
+    - cron: "0 4 * * 1"
+  # Check links when pages or the link checker configuration change
+  push:
+    branches: ["main"]
+    paths:
+      - "**.md"
+      - "**.html"
+      - "lychee.toml"
+      - ".lycheeignore"
+      - ".github/workflows/linkcheck.yml"
+  pull_request:
+    paths:
+      - "**.md"
+      - "**.html"
+      - "lychee.toml"
+      - ".lycheeignore"
+      - ".github/workflows/linkcheck.yml"
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  linkcheck:
+    runs-on: ubuntu-slim
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+      - name: Restore lychee cache
+        uses: actions/cache@v6
+        with:
+          path: .lycheecache
+          key: cache-lychee-${{ github.sha }}
+          restore-keys: cache-lychee-
+      - name: Check links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          # The version should match the one in ./linkcheck.sh
+          lycheeVersion: v0.24.2
+          # The settings are read from ./lychee.toml
+          args: --no-progress './**/*.md' './**/*.html'
+          # Increases the GitHub API rate limit for checking github.com links
+          token: ${{ secrets.GITHUB_TOKEN }}
