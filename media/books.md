@@ -6,14 +6,14 @@ title: Books
 # Books
 Here are some of the books that I have read and can recommend for you to read as well.
 THIS PAGE IS A WORK IN PROGRESS.
-I also wish I'd have more time for reading.
+I also wish I had more time for reading.
 
 
 ## Novels / fiction
 
 ### [Alice in Quantumland](https://www.amazon.com/Alice-Quantumland-Allegory-Quantum-Physics/dp/0387914951)
 Alice in Quantumland is a parody of the classic Alice in Wonderland,
-which by the way is written by the mathematician
+which, by the way, is written by the mathematician
 [Lewis Carroll](https://en.wikipedia.org/wiki/Lewis_Carroll).
 
 ### [Brave New World](https://en.wikipedia.org/wiki/Brave_New_World)
@@ -23,7 +23,7 @@ such a society would encourage consumerism for the sake of the economy,
 and provide the citizens with
 [bread and circuses](https://en.wikipedia.org/wiki/Bread_and_circuses)
 to keep them occupied and docile.
-Political movements, ideologies and religions would be suppressed to prevent disagreements and societal unrest.
+Political movements, ideologies, and religions would be suppressed to prevent disagreements and societal unrest.
 Sexuality would be encouraged only in promiscuous form to discourage forming close bonds with other people,
 preventing them from having other allegiances than to society as a whole.
 Any residual unhappiness is medicated away.
@@ -55,7 +55,7 @@ popularized the term transhumanism.
 
 ### [Foundation series](https://en.wikipedia.org/wiki/Foundation_series)
 This is a classic of science fiction
-and demonstrates the reader that valuing science and knowledge is essential for the success of a civilization.
+and demonstrates to the reader that valuing science and knowledge is essential for the success of a civilization.
 
 
 ### [Harry Potter](https://en.wikipedia.org/wiki/Harry_Potter)
@@ -88,7 +88,7 @@ surveillance hardware
 [in our pockets](https://en.wikipedia.org/wiki/Cellphone_surveillance),
 and our society is increasingly mandating that each citizen should carry one with them at all times.
 Saying "I don't care about mass surveillance because I have nothing to hide"
-is like saying
+is like saying,
 "I don't care about free speech because I have nothing to say".
 
 If you don't want our society to become like the one in the book,
@@ -112,20 +112,20 @@ This is definitely among my favourite novels.
 A chinese engineer gets reborn in a medieval kingdom as its prince
 that has been banished to lead a small remote village,
 where there's a witch hunt ongoing.
-Therefore it's a classic
+Therefore, it's a classic
 [isekai](https://en.wikipedia.org/wiki/Isekai),
-and the the first chapters suffer from some anime and manga cliches.
+and the first chapters suffer from some anime and manga clichés.
 However, once the story gets going,
 it's a tour de force of almost 1500 chapters
 of the industrial revolution and the development of modern civilization,
-and the amount of details is astonishing. To give you an example from chapter 33:
+and the number of details is astonishing. To give you an example from chapter 33:
 "Gunpowder was known as the secret weapon for mass production.
 Its ingredients were easily accessible.
 The prescription required three ingredients: sulfur, charcoal, and saltpeter.
-Gunpowder would be made by just mixing these three ingredients at at 1:1.5:7.5 ratio.
+Gunpowder would be made by just mixing these three ingredients at 1:1.5:7.5 ratio.
 It could be easily produced without any technical barriers."
 The importance of mathematics, physics, chemistry, engineering,
-economy and diplomacy for a modern society is not understated.
+economy, and diplomacy for a modern society is not understated.
 From there on the story slowly snowballs to the point that
 [the Kardashev scale](https://en.wikipedia.org/wiki/Kardashev_scale)
 and
@@ -135,10 +135,10 @@ However, the book was unfortunately probably subject to Chinese censorship,
 as the civilization in the book started to become too democratic for the Chinese government,
 and this is visible in some abrupt turns of the plot.
 
-[The manhua](https://manhuamanhwa.com/manga/release-that-witch/)
-is not even nearly as good as the novel, but it has a few pages that give
-[good glimpses](https://2nd.manhuamanhwa.com/manga_51e6d6e679953c6311757004d8cbbba9/chapter_6/chap_6_2.jpg)
-into the story.
+[The manhua](https://mangadex.org/title/aafb046c-9de4-4c3d-990c-6d75b079c0b9/release-that-witch)
+is unfortunately more of a comedy than a serious adaptation.
+There is also a donghua (=Chinese anime) adaptation ([IMDb](https://www.imdb.com/title/tt40370555/)),
+which is more faithful to the darker tones of the novel.
 The novel also has
 [a wiki](https://releasethatwitch.fandom.com/wiki/Release_that_Witch_Wiki),
 but it contains very heavy spoilers and should not therefore be read before fully reading the book.
@@ -147,7 +147,8 @@ The only exception is
 which is highly useful in keeping track of the various locations.
 Unfortunately the writer had to cut the story short,
 and the final chapters are quite hastily written.
-As a fun coincidence, some ideas in the final chapters are close to the subject of my second master's thesis.
+As a fun coincidence, some ideas in the final chapters are close to the subject of
+[my second master's thesis](https://arxiv.org/abs/2511.20436).
 
 
 ### [Star Maker](https://en.wikipedia.org/wiki/Star_Maker)
@@ -249,7 +250,7 @@ Sequel to Sapiens: A Brief History of Humankind.
 
 
 ### [The Phenomenon of Man](https://en.wikipedia.org/wiki/The_Phenomenon_of_Man)
-This highly abstract, esoteric and difficult-to-read work includes a few ideas that were a lot ahead of their time.
+This highly abstract, esoteric, and difficult-to-read work includes a few ideas that were a lot ahead of their time.
 The book was written in the 1930s, but foreshadows what we today call as the Internet,
 and what transhumanists call as the
 [technological singularity](https://en.wikipedia.org/wiki/Technological_singularity).
