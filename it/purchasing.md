@@ -332,7 +332,7 @@ consider buying a laptop and a USB-c or Thunderbolt dock instead.
     Therefore, an all-in-one (AIO) water cooler will probably be the best option for high-performance cooling.
   - Some manufacturers:
     - [Alphacool](https://www.alphacool.com/shop/enterprise-solutions-server/19-server-racks/19-cases/)
-    - [Inter-Tech](https://www.inter-tech.de/en/products/ipc)
+    - [Inter-Tech](https://www.inter-tech.de/server_case_en.html)
 - If you want a larger case, you should consider installing a regular PC case that is small enough
   to be put on a 19" rack shelf.
   The width of the space in a 19" rack is
@@ -1178,9 +1178,9 @@ Wireless peripherals often have poor security.
   - It's [vulnerable to both eavesdropping and keystroke injection](https://www.heise.de/news/Logitech-keyboards-and-mice-vulnerable-to-extensive-cyber-attacks-4464533.html).
 
 #### Known vulnerabilities
-- [KeySniffer](https://keysniffer.net/)
-  - [Affected devices](https://keysniffer.net/affected-devices)
-- [MouseJack](https://www.mousejack.com/)
+- [KeySniffer](https://www.bastille.net/research/vulnerabilities/keysniffer)
+  - [Affected devices](https://www.bastille.net/research/vulnerabilities/keysniffer#affected-devices)
+- [MouseJack](https://www.bastille.net/research/vulnerabilities/mousejack)
   - [Affected devices](https://bastille.net/research/vulnerabilities-mousejack/#affected-devices)
 - [KeyJack](https://bastille.net/research/vulnerabilities-keyjack/)
   - [Affected devices](https://bastille.net/research/vulnerabilities-keyjack/#affected-devices)
@@ -1284,7 +1284,7 @@ for good mice.
 
 
 Many Logitech wireless mice support the
-[Logitech PowerPlay](https://www.logitechg.com/fi-fi/products/gaming-mouse-pads/powerplay-wireless-charging.html)
+[Logitech PowerPlay](https://www.logitechg.com/en-us/shop/p/powerplay-wireless-charging)
 wireless charging mousepad,
 which I can recommend.
 

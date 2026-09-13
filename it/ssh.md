@@ -37,7 +37,7 @@ ssh-keygen -t ed25519-sk -O resident -O verify-required
 Support has been requested for
 - [Android](https://www.reddit.com/r/yubikey/comments/shrd2u/u2f_and_ssh_on_android/)
 - [iOS](https://www.reddit.com/r/yubikey/comments/krygf6/security_key_nfc_for_ssh_in_ios/)
-- [TermBot](https://github.com/cotechde/termbot/issues/27)
+- [TermBot](https://github.com/hwsecurity-sdk/termbot/issues/27)
 - [Termius](https://ideas.teams.termius.com/c/47-u2f-fido2-token-support)
   - Already works on desktop but not on Android
 - [Termux](https://github.com/termux/termux-packages/issues/4942)

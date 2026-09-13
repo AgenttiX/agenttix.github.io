@@ -94,7 +94,7 @@ Some Onyx Boox devices can be rooted.
 - Third-party [EPub reader firmware](https://github.com/turgu1/EPub-InkPlate)
 
 
-## [PineNote](https://www.pine64.org/pinenote/)
+## [PineNote](https://pine64.org/devices/pinenote/)
 - Open-source
 - Experimental, software is in its infancy (as of 2022)
 

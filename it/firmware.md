@@ -246,7 +246,7 @@ Lenovo laptops have a DRM that prevents third-party batteries from charging.
 
 ### Meltdown and Spectre patch for X58 motherboards
 - [Techpowerup](https://www.techpowerup.com/forums/threads/meltdown-and-spectre-patched-bios-for-x58-motherboards.246101/)
-- [Gigabyte UK](https://forum.giga-byte.co.uk/index.php?topic=22899.0)
+- [Gigabyte UK](https://web.archive.org/web/20251013022523/https://forum.giga-byte.co.uk/index.php?topic=22899.0)
 - [Gigabyte US](https://forum.gigabyte.us/thread/4901/spectre-patched-bios-gigabyte-motherboards)
 
 Tested to work on Gigabyte GA-X58A-UD7.

@@ -81,8 +81,8 @@ to ensure proper security and functionality such as audio quality.
   - [LHDC](https://en.wikipedia.org/wiki/LHDC_(codec))
     - Supported by Android 10 ->
   - [LLAC](https://en.wikipedia.org/wiki/LHDC_(codec)#LLAC)
-    - Low latency verison of LHDC, aka. LHDC LL
-  - [mSBC](https://www.rfwireless-world.com/Terminology/SBC-vs-mSBC-codec.html)
+    - Low-latency version of LHDC, aka. LHDC LL
+  - [mSBC](https://www.rfwireless-world.com/terminology/sbc-vs-msbc-bluetooth-codec-difference)
     - SBC with microphone support. Horrible quality, but much better than CVSD.
   - [SBC](https://en.wikipedia.org/wiki/SBC_(codec))
     - Basic codec. Support is mandatory for all stereo Bluetooth audio devices.
@@ -108,7 +108,7 @@ to ensure proper security and functionality such as audio quality.
   - Realtek RTL8761B
     - Requires Linux kernel >= 5.8, which can be installed on Ubuntu 20.04 with
       `sudo apt-get install linux-generic-hwe-20.04`
-    - [Requires additional firmware for Linux](https://linuxreviews.org/Realtek_RTL8761B)
+    - [Requires additional firmware for Linux](https://web.archive.org/web/20260208220425/https://linuxreviews.org/Realtek_RTL8761B)
       - On Ubuntu the firmware and config should be copied to `/lib/firmware/rtl_bt` with the file extension `.bin`.
 - My upcoming home automation adapter: Barrot
   - [AliExpress](https://www.aliexpress.com/item/1005009587868790.html)

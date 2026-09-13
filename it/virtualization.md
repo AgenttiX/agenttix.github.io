@@ -472,7 +472,7 @@ Workaround: [change from overlayfs2 to fuse-overlayfs](https://webdock.io/en/doc
     [2](https://forum.proxmox.com/threads/docker-is-unable-to-access-gpu-in-lxc-gpu-passthrough.125066/post-582866),
     [3](https://discuss.linuxcontainers.org/t/how-to-build-nvidia-docker-inside-lxd-lxc-container/17582/5)
 - Follow the instructions for your Docker container, e.g.
-  [Jellyfin](https://jellyfin.org/docs/general/administration/hardware-acceleration/nvidia/).
+  [Jellyfin](https://jellyfin.org/docs/general/post-install/transcoding/hardware-acceleration/nvidia/).
   - If nvidia-smi works in the container but transcoding crashes, check the FFmpeg logs in the Jellyfin dashboard.
     You may be missing some libraries in the LXC container,
     such as the `libnvidia-encode` and `libnvidia-decode` mentioned above.

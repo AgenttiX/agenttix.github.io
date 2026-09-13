@@ -95,7 +95,7 @@ These are some of the apps that I have found useful.
     as batteries can't withstand the prolonged high temperatures.
 - [Box](./ai)
 - [Briar](https://briarproject.org/) (GPLv3, [GitLab](https://code.briarproject.org/briar/briar))
-- [Call Recorder](https://f-droid.org/en/packages/com.github.axet.callrecorder/) (GPLv3, [GitLab](https://gitlab.com/axet/android-call-recorder))
+- [Call Recorder](https://gitlab.com/axet/android-call-recorder) (GPLv3)
 - [CellMapper](https://play.google.com/store/apps/details?id=cellmapper.net.cellmapper)
 - [CREDO Detector](https://play.google.com/store/apps/details?id=science.credo.mobiledetector)
 - [DriveDroid](https://www.drivedroid.io/)
@@ -103,7 +103,7 @@ These are some of the apps that I have found useful.
 - [F-Droid](https://f-droid.org/)
 - [Findroid](https://play.google.com/store/apps/details?id=dev.jdtech.jellyfin)
 - [Firefox](https://play.google.com/store/apps/details?id=org.mozilla.firefox)
-- [FlorisBoard](https://play.google.com/store/apps/details?id=dev.patrickgold.florisboard) (Apache 2.0, [GitHub](https://github.com/florisboard/florisboard))
+- [FlorisBoard](https://f-droid.org/packages/dev.patrickgold.florisboard/) (Apache 2.0, [GitHub](https://github.com/florisboard/florisboard))
 - [Fossify Keyboard](https://play.google.com/store/apps/details?id=org.fossify.keyboard) (GPLv3, [GitHub](https://github.com/FossifyOrg/Keyboard))
 - [Google Digital Wellbeing](https://play.google.com/store/apps/details?id=com.google.android.apps.wellbeing)
   - Preinstalled on some devices, and included in some Google Apps packages.
@@ -171,7 +171,7 @@ These are some of the apps that I have found useful.
 - [Sleep as Android](https://play.google.com/store/apps/details?id=com.urbandroid.sleep)
 - [Swift Backup](https://play.google.com/store/apps/details?id=org.swiftapps.swiftbackup)
   - Requires root
-- [Syncthing](https://play.google.com/store/apps/details?id=com.nutomic.syncthingandroid)
+- [Syncthing-Fork](https://play.google.com/store/apps/details?id=com.github.catfriend1.syncthingandroid)
 - [Tankille](https://play.google.com/store/apps/details?id=fi.creosys.fuelfellow)
 - [TeamViewer QuickSupport](https://play.google.com/store/apps/details?id=com.teamviewer.quicksupport.market)
 - [Termux](https://play.google.com/store/apps/details?id=com.termux)
@@ -182,7 +182,7 @@ These are some of the apps that I have found useful.
 - [VLC](https://play.google.com/store/apps/details?id=org.videolan.vlc)
 - [WiGLE](https://play.google.com/store/apps/details?id=net.wigle.wigleandroid)
 - [WireGuard](https://play.google.com/store/apps/details?id=com.wireguard.android)
-- [Xournal++](https://play.google.com/store/apps/details?id=online.xournal.mobile)
+- [Xournal++](https://f-droid.org/packages/online.xournal.mobile/)
 - [X-Plore](https://play.google.com/store/apps/details?id=com.lonelycatgames.Xplore)
 - [YouTube ReVanced](https://github.com/revanced)
   - To install, download [ReVanced Manager](https://github.com/revanced/revanced-manager)
@@ -338,7 +338,7 @@ a vulnerability that allows any installed app to gain root access.
   - [Unofficial LineageOS 14](https://forum.xda-developers.com/t/rom-eol-7-1-2-official-lineageos-for-t0lte.3538310/) (Android 7,
     [download](https://androidfilehost.com/?fid=1395089523397906488))
   - [Unofficial LineageOS 20](https://xdaforums.com/t/rom-unofficial-13-n7105-t0lte-samsung-galaxy-note-2-lte-lineageos-20-0-alpha.4516507/)
-- [TWRP](https://twrp.me/samsung/samsunggalaxynote2n7105.html)
+- [TWRP](https://twrp.me/samsung/samsunggalaxynote2international.html)
 - [Stock ROM](https://sfirmware.com/samsung-gt-n7105/)
 
 
@@ -506,7 +506,7 @@ unless you have a device with the A/B partition scheme or without a separate rec
 - If using an old firmware or old device, these additional tools may help
   - [LSposed_mod](https://github.com/mywalkb/LSPosed_mod)
   - [Zygisk Next](https://github.com/Dr-TSNG/ZygiskNext)
-  - [Play Integrity Fix](https://github.com/chiteroman/PlayIntegrityFix)
+  - [Play Integrity Fix](https://github.com/KOWX712/PlayIntegrityFix)
   - [Zygisk Assistant](https://github.com/snake-4/Zygisk-Assistant)
   - [MagiskHide Props Config](https://github.com/Magisk-Modules-Repo/MagiskHidePropsConf)
   - [Google Pay SQlite Fix Module](https://forum.xda-developers.com/t/working-magisk-with-google-pay-as-of-gms-17-1-22-on-pie.3929950/page-9#post-79643248)

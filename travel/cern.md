@@ -42,14 +42,14 @@ Also note that most stores, including grocery stores, have short opening hours a
 
 [CERN Restaurant 1](https://www.mynovae.ch/en/ets/22-cern-restaurant-n1/?code=CER103)
 - [Google Maps](https://maps.app.goo.gl/Go9mFVAfCNPyu6o68)
-- [CERN info](https://sce-dep.web.cern.ch/home/restaurant-1)
+- [CERN info](https://campus.web.cern.ch/campus-life/catering/)
 - Lunch price starts at around 10 CHF
 
 [CERN Restaurant 2](https://www.mynovae.ch/en/restaurant/21-restaurant-r2/)
 - [Google Maps](https://maps.app.goo.gl/1KvX6ZznaJjJ2Het9)
-- [CERN info](https://sce-dep.web.cern.ch/home/restaurant-2)
+- [CERN info](https://campus.web.cern.ch/campus-life/catering/)
 
-[Centre Commercial Val Thoiry]()
+[Centre Commercial Val Thoiry](https://www.valthoiry.com/)
 - [Google Maps](https://maps.app.goo.gl/Lu8ZPy42o8oMtssh7)
 - This shopping centre has a supermarket (Hyper U) and various other shops.
   This is perhaps the most economical place for shopping near CERN, including groceries.
@@ -57,7 +57,7 @@ Also note that most stores, including grocery stores, have short opening hours a
 
 
 ## Accommodation
-[CERN Hotel](https://sce-dep.web.cern.ch/cern-hotels)
+[CERN Hotel](https://campus.web.cern.ch/campus-life/housing/cern-hotel/)
 - [Google Maps](https://maps.app.goo.gl/CUm69QXRDTCGxonk9)
 - An economical and practical option for conference trips, even though it may look a bit outdated.
 

@@ -123,7 +123,7 @@ This is my primary desktop computer.
     [Wikipedia](https://en.wikipedia.org/wiki/Radeon_RX_Vega_series#Radeon_VII_branded_discrete_graphics)
     - 16 GB HBM2
     - FP64: 3.360 TFLOPS (1/4 of FP32)
-    - [No longer compatible with the latest ROCm](https://github.com/ROCm/ROCm/discussions/3893)
+    - [No longer compatible with the latest ROCm](https://web.archive.org/web/20260305003213/https://github.com/ROCm/ROCm/discussions/3893)
     - The last ROCm version to fully support Radeon VII is 6.0.0.
       It's deprecated for 6.0.2 - 6.3.3 and not supported for 6.4.0 &rarr;.
     - Therefore, [ROCm 6.3.3](https://rocm.docs.amd.com/en/docs-6.3.3/)
@@ -178,8 +178,8 @@ This is my primary desktop computer.
     - 1x [Corsair ML140 PRO RGB fan](https://www.corsair.com/us/en/p/case-fans/co-9050077-ww/ml140-pro-rgb-led-140mm-pwm-premium-magnetic-levitation-fan-single-pack-co-9050077-ww) (CO-9050077-WW)
       - 400 - 1200 RPM PWM
   - Radiators
-    - 2x [Alphacool NexXxoS ST30 Full Copper 480mm V.2 (AT1015508)](https://shop.alphacool.com/en/shop/radiators/480mm/rad-alphacool-nexxxos-st30-full-copper-480mm-radiator-v.2-pht-eol)
-    - 2x [Alphacool NexXxoS ST30 Full Copper 360mm V.2 (AT1015507)](https://shop.alphacool.com/en/shop/radiators/360mm/rad-alphacool-nexxxos-st30-full-copper-360mm-radiator-v.2-pht-eol)
+    - 2x [Alphacool NexXxoS ST30 Full Copper 480mm V.2 (AT1015508)](https://web.archive.org/web/20250418061003/https://shop.alphacool.com/en/shop/radiators/480mm/rad-alphacool-nexxxos-st30-full-copper-480mm-radiator-v.2-pht-eol)
+    - 2x [Alphacool NexXxoS ST30 Full Copper 360mm V.2 (AT1015507)](https://web.archive.org/web/20260114174111/https://shop.alphacool.com/en/shop/radiators/360mm/rad-alphacool-nexxxos-st30-full-copper-360mm-radiator-v.2-pht-eol)
   - CPU block: [EK-Waterblocks EK-Quantum Momentum ROG Zenith II Extreme D-RGB (3831109823965)](https://www.ekwb.com/shop/ek-quantum-momentum-rog-zenith-ii-extreme-d-rgb-plexi)
   - RAM cooling
     - 4x2 [Alphacool D-RAM watercooling module (AT1011209)](https://shop.alphacool.com/en/shop/ram-cooler/17268-alphacool-d-ram-module-for-alphacool-d-ram-cooler-black-2-pieces)

@@ -130,7 +130,7 @@ for setting up a public key infrastructure for a Windows domain.
 
 - [Microsoft instructions](https://docs.microsoft.com/en-us/windows-server/networking/core-network-guide/cncg/server-certs/install-the-certification-authority)
 - [Certification Authority Guidance](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831574(v=ws.11)?redirectedfrom=MSDN#crypto)
-- [3rd party instructions](https://mjcb.io/blog/2020/03/09/certificate-authority-windows-server-2019/)
+- [3rd party instructions](https://web.archive.org/web/20241118083827/https://mjcb.io/blog/2020/03/09/certificate-authority-windows-server-2019/)
 - Decide a name for the CA
   - The default format is Company-ServerName-CA, e.g. MyCompany-AD-CA
   - Please see the [CA naming rules](https://social.technet.microsoft.com/wiki/contents/articles/16160.considerations-for-certification-authority-ca-names.aspx)
@@ -162,7 +162,7 @@ for setting up a public key infrastructure for a Windows domain.
 - Recommendations to use the defaults
   - [Cloud Infrastructure Services](https://cloudinfrastructureservices.co.uk/active-directory-certificate-services-best-practices/) (2019->)
   - [social.technet.microsoft.com](https://social.technet.microsoft.com/Forums/office/en-US/c462dec2-210b-4878-a832-42a95ff2cc61/sha512-and-4096-compatibility?forum=winserversecurity) (2015)
-  - [Zindagi Technologies](https://zindagitech.com/how-should-we-implement-active-directory-certificate-services/) (2021)
+  - [Zindagi Technologies](https://web.archive.org/web/20260312233508/https://zindagitech.com/how-should-we-implement-active-directory-certificate-services/) (2021)
 - Recommendations to configure for higher security
   - [Techgenix](https://techgenix.com/microsoft-pki-quick-guide-part2-design/)
   - [social.technet.microsoft.com](https://social.technet.microsoft.com/Forums/windowsserver/en-US/daeea1a0-bf18-4ec1-b38d-b75a73ee5e08/are-there-any-major-compatibility-issues-with-using-gt-2048-bit-ca-keys?forum=winserversecurity)

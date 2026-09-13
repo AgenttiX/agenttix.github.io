@@ -45,13 +45,13 @@ Unofficial patch by Dr.MonaLisa is available [here](https://ee2.eu/patch/).
 ### [Factorio](https://www.factorio.com/)
 
 
-### [OpenArena](https://www.openarena.ws/)
+### [OpenArena](https://openarena.ws/)
 A free and open-source first-person shooter (FPS) game similar to
 [Quake III Arena](https://en.wikipedia.org/wiki/Quake_III_Arena).
 - Installation
   - Android: [Google Play](https://play.google.com/store/apps/details?id=ws.openarena.sdl)
   - Ubuntu: `sudo apt update && sudo apt install openarena`
-  - Windows: download from [the official website](https://www.openarena.ws/)
+  - Windows: download from [the official website](https://openarena.ws/)
 - My server configs are available [on GitHub](https://github.com/AgenttiX/openarena-server)
 
 
