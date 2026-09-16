@@ -8,6 +8,7 @@ title: My studies
 - Bachelor's thesis (2019): [Puolijohdekiekkolaserin vahvistinpeilin karakterisointi](http://urn.fi/URN:NBN:fi:tuni-201909103227)
 - Master's thesis (2020): [Puolijohdekiekkolaserin eliniän tilastollinen tarkastelu](https://urn.fi/URN:NBN:fi:tuni-202010277540)
 - Master's thesis (2024): [The effect of sound speed on the gravitational wave spectrum of first order phase transitions in the early universe](https://github.com/AgenttiX/msc-thesis2)
+  - Updated version (2025): [arXiv:2511.20436](https://arxiv.org/abs/2511.20436)
 - [PhD presentations](https://agx.fi/phd-presentations/)
 
 
@@ -16,7 +17,21 @@ You can find my PhD presentations [here](https://agx.fi/phd-presentations/).
 
 
 ## PhD events
+### 2026
+
+| Name                                                                                            | Dates     |
+|-------------------------------------------------------------------------------------------------|-----------|
+| CFT retreat                                                                                     | 22.-24.4. |
+| Doctoral Experience Week                                                                        | 25.-29.5. |
+| [Particle & nuclear doctoral pilot student retreat](https://indico.global/event/16532/overview) | 28.-29.5. |
+| [LISA Cosmology Working Group Workshop](https://indico.icc.ub.edu/event/677/)                   | 1.-5.6.   |
+| [LISA DDPC Workshop](https://indico.spacescience.ro/event/61/)                                  | 8.-12.6.  |
+| [Strong and Electro-Weak Matter](https://indico.global/event/14246/)                            | 17.-21.8. |
+| [Cosmo-26](https://indico.global/event/15863/)                                                  | 24.-28.8. |
+
+
 ### 2025
+
 | Name                                                                                                                                         | Dates       |
 |----------------------------------------------------------------------------------------------------------------------------------------------|-------------|
 | Doctoral Education Pilot Base Camp 1                                                                                                         | 25.-28.2.   |
@@ -41,6 +56,7 @@ You can find my PhD presentations [here](https://agx.fi/phd-presentations/).
 - FYS2085 Scientific Computing II (2021): [Planetary motion](https://github.com/AgenttiX/planetary-motion)
 - FYS2029 Quantum Computing (2021): [Quantum machine learning](https://github.com/AgenttiX/fys2029-project)
 - PAP328 Laboratory Course on Instrumentation (2021): [Proportional counter](https://github.com/AgenttiX/proportional-counter)
+
 
 ## Misc. projects
 - [Linnunradan käsikirja teekkareille - Hitchhiker's guide to the sciences](https://github.com/AgenttiX/compendium)
