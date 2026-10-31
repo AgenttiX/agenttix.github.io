@@ -218,6 +218,79 @@ options nvidia-drm modeset=1
 ```
 
 
+#### Sensor configuration
+`sudo sensors-detect` and `sensors` work with these settings:
+- Embedded sensors: yes
+  - AMD Family 17h thermal sensors: k10temp
+  - This is already handled by zenpower, and the `k10temp` module should therefore not be loaded.
+- Super I/O: yes
+  - Nuvoton NCT6798D Super IO Sensors: nct6775
+  - The `nct6775` driver accesses the motherboard's NCT6798D Super I/O chip directly through I/O ports 0x295–0x296.
+    The BIOS doesn’t reserve these ports through ACPI, so there is no resource conflict and no need for `acpi_enforce_resources=lax`.
+    `asus-ec-sensors` and `eeepc-wmi` are loaded automatically.
+    `eeepc-wmi` reads the CPU fan speed through a BIOS WMI method.
+    If that BIOS code also accesses the NCT6798D (unconfirmed), it doesn’t coordinate with the kernel driver,
+    so simultaneous reads could rarely produce a single invalid reading.
+    If the OS controlled the fans, a PWM write could also go to the wrong register.
+    `asus-ec-sensors` reads the embedded controller using the firmware’s ACPI lock, so it isn’t affected.
+    By default, the fan curves are configured in the BIOS and run in the chip itself, and Kubuntu doesn't configure OS fan control by default, so the only realistic effect is an occasional glitched value that’s gone on the next refresh.
+    If you enable PWM control in the OS, then there is a risk of a race condition causing wrong PWM values to be set.
+- IPMI: yes
+  - Nothing found
+- ISA I/O: yes
+  - Nothing found
+- I2C/SMBus: yes
+  - Synopsys DesignWare I2C adapter (i2c-0): NO (IMPORTANT!)
+    - Answering yes to this will make the NVMe SSD read-only, and result in `sensors` reporting for `nvme-pci-2100`:
+      ```
+      ERROR: Can't get value of subfeature temp1_input: I/O error
+      ERROR: Can't get value of subfeature temp1_alarm: I/O error
+      ERROR: Can't get value of subfeature temp1_min: I/O error
+      ERROR: Can't get value of subfeature temp1_max: I/O error
+      ```
+  - NVIDIA i2c adapter 1 at 1:00.0 (i2c-1): yes
+  - NVIDIA i2c adapter 5 at 1:00.0 (i2c-2): yes
+  - NVIDIA i2c adapter 6 at 1:00.0 (i2c-3): yes
+  - NVIDIA i2c adapter 7 at 1:00.0 (i2c-4): yes
+  - NVIDIA i2c adapter 8 at 1:00.0 (i2c-5): yes
+  - SMBus PIIX4 adapter port 0 at 0b00 (i2c-6): yes
+  - SMBus PIIX4 adapter port 2 at 0b00 (i2c-7): yes
+    - `Handled by driver `jc42' (already loaded), chip type `jc42'`
+      - These are the JEDEC JC-42.4 temperature sensors on the DDR4 DIMMs
+    - `Handled by driver `ee1004' (already loaded), chip type `ee1004' (note: this is probably NOT a sensor chip!)`
+  - SMBus PIIX4 adapter port 1 at 0b20 (i2c-8)
+    - Dallas Semiconductor DS75: yes, `(confidence 3, driver `lm75')`
+    - This is a false positive for the RTX 3090, and should not be enabled.
+      Starting the `lm75` driver would write to register 1, which would write into the GPU's management interface.
+  - AMDGPU SMU 0 (i2c-9): yes
+  - AMDGPU DM i2c hw bus 0 (i2c-10): yes
+  - AMDGPU DM i2c hw bus 1 (i2c-11): yes
+  - AMDGPU DM i2c hw bus 2 (i2c-12): yes
+  - AMDGPU DM i2c hw bus 3 (i2c-13): yes
+  - AMDGPU DM aux hw bus 0 (i2c-14): yes
+  - AMDGPU DM aux hw bus 1 (i2c-15): yes
+  - AMDGPU DM aux hw bus 2 (i2c-16): yes
+
+With these settings, `sensors` shows these devices:
+```
+amdgpu-pci-4f00
+asusec-isa-000a
+enp68s0-pci-4400
+hidpp_battery_0-hid-3-e
+iwlwifi_1-virtual-0
+jc42-i2c-6-1a
+jc42-i2c-6-1b
+jc42-i2c-6-1c
+jc42-i2c-6-1d
+jc42-i2c-6-1e
+jc42-i2c-6-1f
+jc42-i2c-6-18
+jc42-i2c-6-19
+nvme-pci-2100
+zenpower-pci-00c3
+```
+
+
 #### Issues
 - [BIOS 1603 is buggy and 1502 is more stable](https://rog-forum.asus.com/t5/zenith-extreme-x399-e/zenith-ii-extreme-alpha-instability-and-restarts-with-bios-1603/m-p/895749/highlight/true#M4540)
 - [On Kubuntu 26.04, KDE window manager restarts spontaneously after the computer has been on for a while](https://bugs.kde.org/show_bug.cgi?id=523384)
